@@ -154,6 +154,12 @@ class APSSpider(Spider):
 
             record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
             record.add_value('page_nr', str(article.get('numPages', '')))
+            record.add_value('report_numbers',[
+                {
+                    'source': 'arXiv',
+                    'value': get_nested(article, 'identifiers', 'arxiv')
+                }
+            ])
 
             record.add_value('abstract', get_nested(article, 'abstract', 'value'))
             record.add_value('title', get_nested(article, 'title', 'value'))
@@ -185,7 +191,8 @@ class APSSpider(Spider):
                     'subjectAreas'
                 )
             ])
-            record.add_value('copyright_holder', get_nested(article, 'rights', 'copyrightHolders')[0]['name'])
+            if get_nested(article, 'rights', 'copyrightHolders'):
+                record.add_value('copyright_holder', get_nested(article, 'rights', 'copyrightHolders')[0]['name'])
             record.add_value('copyright_year', str(get_nested(article, 'rights', 'copyrightYear')))
             record.add_value('copyright_statement', get_nested(article, 'rights', 'rightsStatement'))
             record.add_value('copyright_material', 'Article')
