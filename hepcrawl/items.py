@@ -285,3 +285,5 @@ class HEPRecord(scrapy.Item):
 
     thesis_supervisor = scrapy.Field()
     language = scrapy.Field()
+
+    local_files = scrapy.Field()
