@@ -33,7 +33,6 @@ from ..utils import (
 
 from ..settings import OXFORD_DOWNLOAD_DIR, OXFORD_UNPACK_FOLDER
 
-
 def unzip_files(filename, target_folder, type=".xml"):
     """Unzip files (XML only) into target folder."""
     z = ZipFile(filename)
@@ -46,6 +45,7 @@ def unzip_files(filename, target_folder, type=".xml"):
             xml_files.append(absolute_path)
     return xml_files
 
+
 def ftp_list_folders(server_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
     with ftputil.FTPHost(server, user, password) as host:
@@ -56,9 +56,22 @@ def ftp_list_folders(server_folder, server, user, password):
                 all_folders.append(folder)
     return all_folders
 
+
 def generate_download_name():
     from time import localtime, strftime
     return strftime('%Y-%m-%d_%H:%M:%S', localtime())
+
+
+def get_arxiv(node):
+    arxivs_raw = node.xpath("//article-id[@pub-id-type='arxiv']/text()")
+    arxivs = []
+    for arxiv in arxivs_raw:
+            ar = arxiv.extract()
+            if ar:
+                arxivs.append({
+                    'value':ar
+                })
+    return arxivs
 
 
 class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
@@ -92,7 +105,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
     name = 'OUP'
     custom_settings = {}
     start_urls = []
-    iterator = 'iternodes'  # This is actually unnecessary, since it's the default value
+    iterator = 'html'  # this fixes a problem with parsing the record
     itertag = 'article'
 
     allowed_article_types = [
@@ -141,16 +154,17 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
                 for remote_file in new_files:
                     # Cast to byte-string for scrapy compatibility
                     remote_file = str(remote_file)
-                    ftp_params["ftp_local_filename"] = os.path.join(
-                        self.target_folder,
-                        "_".join([new_download_name,os.path.basename(remote_file)])
-                    )
-                    remote_url = "ftp://{0}/{1}".format(ftp_host, remote_file)
-                    yield Request(
-                        str(remote_url),
-                        meta=ftp_params,
-                        callback=self.handle_package_ftp
-                    )
+                    if '.zip' in remote_file:
+                        ftp_params["ftp_local_filename"] = os.path.join(
+                            self.target_folder,
+                            "_".join([new_download_name,os.path.basename(remote_file)])
+                        )
+                        remote_url = "ftp://{0}/{1}".format(ftp_host, remote_file)
+                        yield Request(
+                            str(remote_url),
+                            meta=ftp_params,
+                            callback=self.handle_package_ftp
+                        )
 
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""
@@ -162,13 +176,6 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
             if dummy == '':
                 break
 
-        if ".xml" in zip_filepath:
-            xml_files = unzip_files(zip_filepath, zip_target_folder)
-            for xml_file in xml_files:
-                yield Request(
-                   "file://{0}".format(xml_file),
-                   meta={"package_path": zip_filepath}
-                )
         if ".pdf" in zip_filepath:
             zip_target_folder = os.path.join(zip_target_folder,"pdf")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
@@ -176,19 +183,20 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
             zip_target_folder = zip_target_folder[0:zip_target_folder.find("_archival")]
             zip_target_folder = os.path.join(zip_target_folder,"archival")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
-
-
-
-    # def handle_package_file(self, response):
-    #     """Handle a local zip package and yield every XML."""
-    #     zip_filepath = urlparse.urlsplit(response.url).path
-    #     zip_target_folder, dummy = os.path.splitext(zip_filepath)
-    #     xml_files = unzip_xml_files(zip_filepath, zip_target_folder)
-    #     for xml_file in xml_files:
-    #         yield Request(
-    #             "file://{0}".format(xml_file),
-    #             meta={"package_path": zip_filepath}
-    #         )
+        if ".xml" in zip_filepath:
+            xml_files = unzip_files(zip_filepath, zip_target_folder)
+            for xml_file in xml_files:
+                dir_path = os.path.dirname(xml_file)
+                filename = os.path.basename(xml_file).split('.')[0]
+                pdf_url = os.path.join(dir_path,"pdf","%s.%s" % (filename,'pdf'))
+                pdfa_url = os.path.join(dir_path,"archival","%s.%s" % (filename,'pdf'))
+                yield Request(
+                   "file://{0}".format(xml_file),
+                   meta={"package_path": zip_filepath,
+                         "xml_url": xml_file,
+                         "pdf_url": pdf_url,
+                         "pdfa_url": pdfa_url}
+                )
 
     def parse_node(self, response, node):
         """Parse a OUP XML file into a HEP record."""
@@ -205,6 +213,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
             record.add_value('journal_doctype', article_type)
         record.add_xpath('dois', "//article-id[@pub-id-type='doi']/text()")
+        record.add_value('arxiv_eprints', get_arxiv(node))
         record.add_xpath('page_nr', "//counts/page-count/@count")
 
         record.add_xpath('abstract', '//abstract[1]')
@@ -242,17 +251,26 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
         record.add_value('copyright_material', 'Article')
 
         license = get_license(
-            license_url=node.xpath(
-                '//license/license-p/ext-link/@href').extract_first(),
-            license_text=node.xpath(
-                '//license/license-p/ext-link/text()').extract_first(),
+            license_url=node.xpath('//license/license-p/ext-link/text()').extract_first()
         )
         record.add_value('license', license)
 
         record.add_value('collections', ['Progress of Theoretical and Experimental Physics'])
-        parsed_record = dict(record.load_item())
-        validate_schema(data=parsed_record, schema_name='hep')
 
+        #local fiels paths
+        local_files = []
+        if 'xml_url' in response.meta:
+            local_files.append({'filetype':'xml', 'path':response.meta['xml_url']})
+        if 'pdf_url' in response.meta:
+            local_files.append({'filetype':'pdf', 'path':response.meta['pdf_url']})
+        if 'pdfa_url' in response.meta:
+            local_files.append({'filetype':'pdf/a', 'path':response.meta['pdfa_url']})
+        record.add_value('local_files', local_files)
+
+        # DIRTY HACK to pass schema validation for prublisher name
+        self.name = "Oxford University Press"
+
+        parsed_record = dict(record.load_item())
         print(parsed_record)
         return parsed_record
 
