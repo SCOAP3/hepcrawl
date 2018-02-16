@@ -428,8 +428,14 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         record.add_value('license', license)
 
         record.add_value('collections', [meta['articles'][doi]['journal']])
+
+        #local fiels paths
+        local_files = []
+        for filetype in meta['articles'][doi]['files']:
+            local_files.append({'filetype':filetype, 'path':meta['articles'][doi]['files'][filetype]})
+        record.add_value('local_files', local_files)
+
         parsed_record = dict(record.load_item())
-        validate_schema(data=parsed_record, schema_name='hep')
 
         print(parsed_record)
         return parsed_record
