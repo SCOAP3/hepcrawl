@@ -154,7 +154,6 @@ class InspireAPIPushPipeline(object):
             'pubinfo_freetext',
         ])
 
-        validate_schema(dict(item), 'hep')
         return item
 
     def _prepare_payload(self, spider):
