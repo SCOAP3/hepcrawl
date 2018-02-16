@@ -101,7 +101,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         'addendum',
         'review-article',
         'rapid-communications',
-        'OriginalPaper'
+        'originalpaper'
     ]
 
     ERROR_CODES = range(400, 432)
@@ -174,13 +174,15 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             # if 'EPJC' in zip_filepath:
             if '.scoap' in xml_file or '.Meta' in xml_file:
                 xml_url = u"file://{0}".format(os.path.abspath(xml_file))
+                pdfa_name = "{0}.pdf".format(os.path.basename(xml_file).split('.')[0])
+                pdfa_path = os.path.join(os.path.dirname(xml_file), 'BodyRef', 'PDF', pdfa_name)
+                pdfa_url = u"file://{0}".format(pdfa_path)
                 yield Request(
                     xml_url,
                     meta={"package_path": zip_filepath,
-                          "xml_url": xml_url},
+                          "xml_url": xml_url,
+                          "pdfa_url": pdfa_url},
                 )
-            # else:
-            #    pass
 
     def _get_published_date(self, node):
         year = node.xpath('//OnlineDate/Year/text()').extract()[0]
@@ -196,7 +198,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
 
         if license_type:
             license_type = license_type[0].lower().lstrip('cc ').replace(' ','-')
-            return {"license": "CC="+license_type.upper()+"-"+version[0],"url":"%s/%s/%s" % (text, license_type, version[0])}
+            return {"license": "CC-"+license_type.upper()+"-"+version[0],"url":"%s/%s/%s" % (text, license_type, version[0])}
         else:
             self.log("No license defined. Setting default license!")
             return {"license": "CC-BY-3.0", "url":"https://creativecommons.org/licenses/by/3.0"}
@@ -271,7 +273,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         node.remove_namespaces()
         article_type = node.xpath('//Article/ArticleInfo/@ArticleType').extract()
         self.log("Got article_type {0}".format(article_type))
-        if article_type is None or article_type[0] not in self.allowed_article_types:
+        if article_type is None or article_type[0].lower() not in self.allowed_article_types:
             # Filter out non-interesting article types
             return None
 
@@ -283,23 +285,17 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         record.add_xpath('dois', "//ArticleDOI/text()")
         #record.add_xpath('page_nr', "//counts/page-count/@count")
 
-        record.add_xpath('abstract', '//Abstract/Para/')
-
         title = node.xpath('//ArticleTitle')
-        print(title)
-        print(title.extract()[0])
         title = re.sub('<math>.*?</math>', '', title.extract()[0])
         title = re.sub('<math>.*?</math>', '', title)
-        self.log('title: '+title)
 
-        record.add_xpath('abstract', '//Abstract/Para')
+        record.add_xpath('abstract', '//Article/ArticleHeader/Abstract/Para')
         record.add_value('title', title)
 
         #record.add_xpath('title', '//ArticleTitle')
         #record.add_xpath('subtitle', '//subtitle/text()')
 
         # TODO: authors and colaboration
-        print('new article')
         record.add_value('authors', self._get_authors(node))
         # record.add_xpath('collaborations', "//contrib/collab/text()")
 
@@ -331,8 +327,16 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         record.add_value('license', license)
 
         record.add_value('collections', [journal])
+
+        #local fiels paths
+        local_files = []
+        if 'xml_url' in response.meta:
+            local_files.append({'filetype':'xml', 'path':request.meta['xml_url'][7:]})
+        if 'pdfa_url' in response.meta:
+            local_files.append({'filetype':'pdf/a', 'path':request.meta['pdfa_url'][7:]})
+        record.add_value('local_files', local_files)
+
         parsed_record = dict(record.load_item())
-        validate_schema(data=parsed_record, schema_name='hep')
 
         print(parsed_record)
         return parsed_record
