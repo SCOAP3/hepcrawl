@@ -287,3 +287,6 @@ class HEPRecord(scrapy.Item):
     language = scrapy.Field()
 
     local_files = scrapy.Field()
+
+    # store creation date in repo.scoap3.org
+    record_creation_date = scrapy.Field()

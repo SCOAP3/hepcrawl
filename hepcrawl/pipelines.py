@@ -99,14 +99,23 @@ class InspireAPIPushPipeline(object):
             item['dois'] += item.pop('related_article_doi', [])
 
         source = item.pop('source', spider.name)
+
+        #parse import records from repo.scoap3.org and manuall input
+        cr_date = datetime.datetime.now()
+        if 'record_creation_date' in item:
+            cr_date = datetime.datetime.strptime(item['record_creation_date'], '%Y-%m-%d')
+        
         item['acquisition_source'] = {
             'source': source,
             # NOTE: Keeps method same as source to conform with INSPIRE
             # submissions which add `submissions` to this field.
             'method': source,
-            'date': datetime.datetime.now().isoformat(),
+            'date': cr_date.isoformat(),
             'submission_number': os.environ.get('SCRAPY_JOB', ''),
         }
+
+        if 'record_creation_date' not in item:
+            item['record_creation_date'] = datetime.datetime.now().isoformat()
 
         item['titles'] = [{
             'title': item.pop('title', ''),
