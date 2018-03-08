@@ -228,9 +228,9 @@ class APSSpider(Spider):
                         })
 
                 authors.append({
-                    'surname': author.get('surname', ''),
-                    'given_names': author.get('firstname', ''),
-                    "raw_name": author.get('name', ''),
+                    'surname': author.get('surname', '').replace('\u2009', ' '),
+                    'given_names': author.get('firstname', '').replace('\u2009', ' '),
+                    "raw_name": author.get('name', '').replace('\u2009', ' '),
                     'affiliations': author_affiliations
                 })
 
