@@ -77,6 +77,7 @@ class Scoap3Spider(XMLFeedSpider):
         """Get the affiliations of an author."""
         affiliations_raw = author.xpath(
             "./subfield[@code='u']/text()").extract()
+        affiliations_raw = set(affiliations_raw)
         affiliations = []
         for aff in affiliations_raw:
             affiliations.append(
