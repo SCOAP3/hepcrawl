@@ -100,7 +100,7 @@ class InspireAPIPushPipeline(object):
 
         source = item.pop('source', spider.name)
 
-        #parse import records from repo.scoap3.org and manuall input
+        #parse imported records from repo.scoap3.org and manuall input
         cr_date = datetime.datetime.now()
         method = source
         if 'record_creation_date' in item:
