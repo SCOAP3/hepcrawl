@@ -11,12 +11,14 @@
 
 from __future__ import absolute_import, print_function
 
+import os
+
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
 
 from ..items import HEPRecord
 from ..loaders import HEPLoader
-from ..utils import get_license
+from ..utils import get_license, get_first
 
 
 class Scoap3Spider(XMLFeedSpider):
@@ -175,6 +177,15 @@ class Scoap3Spider(XMLFeedSpider):
         else:
             return journal_pages, ''
 
+    @staticmethod
+    def get_journal_title(node):
+        title = node.xpath("./datafield[@tag='773']/subfield[@code='p']/text()").extract_first()
+        if title = "PTEP":
+            title = "Progress of Theoretical and Experimental Physics"
+        if title = "New J. Phys.":
+            title = "New Journal of Physics"
+        return title
+
     # def create_fft_file(self, file_path, file_access, file_type):
     #     """Create a structured dictionary to add to 'files' item."""
     #     file_dict = {
@@ -201,8 +212,7 @@ class Scoap3Spider(XMLFeedSpider):
                          "./datafield[@tag='300']/subfield[@code='a']/text()")
         record.add_xpath('dois',
                          "./datafield[@tag='024'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
-        record.add_xpath('journal_title',
-                         "./datafield[@tag='773']/subfield[@code='p']/text()")
+        record.add_value('journal_title', self.get_journal_title(node))
         record.add_xpath('journal_volume',
                          "./datafield[@tag='773']/subfield[@code='a']/text()")
 
@@ -247,15 +257,14 @@ class Scoap3Spider(XMLFeedSpider):
         local_files = []
 
         for file_node in node.xpath("./datafield[@tag='856']"):
-            file_extension = file_node.xpath("/subfield[@code='x']/text()").extract()
-            file_url = file_node.xpath("/subfield[@code='u']/text()").extract()
+            file_extension = file_node.xpath("./subfield[@code='x']/text()").extract()
+            file_url = file_node.xpath("./subfield[@code='u']/text()").extract()
             if not file_extension:
-                tmp, file_extension = os.path.splitext(file_url)
+                tmp, file_extension = os.path.splitext(get_first(file_url, ""))
                 file_extension = file_extension.lower().strip('.')
-            local_files.append({'filetype':file_extension, 'path':file_url})
+            local_files.append({'filetype':file_extension, 'path':get_first(file_url)})
 
         record.add_value('local_files', local_files)
-        record.add_value('collections', ['Advances in High Energy Physics'])
         record.add_xpath('source',
                          "./datafield[@tag='260']/subfield[@code='b']/text()")
 
