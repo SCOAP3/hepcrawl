@@ -180,10 +180,12 @@ class Scoap3Spider(XMLFeedSpider):
     @staticmethod
     def get_journal_title(node):
         title = node.xpath("./datafield[@tag='773']/subfield[@code='p']/text()").extract_first()
-        if title = "PTEP":
+        if title == "PTEP":
             title = "Progress of Theoretical and Experimental Physics"
-        if title = "New J. Phys.":
+        if title == "New J. Phys.":
             title = "New Journal of Physics"
+        if title == "JCAP":
+           title = "Journal of Cosmology and Astroparticle Physics"
         return title
 
     # def create_fft_file(self, file_path, file_access, file_type):
