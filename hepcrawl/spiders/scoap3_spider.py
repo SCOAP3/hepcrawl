@@ -76,7 +76,7 @@ class Scoap3Spider(XMLFeedSpider):
     def get_affiliations(author):
         """Get the affiliations of an author."""
         affiliations_raw = author.xpath(
-            "./subfield[@code='u']/text()").extract()
+            "./subfield[@code='v']/text()").extract()
         affiliations_raw = set(affiliations_raw)
         affiliations = []
         for aff in affiliations_raw:
@@ -118,6 +118,7 @@ class Scoap3Spider(XMLFeedSpider):
             ar = arxiv.xpath("./subfield[@code='a']/text()").extract_first()
             if ar:
                 arxivs.append({
+                    'source': 'arXiv',
                     'value':ar
                 })
         return arxivs
@@ -158,7 +159,9 @@ class Scoap3Spider(XMLFeedSpider):
         """Get copyright year and statement."""
         copyright_raw = node.xpath(
             "./datafield[@tag='542']/subfield[@code='f']/text()").extract_first()
-        cr_year = "".join(i for i in copyright_raw if i.isdigit())
+        cr_year = ""
+        if copyright_raw:
+            cr_year = "".join(i for i in copyright_raw if i.isdigit())
 
         return copyright_raw, cr_year
 
@@ -205,7 +208,7 @@ class Scoap3Spider(XMLFeedSpider):
 
         # record.add_xpath('arxiv_eprints',
         #                  "./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]/subfield[@code='a']/text()")
-        record.add_value('arxiv_eprints', self.get_arxivs(node))
+        record.add_value('report_numbers', self.get_arxivs(node))
         journal_year = node.xpath(
             "./datafield[@tag='773']/subfield[@code='y']/text()"
         ).extract()
@@ -244,12 +247,12 @@ class Scoap3Spider(XMLFeedSpider):
         local_files = []
 
         for file_node in node.xpath("./datafield[@tag='856']"):
-            filetype = file_node.xpath("/subfield[@code='x']/text()").extract()
+            file_extension = file_node.xpath("/subfield[@code='x']/text()").extract()
             file_url = file_node.xpath("/subfield[@code='u']/text()").extract()
             if not file_extension:
-                tmp, filetype = os.path.splitext(file_url)
-                filetype = filetype.lower().strip('.')
-            local_files.append({'filetype':filetype, 'path':file_url})
+                tmp, file_extension = os.path.splitext(file_url)
+                file_extension = file_extension.lower().strip('.')
+            local_files.append({'filetype':file_extension, 'path':file_url})
 
         record.add_value('local_files', local_files)
         record.add_value('collections', ['Advances in High Energy Physics'])
