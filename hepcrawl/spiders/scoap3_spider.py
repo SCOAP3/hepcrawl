@@ -172,20 +172,27 @@ class Scoap3Spider(XMLFeedSpider):
         """Get copyright fpage and lpage."""
         journal_pages = node.xpath(
             "./datafield[@tag='773']/subfield[@code='c']/text()").extract_first()
-        if '-' in journal_pages:
+        if journal_pages and '-' in journal_pages:
             return journal_pages.split('-', 1)
         else:
             return journal_pages, ''
 
     @staticmethod
     def get_journal_title(node):
+        JOURNAL_FULL_NAMES = {
+            "PTEP": "Progress of Theoretical and Experimental Physics",
+            "New J. Phys.": "New Journal of Physics",
+            "JCAP": "Journal of Cosmology and Astroparticle Physics",
+            "EPJC": "European Physical Journal C",
+            "Chinese Phys. C": "Chinese Physics C",
+            "JHEP": "Journal of High Energy Physics",
+            "Physics letters B": "Physics Letters B"
+        }
         title = node.xpath("./datafield[@tag='773']/subfield[@code='p']/text()").extract_first()
-        if title == "PTEP":
-            title = "Progress of Theoretical and Experimental Physics"
-        if title == "New J. Phys.":
-            title = "New Journal of Physics"
-        if title == "JCAP":
-           title = "Journal of Cosmology and Astroparticle Physics"
+        for abreviation, full_name in JOURNAL_FULL_NAMES.items():
+            if title == abreviation:
+                title = full_name
+                break
         return title
 
     # def create_fft_file(self, file_path, file_access, file_type):
@@ -259,15 +266,17 @@ class Scoap3Spider(XMLFeedSpider):
         local_files = []
 
         for file_node in node.xpath("./datafield[@tag='856']"):
-            file_extension = file_node.xpath("./subfield[@code='x']/text()").extract()
-            file_url = file_node.xpath("./subfield[@code='u']/text()").extract()
+            file_extension = file_node.xpath("./subfield[@code='x']/text()").extract_first()
+            file_url = file_node.xpath("./subfield[@code='u']/text()").extract_first()
             if not file_extension:
-                tmp, file_extension = os.path.splitext(get_first(file_url, ""))
+                tmp, file_extension = os.path.splitext(file_url)
                 file_extension = file_extension.lower().strip('.')
-            local_files.append({'filetype':file_extension, 'path':get_first(file_url)})
+            local_files.append({'filetype':file_extension, 'path':file_url})
 
         record.add_value('local_files', local_files)
         record.add_xpath('source',
                          "./datafield[@tag='260']/subfield[@code='b']/text()")
+
+        record.add_xpath('record_creation_date', "./datafield[@tag='592']/subfield[@code='a']/text()")
 
         return record.load_item()
