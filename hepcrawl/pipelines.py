@@ -128,8 +128,18 @@ class InspireAPIPushPipeline(object):
             'value': item.pop('abstract', ''),
             'source': source,
         }]
+
+        publication_date = item.pop('date_published', '')
+        if publication_date:
+            # fixing broken date format
+            tmp_split = publication_date.split('-')
+            tmp_date = datetime.date(int(tmp_split[0]),
+                                     int(tmp_split[1]),
+                                     int(tmp_split[2]))
+            publication_date = tmp_date.strftime('%Y-%m-%d')
+
         item['imprints'] = [{
-            'date': item.pop('date_published', ''),
+            'date': publication_date,
             'publisher': source,
         }]
         item['copyright'] = [{
