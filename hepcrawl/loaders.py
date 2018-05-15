@@ -165,5 +165,7 @@ class HEPLoader(ItemLoader):
     local_files_out = ListToValueDict()
 
     record_creation_date_out = TakeFirst()
+
+    control_field_out = TakeFirst()
 # FIXME: if possible everything with open access should get a FFT
 # FIXME: check that every record has collection HEP

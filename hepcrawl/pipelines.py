@@ -86,6 +86,15 @@ class JsonWriterPipeline(object):
         return item
 
 
+def get_scoap3_creation_date(recid):
+    import urllib2
+    print('Getting creation date from repo.scoap3.org for %s' % (recid,))
+    request = urllib2.urlopen('https://repo.scoap3.org/tools.py/record_creation_date?recid=%s' % (recid,))
+    d = request.read()
+    print('date is: %s' % (d,))
+    return d
+
+
 class InspireAPIPushPipeline(object):
     """Push to INSPIRE API via tasks API."""
 
@@ -100,18 +109,27 @@ class InspireAPIPushPipeline(object):
 
         source = item.pop('source', spider.name)
 
-        #parse imported records from repo.scoap3.org and manuall input
+        #parse imported records from repo.scoap3.org and manual input
         cr_date = datetime.datetime.now()
         method = source
-        if 'record_creation_date' in item:
-            cr_date = datetime.datetime.strptime(item['record_creation_date'], '%Y-%m-%d')
-            method = "scoap3"
-        
+        acquisition_source_method = source
+
+        # if 'record_creation_date' in item:
+        #     cr_date = datetime.datetime.strptime(item['record_creation_date'], '%Y-%m-%d')
+        #     method = "scoap3"
+        # elif 'control_number' in item:
+        if 'control_number' in item:
+            cr_date_tmp = get_scoap3_creation_date(item['control_number'])
+            if cr_date_tmp:
+                cr_date = cr_date_tmp
+                acquisition_source_method = 'scoap3'
+                item['record_creation_date'] = cr_date
+
         item['acquisition_source'] = {
             'source': source,
             # NOTE: Keeps method same as source to conform with INSPIRE
             # submissions which add `submissions` to this field.
-            'method': method,
+            'method': acquisition_source_method,
             'date': cr_date.isoformat(),
             'submission_number': os.environ.get('SCRAPY_JOB', ''),
         }
@@ -124,6 +142,7 @@ class InspireAPIPushPipeline(object):
             'subtitle': item.pop('subtitle', ''),
             'source': source,
         }]
+
         item['abstracts'] = [{
             'value': item.pop('abstract', ''),
             'source': source,
@@ -133,15 +152,22 @@ class InspireAPIPushPipeline(object):
         if publication_date:
             # fixing broken date format
             tmp_split = publication_date.split('-')
+            if(len(tmp_split) == 3):
+                pass
+            elif(len(tmp_split) == 2):
+                tmp_split.append("1")
+            else:
+                tmp_split.append("1").append("1")
             tmp_date = datetime.date(int(tmp_split[0]),
                                      int(tmp_split[1]),
                                      int(tmp_split[2]))
             publication_date = tmp_date.strftime('%Y-%m-%d')
 
         item['imprints'] = [{
-            'date': publication_date,
-            'publisher': source,
-        }]
+                            'date': publication_date,
+                            'publisher': source,
+                            }]
+
         item['copyright'] = [{
             'holder': item.pop('copyright_holder', ''),
             'year': item.pop('copyright_year', ''),

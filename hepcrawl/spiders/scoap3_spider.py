@@ -78,7 +78,7 @@ class Scoap3Spider(XMLFeedSpider):
     def get_affiliations(author):
         """Get the affiliations of an author."""
         affiliations_raw = author.xpath(
-            "./subfield[@code='v']/text()").extract()
+            "./subfield[@code='v' or @code='u']/text()").extract()
         affiliations_raw = set(affiliations_raw)
         affiliations = []
         for aff in affiliations_raw:
@@ -121,7 +121,7 @@ class Scoap3Spider(XMLFeedSpider):
             if ar:
                 arxivs.append({
                     'source': 'arXiv',
-                    'value':ar
+                    'value': ar
                 })
         return arxivs
 
@@ -186,7 +186,10 @@ class Scoap3Spider(XMLFeedSpider):
             "EPJC": "European Physical Journal C",
             "Chinese Phys. C": "Chinese Physics C",
             "JHEP": "Journal of High Energy Physics",
-            "Physics letters B": "Physics Letters B"
+            "Physics letters B": "Physics Letters B",
+            "Phys. Rev. C": "Physical Review C",
+            "Phys. Rev. D": "Physical Review D",
+            "Phys. Rev. Lett.": "Physical Review Letters"
         }
         title = node.xpath("./datafield[@tag='773']/subfield[@code='p']/text()").extract_first()
         for abreviation, full_name in JOURNAL_FULL_NAMES.items():
@@ -220,7 +223,7 @@ class Scoap3Spider(XMLFeedSpider):
         record.add_xpath('page_nr',
                          "./datafield[@tag='300']/subfield[@code='a']/text()")
         record.add_xpath('dois',
-                         "./datafield[@tag='024'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
+                         "./datafield[@tag='024' and @ind1='7'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
         record.add_value('journal_title', self.get_journal_title(node))
         record.add_xpath('journal_volume',
                          "./datafield[@tag='773']/subfield[@code='a']/text()")
@@ -268,6 +271,8 @@ class Scoap3Spider(XMLFeedSpider):
         for file_node in node.xpath("./datafield[@tag='856']"):
             file_extension = file_node.xpath("./subfield[@code='x']/text()").extract_first()
             file_url = file_node.xpath("./subfield[@code='u']/text()").extract_first()
+            if "repo.scoap3" not in file_url:
+                continue
             if not file_extension:
                 tmp, file_extension = os.path.splitext(file_url)
                 file_extension = file_extension.lower().strip('.')
@@ -277,6 +282,8 @@ class Scoap3Spider(XMLFeedSpider):
         record.add_xpath('source',
                          "./datafield[@tag='260']/subfield[@code='b']/text()")
 
-        record.add_xpath('record_creation_date', "./datafield[@tag='592']/subfield[@code='a']/text()")
+        #record.add_xpath('record_creation_date', "./datafield[@tag='592']/subfield[@code='a']/text()")
+        control_number = node.xpath("./controlfield[@tag='001']/text()").extract_first()
+        record.add_value('control_number', control_number)
 
         return record.load_item()

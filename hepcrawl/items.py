@@ -290,3 +290,4 @@ class HEPRecord(scrapy.Item):
 
     # store creation date in repo.scoap3.org
     record_creation_date = scrapy.Field()
+    control_number = scrapy.Field()

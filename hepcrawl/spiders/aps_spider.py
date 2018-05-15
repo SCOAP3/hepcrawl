@@ -172,7 +172,7 @@ class APSSpider(Spider):
             # record.add_value('free_keywords', free_keywords)
             # record.add_value('classification_numbers', classification_numbers)
 
-            record.add_value('journal_title', get_nested(article, 'journal', 'abbreviatedName'))
+            record.add_value('journal_title', get_nested(article, 'journal', 'name'))
             record.add_value('journal_issue', get_nested(article, 'issue', 'number'))
             record.add_value('journal_volume', get_nested(article, 'volume', 'number'))
             # record.add_value('journal_artid', )
