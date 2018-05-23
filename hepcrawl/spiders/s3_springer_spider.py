@@ -11,38 +11,25 @@
 
 from __future__ import absolute_import, print_function
 
+import datetime
 import os
 import re
 
-from tempfile import mkdtemp
-
-import dateutil.parser as dparser
-
-import requests
-
-from scrapy import Request
-from scrapy.spiders import XMLFeedSpider
-
+from ..extractors.jats import Jats
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..utils import (
     get_first,
-    get_license,
-    has_numbers,
-    range_as_string,
     ftp_list_files,
-    ftp_connection_info,
-    get_license
+    ftp_connection_info
 )
-
-import datetime
-
-from inspire_schemas.api import validate as validate_schema
-from ..extractors.jats import Jats
-from zipfile import ZipFile
-from ..dateutils import format_year
-
 from ..settings import SPRINGER_DOWNLOAD_DIR, SPRINGER_UNPACK_FOLDER
+
+from tempfile import mkdtemp
+from scrapy import Request
+from scrapy.spiders import XMLFeedSpider
+from zipfile import ZipFile
+
 
 def unzip_files(filename, target_folder):
     """Unzip files (XML only) into target folder."""
@@ -128,8 +115,8 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             for journal in ['EPJC', 'JHEP']:
                 print("Checking %s" % journal)
                 tmp_new_files, tmp_missing_files = ftp_list_files(
-                    os.path.join(self.ftp_folder,journal),
-                    os.path.join(self.target_folder,journal),
+                    os.path.join(self.ftp_folder, journal),
+                    os.path.join(self.target_folder, journal),
                     server=ftp_host,
                     user=ftp_params['ftp_user'],
                     password=ftp_params['ftp_password']
@@ -190,18 +177,17 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         day = node.xpath('//OnlineDate/Day/text()').extract()[0]
         return datetime.date(day=int(day), month=int(month), year=int(year)).isoformat()
 
-
     def _get_license(self, node):
         license_type = node.xpath('//License/@SubType').extract()
         version = node.xpath('//License/@Version').extract()
         text = "https://creativecommons.org/licenses/"
 
         if license_type:
-            license_type = license_type[0].lower().lstrip('cc ').replace(' ','-')
-            return {"license": "CC-"+license_type.upper()+"-"+version[0],"url":"%s/%s/%s" % (text, license_type, version[0])}
+            license_type = license_type[0].lower().lstrip('cc ').replace(' ', '-')
+            return {"license": "CC-"+license_type.upper()+"-"+version[0], "url":"%s/%s/%s" % (text, license_type, version[0])}
         else:
             self.log("No license defined. Setting default license!")
-            return {"license": "CC-BY-3.0", "url":"https://creativecommons.org/licenses/by/3.0"}
+            return {"license": "CC-BY-3.0", "url": "https://creativecommons.org/licenses/by/3.0"}
 
     def _clean_aff(self, node):
         org_div = node.xpath('./OrgDivision/text()').extract()
@@ -230,7 +216,6 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
 
         return (', '.join(tmp), org_name[0], country)
 
-
     def _get_authors(self, node):
         authors = []
         for contrib in node.xpath("//Author"):
@@ -249,7 +234,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             tmp_aff = []
             for aff in affiliations:
                 a, org, country = self._clean_aff(aff)
-                tmp_aff.append({'value':a, 'organization':org, 'country':country})
+                tmp_aff.append({'value':a, 'organization': org, 'country': country})
             # affiliations = [
             #     {'value': self._clean_aff(aff)}
             #     for aff in affiliations
@@ -266,7 +251,6 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
     def _get_collaboration(self, node):
         pass
         #node.xpath("InstitutionalAuthor")
-
 
     def parse_node(self, response, node):
         """Parse a Springer XML file into a HEP record."""
@@ -331,9 +315,9 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         #local fiels paths
         local_files = []
         if 'xml_url' in response.meta:
-            local_files.append({'filetype':'xml', 'path':request.meta['xml_url'][7:]})
+            local_files.append({'filetype': 'xml', 'path': response.meta['xml_url'][7:]})
         if 'pdfa_url' in response.meta:
-            local_files.append({'filetype':'pdf/a', 'path':request.meta['pdfa_url'][7:]})
+            local_files.append({'filetype': 'pdf/a', 'path': response.meta['pdfa_url'][7:]})
         record.add_value('local_files', local_files)
 
         parsed_record = dict(record.load_item())
