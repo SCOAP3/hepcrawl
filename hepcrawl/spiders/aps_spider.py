@@ -11,13 +11,11 @@
 
 from __future__ import absolute_import, print_function
 
-from datetime import datetime
-import hashlib
 import json
 import link_header
 import logging
-import re
 
+from datetime import datetime
 from errno import EEXIST as FILE_EXISTS, ENOENT as NO_SUCH_FILE_OR_DIR
 from furl import furl
 from os import path, makedirs
@@ -98,7 +96,6 @@ class APSSpider(Spider):
                 # raise NoLastRunToLoad(file_path)
             raise
 
-
     def _save_run(self, started_at):
         """Store last run information
         Args:
@@ -144,7 +141,6 @@ class APSSpider(Spider):
 
         self._save_run(started_at)
 
-
     def parse(self, response):
         """Parse a APS JSON file into a HEP record."""
         aps_response = json.loads(response.body_as_unicode())
@@ -154,7 +150,7 @@ class APSSpider(Spider):
 
             record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
             record.add_value('page_nr', str(article.get('numPages', '')))
-            record.add_value('report_numbers',[
+            record.add_value('report_numbers', [
                 {
                     'source': 'arXiv',
                     'value': get_nested(article, 'identifiers', 'arxiv')
@@ -231,11 +227,11 @@ class APSSpider(Spider):
                 given_name = ''
                 raw_name = ''
                 if author.get('surname'):
-                   surname = author.get('surname').replace('\u2009', ' ')
+                    surname = author.get('surname').replace('\u2009', ' ')
                 if author.get('firstname'):
-                   given_name = author.get('firstname').replace('\u2009', ' ')
+                    given_name = author.get('firstname').replace('\u2009', ' ')
                 if author.get('name'):
-                   raw_name = author.get('name').replace('\u2009', ' ')
+                    raw_name = author.get('name').replace('\u2009', ' ')
                 authors.append({
                     'surname': surname,
                     'given_names': given_name,

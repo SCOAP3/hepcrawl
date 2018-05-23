@@ -110,14 +110,10 @@ class InspireAPIPushPipeline(object):
         source = item.pop('source', spider.name)
 
         #parse imported records from repo.scoap3.org and manual input
-        cr_date = datetime.datetime.now()
+        cr_date = datetime.datetime.now().isoformat()
         method = source
         acquisition_source_method = source
 
-        # if 'record_creation_date' in item:
-        #     cr_date = datetime.datetime.strptime(item['record_creation_date'], '%Y-%m-%d')
-        #     method = "scoap3"
-        # elif 'control_number' in item:
         if 'control_number' in item:
             cr_date_tmp = get_scoap3_creation_date(item['control_number'])
             if cr_date_tmp:
@@ -130,7 +126,7 @@ class InspireAPIPushPipeline(object):
             # NOTE: Keeps method same as source to conform with INSPIRE
             # submissions which add `submissions` to this field.
             'method': acquisition_source_method,
-            'date': cr_date.isoformat(),
+            'date': cr_date,
             'submission_number': os.environ.get('SCRAPY_JOB', ''),
         }
 
