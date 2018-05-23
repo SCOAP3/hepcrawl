@@ -14,37 +14,24 @@ from __future__ import absolute_import, print_function
 import datetime
 import os
 import re
-import sys
+import tarfile
+import zipfile
 
-from tempfile import mkdtemp
-
-import dateutil.parser as dparser
-
-import requests
+from ..extractors.jats import Jats
+from ..items import HEPRecord
+from ..loaders import HEPLoader
+from ..settings import (
+    ELSEVIER_SOURCE_DIR,
+    ELSEVIER_DOWNLOAD_DIR,
+    ELSEVIER_UNPACK_FOLDER
+)
+from ..utils import get_license
 
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
-
-from ..items import HEPRecord
-from ..loaders import HEPLoader
-from ..utils import (
-    get_first,
-    get_license,
-    has_numbers,
-    range_as_string,
-    ftp_connection_info,
-    get_license
-)
-
-from inspire_schemas.api import validate as validate_schema
-from ..extractors.jats import Jats
-import tarfile
-from ..dateutils import format_year
-
-from ..settings import ELSEVIER_SOURCE_DIR, ELSEVIER_DOWNLOAD_DIR, ELSEVIER_UNPACK_FOLDER
-import traceback
-from scrapy.utils.python import re_rsearch
 from scrapy.selector import Selector
+from scrapy.utils.python import re_rsearch
+from tempfile import mkdtemp
 
 
 def list_files(path, target_folder):
@@ -59,19 +46,29 @@ def list_files(path, target_folder):
         all_files.append(os.path.join(path, filename))
     return all_files, missing_files
 
-def untar(filename, target_folder):
+
+def uncompress(filename, target_folder):
     """Unzip files (XML only) into target folder."""
-    with tarfile.open(filename) as tar:
-        datasets = []
-        tar_name = os.path.basename(tar.name).rstrip('.tar')
-        for tarinfo in tar:
-            if "dataset.xml" in tarinfo.name:
-                datasets.append(os.path.join(target_folder,
-                                             #tar_name,
-                                             tarinfo.name))
-        if not os.path.exists(os.path.join(target_folder, tar_name)):
-            tar.extractall(path=target_folder)
-        return datasets
+    datasets = []
+    if '.tar' in filename:
+        with tarfile.open(filename) as archive:
+            archive_name = os.path.basename(archive.name).rstrip('.tar')
+            for tar_info in archive:
+                if "dataset.xml" in tar_info.name:
+                    datasets.append(os.path.join(target_folder,
+                                                 tar_info.name))
+            if not os.path.exists(os.path.join(target_folder, archive_name)):
+                archive.extractall(path=target_folder)
+    else:
+        with zipfile.ZipFile(filename) as archive:
+            archive_name = os.path.basename(archive.filename).rstrip('.zip')
+            for zip_info in archive.filelist:
+                if "dataset.xml" in zip_info.filename:
+                    datasets.append(os.path.join(target_folder,
+                                                 zip_info.filename))
+            if not os.path.exists(os.path.join(target_folder, archive_name)):
+                archive.extractall(path=target_folder)
+    return datasets
 
 
 def xmliter(text, nodename):
@@ -95,14 +92,10 @@ def xmliter(text, nodename):
     header_end = re_rsearch(HEADER_END_RE, text)
     header_end = text[header_end[1]:].strip() if header_end else ''
 
-    print(nodename_patt)
     r = re.compile(r'<%(np)s[\s>].*?</%(np)s>' % {'np': nodename_patt}, re.DOTALL)
-    print(r.finditer(text))
     for match in r.finditer(text):
-        print(match)
         nodetext = header_start + match.group() + header_end
         tmp = Selector(text=nodetext, type='xml')
-        print(tmp)
         tmp.remove_namespaces()
         l = tmp.xpath('//' + nodename)
 
@@ -272,7 +265,7 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
             # Cast to byte-string for scrapy compatibility
             for remote_file in missing_files:
                 ## TODO download only packages where _ready.xml exists
-                if '.tar' in remote_file:
+                if '.tar' in remote_file or '.zip' in remote_file:
                     params["local_filename"] = os.path.join(
                         self.target_folder,
                         remote_file
@@ -288,25 +281,20 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         import traceback
         with open(response.meta["local_filename"], 'w') as destination_file:
                 destination_file.write(response.body)
-        filename = os.path.basename(response.url).rstrip("A.tar")
+        filename = os.path.basename(response.url).rstrip("A.tar").rstrip('.zip')
         # TMP dir to extract zip packages:
         target_folder = mkdtemp(prefix=filename + "_", dir=ELSEVIER_UNPACK_FOLDER)
 
         zip_filepath = response.meta["local_filename"]
-        print("zip_filepath: %s" % (zip_filepath,))
-        print("target_folder: %s" % (target_folder,))
-        files = untar(zip_filepath, target_folder)
+        files = uncompress(zip_filepath, target_folder)
+
         # The xml files shouldn't be removed after processing; they will
         # be later uploaded to Inspire. So don't remove any tmp files here.
-        print("Untared files: ")
-        print(files)
         try:
             for f in files:
                 if 'dataset.xml' in f:
-                    print("Reading dataset")
                     from scrapy.selector import Selector
                     with open(f, 'r') as dataset_file:
-                        print("Dataset opened")
                         dataset = Selector(text=dataset_file.read())
                         data = []
                         for i, issue in enumerate(dataset.xpath('//journal-issue')):
@@ -320,9 +308,13 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                                 iss.remove_namespaces()
                                 for article in iss.xpath('//include-item'):
                                     doi = article.xpath('./doi/text()')[0].extract()
-                                    first_page = article.xpath('./pages/first-page/text()')[0].extract()
-                                    last_page = article.xpath('./pages/last-page/text()')[0].extract()
-                                    arts[doi] = {'files':{'xml':None, 'pdf':None},
+                                    first_page = None
+                                    if article.xpath('./pages/first-page/text()'):
+                                        first_page = article.xpath('./pages/first-page/text()')[0].extract()
+                                    last_page = None
+                                    if article.xpath('./pages/last-page/text()'):
+                                        last_page = article.xpath('./pages/last-page/text()')[0].extract()
+                                    arts[doi] = {'files': {'xml': None, 'pdf': None},
                                                  'first-page': first_page,
                                                  'last-page': last_page}
                             tmp['articles'] = arts
@@ -344,18 +336,18 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                                 journal = "Nuclear Physics B"
 
                             if tmp_empty_data:
-                                data[0]['articles'][doi] = {'files':{'xml':None, 'pdf':None}, 'first-page': None, 'last-page': None,}
+                                data[0]['articles'][doi] = {'files': {'xml': None, 'pdf': None}, 'first-page': None, 'last-page': None,}
                             for i, issue in enumerate(data):
                                 if doi in data[i]['articles']:
                                     data[i]['articles'][doi]['journal'] = journal
                                     data[i]['articles'][doi]['publication-date'] = publication_date
-                                    xml = os.path.join(target_folder,filename,article.xpath('./files-info/ml/pathname/text()')[0].extract())
-                                    pdf = os.path.join(target_folder,filename,article.xpath('./files-info/web-pdf/pathname/text()')[0].extract())
+                                    xml = os.path.join(target_folder, filename, article.xpath('./files-info/ml/pathname/text()')[0].extract())
+                                    pdf = os.path.join(target_folder, filename, article.xpath('./files-info/web-pdf/pathname/text()')[0].extract())
                                     data[i]['articles'][doi]['files']['xml'] = xml
                                     data[i]['articles'][doi]['files']['pdf'] = pdf
                                     if 'vtex' in zip_filepath:
                                         pdfa = os.path.join(os.path.split(pdf)[0], 'main_a-2b.pdf')
-                                        pdfa = os.path.join(target_folder,pdfa)
+                                        pdfa = os.path.join(target_folder, pdfa)
                                         data[i]['articles'][doi]['files']['pdfa'] = pdfa
                         for i, issue in enumerate(data):
                             print('a')
