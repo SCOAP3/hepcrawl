@@ -125,37 +125,6 @@ class Scoap3Spider(XMLFeedSpider):
                 })
         return arxivs
 
-    # # TODO: change this
-    # def get_urls_in_record(self, node):
-    #     """Return all the different urls in the xml."""
-    #     marc_856 = node.xpath(
-    #         "./datafield[@tag='856']/subfield[@code='u']/text()").extract()
-    #     marc_FFT = node.xpath(
-    #         "./datafield[@tag='FFT']/subfield[@code='a']/text()").extract()
-    #     all_links = list(set(marc_856 + marc_FFT))
-
-    #     return self.differentiate_urls(all_links)
-
-    # @staticmethod
-    # def differentiate_urls(urls_in_record):
-    #     """Determine what kind of urls the record has."""
-    #     pdf_links = []
-    #     xml_links = []
-    #     splash_links = []
-    #     for link in urls_in_record:
-    #         if "pdf" in link.lower():
-    #             pdf_links.append(link)
-    #         elif "xml" in link.lower():
-    #             xml_links.append(link)
-    #         elif "dx.doi.org" in link.lower():
-    #             splash_links.append(link)
-
-    #     return (
-    #         pdf_links,
-    #         xml_links,
-    #         splash_links,
-    #     )
-
     @staticmethod
     def get_copyright(node):
         """Get copyright year and statement."""
@@ -198,16 +167,6 @@ class Scoap3Spider(XMLFeedSpider):
                 break
         return title
 
-    # def create_fft_file(self, file_path, file_access, file_type):
-    #     """Create a structured dictionary to add to 'files' item."""
-    #     file_dict = {
-    #         "access": file_access,
-    #         "description": self.name.upper(),
-    #         "url": file_path,
-    #         "type": file_type,
-    #     }
-    #     return file_dict
-
     def parse_node(self, response, node):
         """Iterate all the record nodes in the XML and build the HEPRecord."""
 
@@ -228,8 +187,6 @@ class Scoap3Spider(XMLFeedSpider):
         record.add_xpath('journal_volume',
                          "./datafield[@tag='773']/subfield[@code='a']/text()")
 
-        # record.add_xpath('arxiv_eprints',
-        #                  "./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]/subfield[@code='a']/text()")
         record.add_value('report_numbers', self.get_arxivs(node))
         journal_year = node.xpath(
             "./datafield[@tag='773']/subfield[@code='y']/text()"
@@ -257,15 +214,6 @@ class Scoap3Spider(XMLFeedSpider):
             ).extract_first(),
         )
         record.add_value('license', license)
-
-        # pdf_links, xml_links, splash_links = self.get_urls_in_record(node)
-        # record.add_value('urls', splash_links)
-        # record.add_value('file_urls', pdf_links)
-        # if xml_links:
-        #     record.add_value('additional_files',
-        #                      [self.create_fft_file(xml,
-        #                                            "INSPIRE-HIDDEN",
-        #                                            "Fulltext") for xml in xml_links])
         local_files = []
 
         for file_node in node.xpath("./datafield[@tag='856']"):
@@ -276,13 +224,12 @@ class Scoap3Spider(XMLFeedSpider):
             if not file_extension:
                 tmp, file_extension = os.path.splitext(file_url)
                 file_extension = file_extension.lower().strip('.')
-            local_files.append({'filetype':file_extension, 'path':file_url})
+            local_files.append({'filetype': file_extension, 'path': file_url})
 
         record.add_value('local_files', local_files)
         record.add_xpath('source',
                          "./datafield[@tag='260']/subfield[@code='b']/text()")
 
-        #record.add_xpath('record_creation_date', "./datafield[@tag='592']/subfield[@code='a']/text()")
         control_number = node.xpath("./controlfield[@tag='001']/text()").extract_first()
         record.add_value('control_number', control_number)
 
