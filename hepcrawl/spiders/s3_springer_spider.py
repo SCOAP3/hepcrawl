@@ -88,7 +88,9 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         'addendum',
         'review-article',
         'rapid-communications',
-        'originalpaper'
+        'originalpaper',
+        'briefcommunication',
+        'erratum'
     ]
 
     ERROR_CODES = range(400, 432)
@@ -232,9 +234,15 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
                 for ref in reffered_id[0].split():
                     affiliations += node.xpath("//Affiliation[@ID='{0}']".format(ref))
             tmp_aff = []
+            dedup_affilaition = set()
             for aff in affiliations:
                 a, org, country = self._clean_aff(aff)
-                tmp_aff.append({'value':a, 'organization': org, 'country': country})
+                if (a,org,country) not in dedup_affilaition:
+                    dedup_affilaition.add((a,org,country))
+                    tmp_aff.append({'value':a, 'organization': org, 'country': country})
+                else:
+                    #TODO: add warning message and report metadata error
+                    pass
             # affiliations = [
             #     {'value': self._clean_aff(aff)}
             #     for aff in affiliations
