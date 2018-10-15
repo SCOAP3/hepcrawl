@@ -64,14 +64,11 @@ def generate_download_name():
 
 def get_arxiv(node):
     arxivs_raw = node.xpath("//article-id[@pub-id-type='arxiv']/text()")
-    arxivs = []
     for arxiv in arxivs_raw:
             ar = arxiv.extract()
             if ar:
-                arxivs.append({
-                    'value':ar
-                })
-    return arxivs
+                return ar 
+    return None
 
 
 class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
