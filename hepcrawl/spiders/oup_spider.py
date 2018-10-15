@@ -213,7 +213,10 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
             record.add_value('journal_doctype', article_type)
         record.add_xpath('dois', "//article-id[@pub-id-type='doi']/text()")
-        record.add_value('arxiv_eprints', get_arxiv(node))
+        record.add_value('report_numbers', [{
+            'source': 'arXiv',
+            'value': get_arxiv(node)
+        }])
         record.add_xpath('page_nr', "//counts/page-count/@count")
 
         record.add_xpath('abstract', '//abstract[1]')
