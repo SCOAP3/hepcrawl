@@ -192,31 +192,31 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             return {"license": "CC-BY-3.0", "url": "https://creativecommons.org/licenses/by/3.0"}
 
     def _clean_aff(self, node):
-        org_div = node.xpath('./OrgDivision/text()').extract()
-        org_name = node.xpath('./OrgName/text()').extract()
-        street = node.xpath('./OrgAddress/Street/text()').extract()
-        city = node.xpath('./OrgAddress/City/text()').extract()
-        state = node.xpath('./OrgAddress/State/text()').extract()
-        postcode = node.xpath('./OrgAddress/Postcode/text()').extract()
-        country = node.xpath('./OrgAddress/Country/text()').extract()
+        org_div = node.xpath('./OrgDivision/text()').extract_first()
+        org_name = node.xpath('./OrgName/text()').extract_first()
+        street = node.xpath('./OrgAddress/Street/text()').extract_first()
+        city = node.xpath('./OrgAddress/City/text()').extract_first()
+        state = node.xpath('./OrgAddress/State/text()').extract_first()
+        postcode = node.xpath('./OrgAddress/Postcode/text()').extract_first()
+        country = node.xpath('./OrgAddress/Country/text()').extract_fist()
 
         tmp = []
         if org_div:
-            tmp.append(org_div[0])
+            tmp.append(org_div)
         if org_name:
-            tmp.append(org_name[0])
+            tmp.append(org_name)
         if street:
-            tmp.append(street[0])
+            tmp.append(street)
         if city:
-            tmp.append(city[0])
+            tmp.append(city)
         if state:
-            tmp.append(state[0])
+            tmp.append(state)
         if postcode:
-            tmp.append(postcode[0])
+            tmp.append(postcode)
         if country:
-            tmp.append(country[0])
+            tmp.append(country)
 
-        return (', '.join(tmp), org_name[0], country)
+        return (', '.join(tmp), org_name, country)
 
     def _get_authors(self, node):
         authors = []
@@ -237,9 +237,9 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             dedup_affilaition = set()
             for aff in affiliations:
                 a, org, country = self._clean_aff(aff)
-                if (a,org,country) not in dedup_affilaition:
-                    dedup_affilaition.add((a,org,country))
-                    tmp_aff.append({'value':a, 'organization': org, 'country': country})
+                if (a, org, country) not in dedup_affilaition:
+                    dedup_affilaition.add((a, org, country))
+                    tmp_aff.append({'value': a, 'organization': org, 'country': country})
                 else:
                     #TODO: add warning message and report metadata error
                     pass
