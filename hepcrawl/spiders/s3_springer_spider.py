@@ -109,7 +109,8 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
     def start_requests(self):
         """List selected folder on remote FTP and yield new zip files."""
         if self.package_path:
-            yield Request(self.package_path, callback=self.handle_package_file)
+            ftp_params = {"ftp_local_filename": self.package_path}
+            yield Request(self.package_path, meta=ftp_params, callback=self.handle_package_ftp)
         else:
             ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
             new_files = []
