@@ -75,10 +75,7 @@ EXTENSIONS = {
 }
 SENTRY_DSN = os.environ.get('APP_SENTRY_DSN')
 if SENTRY_DSN:
-    EXTENSIONS = {
-        'scrapy_sentry.extensions.Errors': 10,
-        'hepcrawl.extensions.ErrorHandler': 555,
-    }
+    EXTENSIONS['scrapy_sentry.extensions.Errors'] = 10
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
