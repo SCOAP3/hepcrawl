@@ -199,7 +199,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         city = node.xpath('./OrgAddress/City/text()').extract_first()
         state = node.xpath('./OrgAddress/State/text()').extract_first()
         postcode = node.xpath('./OrgAddress/Postcode/text()').extract_first()
-        country = node.xpath('./OrgAddress/Country/text()').extract_fist()
+        country = node.xpath('./OrgAddress/Country/text()').extract_first()
 
         tmp = []
         if org_div:
