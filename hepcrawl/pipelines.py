@@ -31,8 +31,7 @@ def has_publication_info(item):
         item.get('journal_issue') or \
         item.get('journal_fpage') or \
         item.get('journal_lpage') or \
-        item.get('journal_artid') or \
-        item.get('journal_doctype')
+        item.get('journal_artid')
 
 
 def filter_fields(item, keys):
@@ -180,9 +179,13 @@ class InspireAPIPushPipeline(object):
                     'artid': item.pop('journal_artid', ''),
                     'page_start': item.pop('journal_fpage', ''),
                     'page_end': item.pop('journal_lpage', ''),
-                    'note': item.pop('journal_doctype', ''),
                     'pubinfo_freetext': item.pop('pubinfo_freetext', ''),
                 }]
+
+        item['doctype'] = {
+            'mapped': item.pop('doctype'),
+            'original': item.pop('original_doctype')
+        }
 
         # Remove any fields
         filter_fields(item, [
@@ -192,7 +195,6 @@ class InspireAPIPushPipeline(object):
             'journal_issue',
             'journal_fpage',
             'journal_lpage',
-            'journal_doctype',
             'journal_artid',
             'pubinfo_freetext',
         ])

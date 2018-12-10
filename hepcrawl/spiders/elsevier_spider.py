@@ -93,42 +93,45 @@ class ElsevierSpider(XMLFeedSpider):
     ]
 
     DOCTYPE_MAPPING = {
-        'abs': 'abstract',
+        'article': 'article',
+        'sco': 'article',
+        'fla': 'article',
+        'abs': 'article',
+        'rev': 'article',
         'add': 'addendum',
-        'adv': 'advertisement',
-        'ann': 'announcement',
-        'brv': 'book-review',
-        'cal': 'calendar',
-        'chp': 'chapter in a book',
-        'cnf': 'conference',
-        'con': 'contents list',
-        'cop': 'copyright information',
-        'cor': 'correspondence',
-        'crp': '',
-        'dis': 'discussion',
-        'dup': 'duplicate',
-        'edb': 'editorial board',
+        'edb': 'editorial',
         'edi': 'editorial',
         'err': 'erratum',
-        'exm': 'exam',
-        'fla': 'full-length article',
-        'ind': 'index',
-        'lit': 'literature alert',
-        'mis': 'miscellaneous',
-        'nws': 'news',
-        'ocn': 'other contents',
-        'pgl': 'practice guidelines',
-        'pnt': 'patent report',
-        'prp': 'personal report',
-        'prv': 'product review',
-        'pub': 'publisher\'s Note',
-        'rem': 'removal',
-        'req': 'request for assistance',
         'ret': 'retraction',
-        'rev': 'review',
-        'sco': 'short communication',
-        'ssu': 'short survey',
+        'rem': 'retraction',
+
+        'adv': 'other',
+        'ann': 'other',
+        'brv': 'other',
+        'cal': 'other',
+        'chp': 'other',
+        'cnf': 'other',
+        'con': 'other',
+        'cop': 'other',
+        'cor': 'other',
+        'crp': 'other',
+        'dis': 'other',
+        'dup': 'other',
+        'exm': 'other',
+        'ind': 'other',
+        'lit': 'other',
+        'mis': 'other',
+        'nws': 'other',
+        'ocn': 'other',
+        'pgl': 'other',
+        'pnt': 'other',
+        'prp': 'other',
+        'prv': 'other',
+        'pub': 'other',
+        'req': 'other',
+        'ssu': 'other'
     }
+    default_article_type = 'unknown'
 
     ERROR_CODES = range(400, 432)
 
@@ -352,22 +355,22 @@ class ElsevierSpider(XMLFeedSpider):
     def get_doctype(self, node):
         """Return a doctype mapped from abbreviation."""
         abbrv_doctype = node.xpath(".//@docsubtype").extract()
+
         doctype = ''
+
         if abbrv_doctype:
-            doctype = self.DOCTYPE_MAPPING[get_first(abbrv_doctype)]
+            doctype = get_first(abbrv_doctype)
         elif node.xpath(".//ja:article"):
             doctype = "article"
         elif node.xpath(".//ja:simple-article"):
             doctype = "article"
-        elif node.xpath(".//ja:book-review"):
-            doctype = "book-review"
         elif node.xpath(".//ja:exam"):
-            doctype = "exam"
+            doctype = "exm"
         # A scientific article in a conference proceedings is not cnf.
-        if node.xpath(".//conference-info"):
-            doctype = "conference_paper"
-        if doctype:
-            return doctype
+        elif node.xpath(".//conference-info"):
+            doctype = "article"
+
+        return doctype or self.default_article_type
 
     @staticmethod
     def get_collections(doctype):
@@ -978,11 +981,15 @@ class ElsevierSpider(XMLFeedSpider):
     def build_item(self, response):
         """Parse an Elsevier XML file into a HEP record."""
         node = response.meta.get("node")
-        record = HEPLoader(
-            item=HEPRecord(), selector=node, response=response)
+        record = HEPLoader(item=HEPRecord(), selector=node, response=response)
+
         doctype = self.get_doctype(node)
+        mapped_doctype = self.DOCTYPE_MAPPING.get(doctype, self.default_article_type)
+        record.add_value('original_doctype', doctype)
+        record.add_value('doctype', mapped_doctype)
+
         self.logger.info("Doc type is %s", doctype)
-        if doctype in {'correction', 'addendum'}:
+        if doctype == 'add':
             # NOTE: should test if this is working as intended.
             record.add_xpath(
                 'related_article_doi', "//related-article[@ext-link-type='doi']/@href")
@@ -1006,6 +1013,7 @@ class ElsevierSpider(XMLFeedSpider):
         record.add_value('authors', self.get_authors(node))
         # record.add_xpath("urls", "//prism:url/text()")  # We don't want dx.doi urls
         record.add_value('free_keywords', self.get_keywords(node))
+
         info = response.meta.get("info")
         if info:
             record.add_value('date_published', info.get("date_published"))
@@ -1014,18 +1022,20 @@ class ElsevierSpider(XMLFeedSpider):
             record.add_value('journal_volume', info.get("volume"))
             record.add_value('journal_issn', info.get("issn"))
             record.add_value("dois", info.get("dois"))
-            record.add_value('journal_doctype', doctype)
             record.add_value('journal_fpage', info.get("fpage"))
             record.add_value('journal_lpage', info.get("lpage"))
             record.add_value('page_nr', info.get("page_nr"))
             record.add_value('journal_year', int(info.get("year")))
+
         copyrights = self.get_copyright(node)
         record.add_value('copyright_holder', copyrights.get("cr_holder"))
         record.add_value('copyright_year', copyrights.get("cr_year"))
         record.add_value('copyright_statement', copyrights.get("cr_statement"))
+
         collaborations = node.xpath(
             "//ce:collaboration/ce:text/text()").extract()
         record.add_value('collaborations', collaborations)
+
         record.add_value('collections', self.get_collections(doctype))
         record.add_value('references', self.get_references(node))
 

@@ -274,7 +274,6 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         if article_type in ['correction',
                             'addendum']:
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
-            record.add_value('journal_doctype', article_type)
         record.add_xpath('dois', "//ArticleDOI/text()")
         #record.add_xpath('page_nr', "//counts/page-count/@count")
 

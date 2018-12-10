@@ -34,10 +34,25 @@ class APSSpider(Spider):
     Uses the APS REST API v2. See documentation here:
     http://harvest.aps.org/docs/harvest-api#endpoints
 
-    scrapy crawl APS -a 'from_date=2016-05-01' -a 'until_date=2016-05-15' -a 'sets=openaccess'
+    scrapy crawl APS -a 'from_date=2016-05-01' -a 'until_date=2016-05-15' -a 'sets=scoap3'
     """
     name = 'APS'
     aps_base_url = "http://harvest.aps.org/v2/journals/articles"
+    article_type_mapping = {
+        'article': 'article',
+        'erratum': 'erratum',
+        'editorial': 'editorial',
+        'retraction': 'retraction',
+        'essay': 'other',
+        'comment': 'other',
+        'letter-to-editor': 'other',
+        'rapid': 'other',
+        'brief': 'other',
+        'reply': 'other',
+        'announcement': 'other',
+        'nobel': 'other',
+    }
+    default_article_type = 'unknown'
 
     def __init__(self, url=None, from_date=None, until_date=None,
                  date="published", journals=None, sets=None, per_page=100,
@@ -193,12 +208,15 @@ class APSSpider(Spider):
             record.add_value('copyright_statement', get_nested(article, 'rights', 'rightsStatement'))
             record.add_value('copyright_material', 'Article')
 
+            article_type = article.get('articleType')
+            record.add_value('original_doctype', article_type)
+            record.add_value('doctype', self.article_type_mapping.get(article_type, self.default_article_type))
+
             license = get_license(
                 license_url=get_nested(article, 'rights', 'licenses')[0]['url']
             )
             record.add_value('license', license)
 
-            record.add_value('collections', ['HEP', 'Citeable', 'Published'])
             yield record.load_item()
 
         # Pagination support. Will yield until no more "next" pages are found

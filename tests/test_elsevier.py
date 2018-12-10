@@ -302,8 +302,8 @@ def test_dois(record):
 
 def test_doctype(record):
     """Test that doctype is good."""
-    assert record["journal_doctype"]
-    assert record["journal_doctype"] == "full-length article"
+    assert record["doctype"]["original"]
+    assert record["doctype"]["original"] == "full-length article"
 
 
 def test_keywords(record):

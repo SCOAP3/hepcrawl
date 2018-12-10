@@ -117,6 +117,19 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
         'rapid-communications'
     ]
 
+    article_type_mapping = {
+        'research-article': 'article',
+        'corrected-article': 'article',
+        'original-article': 'article',
+        'correction': 'corrigendum',
+        'addendum': 'addendum',
+        'introduction': 'other',
+        'letter': 'other',
+        'review-article': 'other',
+        'rapid-communications': 'other'
+    }
+    default_article_type = 'unknown'
+
     def __init__(self, package_path=None, ftp_folder="hooks", ftp_host=None, ftp_netrc=None, *args, **kwargs):
         """Construct WSP spider."""
         super(OxfordUniversityPressSpider, self).__init__(*args, **kwargs)
@@ -198,7 +211,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
     def parse_node(self, response, node):
         """Parse a OUP XML file into a HEP record."""
         node.remove_namespaces()
-        article_type = node.xpath('@article-type').extract()
+        article_type = node.xpath('@article-type').extract().lower()
         self.log("Got article_type {0}".format(article_type))
         if article_type is None or article_type[0] not in self.allowed_article_types:
             # Filter out non-interesting article types
@@ -208,7 +221,6 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
         if article_type in ['correction',
                             'addendum']:
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
-            record.add_value('journal_doctype', article_type)
         record.add_xpath('dois', "//article-id[@pub-id-type='doi']/text()")
         record.add_value('report_numbers', [{
             'source': 'arXiv',
@@ -256,6 +268,9 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
         record.add_value('license', license)
 
         record.add_value('collections', ['Progress of Theoretical and Experimental Physics'])
+
+        record.add_value('original_doctype', article_type)
+        record.add_value('doctype', self.article_type_mapping.get(article_type, self.default_article_type))
 
         #local fiels paths
         local_files = []

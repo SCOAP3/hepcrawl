@@ -13,10 +13,11 @@ from __future__ import absolute_import, print_function
 
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
+from xml.etree import ElementTree
 
 from ..items import HEPRecord
 from ..loaders import HEPLoader
-from ..utils import get_license
+from ..utils import get_license, requests_retry_session
 
 
 class HindawiSpider(XMLFeedSpider):
@@ -62,6 +63,15 @@ class HindawiSpider(XMLFeedSpider):
         ("marc", "http://www.loc.gov/MARC21/slim"),
         ("mml", "http://www.w3.org/1998/Math/MathML"),
     ]
+
+    # documentation doesn't specify all possible values
+    article_type_mapping = {
+        'research article': 'article',
+        'corrigendum': 'corrigendum',
+        'erratum': 'erratum',
+        'editorial': 'editorial',
+    }
+    default_article_type = 'other'
 
     def __init__(self, source_file=None, *args, **kwargs):
         """Construct Hindawi spider."""
@@ -180,6 +190,14 @@ class HindawiSpider(XMLFeedSpider):
         }
         return file_dict
 
+    def get_article_type(self, xml_links):
+        for xml_link in xml_links:
+            xml = ElementTree.fromstring(requests_retry_session().get(xml_link).text)
+            types = xml.findall('./front/article-meta/article-categories/subj-group/subject')
+            if types:
+                return types[0].text.lower()
+
+
     def parse_node(self, response, node):
         """Iterate all the record nodes in the XML and build the HEPRecord."""
 
@@ -201,17 +219,12 @@ class HindawiSpider(XMLFeedSpider):
         record.add_xpath('journal_volume',
                          "./datafield[@tag='773']/subfield[@code='a']/text()")
 
-        # record.add_xpath('arxiv_eprints',
-        #                  "./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]/subfield[@code='a']/text()")
         record.add_value('arxiv_eprints', self.get_arxivs(node))
-        journal_year = node.xpath(
-            "./datafield[@tag='773']/subfield[@code='y']/text()"
-        ).extract()
+        journal_year = node.xpath("./datafield[@tag='773']/subfield[@code='y']/text()").extract()
         if journal_year:
             record.add_value('journal_year', int(journal_year[0]))
 
-        record.add_xpath('journal_issue',
-                         "./datafield[@tag='773']/subfield[@code='n']/text()")
+        record.add_xpath('journal_issue', "./datafield[@tag='773']/subfield[@code='n']/text()")
 
         fpage, lpage = self.get_journal_pages(node)
         record.add_value('journal_fpage', fpage)
@@ -222,25 +235,23 @@ class HindawiSpider(XMLFeedSpider):
         record.add_value('copyright_year', cr_year)
 
         license = get_license(
-            license_url=node.xpath(
-                "./datafield[@tag='540']/subfield[@code='u']/text()"
-            ).extract_first(),
-            license_text=node.xpath(
-                "./datafield[@tag='540']/subfield[@code='a']/text()"
-            ).extract_first(),
+            license_url=node.xpath("./datafield[@tag='540']/subfield[@code='u']/text()").extract_first(),
+            license_text=node.xpath("./datafield[@tag='540']/subfield[@code='a']/text()").extract_first(),
         )
         record.add_value('license', license)
 
         pdf_links, xml_links, splash_links = self.get_urls_in_record(node)
+
+        article_type = self.get_article_type(xml_links)
+        record.add_value('original_doctype', article_type)
+        record.add_value('doctype', self.article_type_mapping.get(article_type, self.default_article_type))
+
         record.add_value('urls', splash_links)
         record.add_value('file_urls', pdf_links)
         if xml_links:
             record.add_value('additional_files',
-                             [self.create_fft_file(xml,
-                                                   "INSPIRE-HIDDEN",
-                                                   "Fulltext") for xml in xml_links])
+                             [self.create_fft_file(xml, "INSPIRE-HIDDEN", "Fulltext") for xml in xml_links])
         record.add_value('collections', ['Advances in High Energy Physics'])
-        record.add_xpath('source',
-                         "./datafield[@tag='260']/subfield[@code='b']/text()")
+        record.add_xpath('source', "./datafield[@tag='260']/subfield[@code='b']/text()")
 
         return record.load_item()

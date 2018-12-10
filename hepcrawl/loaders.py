@@ -120,8 +120,10 @@ class HEPLoader(ItemLoader):
     journal_lpage_out = TakeFirst()
     journal_volume_out = TakeFirst()
     journal_issue_out = TakeFirst()
-    journal_doctype_out = TakeFirst()
     pubinfo_freetext_out = TakeFirst()
+
+    original_doctype_out = TakeFirst()
+    doctype_out = TakeFirst()
 
     preprint_date_out = TakeFirst()
     date_published_in = MapCompose(
@@ -132,8 +134,6 @@ class HEPLoader(ItemLoader):
     language_in = MapCompose(
         translate_language,
     )
-
-    related_article_doi_out = TakeFirst()
 
     copyright_holder_out = TakeFirst()
     copyright_year_out = TakeFirst()

@@ -189,7 +189,6 @@ class IOPSpider(XMLFeedSpider, NLM):
 
         record.add_xpath("related_article_doi", "//Replaces[@IdType='doi']/text()")
         doctype = self.get_doctype(node)  # FIXME: should these be mapped?
-        record.add_value("journal_doctype", doctype)
         record.add_value('collections', self.get_collections(doctype))
 
         xml_file_path = response.url

@@ -180,8 +180,9 @@ class HEPRecord(scrapy.Item):
     journal_lpage = scrapy.Field()
     journal_artid = scrapy.Field()
     journal_issn = scrapy.Field()
-    journal_doctype = scrapy.Field()
-    """Special type of publication. E.g. "Erratum", "Addendum"."""
+
+    original_doctype = scrapy.Field()
+    doctype = scrapy.Field()
 
     pubinfo_freetext = scrapy.Field()
     """Raw journal reference string."""

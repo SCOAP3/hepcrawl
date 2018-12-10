@@ -153,6 +153,19 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         'rapid-communications'
     ]
 
+    article_type_mapping = {
+        'research-article': 'article',
+        'corrected-article': 'article',
+        'original-article': 'article',
+        'correction': 'corrigendum',
+        'addendum': 'addendum',
+        'introduction': 'other',
+        'letter': 'other',
+        'review-article': 'other',
+        'rapid-communications': 'other'
+    }
+    default_article_type = 'unknown'
+
     ERROR_CODES = range(400, 432)
 
     def __init__(self, package_path=None, folder=ELSEVIER_SOURCE_DIR, *args, **kwargs):
@@ -374,14 +387,13 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         print("Parsing node")
         print(meta)
         node.remove_namespaces()
-        article_type = node.xpath('@article-type').extract()
+        article_type = node.xpath('@article-type').extract().lower()
         self.log("Got article_type {0}".format(article_type))
 
         record = HEPLoader(item=HEPRecord(), selector=node)
         if article_type in ['correction',
                             'addendum']:
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
-            record.add_value('journal_doctype', article_type)
         record.add_value('dois', [doi])
         record.add_xpath('page_nr', "//counts/page-count/@count")
 
@@ -420,6 +432,9 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         record.add_value('license', license)
 
         record.add_value('collections', [meta['articles'][doi]['journal']])
+
+        record.add_value('original_doctype', article_type)
+        record.add_value('doctype', self.article_type_mapping.get(article_type, self.default_article_type))
 
         #local fiels paths
         local_files = []
