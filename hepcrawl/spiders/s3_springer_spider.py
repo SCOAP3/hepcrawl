@@ -87,6 +87,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         'correction',
         'addendum',
         'review-article',
+        'reviewpaper',
         'rapid-communications',
         'originalpaper',
         'briefcommunication',
