@@ -253,7 +253,10 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
         if self.package_path:
-            yield Request(self.package_path, callback=self.handle_package_file)
+            # add local package name without 'file://'
+            meta = {'local_filename': self.package_path[7:]}
+
+            yield Request(self.package_path, callback=self.handle_package, meta=meta)
         else:
             #ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
             params = {}
