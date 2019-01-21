@@ -87,6 +87,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         'correction',
         'addendum',
         'review-article',
+        'reviewpaper',
         'rapid-communications',
         'originalpaper',
         'briefcommunication',
@@ -155,6 +156,9 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         target_folder = mkdtemp(prefix=filename + "_", dir=SPRINGER_UNPACK_FOLDER)
 
         zip_filepath = response.meta["ftp_local_filename"]
+        if zip_filepath.startswith('file://'):
+            zip_filepath = zip_filepath[7:]
+
         print("zip_filepath: %s" % (zip_filepath,))
         print("target_folder: %s" % (target_folder,))
         files = unzip_files(zip_filepath, target_folder)

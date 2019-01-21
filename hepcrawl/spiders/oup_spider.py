@@ -12,15 +12,12 @@
 from __future__ import absolute_import, print_function
 
 import os
-#import urlparse
 
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
 import ftputil
 
 from zipfile import ZipFile
-
-from inspire_schemas.api import validate as validate_schema
 
 from ..extractors.jats import Jats
 from ..items import HEPRecord
@@ -31,7 +28,7 @@ from ..utils import (
     get_license
 )
 
-from ..settings import OXFORD_DOWNLOAD_DIR, OXFORD_UNPACK_FOLDER
+from ..settings import OXFORD_DOWNLOAD_DIR
 
 def unzip_files(filename, target_folder, type=".xml"):
     """Unzip files (XML only) into target folder."""
@@ -131,7 +128,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
     def start_requests(self):
         """List selected folder on remote FTP and yield new zip files."""
         if self.package_path:
-            yield Request(self.package_path, callback=self.handle_package_file)
+            yield Request(self.package_path, callback=self.handle_package_ftp, meta={'local':True})
         else:
             ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
             for folder in ftp_list_folders(
@@ -166,8 +163,12 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""
         self.log("Visited %s" % response.url)
-        zip_filepath = response.body
+        if 'local' in response.meta:
+            zip_filepath = response.url[7:]
+        else:
+            zip_filepath = response.body
         zip_target_folder = zip_filepath
+
         while True:
             zip_target_folder, dummy = os.path.splitext(zip_target_folder)
             if dummy == '':
