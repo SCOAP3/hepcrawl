@@ -238,8 +238,8 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         function _find_affiliations_by_id().
         """
         ref_ids = author.xpath(".//@refid").extract()
-        group_affs = author_group.xpath(
-            ".//affiliation[not(@*)]/textfn/text()")
+        group_affs = author_group.xpath(".//affiliation[not(@*)]/textfn/text()")
+        all_group_affs = author_group.xpath(".//affiliation/textfn/text()")
         # Don't take correspondence (cor1) or deceased (fn1):
         ref_ids = [refid for refid in ref_ids if "aff" in refid]
         affiliations = []
@@ -247,6 +247,11 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
             affiliations = self._find_affiliations_by_id(author_group, ref_ids)
         if group_affs:
             affiliations += group_affs.extract()
+
+        # if we have no affiliations yet, we got a bad xml, without affiliation cross references.
+        # in these cases it seems all group affiliation should be attached to all authors.
+        if not affiliations:
+            affiliations = all_group_affs.extract()
 
         return affiliations
 
