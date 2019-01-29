@@ -1,16 +1,12 @@
 {
    "data":[
       {
-         "abstract":{
-            "value":"<p>We use a popular fictional disease, zombies, in order to introduce techniques used in modern epidemiology modeling, and ideas and techniques used in the numerical study of critical phenomena. We consider variants of zombie models, from fully connected continuous time dynamics to a full scale exact stochastic dynamic simulation of a zombie outbreak on the continental United States. Along the way, we offer a closed form analytical expression for the fully connected differential equation, and demonstrate that the single person per site two dimensional square lattice version of zombies lies in the percolation universality class. We end with a quantitative study of the full scale US outbreak, including the average susceptibility of different geographical regions.</p>",
-            "format":"html"
-         },
          "metadata_last_modified_at":"2015-11-02T10:03:32-0500",
          "type":"article",
          "hasArticleId":true,
          "id":"10.1103/PhysRevE.92.052801",
          "title":{
-            "value":"You can run, you can hide: The epidemiology and statistical mechanics of zombies",
+            "value":"",
             "format":"html"
          },
          "last_modified_at":"2015-11-02T10:03:32-0500",
@@ -99,8 +95,8 @@
                "firstname":"James P."
             }
          ],
-         "date":"2015-11-02",
-         "numPages":11,
+         "date":"2015-11-02T10:03:32Z",
+         "numPages": 0,
          "publisher":{
             "name":"APS"
          },
@@ -119,55 +115,16 @@
             ],
             "rightsStatement":"Published by the American Physical Society"
          },
-         "classificationSchemes":{
-            "subjectAreas":[
-                {
+         "classificationSchemes": {
+            "subjectAreas": [
+               {
                   "id": "quantum-info",
                   "label": "Quantum Information"
-                }
+               }
             ]
          },
-         "notes":[
-            {
-               "_type":"Tesseract::Core::Text",
-               "contentType":"text/html",
-               "format":"html",
-               "value":"<p>aaa244@cornell.edu</p>",
-               "label":"*",
-               "type":"contrib",
-               "id":"n1"
-            },
-            {
-               "_type":"Tesseract::Core::Text",
-               "contentType":"text/html",
-               "format":"html",
-               "value":"<p>mkb72@cornell.edu</p>",
-               "label":"\u2020",
-               "type":"contrib",
-               "id":"n2"
-            },
-            {
-               "_type":"Tesseract::Core::Text",
-               "contentType":"text/html",
-               "format":"html",
-               "value":"<p>c.myers@cornell.edu</p>",
-               "label":"\u2021",
-               "type":"contrib",
-               "id":"n3"
-            },
-            {
-               "_type":"Tesseract::Core::Text",
-               "contentType":"text/html",
-               "format":"html",
-               "value":"<p>sethna@lassp.cornell.edu</p>",
-               "label":"\u00a7",
-               "type":"contrib",
-               "id":"n4"
-            }
-         ],
          "identifiers":{
-            "doi":"10.1103/PhysRevE.92.052801",
-            "arxiv": "arXiv:1806.06486"
+            "doi":"10.1103/PhysRevE.92.052801"
          }
       }
    ]
