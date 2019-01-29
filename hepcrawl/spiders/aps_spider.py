@@ -75,7 +75,6 @@ class APSSpider(Spider):
             string: path to last runs path
         """
         lasts_run_path = LAST_RUNS_PATH
-        #file_name = hashlib.sha1(self._make_alias()).hexdigest() + '.json'
         file_name = 'test.json'
         return path.join(lasts_run_path, self.name, file_name)
 
@@ -93,7 +92,6 @@ class APSSpider(Spider):
         except IOError as exc:
             if exc.errno == NO_SUCH_FILE_OR_DIR:
                 return None
-                # raise NoLastRunToLoad(file_path)
             raise
 
     def _save_run(self, started_at):
@@ -103,11 +101,8 @@ class APSSpider(Spider):
         Raises:
             IOError: if writing the file is unsuccessful
         """
-        print(self.params)
         last_run_info = {
             'spider': self.name,
-            #'url': self.url,
-            #'metadata_prefix': self.metadata_prefix,
             'set': self.params['set'],
             'from': self.params.get('from', None),
             'until': self.params.get('until', None),
@@ -117,21 +112,19 @@ class APSSpider(Spider):
             'last_run_started_at': started_at.isoformat(),
             'last_run_finished_at': datetime.utcnow().isoformat(),
         }
+
         file_path = self._last_run_file_path()
-        LOGGER.info("Last run file saved to {}".format(file_path))
+
         try:
             makedirs(path.dirname(file_path))
         except OSError as exc:
             if exc.errno != FILE_EXISTS:
                 raise
+
         with open(file_path, 'w') as f:
             json.dump(last_run_info, f, indent=4)
 
-    #def _make_alias(self):
-    #    return 'metadataPrefix={metadata_prefix}&set={set}'.format(
-    #        metadata_prefix=self.params['date'],
-    #        set=self.params['set']
-    #    )
+        LOGGER.info("Last run file saved to {}".format(file_path))
 
     def start_requests(self):
         """Just yield the url."""
@@ -159,19 +152,14 @@ class APSSpider(Spider):
 
             record.add_value('abstract', get_nested(article, 'abstract', 'value'))
             record.add_value('title', get_nested(article, 'title', 'value'))
-            # record.add_value('subtitle', '')
 
             authors, collaborations = self._get_authors_and_collab(article)
             record.add_value('authors', authors)
             record.add_value('collaborations', collaborations)
 
-            # record.add_value('free_keywords', free_keywords)
-            # record.add_value('classification_numbers', classification_numbers)
-
             record.add_value('journal_title', get_nested(article, 'journal', 'name'))
             record.add_value('journal_issue', get_nested(article, 'issue', 'number'))
             record.add_value('journal_volume', get_nested(article, 'volume', 'number'))
-            # record.add_value('journal_artid', )
 
             published_date = article.get('date', '')
             record.add_value('journal_year', int(published_date[:4]))
