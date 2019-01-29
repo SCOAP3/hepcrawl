@@ -75,8 +75,7 @@ class HindawiSpider(XMLFeedSpider):
     @staticmethod
     def get_affiliations(author):
         """Get the affiliations of an author."""
-        affiliations_raw = author.xpath(
-            "./subfield[@code='u']/text()").extract()
+        affiliations_raw = author.xpath("./subfield[@code='u']/text()").extract()
         affiliations = []
         for aff in affiliations_raw:
             affiliations.append(
@@ -123,10 +122,8 @@ class HindawiSpider(XMLFeedSpider):
 
     def get_urls_in_record(self, node):
         """Return all the different urls in the xml."""
-        marc_856 = node.xpath(
-            "./datafield[@tag='856']/subfield[@code='u']/text()").extract()
-        marc_FFT = node.xpath(
-            "./datafield[@tag='FFT']/subfield[@code='a']/text()").extract()
+        marc_856 = node.xpath("./datafield[@tag='856']/subfield[@code='u']/text()").extract()
+        marc_FFT = node.xpath("./datafield[@tag='FFT']/subfield[@code='a']/text()").extract()
         all_links = list(set(marc_856 + marc_FFT))
 
         return self.differentiate_urls(all_links)
@@ -154,8 +151,7 @@ class HindawiSpider(XMLFeedSpider):
     @staticmethod
     def get_copyright(node):
         """Get copyright year and statement."""
-        copyright_raw = node.xpath(
-            "./datafield[@tag='542']/subfield[@code='f']/text()").extract_first()
+        copyright_raw = node.xpath("./datafield[@tag='542']/subfield[@code='f']/text()").extract_first()
         cr_year = "".join(i for i in copyright_raw if i.isdigit())
 
         return copyright_raw, cr_year
@@ -163,8 +159,7 @@ class HindawiSpider(XMLFeedSpider):
     @staticmethod
     def get_journal_pages(node):
         """Get copyright fpage and lpage."""
-        journal_pages = node.xpath(
-            "./datafield[@tag='773']/subfield[@code='c']/text()").extract_first()
+        journal_pages = node.xpath("./datafield[@tag='773']/subfield[@code='c']/text()").extract_first()
         if '-' in journal_pages:
             return journal_pages.split('-', 1)
         else:
@@ -201,17 +196,12 @@ class HindawiSpider(XMLFeedSpider):
         record.add_xpath('journal_volume',
                          "./datafield[@tag='773']/subfield[@code='a']/text()")
 
-        # record.add_xpath('arxiv_eprints',
-        #                  "./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]/subfield[@code='a']/text()")
         record.add_value('arxiv_eprints', self.get_arxivs(node))
-        journal_year = node.xpath(
-            "./datafield[@tag='773']/subfield[@code='y']/text()"
-        ).extract()
+        journal_year = node.xpath("./datafield[@tag='773']/subfield[@code='y']/text()").extract()
         if journal_year:
             record.add_value('journal_year', int(journal_year[0]))
 
-        record.add_xpath('journal_issue',
-                         "./datafield[@tag='773']/subfield[@code='n']/text()")
+        record.add_xpath('journal_issue', "./datafield[@tag='773']/subfield[@code='n']/text()")
 
         fpage, lpage = self.get_journal_pages(node)
         record.add_value('journal_fpage', fpage)
@@ -222,12 +212,8 @@ class HindawiSpider(XMLFeedSpider):
         record.add_value('copyright_year', cr_year)
 
         license = get_license(
-            license_url=node.xpath(
-                "./datafield[@tag='540']/subfield[@code='u']/text()"
-            ).extract_first(),
-            license_text=node.xpath(
-                "./datafield[@tag='540']/subfield[@code='a']/text()"
-            ).extract_first(),
+            license_url=node.xpath("./datafield[@tag='540']/subfield[@code='u']/text()").extract_first(),
+            license_text=node.xpath("./datafield[@tag='540']/subfield[@code='a']/text()").extract_first(),
         )
         record.add_value('license', license)
 
@@ -236,11 +222,8 @@ class HindawiSpider(XMLFeedSpider):
         record.add_value('file_urls', pdf_links)
         if xml_links:
             record.add_value('additional_files',
-                             [self.create_fft_file(xml,
-                                                   "INSPIRE-HIDDEN",
-                                                   "Fulltext") for xml in xml_links])
+                             [self.create_fft_file(xml, "INSPIRE-HIDDEN", "Fulltext") for xml in xml_links])
         record.add_value('collections', ['Advances in High Energy Physics'])
-        record.add_xpath('source',
-                         "./datafield[@tag='260']/subfield[@code='b']/text()")
+        record.add_xpath('source', "./datafield[@tag='260']/subfield[@code='b']/text()")
 
         return record.load_item()
