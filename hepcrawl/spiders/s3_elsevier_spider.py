@@ -386,10 +386,10 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         self.log("Got article_type {0}".format(article_type))
 
         record = HEPLoader(item=HEPRecord(), selector=node)
-        if article_type in ['correction',
-                            'addendum']:
+        if article_type in ['correction', 'addendum']:
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
             record.add_value('journal_doctype', article_type)
+
         record.add_value('dois', [doi])
         record.add_xpath('page_nr', "//counts/page-count/@count")
 
@@ -418,7 +418,7 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         record.add_value('date_published', datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d"))
 
         record.add_xpath('copyright_holder', '//copyright/text()')
-        record.add_xpath('copyright_year', '//copyright/@year/text()')
+        record.add_xpath('copyright_year', '//copyright/@year')
         record.add_xpath('copyright_statement', '//copyright/text()')
         record.add_value('copyright_material', 'Article')
 
