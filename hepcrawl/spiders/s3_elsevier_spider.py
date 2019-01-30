@@ -40,7 +40,6 @@ def list_files(path, target_folder):
     all_files = []
     for filename in files:
         destination_file = os.path.join(target_folder, filename)
-        #source_file = os.path.join(path, filename)
         if not os.path.exists(destination_file):
             missing_files.append(filename)
         all_files.append(os.path.join(path, filename))
@@ -55,8 +54,7 @@ def uncompress(filename, target_folder):
             archive_name = os.path.basename(archive.name).rstrip('.tar')
             for tar_info in archive:
                 if "dataset.xml" in tar_info.name:
-                    datasets.append(os.path.join(target_folder,
-                                                 tar_info.name))
+                    datasets.append(os.path.join(target_folder, tar_info.name))
             if not os.path.exists(os.path.join(target_folder, archive_name)):
                 archive.extractall(path=target_folder)
     else:
@@ -64,8 +62,7 @@ def uncompress(filename, target_folder):
             archive_name = os.path.basename(archive.filename).rstrip('.zip')
             for zip_info in archive.filelist:
                 if "dataset.xml" in zip_info.filename:
-                    datasets.append(os.path.join(target_folder,
-                                                 zip_info.filename))
+                    datasets.append(os.path.join(target_folder, zip_info.filename))
             if not os.path.exists(os.path.join(target_folder, archive_name)):
                 archive.extractall(path=target_folder)
     return datasets
@@ -85,7 +82,6 @@ def xmliter(text, nodename):
 
     HEADER_START_RE = re.compile(r'^(.*?)<\s*%s(?:\s|>)' % nodename_patt, re.S)
     HEADER_END_RE = re.compile(r'<\s*/%s\s*>' % nodename_patt, re.S)
-    #text = _body_or_str(obj)
 
     header_start = re.search(HEADER_START_RE, text)
     header_start = header_start.group(1).strip() if header_start else ''
@@ -101,9 +97,6 @@ def xmliter(text, nodename):
 
         if l:
             yield l[0]
-        else:
-            continue
-
 
 
 class S3ElsevierSpider(Jats, XMLFeedSpider):
@@ -138,8 +131,7 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
 
     name = 'Elsevier'
     start_urls = []
-    #iterator = 'iternodes'
-    itertag = ['article','simple-article']
+    itertag = ['article', 'simple-article']
 
     allowed_article_types = [
         'research-article',
@@ -189,8 +181,7 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                     if orcid:
                         auth_dict['orcid'] = orcid
                     if affiliations:
-                        auth_dict['affiliations'] = [
-                            {"value": aff} for aff in affiliations]
+                        auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
                     if emails:
                         auth_dict['email'] = emails.extract_first()
                     if collaborations:
@@ -217,15 +208,12 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         """
         affiliations_by_id = []
         for aff_id in ref_ids:
-            ce_affiliation = author_group.xpath(
-                "//affiliation[@id='" + aff_id + "']")
+            ce_affiliation = author_group.xpath("//affiliation[@id='" + aff_id + "']")
             if ce_affiliation.xpath(".//affiliation"):
-                aff = ce_affiliation.xpath(
-                    ".//*[self::organization or self::city or self::country]/text()")
+                aff = ce_affiliation.xpath(".//*[self::organization or self::city or self::country]/text()")
                 affiliations_by_id.append(", ".join(aff.extract()))
             elif ce_affiliation:
-                aff = ce_affiliation.xpath(
-                    "./textfn/text()").extract_first()
+                aff = ce_affiliation.xpath("./textfn/text()").extract_first()
                 aff = re.sub(r'^(\d+\ ?)', "", aff)
                 affiliations_by_id.append(aff)
 
@@ -263,7 +251,6 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
 
             yield Request(self.package_path, callback=self.handle_package, meta=meta)
         else:
-            #ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
             params = {}
             new_files, missing_files = list_files(
                 self.folder,
@@ -288,7 +275,7 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         """Handle the zip package and yield a request for every XML found."""
         import traceback
         with open(response.meta["local_filename"], 'w') as destination_file:
-                destination_file.write(response.body)
+            destination_file.write(response.body)
         filename = os.path.basename(response.url).rstrip("A.tar").rstrip('.zip')
         # TMP dir to extract zip packages:
         target_folder = mkdtemp(prefix=filename + "_", dir=ELSEVIER_UNPACK_FOLDER)
@@ -307,9 +294,12 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                         data = []
                         for i, issue in enumerate(dataset.xpath('//journal-issue')):
                             tmp = {}
-                            tmp['volume'] = "%s %s" % (issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(), issue.xpath('//volume-issue-number/suppl/text()')[0].extract())
+                            tmp['volume'] = "%s %s" % (
+                            issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(),
+                            issue.xpath('//volume-issue-number/suppl/text()')[0].extract())
                             tmp['issue'] = issue.xpath('//issn/text()')[0].extract()
-                            issue_file = os.path.join(target_folder, filename, issue.xpath('./files-info/ml/pathname/text()')[0].extract())
+                            issue_file = os.path.join(target_folder, filename,
+                                                      issue.xpath('./files-info/ml/pathname/text()')[0].extract())
                             arts = {}
                             with open(issue_file, 'r') as issue_file:
                                 iss = Selector(text=issue_file.read())
@@ -330,11 +320,13 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                         tmp_empty_data = 0
                         if not data:
                             tmp_empty_data = 1
-                            data.append({'volume':None, 'issue':None, 'articles': {}})
+                            data.append({'volume': None, 'issue': None, 'articles': {}})
                         for article in dataset.xpath('//journal-item'):
                             doi = article.xpath('./journal-item-unique-ids/doi/text()')[0].extract()
                             if article.xpath('./journal-item-properties/online-publication-date/text()'):
-                                publication_date = article.xpath('./journal-item-properties/online-publication-date/text()')[0].extract()[:18]
+                                publication_date = \
+                                article.xpath('./journal-item-properties/online-publication-date/text()')[0].extract()[
+                                :18]
                             else:
                                 publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
                             journal = article.xpath('./journal-item-unique-ids/jid-aid/jid/text()')[0].extract()
@@ -344,13 +336,17 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                                 journal = "Nuclear Physics B"
 
                             if tmp_empty_data:
-                                data[0]['articles'][doi] = {'files': {'xml': None, 'pdf': None}, 'first-page': None, 'last-page': None,}
+                                data[0]['articles'][doi] = {'files': {'xml': None, 'pdf': None}, 'first-page': None,
+                                                            'last-page': None, }
                             for i, issue in enumerate(data):
                                 if doi in data[i]['articles']:
                                     data[i]['articles'][doi]['journal'] = journal
                                     data[i]['articles'][doi]['publication-date'] = publication_date
-                                    xml = os.path.join(target_folder, filename, article.xpath('./files-info/ml/pathname/text()')[0].extract())
-                                    pdf = os.path.join(target_folder, filename, article.xpath('./files-info/web-pdf/pathname/text()')[0].extract())
+                                    xml = os.path.join(target_folder, filename,
+                                                       article.xpath('./files-info/ml/pathname/text()')[0].extract())
+                                    pdf = os.path.join(target_folder, filename,
+                                                       article.xpath('./files-info/web-pdf/pathname/text()')[
+                                                           0].extract())
                                     data[i]['articles'][doi]['files']['xml'] = xml
                                     data[i]['articles'][doi]['files']['pdf'] = pdf
                                     if 'vtex' in zip_filepath:
@@ -363,7 +359,7 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                                 print('b')
                                 try:
                                     print('try')
-                                    xml_file = open(data[i]['articles'][doi]['files']['xml'],'r')
+                                    xml_file = open(data[i]['articles'][doi]['files']['xml'], 'r')
                                     print(xml_file)
                                     xml_file_content = xml_file.read()
                                     for nodename in self.itertag:
@@ -415,7 +411,8 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
 
         published_date = self._get_published_date(node)
         record.add_value('journal_year', int(published_date[:4]))
-        record.add_value('date_published', datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d"))
+        record.add_value('date_published', datetime.datetime.strptime(meta['articles'][doi]['publication-date'],
+                                                                      "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d"))
 
         record.add_xpath('copyright_holder', '//copyright/text()')
         record.add_xpath('copyright_year', '//copyright/@year')
@@ -429,14 +426,13 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
 
         record.add_value('collections', [meta['articles'][doi]['journal']])
 
-        #local fiels paths
+        # local fiels paths
         local_files = []
         for filetype in meta['articles'][doi]['files']:
-            local_files.append({'filetype':filetype, 'path':meta['articles'][doi]['files'][filetype]})
+            local_files.append({'filetype': filetype, 'path': meta['articles'][doi]['files'][filetype]})
         record.add_value('local_files', local_files)
 
         parsed_record = dict(record.load_item())
 
         print(parsed_record)
         return parsed_record
-
