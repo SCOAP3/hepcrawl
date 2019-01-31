@@ -306,7 +306,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         record.add_value('journal_title', journal)
         record.add_xpath('journal_issue', '//IssueIDStart/text()')
         record.add_xpath('journal_volume', '//VolumeIDStart/text()')
-        record.add_xpath('journal_artid', '//Article/@ID/text()')
+        record.add_xpath('journal_artid', '//Article/@ID')
 
         record.add_xpath('journal_fpage', '//ArticleFirstPage/text()')
         record.add_xpath('journal_lpage', '//ArticleLastPage/text()')
