@@ -127,11 +127,11 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
                 )
                 new_files.extend(tmp_new_files)
                 missing_files.extend(tmp_missing_files)
-            ## TODO - add checking if the package was already downloaded
+            # TODO - add checking if the package was already downloaded
             # Cast to byte-string for scrapy compatibility
             print(missing_files)
             for remote_file in missing_files:
-                if('EPJC' in remote_file):
+                if 'EPJC' in remote_file:
                     journal = 'EPJC'
                 else:
                     journal = 'JHEP'
@@ -191,7 +191,8 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
 
         if license_type:
             license_type = license_type[0].lower().lstrip('cc ').replace(' ', '-')
-            return {"license": "CC-"+license_type.upper()+"-"+version[0], "url":"%s/%s/%s" % (text, license_type, version[0])}
+            return {"license": "CC-" + license_type.upper() + "-" + version[0],
+                    "url": "%s/%s/%s" % (text, license_type, version[0])}
         else:
             self.log("No license defined. Setting default license!")
             return {"license": "CC-BY-3.0", "url": "https://creativecommons.org/licenses/by/3.0"}
@@ -230,7 +231,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             given_names = contrib.xpath("./AuthorName/GivenName/text()").extract()
             email = contrib.xpath("./Contact/Email/text()").extract()
             # ?? no idea what it is suppose to do ??
-            #affiliations = contrib.xpath('//Affiliation')
+            # affiliations = contrib.xpath('//Affiliation')
             affiliations = []
             reffered_id = contrib.xpath("@AffiliationIDS").extract()
             # check what is in reffered_id
@@ -246,7 +247,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
                     dedup_affilaition.add((a, org, country))
                     tmp_aff.append({'value': a, 'organization': org, 'country': country})
                 else:
-                    #TODO: add warning message and report metadata error
+                    # TODO: add warning message and report metadata error
                     pass
             # affiliations = [
             #     {'value': self._clean_aff(aff)}
@@ -263,7 +264,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
 
     def _get_collaboration(self, node):
         pass
-        #node.xpath("InstitutionalAuthor")
+        # node.xpath("InstitutionalAuthor")
 
     def parse_node(self, response, node):
         """Parse a Springer XML file into a HEP record."""
@@ -280,7 +281,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
             record.add_value('journal_doctype', article_type)
         record.add_xpath('dois', "//ArticleDOI/text()")
-        #record.add_xpath('page_nr', "//counts/page-count/@count")
+        # record.add_xpath('page_nr', "//counts/page-count/@count")
 
         title = node.xpath('//ArticleTitle')
         title = re.sub('<math>.*?</math>', '', title.extract()[0])
@@ -289,8 +290,8 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         record.add_xpath('abstract', '//Article/ArticleHeader/Abstract/Para')
         record.add_value('title', title)
 
-        #record.add_xpath('title', '//ArticleTitle')
-        #record.add_xpath('subtitle', '//subtitle/text()')
+        # record.add_xpath('title', '//ArticleTitle')
+        # record.add_xpath('subtitle', '//subtitle/text()')
 
         # TODO: authors and colaboration
         record.add_value('authors', self._get_authors(node))
@@ -325,7 +326,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
 
         record.add_value('collections', [journal])
 
-        #local fiels paths
+        # local fiels paths
         local_files = []
         if 'xml_url' in response.meta:
             local_files.append({'filetype': 'xml', 'path': response.meta['xml_url'][7:]})

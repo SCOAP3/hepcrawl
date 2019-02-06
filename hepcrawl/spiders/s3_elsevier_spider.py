@@ -256,10 +256,10 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                 self.folder,
                 self.target_folder,
             )
-            ## TODO - add checking if the package was already downloaded
+            # TODO - add checking if the package was already downloaded
             # Cast to byte-string for scrapy compatibility
             for remote_file in missing_files:
-                ## TODO download only packages where _ready.xml exists
+                # TODO download only packages where _ready.xml exists
                 if '.tar' in remote_file or '.zip' in remote_file:
                     params["local_filename"] = os.path.join(
                         self.target_folder,
@@ -295,8 +295,8 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                         for i, issue in enumerate(dataset.xpath('//journal-issue')):
                             tmp = {}
                             tmp['volume'] = "%s %s" % (
-                            issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(),
-                            issue.xpath('//volume-issue-number/suppl/text()')[0].extract())
+                                issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(),
+                                issue.xpath('//volume-issue-number/suppl/text()')[0].extract())
                             tmp['issue'] = issue.xpath('//issn/text()')[0].extract()
                             issue_file = os.path.join(target_folder, filename,
                                                       issue.xpath('./files-info/ml/pathname/text()')[0].extract())
@@ -324,9 +324,8 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
                         for article in dataset.xpath('//journal-item'):
                             doi = article.xpath('./journal-item-unique-ids/doi/text()')[0].extract()
                             if article.xpath('./journal-item-properties/online-publication-date/text()'):
-                                publication_date = \
-                                article.xpath('./journal-item-properties/online-publication-date/text()')[0].extract()[
-                                :18]
+                                publication_date = article.xpath(
+                                    './journal-item-properties/online-publication-date/text()')[0].extract()[:18]
                             else:
                                 publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
                             journal = article.xpath('./journal-item-unique-ids/jid-aid/jid/text()')[0].extract()

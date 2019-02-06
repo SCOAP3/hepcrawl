@@ -30,6 +30,7 @@ from ..utils import (
 
 from ..settings import OXFORD_DOWNLOAD_DIR
 
+
 def unzip_files(filename, target_folder, type=".xml"):
     """Unzip files (XML only) into target folder."""
     z = ZipFile(filename)
@@ -64,7 +65,7 @@ def get_arxiv(node):
     for arxiv in arxivs_raw:
             ar = arxiv.extract()
             if ar:
-                return ar 
+                return ar
     return None
 
 
@@ -128,7 +129,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
     def start_requests(self):
         """List selected folder on remote FTP and yield new zip files."""
         if self.package_path:
-            yield Request(self.package_path, callback=self.handle_package_ftp, meta={'local':True})
+            yield Request(self.package_path, callback=self.handle_package_ftp, meta={'local': True})
         else:
             ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
             for folder in ftp_list_folders(
@@ -139,7 +140,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
             ):
                 new_download_name = generate_download_name()
                 new_files, dummy = ftp_list_files(
-                    os.path.join(self.ftp_folder,folder),
+                    os.path.join(self.ftp_folder, folder),
                     self.target_folder,
                     server=ftp_host,
                     user=ftp_params['ftp_user'],
@@ -151,7 +152,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
                     if '.zip' in remote_file:
                         ftp_params["ftp_local_filename"] = os.path.join(
                             self.target_folder,
-                            "_".join([new_download_name,os.path.basename(remote_file)])
+                            "_".join([new_download_name, os.path.basename(remote_file)])
                         )
                         remote_url = "ftp://{0}/{1}".format(ftp_host, remote_file)
                         yield Request(
@@ -175,25 +176,25 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
                 break
 
         if ".pdf" in zip_filepath:
-            zip_target_folder = os.path.join(zip_target_folder,"pdf")
+            zip_target_folder = os.path.join(zip_target_folder, "pdf")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
         if zip_target_folder.endswith("_archival"):
             zip_target_folder = zip_target_folder[0:zip_target_folder.find("_archival")]
-            zip_target_folder = os.path.join(zip_target_folder,"archival")
+            zip_target_folder = os.path.join(zip_target_folder, "archival")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
         if ".xml" in zip_filepath:
             xml_files = unzip_files(zip_filepath, zip_target_folder)
             for xml_file in xml_files:
                 dir_path = os.path.dirname(xml_file)
                 filename = os.path.basename(xml_file).split('.')[0]
-                pdf_url = os.path.join(dir_path,"pdf","%s.%s" % (filename,'pdf'))
-                pdfa_url = os.path.join(dir_path,"archival","%s.%s" % (filename,'pdf'))
+                pdf_url = os.path.join(dir_path, "pdf", "%s.%s" % (filename, 'pdf'))
+                pdfa_url = os.path.join(dir_path, "archival", "%s.%s" % (filename, 'pdf'))
                 yield Request(
-                   "file://{0}".format(xml_file),
-                   meta={"package_path": zip_filepath,
-                         "xml_url": xml_file,
-                         "pdf_url": pdf_url,
-                         "pdfa_url": pdfa_url}
+                    "file://{0}".format(xml_file),
+                    meta={"package_path": zip_filepath,
+                          "xml_url": xml_file,
+                          "pdf_url": pdf_url,
+                          "pdfa_url": pdfa_url}
                 )
 
     def parse_node(self, response, node):
@@ -258,14 +259,14 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
 
         record.add_value('collections', ['Progress of Theoretical and Experimental Physics'])
 
-        #local fiels paths
+        # local file paths
         local_files = []
         if 'xml_url' in response.meta:
-            local_files.append({'filetype':'xml', 'path':response.meta['xml_url']})
+            local_files.append({'filetype': 'xml', 'path': response.meta['xml_url']})
         if 'pdf_url' in response.meta:
-            local_files.append({'filetype':'pdf', 'path':response.meta['pdf_url']})
+            local_files.append({'filetype': 'pdf', 'path': response.meta['pdf_url']})
         if 'pdfa_url' in response.meta:
-            local_files.append({'filetype':'pdf/a', 'path':response.meta['pdfa_url']})
+            local_files.append({'filetype': 'pdf/a', 'path': response.meta['pdfa_url']})
         record.add_value('local_files', local_files)
 
         # DIRTY HACK to pass schema validation for prublisher name

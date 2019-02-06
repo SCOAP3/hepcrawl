@@ -28,6 +28,7 @@ from ..utils import get_license, get_nested, build_dict
 
 LOGGER = logging.getLogger(__name__)
 
+
 class APSSpider(Spider):
     """APS crawler.
 

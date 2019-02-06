@@ -116,7 +116,7 @@ class HindawiSpider(XMLFeedSpider):
             ar = arxiv.xpath("./subfield[@code='a']/text()").extract_first()
             if ar:
                 arxivs.append({
-                    'value':ar
+                    'value': ar
                 })
         return arxivs
 

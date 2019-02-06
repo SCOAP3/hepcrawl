@@ -109,7 +109,7 @@ class InspireAPIPushPipeline(object):
 
         source = item.pop('source', spider.name)
 
-        #parse imported records from repo.scoap3.org and manual input
+        # parse imported records from repo.scoap3.org and manual input
         cr_date = datetime.datetime.now().isoformat()
         method = source
         acquisition_source_method = source
