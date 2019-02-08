@@ -17,7 +17,6 @@ import re
 import tarfile
 import zipfile
 
-from ..extractors.jats import Jats
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..settings import (
@@ -99,7 +98,7 @@ def xmliter(text, nodename):
             yield l[0]
 
 
-class S3ElsevierSpider(Jats, XMLFeedSpider):
+class S3ElsevierSpider(XMLFeedSpider):
     """Elsevier SCOPA3 crawler.
 
     This spider can scrape either an ATOM feed (default), zip file
@@ -395,10 +394,6 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         record.add_value('authors', self.get_authors(node))
         record.add_xpath('collaborations', "//contrib/collab/text()")
 
-        free_keywords, classification_numbers = self._get_keywords(node)
-        record.add_value('free_keywords', free_keywords)
-        record.add_value('classification_numbers', classification_numbers)
-
         # TODO: Special journal title handling
         record.add_value('journal_title', meta['articles'][doi]['journal'])
         record.add_value('journal_issue', meta['issue'])
@@ -408,10 +403,9 @@ class S3ElsevierSpider(Jats, XMLFeedSpider):
         record.add_value('journal_fpage', meta['articles'][doi]['first-page'])
         record.add_value('journal_lpage', meta['articles'][doi]['last-page'])
 
-        published_date = self._get_published_date(node)
-        record.add_value('journal_year', int(published_date[:4]))
-        record.add_value('date_published', datetime.datetime.strptime(meta['articles'][doi]['publication-date'],
-                                                                      "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d"))
+        published_date = datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S")
+        record.add_value('journal_year', published_date.year)
+        record.add_value('date_published', published_date.strftime("%Y-%m-%d"))
 
         record.add_xpath('copyright_holder', '//copyright/text()')
         record.add_xpath('copyright_year', '//copyright/@year')

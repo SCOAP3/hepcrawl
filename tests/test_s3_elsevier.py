@@ -129,7 +129,7 @@ def test_publication_info(results):
     """Test extracting dois."""
     expected_results = (
         dict(journal_title="Nuclear Physics B",
-             journal_year=2019,
+             journal_year=2018,
              journal_artid='14394'),
     )
     for expected, record in zip(expected_results, results):
