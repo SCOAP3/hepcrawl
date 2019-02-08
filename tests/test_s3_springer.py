@@ -252,6 +252,17 @@ def test_authors(results):
         assert record['authors'] == expected
 
 
+def test_page_nr(results):
+    """Test extracting copyright."""
+    expected_results = (
+        ['29'],
+        ['25']
+    )
+    for expected, record in zip(expected_results, results):
+        assert 'page_nr' in record
+        assert record['page_nr'] == expected
+
+
 def test_copyrights(results):
     """Test extracting copyright."""
     expected_results = (

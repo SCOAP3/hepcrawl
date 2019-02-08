@@ -15,7 +15,6 @@ import datetime
 import os
 import re
 
-from ..extractors.jats import Jats
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..utils import (
@@ -43,7 +42,7 @@ def unzip_files(filename, target_folder):
     return files
 
 
-class S3SpringerSpider(Jats, XMLFeedSpider):
+class S3SpringerSpider(XMLFeedSpider):
     """Springer SCOPA3 crawler.
 
     This spider can scrape either an ATOM feed (default), zip file
@@ -165,7 +164,6 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         # The xml files shouldn't be removed after processing; they will
         # be later uploaded to Inspire. So don't remove any tmp files here.
         for xml_file in files:
-            # if 'EPJC' in zip_filepath:
             if '.scoap' in xml_file or '.Meta' in xml_file:
                 xml_url = u"file://{0}".format(os.path.abspath(xml_file))
                 pdfa_name = "{0}.pdf".format(os.path.basename(xml_file).split('.')[0])
@@ -281,7 +279,11 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
             record.add_value('journal_doctype', article_type)
         record.add_xpath('dois', "//ArticleDOI/text()")
-        # record.add_xpath('page_nr', "//counts/page-count/@count")
+
+        first_pages = node.xpath('//ArticleFirstPage/text()').extract()
+        last_pages = node.xpath('//ArticleLastPage/text()').extract()
+        page_nrs = map(lambda (first, last): str(int(last) - int(first) + 1), zip(first_pages, last_pages))
+        record.add_value('page_nr', page_nrs)
 
         title = node.xpath('//ArticleTitle')
         title = re.sub('<math>.*?</math>', '', title.extract()[0])
