@@ -19,10 +19,10 @@ from .responses import fake_response_from_file
 
 @pytest.fixture
 def results():
-    """Return results generator from the WSP spider."""
     download_dir = '/tmp/springer_test_download_dir/'
     unpack_dir = '/tmp/springer_test_unpack_dir/'
-    test_files = ('ftp_PUB_19-01-29_20-02-10_JHEP.zip', 'ftp_PUB_19-01-29_20-02-10_EPJC.zip')
+    test_files = ('ftp_PUB_19-01-29_20-02-10_JHEP.zip', 'ftp_PUB_19-01-29_20-02-10_EPJC.zip',
+                  'ftp_PUB_19-02-06_16-01-13_EPJC_stripped.zip')
     responses_dir = path.join(path.dirname(path.realpath(__file__)), 'responses')
 
     records = []
@@ -81,7 +81,22 @@ def test_abstract(results):
         "three-dimensional energy and pressure distributions. We briefly discuss the phenomenological relevance of our"
         " findings with a simple yet realistic model. In the light of this exhaustive mechanical description of the "
         "nucleon, we also present several possible connections between hadronic physics and compact stars, like e.g. "
-        "the study of the equation of state for matter under extreme conditions and stability constraints."
+        "the study of the equation of state for matter under extreme conditions and stability constraints.",
+
+        u"This paper describes a strategy for a general search used by the ATLAS Collaboration to find potential "
+        u"indications of new physics. Events are classified according to their final state into many event classes. For "
+        u"each event class an automated search algorithm tests whether the data are compatible with the Monte Carlo "
+        u"simulated expectation in several distributions sensitive to the effects of new physics. The significance of a "
+        u"deviation is quantified using pseudo-experiments. A data selection with a significant deviation defines a "
+        u"signal region for a dedicated follow-up analysis with an improved background expectation. The analysis of the "
+        u"data-derived signal regions on a new dataset allows a statistical interpretation without the large "
+        u"look-elsewhere effect. The sensitivity of the approach is discussed using Standard Model processes and "
+        u"benchmark signals of new physics. As an example, results are shown for 3.2 fb$$^{-1}$$ <math><msup><mrow>"
+        u"</mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></math>  of proton\u2013proton collision data at a "
+        u"centre-of-mass energy of 13 $$\\text {TeV}$$ <math><mtext>TeV</mtext></math>  collected with the ATLAS "
+        u"detector at the LHC in 2015, in which more than 700 event classes and more than $$10^5$$ <math><msup><mn>10"
+        u"</mn><mn>5</mn></msup></math>  regions have been analysed. No significant deviations are found and "
+        u"consequently no data-derived signal regions for a follow-up analysis have been defined."
     )
     for abstract, record in zip(abstracts, results):
         if abstract:
@@ -94,7 +109,10 @@ def test_abstract(results):
 def test_title(results):
     """Test extracting title."""
     titles = ("Symmetry breaking in quantum curves and super Chern-Simons matrix models",
-              "Revisiting the mechanical properties of the nucleon")
+              "Revisiting the mechanical properties of the nucleon",
+
+              "A strategy for a general search for new phenomena using data-derived signal regions and its "
+              "application within the ATLAS experiment")
     for title, record in zip(titles, results):
         assert 'title' in record
         assert record['title'] == title
@@ -103,7 +121,8 @@ def test_title(results):
 def test_date_published(results):
     """Test extracting date_published."""
     dates_published = ("2019-01-28",
-                       "2019-01-29")
+                       "2019-01-29",
+                       "2019-02-06")
     for date_published, record in zip(dates_published, results):
         assert 'date_published' in record
         assert record['date_published'] == date_published
@@ -120,6 +139,10 @@ def test_license(results):
             'license': 'CC-BY-4.0',
             'url': 'https://creativecommons.org/licenses//by/4.0',
         }],
+        [{
+            'license': 'CC-BY-4.0',
+            'url': 'https://creativecommons.org/licenses//by/4.0',
+        }],
     )
     for expected_license, record in zip(expected_licenses, results):
         assert 'license' in record
@@ -129,7 +152,8 @@ def test_license(results):
 def test_dois(results):
     """Test extracting dois."""
     dois = ("10.1007/JHEP01(2019)210",
-            "10.1140/epjc/s10052-019-6572-3")
+            "10.1140/epjc/s10052-019-6572-3",
+            "10.1140/epjc/s10052-019-6540-y")
     for doi, record in zip(dois, results):
         assert 'dois' in record
         assert record['dois'][0]['value'] == doi
@@ -139,6 +163,7 @@ def test_dois(results):
 def test_collections(results):
     """Test extracting collections."""
     collections = (['Journal of High Energy Physics'],
+                   ['European Physical Journal C'],
                    ['European Physical Journal C'])
     for collection, record in zip(collections, results):
         assert 'collections' in record
@@ -150,6 +175,8 @@ def test_collaborations(results):
     """Test extracting collaboration."""
     collaborations = (
         [],
+        [],
+        [{'value': 'ATLAS Collaboration'}]
     )
     for collaboration, record in zip(collaborations, results):
         if collaboration:
@@ -176,6 +203,13 @@ def test_publication_info(results):
              journal_fpage='1',
              journal_lpage='25',
              journal_artid='s10052-019-6572-3'),
+        dict(journal_title="European Physical Journal C",
+             journal_year=2019,
+             journal_volume='79',
+             journal_issue='2',
+             journal_fpage='1',
+             journal_lpage='45',
+             journal_artid='s10052-019-6540-y'),
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
@@ -256,7 +290,8 @@ def test_page_nr(results):
     """Test extracting copyright."""
     expected_results = (
         ['29'],
-        ['25']
+        ['25'],
+        ['45']
     )
     for expected, record in zip(expected_results, results):
         assert 'page_nr' in record
@@ -267,13 +302,38 @@ def test_copyrights(results):
     """Test extracting copyright."""
     expected_results = (
         dict(copyright_holder="SISSA, Trieste, Italy",
-             copyright_year="2019",
-             copyright_material="Article"),
+             copyright_year="2019"),
         dict(copyright_holder="The Author(s)",
-             copyright_year="2019",
-             copyright_material="Article")
+             copyright_year="2019"),
+        dict(copyright_holder='CERN for the benefit of the ATLAS collaboration',
+             copyright_year='2019')
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
             assert k in record
             assert record[k] == v
+
+
+def test_arxiv(results):
+    """Text extracting arXiv eprints."""
+    expected_results = (
+        [dict(value='1811.06048')],
+        [dict(value='1810.09837')],
+        [dict(value='1807.07447v1')],
+    )
+
+    for expected, record in zip(expected_results, results):
+        assert 'arxiv_eprints' in record
+        assert record['arxiv_eprints'] == expected
+
+
+def test_doctype(results):
+    expected_results = (
+        'publication',
+        'publication',
+        'publication',
+    )
+
+    for expected, record in zip(expected_results, results):
+        assert 'journal_doctype' in record
+        assert record['journal_doctype'] == expected

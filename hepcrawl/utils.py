@@ -27,6 +27,18 @@ RE_FOR_THE = re.compile(r'\b(?:for|on behalf of|representing)\b', re.IGNORECASE)
 INST_PHRASES = ['for the development', ]
 
 
+def unzip_files(filename, target_folder):
+    """Unzip files into target folder."""
+    z = ZipFile(filename)
+    files = []
+    for filename in z.namelist():
+        absolute_path = os.path.join(target_folder, filename)
+        if not os.path.exists(absolute_path):
+            z.extract(filename, target_folder)
+        files.append(absolute_path)
+    return files
+
+
 def unzip_xml_files(filename, target_folder):
     """Unzip files (XML only) into target folder."""
     z = ZipFile(filename)
