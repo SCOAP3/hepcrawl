@@ -17,17 +17,15 @@ import re
 import tarfile
 import zipfile
 
-from ..items import HEPRecord
-from ..loaders import HEPLoader
+from hepcrawl.extractors.s3_elsevier_parser import S3ElsevierParser
 from ..settings import (
     ELSEVIER_SOURCE_DIR,
     ELSEVIER_DOWNLOAD_DIR,
     ELSEVIER_UNPACK_FOLDER
 )
-from ..utils import get_license
 
 from scrapy import Request
-from scrapy.spiders import XMLFeedSpider
+from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from scrapy.utils.python import re_rsearch
 from tempfile import mkdtemp
@@ -98,7 +96,7 @@ def xmliter(text, nodename):
             yield l[0]
 
 
-class S3ElsevierSpider(XMLFeedSpider):
+class S3ElsevierSpider(Spider):
     """Elsevier SCOPA3 crawler.
 
     This spider can scrape either an ATOM feed (default), zip file
@@ -132,17 +130,10 @@ class S3ElsevierSpider(XMLFeedSpider):
     start_urls = []
     itertag = ['article', 'simple-article']
 
-    allowed_article_types = [
-        'research-article',
-        'corrected-article',
-        'original-article',
-        'introduction',
-        'letter',
-        'correction',
-        'addendum',
-        'review-article',
-        'rapid-communications'
-    ]
+    journal_mapping = {
+        'PLB': 'Physics Letters B',
+        'NUPHB': 'Nuclear Physics B'
+    }
 
     ERROR_CODES = range(400, 432)
 
@@ -157,113 +148,22 @@ class S3ElsevierSpider(XMLFeedSpider):
         if not os.path.exists(self.target_folder):
             os.makedirs(self.target_folder)
 
-    def get_authors(self, node):
-        """Get the authors."""
-        authors = []
-
-        if node.xpath(".//author"):
-            for author_group in node.xpath(".//author-group"):
-                collaborations = author_group.xpath(
-                    ".//collaboration/text/text()").extract()
-                for author in author_group.xpath("./author"):
-                    surname = author.xpath("./surname/text()")
-                    given_names = author.xpath("./given-name/text()")
-                    affiliations = self._get_affiliations(author_group, author)
-                    orcid = self._get_orcid(author)
-                    emails = author.xpath("./e-address/text()")
-
-                    auth_dict = {}
-                    if surname:
-                        auth_dict['surname'] = surname.extract_first()
-                    if given_names:
-                        auth_dict['given_names'] = given_names.extract_first()
-                    if orcid:
-                        auth_dict['orcid'] = orcid
-                    if affiliations:
-                        auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
-                    if emails:
-                        auth_dict['email'] = emails.extract_first()
-                    if collaborations:
-                        auth_dict['collaborations'] = collaborations
-                    authors.append(auth_dict)
-        elif node.xpath('.//creator'):
-            for author in node.xpath('.//creator/text()'):
-                authors.append({'raw_name': author.extract()})
-
-        return authors
-
-    @staticmethod
-    def _get_orcid(author):
-        """Return an authors ORCID number."""
-        orcid_raw = author.xpath("./@orcid").extract_first()
-        if orcid_raw:
-            return u"ORCID:{0}".format(orcid_raw)
-
-    @staticmethod
-    def _find_affiliations_by_id(author_group, ref_ids):
-        """Return affiliations with given ids.
-
-        Affiliations should be standardized later.
-        """
-        affiliations_by_id = []
-        for aff_id in ref_ids:
-            ce_affiliation = author_group.xpath("//affiliation[@id='" + aff_id + "']")
-            if ce_affiliation.xpath(".//affiliation"):
-                aff = ce_affiliation.xpath(".//*[self::organization or self::city or self::country]/text()")
-                affiliations_by_id.append(", ".join(aff.extract()))
-            elif ce_affiliation:
-                aff = ce_affiliation.xpath("./textfn/text()").extract_first()
-                aff = re.sub(r'^(\d+\ ?)', "", aff)
-                affiliations_by_id.append(aff)
-
-        return affiliations_by_id
-
-    def _get_affiliations(self, author_group, author):
-        """Return one author's affiliations.
-
-        Will extract authors affiliation ids and call the
-        function _find_affiliations_by_id().
-        """
-        ref_ids = author.xpath(".//@refid").extract()
-        group_affs = author_group.xpath(".//affiliation[not(@*)]/textfn/text()")
-        all_group_affs = author_group.xpath(".//affiliation/textfn/text()")
-        # Don't take correspondence (cor1) or deceased (fn1):
-        ref_ids = [refid for refid in ref_ids if "aff" in refid]
-        affiliations = []
-        if ref_ids:
-            affiliations = self._find_affiliations_by_id(author_group, ref_ids)
-        if group_affs:
-            affiliations += group_affs.extract()
-
-        # if we have no affiliations yet, we got a bad xml, without affiliation cross references.
-        # in these cases it seems all group affiliation should be attached to all authors.
-        if not affiliations:
-            affiliations = all_group_affs.extract()
-
-        return affiliations
-
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
         if self.package_path:
             # add local package name without 'file://'
-            meta = {'local_filename': self.package_path[7:]}
+            meta = {'local_filename': self.package_path.lstrip('file://')}
 
             yield Request(self.package_path, callback=self.handle_package, meta=meta)
         else:
+            # if running without package path, download missing files from self.folder
             params = {}
-            new_files, missing_files = list_files(
-                self.folder,
-                self.target_folder,
-            )
-            # TODO - add checking if the package was already downloaded
-            # Cast to byte-string for scrapy compatibility
+            _, missing_files = list_files(self.folder, self.target_folder)
+
             for remote_file in missing_files:
                 # TODO download only packages where _ready.xml exists
                 if '.tar' in remote_file or '.zip' in remote_file:
-                    params["local_filename"] = os.path.join(
-                        self.target_folder,
-                        remote_file
-                    )
+                    params["local_filename"] = os.path.join(self.target_folder, remote_file)
                     remote_url = 'file://' + os.path.join('localhost', '/mnt/elsevier-sftp', remote_file)
                     yield Request(
                         str(remote_url),
@@ -272,160 +172,134 @@ class S3ElsevierSpider(XMLFeedSpider):
 
     def handle_package(self, response):
         """Handle the zip package and yield a request for every XML found."""
-        import traceback
-        with open(response.meta["local_filename"], 'w') as destination_file:
+
+        # write response to local file
+        # fixme: what happens if the local file already exists? E.g. when we are running it manually...
+        zip_filepath = response.meta["local_filename"]
+        with open(zip_filepath, 'w') as destination_file:
             destination_file.write(response.body)
+
+        # extract the name of the package without extension
         filename = os.path.basename(response.url).rstrip("A.tar").rstrip('.zip')
-        # TMP dir to extract zip packages:
+
+        # create temporary directory to extract zip packages:
         target_folder = mkdtemp(prefix=filename + "_", dir=ELSEVIER_UNPACK_FOLDER)
 
-        zip_filepath = response.meta["local_filename"]
+        # uncompress files to temp directory
         files = uncompress(zip_filepath, target_folder)
 
-        # The xml files shouldn't be removed after processing; they will
-        # be later uploaded to Inspire. So don't remove any tmp files here.
-        try:
-            for f in files:
-                if 'dataset.xml' in f:
-                    from scrapy.selector import Selector
-                    with open(f, 'r') as dataset_file:
-                        dataset = Selector(text=dataset_file.read())
-                        data = []
-                        for i, issue in enumerate(dataset.xpath('//journal-issue')):
-                            tmp = {}
-                            tmp['volume'] = "%s %s" % (
-                                issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(),
-                                issue.xpath('//volume-issue-number/suppl/text()')[0].extract())
-                            tmp['issue'] = issue.xpath('//issn/text()')[0].extract()
-                            issue_file = os.path.join(target_folder, filename,
-                                                      issue.xpath('./files-info/ml/pathname/text()')[0].extract())
-                            arts = {}
-                            with open(issue_file, 'r') as issue_file:
-                                iss = Selector(text=issue_file.read())
-                                iss.remove_namespaces()
-                                for article in iss.xpath('//include-item'):
-                                    doi = article.xpath('./doi/text()')[0].extract()
-                                    first_page = None
-                                    if article.xpath('./pages/first-page/text()'):
-                                        first_page = article.xpath('./pages/first-page/text()')[0].extract()
-                                    last_page = None
-                                    if article.xpath('./pages/last-page/text()'):
-                                        last_page = article.xpath('./pages/last-page/text()')[0].extract()
-                                    arts[doi] = {'files': {'xml': None, 'pdf': None},
-                                                 'first-page': first_page,
-                                                 'last-page': last_page}
-                            tmp['articles'] = arts
-                            data.append(tmp)
-                        tmp_empty_data = 0
-                        if not data:
-                            tmp_empty_data = 1
-                            data.append({'volume': None, 'issue': None, 'articles': {}})
-                        for article in dataset.xpath('//journal-item'):
-                            doi = article.xpath('./journal-item-unique-ids/doi/text()')[0].extract()
-                            if article.xpath('./journal-item-properties/online-publication-date/text()'):
-                                publication_date = article.xpath(
-                                    './journal-item-properties/online-publication-date/text()')[0].extract()[:18]
-                            else:
-                                publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-                            journal = article.xpath('./journal-item-unique-ids/jid-aid/jid/text()')[0].extract()
-                            if journal == "PLB":
-                                journal = "Physics Letters B"
-                            if journal == "NUPHB":
-                                journal = "Nuclear Physics B"
+        for f in files:
+            if 'dataset.xml' in f:
+                return self.parse_dataset(target_folder, filename, zip_filepath, f)
 
-                            if tmp_empty_data:
-                                data[0]['articles'][doi] = {'files': {'xml': None, 'pdf': None}, 'first-page': None,
-                                                            'last-page': None, }
-                            for i, issue in enumerate(data):
-                                if doi in data[i]['articles']:
-                                    data[i]['articles'][doi]['journal'] = journal
-                                    data[i]['articles'][doi]['publication-date'] = publication_date
-                                    xml = os.path.join(target_folder, filename,
-                                                       article.xpath('./files-info/ml/pathname/text()')[0].extract())
-                                    pdf = os.path.join(target_folder, filename,
-                                                       article.xpath('./files-info/web-pdf/pathname/text()')[
-                                                           0].extract())
-                                    data[i]['articles'][doi]['files']['xml'] = xml
-                                    data[i]['articles'][doi]['files']['pdf'] = pdf
-                                    if 'vtex' in zip_filepath:
-                                        pdfa = os.path.join(os.path.split(pdf)[0], 'main_a-2b.pdf')
-                                        pdfa = os.path.join(target_folder, pdfa)
-                                        data[i]['articles'][doi]['files']['pdfa'] = pdfa
-                        for i, issue in enumerate(data):
-                            print('a')
-                            for doi in data[i]['articles']:
-                                print('b')
-                                try:
-                                    print('try')
-                                    xml_file = open(data[i]['articles'][doi]['files']['xml'], 'r')
-                                    print(xml_file)
-                                    xml_file_content = xml_file.read()
-                                    for nodename in self.itertag:
-                                        print(nodename)
-                                        for selector in xmliter(xml_file_content, nodename):
-                                            print(selector)
-                                            yield self.parse_node(data[i], doi, zip_filepath, selector)
-                                except:
-                                    print(traceback.print_exc())
-        except:
-            import traceback
-            traceback.print_exc()
+    def parse_dataset(self, target_folder, filename, zip_filepath, f):
+        """Parse the dataset and other xml files.
+        We have one dataset.xml per package, this describes the artciles we received in this package.
+        """
 
-    def parse_node(self, meta, doi, package_path, node):
-        """Parse a OUP XML file into a HEP record."""
-        print("Parsing node")
-        print(meta)
-        node.remove_namespaces()
-        article_type = node.xpath('@article-type').extract()
-        self.log("Got article_type {0}".format(article_type))
+        with open(f, 'r') as dataset_file:
+            dataset = Selector(text=dataset_file.read())
+            journal_data = self.parse_journal_issue(dataset, target_folder, filename)
+            self.parse_journal_items(dataset, target_folder, filename, zip_filepath, journal_data)
 
-        record = HEPLoader(item=HEPRecord(), selector=node)
-        if article_type in ['correction', 'addendum']:
-            record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
-            record.add_value('journal_doctype', article_type)
+            for i in range(len(journal_data)):
+                for doi, data in journal_data[i]['articles'].items():
+                    with open(data['files']['xml'], 'r') as xml_file:
+                        xml_file_content = xml_file.read()
+                        for nodename in self.itertag:
+                            for selector in xmliter(xml_file_content, nodename):
+                                yield self.parse_node(journal_data[i], selector)
 
-        record.add_value('dois', [doi])
-        record.add_xpath('page_nr', "//counts/page-count/@count")
+    def parse_journal_issue(self, dataset, target_folder, filename):
+        """Parse journal issue tags and files if there is any in the dataset.xml.
+        The journal issue xmls are containing all the dois for artciles in that issue. Extract this data,
+        and later update it from the journal item xml.
+        """
 
-        record.add_xpath('abstract', '//abstract[1]/abstract-sec')
-        record.add_xpath('title', '//title/text()')
-        record.add_xpath('subtitle', '//subtitle/text()')
+        data = []
 
-        record.add_value('authors', self.get_authors(node))
-        record.add_xpath('collaborations', "//contrib/collab/text()")
+        for issue in dataset.xpath('//journal-issue'):
+            tmp = {
+                'volume': "%s %s" % (issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(),
+                                     issue.xpath('//volume-issue-number/suppl/text()')[0].extract()),
+                'issue': issue.xpath('//issn/text()')[0].extract()
+            }
+            issue_file = os.path.join(target_folder, filename,
+                                      issue.xpath('./files-info/ml/pathname/text()')[0].extract())
+            articles = {}
 
-        # TODO: Special journal title handling
-        record.add_value('journal_title', meta['articles'][doi]['journal'])
-        record.add_value('journal_issue', meta['issue'])
-        record.add_value('journal_volume', meta['volume'])
-        record.add_xpath('journal_artid', '//item-info/aid/text()')
+            with open(issue_file, 'r') as issue_file:
+                iss = Selector(text=issue_file.read())
+                iss.remove_namespaces()
+                for article in iss.xpath('//include-item'):
+                    doi = article.xpath('./doi/text()')[0].extract()
 
-        record.add_value('journal_fpage', meta['articles'][doi]['first-page'])
-        record.add_value('journal_lpage', meta['articles'][doi]['last-page'])
+                    first_page = None
+                    if article.xpath('./pages/first-page/text()'):
+                        first_page = article.xpath('./pages/first-page/text()')[0].extract()
 
-        published_date = datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S")
-        record.add_value('journal_year', published_date.year)
-        record.add_value('date_published', published_date.strftime("%Y-%m-%d"))
+                    last_page = None
+                    if article.xpath('./pages/last-page/text()'):
+                        last_page = article.xpath('./pages/last-page/text()')[0].extract()
 
-        record.add_xpath('copyright_holder', '//copyright/text()')
-        record.add_xpath('copyright_year', '//copyright/@year')
-        record.add_xpath('copyright_statement', '//copyright/text()')
-        record.add_value('copyright_material', 'Article')
+                    articles[doi] = {'first-page': first_page,
+                                     'last-page': last_page}
 
-        license = get_license(
-            license_url='http://creativecommons.org/licenses/by/3.0/'
-        )
-        record.add_value('license', license)
+            tmp['articles'] = articles
+            data.append(tmp)
 
-        record.add_value('collections', [meta['articles'][doi]['journal']])
+        return data
 
-        # local fiels paths
-        local_files = []
-        for filetype in meta['articles'][doi]['files']:
-            local_files.append({'filetype': filetype, 'path': meta['articles'][doi]['files'][filetype]})
-        record.add_value('local_files', local_files)
+    def parse_journal_items(self, dataset, target_folder, filename, zip_filepath, journal_data):
+        """Parsing journal items, e.g. articles in the dataset.xml.
+        Extends the initially collected data for the articles."""
 
-        parsed_record = dict(record.load_item())
+        for x_article in dataset.xpath('//journal-item'):
+            doi = x_article.xpath('./journal-item-unique-ids/doi/text()')[0].extract()
 
-        print(parsed_record)
-        return parsed_record
+            date_xpath = './journal-item-properties/online-publication-date/text()'
+            if x_article.xpath(date_xpath):
+                publication_date = x_article.xpath(date_xpath)[0].extract()[:18]  # fixme magic number?
+            else:
+                publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+
+            journal = x_article.xpath('./journal-item-unique-ids/jid-aid/jid/text()')[0].extract()
+            journal = self.journal_mapping.get(journal, journal)
+
+            # find the doi in journal data
+            data_index = None
+            for i in range(len(journal_data)):
+                if doi in journal_data[i]['articles']:
+                    data_index = i
+                    break
+
+            xml = os.path.join(target_folder, filename,
+                               x_article.xpath('./files-info/ml/pathname/text()')[0].extract())
+            pdf = os.path.join(target_folder, filename,
+                               x_article.xpath('./files-info/web-pdf/pathname/text()')[0].extract())
+            article_data = {
+                'files':
+                    {
+                        'xml': xml,
+                        'pdf': pdf
+                    },
+                'journal': journal,
+                'publication-date': publication_date,
+            }
+
+            # legacy?
+            if 'vtex' in zip_filepath:
+                pdfa = os.path.join(os.path.split(pdf)[0], 'main_a-2b.pdf')
+                pdfa = os.path.join(target_folder, pdfa)
+                article_data['files']['pdfa'] = pdfa
+
+            if data_index is None:
+                # if this doi is not present, add a new entry
+                journal_data.append({'volume': None, 'issue': None, 'articles': {doi: article_data}})
+            else:
+                # if it is, update the existing one
+                journal_data[data_index]['articles'][doi].update(article_data)
+
+    def parse_node(self, meta_data, node):
+        parser = S3ElsevierParser()
+        return parser.parse_node(meta_data, node)
