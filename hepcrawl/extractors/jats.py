@@ -12,6 +12,7 @@
 from __future__ import absolute_import, print_function
 
 import datetime
+import xml.etree.ElementTree as ET
 
 from ..utils import get_first
 
@@ -69,7 +70,6 @@ class Jats(object):
         return free_keywords, classification_numbers
 
     def _clean_aff(self, aff):
-        import xml.etree.ElementTree as ET
         root = ET.fromstring(aff.extract().encode('UTF-8"'))
         for el in root:
             if el.tag == 'label':
@@ -82,19 +82,13 @@ class Jats(object):
             surname = contrib.xpath("name/surname/text()").extract()
             given_names = contrib.xpath("name/given-names/text()").extract()
             email = contrib.xpath("email/text()").extract()
+
             affiliations = contrib.xpath('aff')
             reffered_id = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
             if reffered_id:
-                affiliations += node.xpath(".//aff[@id='{0}']".format(
-                    get_first(reffered_id))
-                )
+                affiliations += node.xpath(".//aff[@id='{0}']".format(get_first(reffered_id)))
 
-            for aff in affiliations:
-                print(aff)
-            affiliations = [
-                {'value': self._clean_aff(aff)}
-                for aff in affiliations
-            ]
+            affiliations = [{'value': self._clean_aff(aff)} for aff in affiliations]
 
             authors.append({
                 'surname': get_first(surname, ""),

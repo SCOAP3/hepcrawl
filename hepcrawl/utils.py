@@ -69,6 +69,17 @@ def ftp_list_files(server_folder, target_folder, server, user, password):
     return all_files, missing_files
 
 
+def ftp_list_folders(server_folder, server, user, password):
+    """List files from given FTP's server folder to target folder."""
+    with ftputil.FTPHost(server, user, password) as host:
+        folders = host.listdir(host.curdir + '/' + server_folder)
+        all_folders = []
+        for folder in folders:
+            if not folder.startswith('.'):
+                all_folders.append(folder)
+    return all_folders
+
+
 def get_first(iterable, default=None):
     """Get first item in iterable or default."""
     if iterable:

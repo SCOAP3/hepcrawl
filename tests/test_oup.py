@@ -211,10 +211,38 @@ def test_copyrights(results):
     expected_results = (
         dict(copyright_statement=u"\xa9  The Author(s) 2019. Published by Oxford University Press on behalf of the "
                               u"Physical Society of Japan.",
-             copyright_year="2019",
-             copyright_material="Article"),
+             copyright_year="2019"),
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
             assert k in record
             assert record[k] == v
+
+
+def test_doctype(results):
+    expected_results = ('article', )
+
+    for expected, record in zip(expected_results, results):
+        assert 'journal_doctype' in record
+        assert record['journal_doctype' ] == expected
+
+
+def test_arxiv_eprints(results):
+    """Text extracting arXiv eprints."""
+    expected_results = (
+        [dict(value='1611.10151')],
+    )
+
+    for expected, record in zip(expected_results, results):
+        assert 'arxiv_eprints' in record
+        assert record['arxiv_eprints'] == expected
+
+
+def test_page_nr(results):
+    expected_results = (
+        ['13'],
+    )
+
+    for expected, record in zip(expected_results, results):
+        assert 'page_nr' in record
+        assert record['page_nr'] == expected
