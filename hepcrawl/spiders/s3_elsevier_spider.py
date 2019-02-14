@@ -152,7 +152,7 @@ class S3ElsevierSpider(Spider):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
         if self.package_path:
             # add local package name without 'file://'
-            meta = {'local_filename': self.package_path.lstrip('file://')}
+            meta = {'local_filename': self.package_path.replace('file://', '')}
 
             yield Request(self.package_path, callback=self.handle_package, meta=meta)
         else:

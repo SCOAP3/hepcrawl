@@ -81,9 +81,9 @@ class S3SpringerParser(object):
         # local file paths
         local_files = []
         if 'xml_url' in response.meta:
-            local_files.append({'filetype': 'xml', 'path': response.meta['xml_url'].lstrip('file://')})
+            local_files.append({'filetype': 'xml', 'path': response.meta['xml_url'].replace('file://', '')})
         if 'pdfa_url' in response.meta:
-            local_files.append({'filetype': 'pdf/a', 'path': response.meta['pdfa_url'].lstrip('file://')})
+            local_files.append({'filetype': 'pdf/a', 'path': response.meta['pdfa_url'].replace('file://', '')})
 
         record.add_value('local_files', local_files)
 
