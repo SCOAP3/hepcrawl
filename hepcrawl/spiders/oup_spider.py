@@ -17,31 +17,16 @@ from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
 import ftputil
 
-from zipfile import ZipFile
-
 from ..extractors.jats import Jats
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..utils import (
     ftp_list_files,
     ftp_connection_info,
-    get_license
-)
+    get_license,
+    unzip_files)
 
 from ..settings import OXFORD_DOWNLOAD_DIR
-
-
-def unzip_files(filename, target_folder, type=".xml"):
-    """Unzip files (XML only) into target folder."""
-    z = ZipFile(filename)
-    xml_files = []
-    for filename in z.namelist():
-        if filename.endswith(type):
-            absolute_path = os.path.join(target_folder, filename)
-            if not os.path.exists(absolute_path):
-                z.extract(filename, target_folder)
-            xml_files.append(absolute_path)
-    return xml_files
 
 
 def ftp_list_folders(server_folder, server, user, password):
@@ -183,7 +168,7 @@ class OxfordUniversityPressSpider(Jats, XMLFeedSpider):
             zip_target_folder = os.path.join(zip_target_folder, "archival")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
         if ".xml" in zip_filepath:
-            xml_files = unzip_files(zip_filepath, zip_target_folder)
+            xml_files = unzip_files(zip_filepath, zip_target_folder, '.xml')
             for xml_file in xml_files:
                 dir_path = os.path.dirname(xml_file)
                 filename = os.path.basename(xml_file).split('.')[0]

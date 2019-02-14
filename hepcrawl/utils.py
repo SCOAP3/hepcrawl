@@ -27,24 +27,14 @@ RE_FOR_THE = re.compile(r'\b(?:for|on behalf of|representing)\b', re.IGNORECASE)
 INST_PHRASES = ['for the development', ]
 
 
-def unzip_files(filename, target_folder):
-    """Unzip files into target folder."""
-    z = ZipFile(filename)
-    files = []
-    for filename in z.namelist():
-        absolute_path = os.path.join(target_folder, filename)
-        if not os.path.exists(absolute_path):
-            z.extract(filename, target_folder)
-        files.append(absolute_path)
-    return files
-
-
-def unzip_xml_files(filename, target_folder):
-    """Unzip files (XML only) into target folder."""
+def unzip_files(filename, target_folder, type=None):
+    """Unzip files (XML only) into target folder.
+    :param type: filters files that ends with this value. E.g. for xml files '.xml'
+    """
     z = ZipFile(filename)
     xml_files = []
     for filename in z.namelist():
-        if filename.endswith(".xml"):
+        if not type or type and filename.endswith(type):
             absolute_path = os.path.join(target_folder, filename)
             if not os.path.exists(absolute_path):
                 z.extract(filename, target_folder)
