@@ -95,47 +95,6 @@ def test_source(records):
         assert record["source"] == "Hindawi Publishing Corporation"
 
 
-def test_files(records):
-    """Test files."""
-
-    file_urls = (["http://downloads.hindawi.com/journals/aa/2010/194946.pdf"],
-                 ["http://downloads.hindawi.com/journals/aa/2010/194946.pdf"])
-
-    for url, record in zip(file_urls, records):
-        assert "file_urls" in record
-        assert record["file_urls"] == url
-
-
-def test_urls(records):
-    """Test url in record."""
-    urls = ("http://dx.doi.org/10.1155/2010/194946",
-            "")
-
-    for url, record in zip(urls, records):
-        if url:
-            assert "urls" in record
-            assert len(record["urls"]) == 1
-
-            seen_urls = set()
-            for url in record["urls"]:
-                assert url['value'] in urls
-                assert url['value'] not in seen_urls
-                seen_urls.add(url['value'])
-        else:
-            assert "urls" not in record
-
-
-def test_additional_files(records):
-    """Test additional files."""
-    urls = ("http://downloads.hindawi.com/journals/aa/2010/194946.xml",
-           "http://downloads.hindawi.com/journals/aa/2010/194946.xml")
-
-    for url, record in zip(urls, records):
-        assert "additional_files" in record
-        assert record["additional_files"][0]["url"] == url
-        assert record["additional_files"][0]["access"] == "INSPIRE-HIDDEN"
-
-
 def test_collections(records):
     """Test extracting collections."""
     collections = (['Advances in High Energy Physics'], ['Advances in High Energy Physics'])
@@ -149,7 +108,7 @@ def test_collections(records):
 def test_copyright(records):
     """Test copyright."""
     cr_statements = ("Copyright \xa9 2010 Katarzyna Ma\u0142ek et al.",
-                    "Copyright \xa9 2010 Katarzyna Ma\u0142ek et al.")
+                     "Copyright \xa9 2010 Katarzyna Ma\u0142ek et al.")
 
     for cr_statement, record in zip(cr_statements, records):
         assert "copyright_statement" in record
@@ -201,4 +160,16 @@ def test_license(records):
     )
 
     for expected_license, record in zip(expected_licenses, records):
+        assert 'license' in record
         assert record['license'] == expected_license
+
+
+def test_page_nr(records):
+    expected_results = (
+        ['9'],
+        ['9']
+    )
+
+    for expected, record in zip(expected_results, records):
+        assert 'page_nr' in record
+        assert record['page_nr'] == expected
