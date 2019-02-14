@@ -195,12 +195,10 @@ def test_copyrights(results):
     expected_results = (
         dict(copyright_holder="authors",
              copyright_year="2015",
-             copyright_statement="Published by the American Physical Society",
-             copyright_material="Article"),
+             copyright_statement="Published by the American Physical Society"),
         dict(copyright_holder="authors",
              copyright_year="2015",
-             copyright_statement="Published by the American Physical Society",
-             copyright_material="Article")
+             copyright_statement="Published by the American Physical Society")
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
@@ -208,11 +206,23 @@ def test_copyrights(results):
             assert record[k] == v
 
 
-def test_report_numbers(results):
+def test_arxiv_eprints(results):
     expected_results = (
-        [{'source': 'arXiv', 'value': 'arXiv:1806.06486'}],
-        [{'source': 'arXiv', 'value': ''}]
+        [{'value': '1806.06486'}],
+        [{'value': ''}]
     )
 
     for expected, record in zip(expected_results, results):
-        assert record['report_numbers'] == expected
+        assert 'arxiv_eprints' in record
+        assert record['arxiv_eprints'] == expected
+
+
+def test_doctype(results):
+    expected_results = (
+        'article',
+        'article'
+    )
+
+    for expected, record in zip(expected_results, results):
+        assert 'journal_doctype' in record
+        assert record['journal_doctype'] == expected
