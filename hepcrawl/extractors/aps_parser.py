@@ -9,6 +9,21 @@ from scrapy import Request
 
 
 class APSParser(object):
+    article_type_mapping = {
+        'article': 'article',
+        'erratum': 'erratum',
+        'editorial': 'editorial',
+        'retraction': 'retraction',
+        'essay': 'other',
+        'comment': 'other',
+        'letter-to-editor': 'other',
+        'rapid': 'other',
+        'brief': 'other',
+        'reply': 'other',
+        'announcement': 'other',
+        'nobel': 'other',
+    }
+
     def parse(self, response):
         """Parse a APS JSON file into a HEP record."""
         aps_response = json.loads(response.body_as_unicode())
@@ -16,7 +31,8 @@ class APSParser(object):
         for article in aps_response['data']:
             record = HEPLoader(item=HEPRecord(), response=response)
 
-            record.add_value('journal_doctype', article.get('articleType'))
+            journal_doctype = self.article_type_mapping.get(article.get('articleType'), 'other')
+            record.add_value('journal_doctype', journal_doctype)
             record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
             record.add_value('page_nr', str(article.get('numPages', '')))
 
