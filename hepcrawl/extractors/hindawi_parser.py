@@ -1,6 +1,10 @@
+import logging
+
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..utils import get_license
+
+logger = logging.getLogger(__name__)
 
 
 class HindawiParser(object):
@@ -76,16 +80,24 @@ class HindawiParser(object):
                     'affiliations': self.get_affiliations(author),
                 })
 
+        if not authors:
+            logger.error('No authors found.')
+
         return authors
 
     def get_arxivs(self, node):
         """Gets the authors."""
         arxivs_raw = node.xpath("./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]")
         arxivs = []
+
         for arxiv in arxivs_raw:
             ar = arxiv.xpath("./subfield[@code='a']/text()").extract_first().replace('arXiv:', '')
             if ar:
                 arxivs.append({'value': ar})
+
+        if not arxivs:
+            logger.error('No arxiv found.')
+
         return arxivs
 
     @staticmethod
@@ -104,13 +116,3 @@ class HindawiParser(object):
             return journal_pages.split('-', 1)
         else:
             return journal_pages, ''
-
-    def create_fft_file(self, file_path, file_access, file_type):
-        """Create a structured dictionary to add to 'files' item."""
-        file_dict = {
-            "access": file_access,
-            "description": 'HINDAWI',
-            "url": file_path,
-            "type": file_type,
-        }
-        return file_dict

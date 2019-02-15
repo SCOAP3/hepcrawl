@@ -1,9 +1,12 @@
 import datetime
+import logging
 import re
 
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..utils import get_license
+
+logger = logging.getLogger(__name__)
 
 
 class S3ElsevierParser(object):
@@ -56,6 +59,7 @@ class S3ElsevierParser(object):
         record.add_value('journal_doctype', article_type)
 
         if article_type in ['correction', 'addendum']:
+            logger.info('Adding related_article_doi.')
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
 
         dois = node.xpath('./item-info/doi/text()').extract()
@@ -134,6 +138,9 @@ class S3ElsevierParser(object):
 
                     authors.append(auth_dict)
 
+        if not authors:
+            logger.error('No authors found.')
+
         return authors
 
     @staticmethod
@@ -183,6 +190,9 @@ class S3ElsevierParser(object):
         # if we have no affiliations yet, we got a bad xml, without affiliation cross references.
         # in these cases it seems all group affiliation should be attached to all authors.
         if not affiliations:
+            author_ids = author.xpath('./@author-id').extract()
+            logger.error('Not found referenced affiliations, adding all in the group for author with id: %s'
+                         % author_ids)
             affiliations += all_group_affs.extract()
 
         return affiliations

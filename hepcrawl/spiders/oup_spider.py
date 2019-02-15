@@ -11,6 +11,7 @@
 
 from __future__ import absolute_import, print_function
 
+import logging
 import os
 
 from scrapy import Request
@@ -73,8 +74,12 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
 
     def start_requests(self):
         """List selected folder on remote FTP and yield new zip files."""
+
+        self.log('Harvest started.', logging.INFO)
+
         if self.package_path:
             # local package handling.
+            self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
             yield Request(self.package_path, callback=self.handle_package_ftp, meta={'local': True})
         else:
             # connect to ftp and download files
@@ -94,7 +99,9 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                     password=ftp_params['ftp_password']
                 )
 
+                self.log('New files on FTP: %s' % new_files, logging.INFO)
                 for remote_file in new_files:
+                    self.log('Processing file: %s' % remote_file, logging.INFO)
                     # Cast to byte-string for scrapy compatibility
                     remote_file = str(remote_file)
                     if '.zip' in remote_file:
@@ -116,6 +123,8 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
         else:
             zip_filepath = response.body
 
+        self.log('Processing ftp package: %s' % zip_filepath, logging.INFO)
+
         zip_target_folder = zip_filepath
         while True:
             zip_target_folder, ext = os.path.splitext(zip_target_folder)
@@ -124,16 +133,19 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
 
         # extract pdf files
         if ".pdf" in zip_filepath:
+            self.log('Unzipping pdf...', logging.INFO)
             zip_target_folder = os.path.join(zip_target_folder, "pdf")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
 
         if zip_target_folder.endswith("_archival"):
+            self.log('Unzipping archival...', logging.INFO)
             zip_target_folder = zip_target_folder[0:zip_target_folder.find("_archival")]
             zip_target_folder = os.path.join(zip_target_folder, "archival")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
 
         # extract and yield xml file for parsing
         if ".xml" in zip_filepath:
+            self.log('Unzipping and parsing xml...', logging.INFO)
             xml_files = unzip_files(zip_filepath, zip_target_folder, '.xml')
             for xml_file in xml_files:
                 dir_path = os.path.dirname(xml_file)
@@ -149,5 +161,6 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 )
 
     def parse_node(self, response, node):
+        self.log('Parsing node...', logging.INFO)
         parser = OUPParser()
         return parser.parse_node(response, node)

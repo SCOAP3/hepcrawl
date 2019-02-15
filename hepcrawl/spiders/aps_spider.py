@@ -12,6 +12,7 @@
 from __future__ import absolute_import, print_function
 
 import json
+import logging
 
 from datetime import datetime
 from errno import EEXIST as FILE_EXISTS, ENOENT as NO_SUCH_FILE_OR_DIR
@@ -67,6 +68,8 @@ class APSSpider(Spider):
         """Just yield the url."""
         started_at = datetime.utcnow()
 
+        self.log('Harvest started_at: %s' % started_at, logging.INFO)
+
         yield Request(self.url)
 
         self._save_run(started_at)
@@ -92,6 +95,7 @@ class APSSpider(Spider):
                 return last_run
         except IOError as exc:
             if exc.errno == NO_SUCH_FILE_OR_DIR:
+                self.log('No last run file found.', logging.WARNING)
                 return None
             raise
 
@@ -124,7 +128,9 @@ class APSSpider(Spider):
 
         with open(file_path, 'w') as f:
             json.dump(last_run_info, f, indent=4)
+            self.log('Last run time saved to file.', logging.INFO)
 
     def parse(self, response):
+        self.log('Parsing node...', logging.INFO)
         parser = APSParser()
         return parser.parse(response)

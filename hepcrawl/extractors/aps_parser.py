@@ -1,4 +1,5 @@
 import json
+import logging
 
 import link_header
 
@@ -6,6 +7,8 @@ from hepcrawl.items import HEPRecord
 from hepcrawl.loaders import HEPLoader
 from hepcrawl.utils import get_nested, get_license, build_dict
 from scrapy import Request
+
+logger = logging.getLogger(__name__)
 
 
 class APSParser(object):
@@ -32,11 +35,16 @@ class APSParser(object):
             record = HEPLoader(item=HEPRecord(), response=response)
 
             journal_doctype = self.article_type_mapping.get(article.get('articleType'), 'other')
+            if journal_doctype == 'other':
+                logger.warning('Journal_doctype is %s. Do we need other mapping for this?' % journal_doctype)
+
             record.add_value('journal_doctype', journal_doctype)
             record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
             record.add_value('page_nr', str(article.get('numPages', '')))
 
             arxiv = get_nested(article, 'identifiers', 'arxiv').replace('arXiv:', '')
+            if not arxiv:
+                logger.warning('No arxiv eprints found.')
             record.add_value('arxiv_eprints', {'value': arxiv})
 
             record.add_value('abstract', get_nested(article, 'abstract', 'value'))
@@ -118,5 +126,8 @@ class APSParser(object):
 
             elif author['type'] == 'Collaboration':
                 collaboration.append(author['name'])
+
+        if not authors:
+            logger.error('No authors found.')
 
         return authors, collaboration

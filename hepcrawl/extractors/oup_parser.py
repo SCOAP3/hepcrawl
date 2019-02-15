@@ -1,7 +1,11 @@
+import logging
+
 from hepcrawl.extractors.jats import Jats
 from hepcrawl.items import HEPRecord
 from hepcrawl.loaders import HEPLoader
 from hepcrawl.utils import get_license
+
+logger = logging.getLogger(__name__)
 
 
 class OUPParser(Jats):
@@ -19,11 +23,15 @@ class OUPParser(Jats):
         node.remove_namespaces()
         record = HEPLoader(item=HEPRecord(), selector=node, response=response)
 
-        article_type = node.xpath('./@article-type').extract()
-        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
+        raw_article_type = node.xpath('./@article-type').extract()
+        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), raw_article_type)
         record.add_value('journal_doctype', article_type)
 
+        if 'other' in article_type:
+            logger.warning('There are unmapped article types in %s.' % raw_article_type)
+
         if article_type in ['correction', 'addendum']:
+            logger.info('Adding related_article_doi.')
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
 
         record.add_xpath('dois', "//article-id[@pub-id-type='doi']/text()")
@@ -34,7 +42,10 @@ class OUPParser(Jats):
         record.add_xpath('title', '//article-title/text()')
         record.add_xpath('subtitle', '//subtitle/text()')
 
-        record.add_value('authors', self._get_authors(node))
+        authors = self._get_authors(node)
+        if not authors:
+            logger.error('No authors found.')
+        record.add_value('authors', authors)
         record.add_xpath('collaborations', "//contrib/collab/text()")
 
         record.add_value('date_published', self._get_published_date(node))
@@ -80,5 +91,8 @@ class OUPParser(Jats):
             ar = arxiv.extract().replace('arXiv:', '')
             if ar:
                 arxiv_eprints.append({'value': ar})
+
+        if not arxiv_eprints:
+            logger.warning('No arxiv eprints found.')
 
         return arxiv_eprints

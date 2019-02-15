@@ -11,6 +11,7 @@
 
 from __future__ import absolute_import, print_function
 
+import logging
 import os
 
 from hepcrawl.extractors.s3_springer_parser import S3SpringerParser
@@ -105,7 +106,10 @@ class S3SpringerSpider(XMLFeedSpider):
 
     def handle_package_ftp(self, response):
         """Handle the zip package and yield a request for every XML found."""
+        self.log('Handling package: %s' % response.url, logging.INFO)
+
         filename = os.path.basename(response.url).rstrip(".zip")
+
         # TMP dir to extract zip packages:
         target_folder = mkdtemp(prefix=filename + "_", dir=SPRINGER_UNPACK_FOLDER)
 
@@ -114,6 +118,7 @@ class S3SpringerSpider(XMLFeedSpider):
             zip_filepath = zip_filepath[7:]
 
         files = unzip_files(zip_filepath, target_folder)
+        self.log('Extracted files to %s' % target_folder, logging.INFO)
         # The xml files shouldn't be removed after processing; they will
         # be later uploaded to Inspire. So don't remove any tmp files here.
         for xml_file in files:
@@ -130,5 +135,6 @@ class S3SpringerSpider(XMLFeedSpider):
                 )
 
     def parse_node(self, response, node):
+        self.log('Parsing node...', logging.INFO)
         parser = S3SpringerParser()
         return parser.parse_node(response, node)

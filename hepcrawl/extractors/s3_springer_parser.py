@@ -1,9 +1,12 @@
 import datetime
+import logging
 import re
 
 from ..items import HEPRecord
 from ..loaders import HEPLoader
 from ..utils import get_first
+
+logger = logging.getLogger(__name__)
 
 
 class S3SpringerParser(object):
@@ -108,6 +111,7 @@ class S3SpringerParser(object):
             }
 
         # return default licence if not found
+        logger.warning('Licence not found, returning default licence.')
         return {"license": "CC-BY-3.0", "url": "https://creativecommons.org/licenses/by/3.0"}
 
     def _clean_aff(self, node):
@@ -170,6 +174,10 @@ class S3SpringerParser(object):
                 'affiliations': affiliations,
                 'email': get_first(email, ""),
             })
+
+        if not authors:
+            logger.error('No authors found.')
+
         return authors
 
     def _get_arxiv_eprints(self, node):
@@ -177,5 +185,8 @@ class S3SpringerParser(object):
 
         for arxiv in node.xpath("//ArticleExternalID[@Type='arXiv']/text()"):
             arxiv_eprints.append({'value': arxiv.extract()})
+
+        if not arxiv_eprints:
+            logger.warning('No arxiv eprints found.')
 
         return arxiv_eprints

@@ -12,6 +12,7 @@
 from __future__ import absolute_import, print_function
 
 import datetime
+import logging
 import os
 import re
 import tarfile
@@ -150,8 +151,11 @@ class S3ElsevierSpider(Spider):
 
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
+        self.log('Harvest started.', logging.INFO)
+
         if self.package_path:
             # add local package name without 'file://'
+            self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
             meta = {'local_filename': self.package_path.replace('file://', '')}
 
             yield Request(self.package_path, callback=self.handle_package, meta=meta)
@@ -160,6 +164,7 @@ class S3ElsevierSpider(Spider):
             params = {}
             _, missing_files = list_files(self.folder, self.target_folder)
 
+            self.log('New files: %s' % missing_files, logging.INFO)
             for remote_file in missing_files:
                 # TODO download only packages where _ready.xml exists
                 if '.tar' in remote_file or '.zip' in remote_file:
@@ -179,6 +184,8 @@ class S3ElsevierSpider(Spider):
         with open(zip_filepath, 'w') as destination_file:
             destination_file.write(response.body)
 
+        self.log('Handling package: %s' % zip_filepath, logging.INFO)
+
         # extract the name of the package without extension
         filename = os.path.basename(response.url).rstrip("A.tar").rstrip('.zip')
 
@@ -187,6 +194,8 @@ class S3ElsevierSpider(Spider):
 
         # uncompress files to temp directory
         files = uncompress(zip_filepath, target_folder)
+
+        self.log('Files uncompressed to: %s' % target_folder, logging.INFO)
 
         for f in files:
             if 'dataset.xml' in f:
@@ -197,6 +206,7 @@ class S3ElsevierSpider(Spider):
         We have one dataset.xml per package, this describes the artciles we received in this package.
         """
 
+        self.log('Parsing dataset: %s' % f, logging.INFO)
         with open(f, 'r') as dataset_file:
             dataset = Selector(text=dataset_file.read())
             journal_data = self.parse_journal_issue(dataset, target_folder, filename)
@@ -226,8 +236,10 @@ class S3ElsevierSpider(Spider):
             }
             issue_file = os.path.join(target_folder, filename,
                                       issue.xpath('./files-info/ml/pathname/text()')[0].extract())
-            articles = {}
 
+            self.log('Parsing journal issue xml: %s' % issue_file, logging.INFO)
+
+            articles = {}
             with open(issue_file, 'r') as issue_file:
                 iss = Selector(text=issue_file.read())
                 iss.remove_namespaces()
@@ -301,5 +313,6 @@ class S3ElsevierSpider(Spider):
                 journal_data[data_index]['articles'][doi].update(article_data)
 
     def parse_node(self, meta_data, node):
+        self.log('Parsing node...', logging.INFO)
         parser = S3ElsevierParser()
         return parser.parse_node(meta_data, node)

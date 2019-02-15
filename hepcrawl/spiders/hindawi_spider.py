@@ -11,6 +11,8 @@
 
 from __future__ import absolute_import, print_function
 
+import logging
+
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
 
@@ -68,8 +70,10 @@ class HindawiSpider(XMLFeedSpider):
 
     def start_requests(self):
         """Default starting point for scraping shall be the local XML file."""
+        self.log('Harvest started.', logging.INFO)
         yield Request(self.source_file)
 
     def parse_node(self, response, node):
+        self.log('Parsing node...', logging.INFO)
         parser = HindawiParser()
         return parser.parse_node(response, node)
