@@ -19,7 +19,7 @@ from .responses import fake_response_from_file
 
 @pytest.fixture
 def results():
-    """Return results generator from the WSP spider."""
+    """Return results generator from the Elsevier spider."""
     download_dir = '/tmp/elsevier_test_download_dir/'
     unpack_dir = '/tmp/elsevier_test_unpack_dir/'
     test_files = ('CERNR000000005008A.tar', 'CERNAB00000005657_stripped.tar')

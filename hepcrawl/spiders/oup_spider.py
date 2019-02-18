@@ -62,7 +62,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
     itertag = 'article'
 
     def __init__(self, package_path=None, ftp_folder="hooks", ftp_host=None, ftp_netrc=None, *args, **kwargs):
-        """Construct WSP spider."""
+        """Construct OUP spider."""
         super(OxfordUniversityPressSpider, self).__init__(*args, **kwargs)
         self.ftp_folder = ftp_folder
         self.ftp_host = ftp_host

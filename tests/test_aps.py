@@ -18,7 +18,7 @@ from .responses import fake_response_from_file
 
 @pytest.fixture
 def results():
-    """Return results generator from the WSP spider."""
+    """Return results generator from the APS spider."""
 
     records = []
 
