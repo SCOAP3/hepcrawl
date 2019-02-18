@@ -84,8 +84,11 @@ class S3ElsevierParser(object):
         record.add_value('journal_lpage', last_page)
 
         if first_page is not None and last_page is not None:
-            page_nr = int(last_page) - int(first_page) + 1
-            record.add_value('page_nr', page_nr)
+            try:
+                page_nr = int(last_page) - int(first_page) + 1
+                record.add_value('page_nr', page_nr)
+            except ValueError as e:
+                logger.error('Failed to parse last_page or first_page: %s' % e)
 
         published_date = datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S")
         record.add_value('journal_year', published_date.year)

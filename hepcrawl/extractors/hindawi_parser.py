@@ -21,8 +21,11 @@ class HindawiParser(object):
         record.add_xpath('date_published', "./datafield[@tag='260']/subfield[@code='c']/text()")
         page_nr = node.xpath("./datafield[@tag='300']/subfield[@code='a']/text()")
         if page_nr:
-            page_nr = map(int, page_nr.extract())
-            record.add_value('page_nr', page_nr)
+            try:
+                page_nr = map(int, page_nr.extract())
+                record.add_value('page_nr', page_nr)
+            except ValueError as e:
+                logger.error('Failed to parse last_page or first_page: %s' % e)
         record.add_xpath('dois',
                          "./datafield[@tag='024'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
         record.add_xpath('journal_title', "./datafield[@tag='773']/subfield[@code='p']/text()")

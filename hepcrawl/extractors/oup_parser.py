@@ -38,8 +38,11 @@ class OUPParser(Jats):
         record.add_value('arxiv_eprints', self.get_arxiv_eprints(node))
         page_nr = node.xpath("//counts/page-count/@count")
         if page_nr:
-            page_nr = map(int, page_nr.extract())
-            record.add_value('page_nr', page_nr)
+            try:
+                page_nr = map(int, page_nr.extract())
+                record.add_value('page_nr', page_nr)
+            except ValueError as e:
+                logger.error('Failed to parse last_page or first_page: %s' % e)
 
         record.add_xpath('abstract', '//abstract[1]')
         record.add_xpath('title', '//article-title/text()')
