@@ -77,8 +77,8 @@ def test_date_published(results):
 
 def test_page_nr(results):
     """Test extracting page_nr"""
-    page_nrs = [["11"],
-                ['0']]
+    page_nrs = [[11],
+                [0]]
     for page_nr, record in zip(page_nrs, results):
         assert 'page_nr' in record
         assert record['page_nr'] == page_nr

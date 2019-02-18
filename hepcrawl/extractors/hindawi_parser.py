@@ -19,7 +19,10 @@ class HindawiParser(object):
         record.add_xpath('abstract', "./datafield[@tag='520']/subfield[@code='a']")
         record.add_xpath('title', "./datafield[@tag='245']/subfield[@code='a']/text()")
         record.add_xpath('date_published', "./datafield[@tag='260']/subfield[@code='c']/text()")
-        record.add_xpath('page_nr', "./datafield[@tag='300']/subfield[@code='a']/text()")
+        page_nr = node.xpath("./datafield[@tag='300']/subfield[@code='a']/text()")
+        if page_nr:
+            page_nr = map(int, page_nr.extract())
+            record.add_value('page_nr', page_nr)
         record.add_xpath('dois',
                          "./datafield[@tag='024'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
         record.add_xpath('journal_title', "./datafield[@tag='773']/subfield[@code='p']/text()")

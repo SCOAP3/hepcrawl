@@ -40,7 +40,9 @@ class APSParser(object):
 
             record.add_value('journal_doctype', journal_doctype)
             record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
-            record.add_value('page_nr', str(article.get('numPages', '')))
+            page_nr = article.get('numPages')
+            if page_nr is not None:
+                record.add_value('page_nr', page_nr)
 
             arxiv = get_nested(article, 'identifiers', 'arxiv').replace('arXiv:', '')
             if not arxiv:

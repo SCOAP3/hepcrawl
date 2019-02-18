@@ -49,7 +49,7 @@ class S3SpringerParser(object):
         first_pages = node.xpath('//ArticleFirstPage/text()').extract()
         last_pages = node.xpath('//ArticleLastPage/text()').extract()
         if first_pages and last_pages:
-            page_nrs = map(lambda (first, last): str(int(last) - int(first) + 1), zip(first_pages, last_pages))
+            page_nrs = map(lambda (first, last): int(last) - int(first) + 1, zip(first_pages, last_pages))
             record.add_value('page_nr', page_nrs)
 
         record.add_xpath('abstract', '//Article/ArticleHeader/Abstract/Para')

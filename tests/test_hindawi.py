@@ -166,8 +166,8 @@ def test_license(records):
 
 def test_page_nr(records):
     expected_results = (
-        ['9'],
-        ['9']
+        [9],
+        [9]
     )
 
     for expected, record in zip(expected_results, records):

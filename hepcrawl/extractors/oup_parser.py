@@ -36,7 +36,10 @@ class OUPParser(Jats):
 
         record.add_xpath('dois', "//article-id[@pub-id-type='doi']/text()")
         record.add_value('arxiv_eprints', self.get_arxiv_eprints(node))
-        record.add_xpath('page_nr', "//counts/page-count/@count")
+        page_nr = node.xpath("//counts/page-count/@count")
+        if page_nr:
+            page_nr = map(int, page_nr.extract())
+            record.add_value('page_nr', page_nr)
 
         record.add_xpath('abstract', '//abstract[1]')
         record.add_xpath('title', '//article-title/text()')

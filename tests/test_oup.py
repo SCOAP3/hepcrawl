@@ -240,7 +240,7 @@ def test_arxiv_eprints(results):
 
 def test_page_nr(results):
     expected_results = (
-        ['13'],
+        [13],
     )
 
     for expected, record in zip(expected_results, results):
