@@ -24,8 +24,8 @@ def results():
     unpack_dir = '/tmp/elsevier_test_unpack_dir/'
     test_files = ('CERNR000000005008A.tar', 'CERNAB00000005657_stripped.tar')
 
-    with patch('hepcrawl.settings.ELSEVIER_DOWNLOAD_DIR', download_dir):
-        with patch('hepcrawl.settings.ELSEVIER_UNPACK_FOLDER', unpack_dir):
+    with patch('hepcrawl.settings.ELSEVIER_DOWNLOAD_DIR', download_dir),\
+         patch('hepcrawl.settings.ELSEVIER_UNPACK_FOLDER', unpack_dir):
             from hepcrawl.spiders import s3_elsevier_spider
             records = []
 

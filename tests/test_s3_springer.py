@@ -27,8 +27,8 @@ def results():
 
     records = []
 
-    with patch('hepcrawl.settings.SPRINGER_DOWNLOAD_DIR', download_dir):
-        with patch('hepcrawl.settings.SPRINGER_UNPACK_FOLDER', unpack_dir):
+    with patch('hepcrawl.settings.SPRINGER_DOWNLOAD_DIR', download_dir),\
+         patch('hepcrawl.settings.SPRINGER_UNPACK_FOLDER', unpack_dir):
             for test_file in test_files:
 
                 if not path.exists(unpack_dir):
