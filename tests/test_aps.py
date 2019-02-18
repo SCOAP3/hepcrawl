@@ -22,7 +22,7 @@ def results():
 
     records = []
 
-    for file in ('aps/aps_single_response.json', 'aps/aps_single_response2.json'):
+    for file in ('aps/aps_single_response.json',):
         fake_response = fake_response_from_file(
             file,
             response_type=TextResponse,
@@ -31,7 +31,7 @@ def results():
         records.extend(list(spider.parse(fake_response)))
 
     assert records
-    assert len(records) == 2
+    assert len(records) == 1
 
     return records
 
@@ -47,7 +47,6 @@ def test_abstract(results):
         " per site two dimensional square lattice version of zombies lies in the percolation universality class. We end"
         " with a quantitative study of the full scale US outbreak, including the average susceptibility of different"
         " geographical regions.",
-        ""
     )
     for abstract, record in zip(abstracts, results):
         if abstract:
@@ -59,8 +58,7 @@ def test_abstract(results):
 
 def test_title(results):
     """Test extracting title."""
-    titles = ("You can run, you can hide: The epidemiology and statistical mechanics of zombies",
-              '')
+    titles = ("You can run, you can hide: The epidemiology and statistical mechanics of zombies",)
     for title, record in zip(titles, results):
         assert 'title' in record
         assert record['title'] == title
@@ -68,8 +66,7 @@ def test_title(results):
 
 def test_date_published(results):
     """Test extracting date_published."""
-    dates_published = ("2015-11-02",
-                       '2015-11-02')
+    dates_published = ("2015-11-02",)
     for date_published, record in zip(dates_published, results):
         assert 'date_published' in record
         assert record['date_published'] == date_published
@@ -77,8 +74,7 @@ def test_date_published(results):
 
 def test_page_nr(results):
     """Test extracting page_nr"""
-    page_nrs = [[11],
-                [0]]
+    page_nrs = [[11],]
     for page_nr, record in zip(page_nrs, results):
         assert 'page_nr' in record
         assert record['page_nr'] == page_nr
@@ -86,16 +82,12 @@ def test_page_nr(results):
 
 def test_license(results):
     """Test extracting license information."""
-    expected_licenses = [
+    expected_licenses = (
         [{
             'license': 'CC-BY-3.0',
             'url': 'http://creativecommons.org/licenses/by/3.0/',
         }],
-        [{
-            'license': 'CC-BY-3.0',
-            'url': 'http://creativecommons.org/licenses/by/3.0/',
-        }],
-    ]
+    )
     for expected_license, record in zip(expected_licenses, results):
         assert 'license' in record
         assert record['license'] == expected_license
@@ -103,8 +95,7 @@ def test_license(results):
 
 def test_dois(results):
     """Test extracting dois."""
-    dois = ("10.1103/PhysRevE.92.052801",
-            "10.1103/PhysRevE.92.052801")
+    dois = ("10.1103/PhysRevE.92.052801", )
     for doi, record in zip(dois, results):
         assert 'dois' in record
         assert record['dois'][0]['value'] == doi
@@ -113,7 +104,7 @@ def test_dois(results):
 
 def test_collections(results):
     """Test extracting collections."""
-    collections = [['HEP', 'Citeable', 'Published'], ['HEP', 'Citeable', 'Published']]
+    collections = [['HEP', 'Citeable', 'Published']]
     for collection, record in zip(collections, results):
         assert 'collections' in record
         for coll in collection:
@@ -124,7 +115,6 @@ def test_collaborations(results):
     """Test extracting collaboration."""
     collaborations = [
         [{"value": "OSQAR Collaboration"}],
-        [{"value": "OSQAR Collaboration"}]
     ]
     for collaboration, record in zip(collaborations, results):
         assert 'collaborations' in record
@@ -139,11 +129,6 @@ def test_subjects(results):
             'source': '',
             'term': 'Quantum Information',
         }],
-        [{
-            'scheme': 'APS',
-            'source': '',
-            'term': 'Quantum Information',
-        }]
     ]
     for subject, record in zip(subjects, results):
         assert 'field_categories' in record
@@ -157,10 +142,6 @@ def test_publication_info(results):
              journal_year=2015,
              journal_volume="92",
              journal_issue="5"),
-        dict(journal_title="Physical Review E",
-             journal_year=2015,
-             journal_volume="92",
-             journal_issue="5")
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
@@ -175,10 +156,6 @@ def test_authors(results):
             affiliation='Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA',
             author_full_names=['Alemi, Alexander A.', 'Bierbaum, Matthew', 'Myers, Christopher R.', 'Sethna, James P.']
         ),
-        dict(
-            affiliation='Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA',
-            author_full_names=['Alemi, Alexander A.', 'Bierbaum, Matthew', 'Myers, Christopher R.', 'Sethna, James P.']
-        )
     )
     for expected, record in zip(expected_results, results):
         assert 'authors' in record
@@ -196,9 +173,6 @@ def test_copyrights(results):
         dict(copyright_holder="authors",
              copyright_year="2015",
              copyright_statement="Published by the American Physical Society"),
-        dict(copyright_holder="authors",
-             copyright_year="2015",
-             copyright_statement="Published by the American Physical Society")
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
@@ -209,7 +183,6 @@ def test_copyrights(results):
 def test_arxiv_eprints(results):
     expected_results = (
         [{'value': '1806.06486'}],
-        [{'value': ''}]
     )
 
     for expected, record in zip(expected_results, results):
@@ -220,7 +193,6 @@ def test_arxiv_eprints(results):
 def test_doctype(results):
     expected_results = (
         'article',
-        'article'
     )
 
     for expected, record in zip(expected_results, results):
