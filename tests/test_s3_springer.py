@@ -329,9 +329,9 @@ def test_arxiv(results):
 
 def test_doctype(results):
     expected_results = (
-        'publication',
-        'publication',
-        'publication',
+        'article',
+        'article',
+        'article',
     )
 
     for expected, record in zip(expected_results, results):

@@ -11,10 +11,10 @@ logger = logging.getLogger(__name__)
 
 class S3SpringerParser(object):
     article_type_mapping = {
-        "OriginalPaper": "publication",
+        "OriginalPaper": "article",
         "ReviewPaper": "review",
-        "BriefCommunication": "other",
-        "EditorialNotes": "editorial note",
+        "BriefCommunication": "article",
+        "EditorialNotes": "editorial",
         "BookReview": "review",
         "ContinuingEducation": "other",
         "Interview": "other",
