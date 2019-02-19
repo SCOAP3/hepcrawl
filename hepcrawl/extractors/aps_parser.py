@@ -47,7 +47,8 @@ class APSParser(object):
             arxiv = get_nested(article, 'identifiers', 'arxiv').replace('arXiv:', '')
             if not arxiv:
                 logger.warning('No arxiv eprints found.')
-            record.add_value('arxiv_eprints', {'value': arxiv})
+            else:
+                record.add_value('arxiv_eprints', {'value': arxiv})
 
             record.add_value('abstract', get_nested(article, 'abstract', 'value'))
             record.add_value('title', get_nested(article, 'title', 'value'))
