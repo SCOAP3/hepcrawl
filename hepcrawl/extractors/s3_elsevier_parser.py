@@ -58,19 +58,19 @@ class S3ElsevierParser(object):
         article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
         record.add_value('journal_doctype', article_type)
 
-        if article_type in ['correction', 'addendum']:
-            logger.info('Adding related_article_doi.')
-            record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
-
         dois = node.xpath('./item-info/doi/text()').extract()
         doi = dois[0]
         record.add_value('dois', dois)
+
+        if article_type in ['correction', 'addendum']:
+            logger.info('Adding related_article_doi for article %s.' % dois)
+            record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
 
         record.add_xpath('abstract', './head/abstract[1]/abstract-sec')
         record.add_xpath('title', './head/title/text()')
         record.add_xpath('subtitle', './head/subtitle/text()')
 
-        record.add_value('authors', self.get_authors(node))
+        record.add_value('authors', self.get_authors(node, dois))
         record.add_xpath('collaborations', "./head/author-group/collaboration/text/text()")
 
         record.add_value('journal_title', meta['articles'][doi]['journal'])
@@ -88,7 +88,7 @@ class S3ElsevierParser(object):
                 page_nr = int(last_page) - int(first_page) + 1
                 record.add_value('page_nr', page_nr)
             except ValueError as e:
-                logger.error('Failed to parse last_page or first_page: %s' % e)
+                logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
 
         published_date = datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S")
         record.add_value('journal_year', published_date.year)
@@ -113,7 +113,7 @@ class S3ElsevierParser(object):
 
         return dict(record.load_item())
 
-    def get_authors(self, node):
+    def get_authors(self, node, dois):
         """Get the authors."""
         authors = []
 
@@ -122,7 +122,7 @@ class S3ElsevierParser(object):
                 for author in author_group.xpath("./author"):
                     surname = author.xpath("./surname/text()")
                     given_names = author.xpath("./given-name/text()")
-                    affiliations = self._get_affiliations(author_group, author)
+                    affiliations = self._get_affiliations(author_group, author, dois)
                     orcid = self._get_orcid(author)
                     emails = author.xpath("./e-address/text()")
 
@@ -142,7 +142,7 @@ class S3ElsevierParser(object):
                     authors.append(auth_dict)
 
         if not authors:
-            logger.error('No authors found.')
+            logger.error('No authors found for article %s.' % dois)
 
         return authors
 
@@ -172,7 +172,7 @@ class S3ElsevierParser(object):
 
         return affiliations_by_id
 
-    def _get_affiliations(self, author_group, author):
+    def _get_affiliations(self, author_group, author, dois):
         """Return one author's affiliations.
 
         Will extract authors affiliation ids and call the
@@ -194,8 +194,8 @@ class S3ElsevierParser(object):
         # in these cases it seems all group affiliation should be attached to all authors.
         if not affiliations:
             author_ids = author.xpath('./@author-id').extract()
-            logger.error('Not found referenced affiliations, adding all in the group for author with id: %s'
-                         % author_ids)
+            logger.error('Not found referenced affiliations, adding all in the group '
+                         'for author with id: %s for article %s' % (dois, author_ids))
             affiliations += all_group_affs.extract()
 
         return affiliations

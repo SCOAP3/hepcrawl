@@ -42,8 +42,14 @@ class S3SpringerParser(object):
         article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
         record.add_value('journal_doctype', article_type)
 
-        record.add_xpath('dois', "//ArticleDOI/text()")
-        record.add_value('arxiv_eprints', self._get_arxiv_eprints(node))
+        dois = node.xpath("//ArticleDOI/text()").extract()
+        record.add_value('dois', dois)
+
+        arxiv_eprints = self._get_arxiv_eprints(node)
+        if not arxiv_eprints:
+            logger.warning('No arxiv eprints found for article %s.' % dois)
+        else:
+            record.add_value('arxiv_eprints', arxiv_eprints)
 
         # extract first and last page, then calculate the number of pages
         first_pages = node.xpath('//ArticleFirstPage/text()').extract()
@@ -53,7 +59,7 @@ class S3SpringerParser(object):
                 page_nrs = map(lambda (first, last): int(last) - int(first) + 1, zip(first_pages, last_pages))
                 record.add_value('page_nr', page_nrs)
             except ValueError as e:
-                logger.error('Failed to parse last_page or first_page: %s' % e)
+                logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
 
         record.add_xpath('abstract', '//Article/ArticleHeader/Abstract/Para')
 
@@ -61,7 +67,7 @@ class S3SpringerParser(object):
         title = re.sub('<math>.*?</math>', '', title.extract()[0])
         record.add_value('title', title)
 
-        record.add_value('authors', self._get_authors(node))
+        record.add_value('authors', self._get_authors(node, dois))
         record.add_xpath('collaborations', '//InstitutionalAuthor/InstitutionalAuthorName/text()')
 
         journal = node.xpath('//JournalTitle/text()').extract()[0].lstrip('The ')
@@ -81,7 +87,7 @@ class S3SpringerParser(object):
         record.add_xpath('copyright_year', '//ArticleCopyright/CopyrightYear/text()')
         record.add_xpath('copyright_statement', '//ArticleCopyright/copyright-statement/text()')
 
-        record.add_value('license', self._get_license(node))
+        record.add_value('license', self._get_license(node, dois))
 
         record.add_value('collections', [journal])
 
@@ -102,7 +108,7 @@ class S3SpringerParser(object):
         day = node.xpath('//OnlineDate/Day/text()').extract()[0]
         return datetime.date(day=int(day), month=int(month), year=int(year))
 
-    def _get_license(self, node):
+    def _get_license(self, node, dois):
         license_type = node.xpath('//License/@SubType').extract()
         version = node.xpath('//License/@Version').extract()
         text = "https://creativecommons.org/licenses/"
@@ -115,7 +121,7 @@ class S3SpringerParser(object):
             }
 
         # return default licence if not found
-        logger.warning('Licence not found, returning default licence.')
+        logger.warning('Licence not found, returning default licence for article %s.' % dois)
         return {"license": "CC-BY-3.0", "url": "https://creativecommons.org/licenses/by/3.0"}
 
     def _clean_aff(self, node):
@@ -163,7 +169,7 @@ class S3SpringerParser(object):
 
         return mapped_affiliations
 
-    def _get_authors(self, node):
+    def _get_authors(self, node, dois):
         authors = []
         for contrib in node.xpath("//Author"):
             surname = contrib.xpath("./AuthorName/FamilyName/text()").extract()
@@ -180,7 +186,7 @@ class S3SpringerParser(object):
             })
 
         if not authors:
-            logger.error('No authors found.')
+            logger.error('No authors found for article %s.' % dois)
 
         return authors
 
@@ -189,8 +195,5 @@ class S3SpringerParser(object):
 
         for arxiv in node.xpath("//ArticleExternalID[@Type='arXiv']/text()"):
             arxiv_eprints.append({'value': arxiv.extract()})
-
-        if not arxiv_eprints:
-            logger.warning('No arxiv eprints found.')
 
         return arxiv_eprints

@@ -15,22 +15,25 @@ class HindawiParser(object):
         node.remove_namespaces()
         record = HEPLoader(item=HEPRecord(), selector=node, response=response)
 
-        record.add_value('authors', self.get_authors(node))
+        dois = node.xpath(
+            "./datafield[@tag='024'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()").extract()
+        record.add_value('dois', dois)
+
+        record.add_value('authors', self.get_authors(node, dois))
         record.add_xpath('abstract', "./datafield[@tag='520']/subfield[@code='a']")
         record.add_xpath('title', "./datafield[@tag='245']/subfield[@code='a']/text()")
         record.add_xpath('date_published', "./datafield[@tag='260']/subfield[@code='c']/text()")
+
         page_nr = node.xpath("./datafield[@tag='300']/subfield[@code='a']/text()")
         if page_nr:
             try:
                 page_nr = map(int, page_nr.extract())
                 record.add_value('page_nr', page_nr)
             except ValueError as e:
-                logger.error('Failed to parse last_page or first_page: %s' % e)
-        record.add_xpath('dois',
-                         "./datafield[@tag='024'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
+                logger.error('Failed to parse last_page or first_page for artcile %s: %s' % (dois, e))
         record.add_xpath('journal_title', "./datafield[@tag='773']/subfield[@code='p']/text()")
         record.add_xpath('journal_volume', "./datafield[@tag='773']/subfield[@code='a']/text()")
-        record.add_value('arxiv_eprints', self.get_arxivs(node))
+        record.add_value('arxiv_eprints', self.get_arxivs(node, dois))
 
         journal_year = node.xpath("./datafield[@tag='773']/subfield[@code='y']/text()").extract()
         if journal_year:
@@ -64,7 +67,7 @@ class HindawiParser(object):
 
         return [{"value": aff} for aff in affiliations_raw]
 
-    def get_authors(self, node):
+    def get_authors(self, node, dois):
         """Gets the authors."""
         authors_first = node.xpath("./datafield[@tag='100']")
         authors_others = node.xpath("./datafield[@tag='700']")
@@ -87,11 +90,11 @@ class HindawiParser(object):
                 })
 
         if not authors:
-            logger.error('No authors found.')
+            logger.error('No authors found for article %s.' % dois)
 
         return authors
 
-    def get_arxivs(self, node):
+    def get_arxivs(self, node, dois):
         """Gets the authors."""
         arxivs_raw = node.xpath("./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]")
         arxivs = []
@@ -102,7 +105,7 @@ class HindawiParser(object):
                 arxivs.append({'value': ar})
 
         if not arxivs:
-            logger.error('No arxiv found.')
+            logger.error('No arxiv found for article %s.' % dois)
 
         return arxivs
 

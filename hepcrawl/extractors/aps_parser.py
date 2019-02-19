@@ -34,26 +34,29 @@ class APSParser(object):
         for article in aps_response['data']:
             record = HEPLoader(item=HEPRecord(), response=response)
 
+            dois = get_nested(article, 'identifiers', 'doi')
+            record.add_value('dois', dois)
+
             journal_doctype = self.article_type_mapping.get(article.get('articleType'), 'other')
             if journal_doctype == 'other':
-                logger.warning('Journal_doctype is %s. Do we need other mapping for this?' % journal_doctype)
+                logger.warning('Journal_doctype is %s for article %s. Do we need other mapping for this?' % (
+                    journal_doctype, dois))
 
             record.add_value('journal_doctype', journal_doctype)
-            record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
             page_nr = article.get('numPages')
             if page_nr is not None:
                 record.add_value('page_nr', page_nr)
 
             arxiv = get_nested(article, 'identifiers', 'arxiv').replace('arXiv:', '')
             if not arxiv:
-                logger.warning('No arxiv eprints found.')
+                logger.warning('No arxiv eprints found for article %s.' % dois)
             else:
                 record.add_value('arxiv_eprints', {'value': arxiv})
 
             record.add_value('abstract', get_nested(article, 'abstract', 'value'))
             record.add_value('title', get_nested(article, 'title', 'value'))
 
-            authors, collaborations = self._get_authors_and_collab(article)
+            authors, collaborations = self._get_authors_and_collab(article, dois)
             record.add_value('authors', authors)
             record.add_value('collaborations', collaborations)
 
@@ -98,7 +101,7 @@ class APSParser(object):
                 next_url = next[0].href
                 yield Request(next_url)
 
-    def _get_authors_and_collab(self, article):
+    def _get_authors_and_collab(self, article, dois):
         authors = []
         collaboration = []
 
@@ -131,6 +134,6 @@ class APSParser(object):
                 collaboration.append(author['name'])
 
         if not authors:
-            logger.error('No authors found.')
+            logger.error('No authors found for article %s.' % dois)
 
         return authors, collaboration
