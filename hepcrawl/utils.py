@@ -27,12 +27,14 @@ RE_FOR_THE = re.compile(r'\b(?:for|on behalf of|representing)\b', re.IGNORECASE)
 INST_PHRASES = ['for the development', ]
 
 
-def unzip_xml_files(filename, target_folder):
-    """Unzip files (XML only) into target folder."""
+def unzip_files(filename, target_folder, type=None):
+    """Unzip files (XML only) into target folder.
+    :param type: filters files that ends with this value. E.g. for xml files '.xml'
+    """
     z = ZipFile(filename)
     xml_files = []
     for filename in z.namelist():
-        if filename.endswith(".xml"):
+        if not type or type and filename.endswith(type):
             absolute_path = os.path.join(target_folder, filename)
             if not os.path.exists(absolute_path):
                 z.extract(filename, target_folder)
@@ -65,6 +67,17 @@ def ftp_list_files(server_folder, target_folder, server, user, password):
                 missing_files.append(source_file)
             all_files.append(source_file)
     return all_files, missing_files
+
+
+def ftp_list_folders(server_folder, server, user, password):
+    """List files from given FTP's server folder to target folder."""
+    with ftputil.FTPHost(server, user, password) as host:
+        folders = host.listdir(host.curdir + '/' + server_folder)
+        all_folders = []
+        for folder in folders:
+            if not folder.startswith('.'):
+                all_folders.append(folder)
+    return all_folders
 
 
 def get_first(iterable, default=None):

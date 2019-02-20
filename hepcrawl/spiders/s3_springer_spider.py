@@ -11,39 +11,19 @@
 
 from __future__ import absolute_import, print_function
 
-import datetime
+import logging
 import os
-import re
 
-from ..extractors.jats import Jats
-from ..items import HEPRecord
-from ..loaders import HEPLoader
-from ..utils import (
-    get_first,
-    ftp_list_files,
-    ftp_connection_info
-)
+from hepcrawl.extractors.s3_springer_parser import S3SpringerParser
+from ..utils import ftp_list_files, ftp_connection_info, unzip_files
 from ..settings import SPRINGER_DOWNLOAD_DIR, SPRINGER_UNPACK_FOLDER
 
 from tempfile import mkdtemp
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
-from zipfile import ZipFile
 
 
-def unzip_files(filename, target_folder):
-    """Unzip files (XML only) into target folder."""
-    z = ZipFile(filename)
-    files = []
-    for filename in z.namelist():
-        absolute_path = os.path.join(target_folder, filename)
-        if not os.path.exists(absolute_path):
-            z.extract(filename, target_folder)
-        files.append(absolute_path)
-    return files
-
-
-class S3SpringerSpider(Jats, XMLFeedSpider):
+class S3SpringerSpider(XMLFeedSpider):
     """Springer SCOPA3 crawler.
 
     This spider can scrape either an ATOM feed (default), zip file
@@ -78,22 +58,6 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
     iterator = 'iternodes'
     itertag = 'Publisher'
 
-    allowed_article_types = [
-        'research-article',
-        'corrected-article',
-        'original-article',
-        'introduction',
-        'letter',
-        'correction',
-        'addendum',
-        'review-article',
-        'reviewpaper',
-        'rapid-communications',
-        'originalpaper',
-        'briefcommunication',
-        'erratum'
-    ]
-
     ERROR_CODES = range(400, 432)
 
     def __init__(self, package_path=None, ftp_folder="data/in", ftp_host=None, ftp_netrc=None, *args, **kwargs):
@@ -114,28 +78,20 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
             yield Request(self.package_path, meta=ftp_params, callback=self.handle_package_ftp)
         else:
             ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
-            new_files = []
             missing_files = []
             for journal in ['EPJC', 'JHEP']:
-                print("Checking %s" % journal)
-                tmp_new_files, tmp_missing_files = ftp_list_files(
+                _, tmp_missing_files = ftp_list_files(
                     os.path.join(self.ftp_folder, journal),
                     os.path.join(self.target_folder, journal),
                     server=ftp_host,
                     user=ftp_params['ftp_user'],
                     password=ftp_params['ftp_password']
                 )
-                new_files.extend(tmp_new_files)
                 missing_files.extend(tmp_missing_files)
-            ## TODO - add checking if the package was already downloaded
-            # Cast to byte-string for scrapy compatibility
-            print(missing_files)
+            # TODO - add checking if the package was already downloaded
+
             for remote_file in missing_files:
-                if('EPJC' in remote_file):
-                    journal = 'EPJC'
-                else:
-                    journal = 'JHEP'
-                print(remote_file)
+                journal = 'EPJC' if 'EPJC' in remote_file else 'JHEP'
                 remote_file = str(remote_file).strip('/data/in/%s/' % journal)
                 ftp_params["ftp_local_filename"] = os.path.join(
                     self.target_folder,
@@ -143,7 +99,6 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
                     remote_file
                 )
                 remote_url = "ftp://{0}/{1}".format(ftp_host, os.path.join('data/in/', journal, remote_file))
-                print(remote_url)
                 yield Request(
                     str(remote_url),
                     meta=ftp_params,
@@ -151,7 +106,10 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
 
     def handle_package_ftp(self, response):
         """Handle the zip package and yield a request for every XML found."""
+        self.log('Handling package: %s' % response.url, logging.INFO)
+
         filename = os.path.basename(response.url).rstrip(".zip")
+
         # TMP dir to extract zip packages:
         target_folder = mkdtemp(prefix=filename + "_", dir=SPRINGER_UNPACK_FOLDER)
 
@@ -159,13 +117,11 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
         if zip_filepath.startswith('file://'):
             zip_filepath = zip_filepath[7:]
 
-        print("zip_filepath: %s" % (zip_filepath,))
-        print("target_folder: %s" % (target_folder,))
         files = unzip_files(zip_filepath, target_folder)
+        self.log('Extracted files to %s' % target_folder, logging.INFO)
         # The xml files shouldn't be removed after processing; they will
         # be later uploaded to Inspire. So don't remove any tmp files here.
         for xml_file in files:
-            # if 'EPJC' in zip_filepath:
             if '.scoap' in xml_file or '.Meta' in xml_file:
                 xml_url = u"file://{0}".format(os.path.abspath(xml_file))
                 pdfa_name = "{0}.pdf".format(os.path.basename(xml_file).split('.')[0])
@@ -178,162 +134,7 @@ class S3SpringerSpider(Jats, XMLFeedSpider):
                           "pdfa_url": pdfa_url},
                 )
 
-    def _get_published_date(self, node):
-        year = node.xpath('//OnlineDate/Year/text()').extract()[0]
-        month = node.xpath('//OnlineDate/Month/text()').extract()[0]
-        day = node.xpath('//OnlineDate/Day/text()').extract()[0]
-        return datetime.date(day=int(day), month=int(month), year=int(year)).isoformat()
-
-    def _get_license(self, node):
-        license_type = node.xpath('//License/@SubType').extract()
-        version = node.xpath('//License/@Version').extract()
-        text = "https://creativecommons.org/licenses/"
-
-        if license_type:
-            license_type = license_type[0].lower().lstrip('cc ').replace(' ', '-')
-            return {"license": "CC-"+license_type.upper()+"-"+version[0], "url":"%s/%s/%s" % (text, license_type, version[0])}
-        else:
-            self.log("No license defined. Setting default license!")
-            return {"license": "CC-BY-3.0", "url": "https://creativecommons.org/licenses/by/3.0"}
-
-    def _clean_aff(self, node):
-        org_div = node.xpath('./OrgDivision/text()').extract_first()
-        org_name = node.xpath('./OrgName/text()').extract_first()
-        street = node.xpath('./OrgAddress/Street/text()').extract_first()
-        city = node.xpath('./OrgAddress/City/text()').extract_first()
-        state = node.xpath('./OrgAddress/State/text()').extract_first()
-        postcode = node.xpath('./OrgAddress/Postcode/text()').extract_first()
-        country = node.xpath('./OrgAddress/Country/text()').extract_first()
-
-        tmp = []
-        if org_div:
-            tmp.append(org_div)
-        if org_name:
-            tmp.append(org_name)
-        if street:
-            tmp.append(street)
-        if city:
-            tmp.append(city)
-        if state:
-            tmp.append(state)
-        if postcode:
-            tmp.append(postcode)
-        if country:
-            tmp.append(country)
-
-        return (', '.join(tmp), org_name, country)
-
-    def _get_authors(self, node):
-        authors = []
-        for contrib in node.xpath("//Author"):
-            surname = contrib.xpath("./AuthorName/FamilyName/text()").extract()
-            given_names = contrib.xpath("./AuthorName/GivenName/text()").extract()
-            email = contrib.xpath("./Contact/Email/text()").extract()
-            # ?? no idea what it is suppose to do ??
-            #affiliations = contrib.xpath('//Affiliation')
-            affiliations = []
-            reffered_id = contrib.xpath("@AffiliationIDS").extract()
-            # check what is in reffered_id
-            print(reffered_id)
-            if reffered_id:
-                for ref in reffered_id[0].split():
-                    affiliations += node.xpath("//Affiliation[@ID='{0}']".format(ref))
-            tmp_aff = []
-            dedup_affilaition = set()
-            for aff in affiliations:
-                a, org, country = self._clean_aff(aff)
-                if (a, org, country) not in dedup_affilaition:
-                    dedup_affilaition.add((a, org, country))
-                    tmp_aff.append({'value': a, 'organization': org, 'country': country})
-                else:
-                    #TODO: add warning message and report metadata error
-                    pass
-            # affiliations = [
-            #     {'value': self._clean_aff(aff)}
-            #     for aff in affiliations
-            # ]
-
-            authors.append({
-                'surname': get_first(surname, ""),
-                'given_names': get_first(given_names, ""),
-                'affiliations': tmp_aff,
-                'email': get_first(email, ""),
-            })
-        return authors
-
-    def _get_collaboration(self, node):
-        pass
-        #node.xpath("InstitutionalAuthor")
-
     def parse_node(self, response, node):
-        """Parse a Springer XML file into a HEP record."""
-        node.remove_namespaces()
-        article_type = node.xpath('//Article/ArticleInfo/@ArticleType').extract()
-        self.log("Got article_type {0}".format(article_type))
-        if article_type is None or article_type[0].lower() not in self.allowed_article_types:
-            # Filter out non-interesting article types
-            return None
-
-        record = HEPLoader(item=HEPRecord(), selector=node, response=response)
-        if article_type in ['correction',
-                            'addendum']:
-            record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
-            record.add_value('journal_doctype', article_type)
-        record.add_xpath('dois', "//ArticleDOI/text()")
-        #record.add_xpath('page_nr', "//counts/page-count/@count")
-
-        title = node.xpath('//ArticleTitle')
-        title = re.sub('<math>.*?</math>', '', title.extract()[0])
-        title = re.sub('<math>.*?</math>', '', title)
-
-        record.add_xpath('abstract', '//Article/ArticleHeader/Abstract/Para')
-        record.add_value('title', title)
-
-        #record.add_xpath('title', '//ArticleTitle')
-        #record.add_xpath('subtitle', '//subtitle/text()')
-
-        # TODO: authors and colaboration
-        record.add_value('authors', self._get_authors(node))
-        # record.add_xpath('collaborations', "//contrib/collab/text()")
-
-        # free_keywords, classification_numbers = self._get_keywords(node)
-        # record.add_value('free_keywords', free_keywords)
-        # record.add_value('classification_numbers', classification_numbers)
-
-        record.add_value('date_published', self._get_published_date(node))
-
-        journal = node.xpath('//JournalTitle/text()').extract()[0].lstrip('The ')
-        record.add_value('journal_title', journal)
-        record.add_xpath('journal_issue', '//IssueIDStart/text()')
-        record.add_xpath('journal_volume', '//VolumeIDStart/text()')
-        record.add_xpath('journal_artid', '//Article/@ID/text()')
-
-        record.add_xpath('journal_fpage', '//ArticleFirstPage/text()')
-        record.add_xpath('journal_lpage', '//ArticleLastPage/text()')
-
-        published_date = self._get_published_date(node)
-        record.add_value('journal_year', int(published_date[:4]))
-        record.add_value('date_published', published_date)
-
-        record.add_xpath('copyright_holder', '//ArticleCopyright/CopyrightHolderName/text()')
-        record.add_xpath('copyright_year', '//ArticleCopyright/CopyrightYear/text()')
-        record.add_xpath('copyright_statement', '//ArticleCopyright/copyright-statement/text()')
-        record.add_value('copyright_material', 'Article')
-
-        license = self._get_license(node)
-        record.add_value('license', license)
-
-        record.add_value('collections', [journal])
-
-        #local fiels paths
-        local_files = []
-        if 'xml_url' in response.meta:
-            local_files.append({'filetype': 'xml', 'path': response.meta['xml_url'][7:]})
-        if 'pdfa_url' in response.meta:
-            local_files.append({'filetype': 'pdf/a', 'path': response.meta['pdfa_url'][7:]})
-        record.add_value('local_files', local_files)
-
-        parsed_record = dict(record.load_item())
-
-        print(parsed_record)
-        return parsed_record
+        self.log('Parsing node...', logging.INFO)
+        parser = S3SpringerParser()
+        return parser.parse_node(response, node)

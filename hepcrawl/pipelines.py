@@ -109,7 +109,7 @@ class InspireAPIPushPipeline(object):
 
         source = item.pop('source', spider.name)
 
-        #parse imported records from repo.scoap3.org and manual input
+        # parse imported records from repo.scoap3.org and manual input
         cr_date = datetime.datetime.now().isoformat()
         method = source
         acquisition_source_method = source
@@ -180,7 +180,7 @@ class InspireAPIPushPipeline(object):
                     'artid': item.pop('journal_artid', ''),
                     'page_start': item.pop('journal_fpage', ''),
                     'page_end': item.pop('journal_lpage', ''),
-                    'note': item.pop('journal_doctype', ''),
+                    'material': item.pop('journal_doctype', ''),
                     'pubinfo_freetext': item.pop('pubinfo_freetext', ''),
                 }]
 

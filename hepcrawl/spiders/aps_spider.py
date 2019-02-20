@@ -12,7 +12,6 @@
 from __future__ import absolute_import, print_function
 
 import json
-import link_header
 import logging
 
 from datetime import datetime
@@ -21,12 +20,9 @@ from furl import furl
 from os import path, makedirs
 from scrapy import Request, Spider
 
-from ..items import HEPRecord
-from ..loaders import HEPLoader
+from hepcrawl.extractors.aps_parser import APSParser
 from ..settings import LAST_RUNS_PATH
-from ..utils import get_license, get_nested, build_dict
 
-LOGGER = logging.getLogger(__name__)
 
 class APSSpider(Spider):
     """APS crawler.
@@ -39,9 +35,8 @@ class APSSpider(Spider):
     name = 'APS'
     aps_base_url = "http://harvest.aps.org/v2/journals/articles"
 
-    def __init__(self, url=None, from_date=None, until_date=None,
-                 date="published", journals=None, sets=None, per_page=100,
-                 **kwargs):
+    def __init__(self, url=None, from_date=None, until_date=None, date="published", journals=None,
+                 sets=None, per_page=100, **kwargs):
         """Construct APS spider."""
         super(APSSpider, self).__init__(**kwargs)
         if url is None:
@@ -69,13 +64,22 @@ class APSSpider(Spider):
             url = furl(APSSpider.aps_base_url).add(self.params).url
         self.url = url
 
+    def start_requests(self):
+        """Just yield the url."""
+        started_at = datetime.utcnow()
+
+        self.log('Harvest started_at: %s' % started_at, logging.INFO)
+
+        yield Request(self.url)
+
+        self._save_run(started_at)
+
     def _last_run_file_path(self):
         """Render a path to a file where last run information is stored.
         Returns:
             string: path to last runs path
         """
         lasts_run_path = LAST_RUNS_PATH
-        #file_name = hashlib.sha1(self._make_alias()).hexdigest() + '.json'
         file_name = 'test.json'
         return path.join(lasts_run_path, self.name, file_name)
 
@@ -88,12 +92,11 @@ class APSSpider(Spider):
         try:
             with open(file_path) as f:
                 last_run = json.load(f)
-                LOGGER.info('Last run file loaded: {}'.format(repr(last_run)))
                 return last_run
         except IOError as exc:
             if exc.errno == NO_SUCH_FILE_OR_DIR:
+                self.log('No last run file found.', logging.WARNING)
                 return None
-                # raise NoLastRunToLoad(file_path)
             raise
 
     def _save_run(self, started_at):
@@ -103,11 +106,8 @@ class APSSpider(Spider):
         Raises:
             IOError: if writing the file is unsuccessful
         """
-        print(self.params)
         last_run_info = {
             'spider': self.name,
-            #'url': self.url,
-            #'metadata_prefix': self.metadata_prefix,
             'set': self.params['set'],
             'from': self.params.get('from', None),
             'until': self.params.get('until', None),
@@ -117,129 +117,20 @@ class APSSpider(Spider):
             'last_run_started_at': started_at.isoformat(),
             'last_run_finished_at': datetime.utcnow().isoformat(),
         }
+
         file_path = self._last_run_file_path()
-        LOGGER.info("Last run file saved to {}".format(file_path))
+
         try:
             makedirs(path.dirname(file_path))
         except OSError as exc:
             if exc.errno != FILE_EXISTS:
                 raise
+
         with open(file_path, 'w') as f:
             json.dump(last_run_info, f, indent=4)
-
-    #def _make_alias(self):
-    #    return 'metadataPrefix={metadata_prefix}&set={set}'.format(
-    #        metadata_prefix=self.params['date'],
-    #        set=self.params['set']
-    #    )
-
-    def start_requests(self):
-        """Just yield the url."""
-        started_at = datetime.utcnow()
-
-        yield Request(self.url)
-
-        self._save_run(started_at)
+            self.log('Last run time saved to file.', logging.INFO)
 
     def parse(self, response):
-        """Parse a APS JSON file into a HEP record."""
-        aps_response = json.loads(response.body_as_unicode())
-
-        for article in aps_response['data']:
-            record = HEPLoader(item=HEPRecord(), response=response)
-
-            record.add_value('dois', get_nested(article, 'identifiers', 'doi'))
-            record.add_value('page_nr', str(article.get('numPages', '')))
-            record.add_value('report_numbers', [
-                {
-                    'source': 'arXiv',
-                    'value': get_nested(article, 'identifiers', 'arxiv')
-                }
-            ])
-
-            record.add_value('abstract', get_nested(article, 'abstract', 'value'))
-            record.add_value('title', get_nested(article, 'title', 'value'))
-            # record.add_value('subtitle', '')
-
-            authors, collaborations = self._get_authors_and_collab(article)
-            record.add_value('authors', authors)
-            record.add_value('collaborations', collaborations)
-
-            # record.add_value('free_keywords', free_keywords)
-            # record.add_value('classification_numbers', classification_numbers)
-
-            record.add_value('journal_title', get_nested(article, 'journal', 'name'))
-            record.add_value('journal_issue', get_nested(article, 'issue', 'number'))
-            record.add_value('journal_volume', get_nested(article, 'volume', 'number'))
-            # record.add_value('journal_artid', )
-
-            published_date = article.get('date', '')
-            record.add_value('journal_year', int(published_date[:4]))
-            record.add_value('date_published', published_date)
-            record.add_value('field_categories', [
-                {
-                    'term': term.get('label'),
-                    'scheme': 'APS',
-                    'source': '',
-                } for term in get_nested(
-                    article,
-                    'classificationSchemes',
-                    'subjectAreas'
-                )
-            ])
-            if get_nested(article, 'rights', 'copyrightHolders'):
-                record.add_value('copyright_holder', get_nested(article, 'rights', 'copyrightHolders')[0]['name'])
-            record.add_value('copyright_year', str(get_nested(article, 'rights', 'copyrightYear')))
-            record.add_value('copyright_statement', get_nested(article, 'rights', 'rightsStatement'))
-            record.add_value('copyright_material', 'Article')
-
-            license = get_license(
-                license_url=get_nested(article, 'rights', 'licenses')[0]['url']
-            )
-            record.add_value('license', license)
-
-            record.add_value('collections', ['HEP', 'Citeable', 'Published'])
-            yield record.load_item()
-
-        # Pagination support. Will yield until no more "next" pages are found
-        if 'Link' in response.headers:
-            links = link_header.parse(response.headers['Link'])
-            next = links.links_by_attr_pairs([('rel', 'next')])
-            if next:
-                next_url = next[0].href
-                yield Request(next_url)
-
-    def _get_authors_and_collab(self, article):
-        authors = []
-        collaboration = []
-
-        for author in article['authors']:
-            if author['type'] == 'Person':
-                author_affiliations = []
-                if 'affiliations' in article and 'affiliationIds' in author:
-                    affiliations = build_dict(article['affiliations'], 'id')
-                    for aff_id in author['affiliationIds']:
-                        author_affiliations.append({
-                            'value': affiliations[aff_id]['name']
-                        })
-
-                surname = ''
-                given_name = ''
-                raw_name = ''
-                if author.get('surname'):
-                    surname = author.get('surname').replace('\u2009', ' ')
-                if author.get('firstname'):
-                    given_name = author.get('firstname').replace('\u2009', ' ')
-                if author.get('name'):
-                    raw_name = author.get('name').replace('\u2009', ' ')
-                authors.append({
-                    'surname': surname,
-                    'given_names': given_name,
-                    "raw_name": raw_name,
-                    'affiliations': author_affiliations
-                })
-
-            elif author['type'] == 'Collaboration':
-                collaboration.append(author['name'])
-
-        return authors, collaboration
+        self.log('Parsing node...', logging.INFO)
+        parser = APSParser()
+        return parser.parse(response)

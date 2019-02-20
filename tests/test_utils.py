@@ -29,8 +29,7 @@ from hepcrawl.utils import (
     parse_domain,
     range_as_string,
     split_fullname,
-    unzip_xml_files,
-)
+    unzip_files)
 
 
 @pytest.fixture
@@ -79,7 +78,7 @@ def list_for_dict():
 
 def test_unzip_xml(zipfile, tmpdir):
     """Test unzipping of xml files using zipfile and tmpdir fixtures."""
-    assert len(unzip_xml_files(zipfile, six.text_type(tmpdir))) == 1
+    assert len(unzip_files(zipfile, six.text_type(tmpdir), '.xml')) == 1
 
 
 def test_get_first(zipfile, tmpdir):
