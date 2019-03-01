@@ -16,26 +16,29 @@ readme = open('README.rst').read()
 install_requires = [
     'autosemver>=0.1.4',
     'inspire-schemas~=1.0',
+    'inspire-crawler>=3.0.3,~=3.0',
     'Scrapy>=1.1.0',
     # TODO: unpin once they support wheel building again
     'scrapyd==1.2.0',
     'scrapyd-client>=1.0.1',
     'six>=1.9.0',
     'requests>=2.8.1',
-    'celery>=3.1.23',
+    'celery<4.2.0,>=4.1.0,~=4.0',
     'redis>=2.10.5',
     'pyasn1>=0.1.8',  # Needed for dependency resolving.
     'LinkHeader>=0.4.3',
     'furl>=0.4.95',
     'ftputil>=3.3.1',
     'python-dateutil>=2.4.2',
+    'attrs>=17.4.0',
+    'idna<2.8,>=2.5',
 ]
 
 tests_require = [
     'check-manifest>=0.25',
     'coverage>=4.0',
     'isort==4.2.2',
-    'pytest>=2.8.0',
+    'pytest>=3.6.0,~=3.6',
     'pytest-cov>=2.1.0',
     'pytest-pep8>=1.0.6',
     'responses>=0.5.0',
