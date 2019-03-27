@@ -54,7 +54,7 @@ class S3ElsevierParser(object):
         node.remove_namespaces()
         record = HEPLoader(item=HEPRecord(), selector=node)
 
-        article_type = node.xpath('//article/@docsubtype').extract()
+        article_type = node.xpath('./@docsubtype').extract()
         article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
         record.add_value('journal_doctype', article_type)
 
@@ -66,12 +66,12 @@ class S3ElsevierParser(object):
             logger.info('Adding related_article_doi for article %s.' % dois)
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
 
-        record.add_xpath('abstract', './head/abstract[1]/abstract-sec')
-        record.add_xpath('title', './head/title/text()')
-        record.add_xpath('subtitle', './head/subtitle/text()')
+        record.add_xpath('abstract', './*[self::head | self::simple-head]/abstract[1]/abstract-sec')
+        record.add_xpath('title', './*[self::head | self::simple-head]/title/text()')
+        record.add_xpath('subtitle', './*[self::head | self::simple-head]/subtitle/text()')
 
         record.add_value('authors', self.get_authors(node, dois))
-        record.add_xpath('collaborations', "./head/author-group/collaboration/text/text()")
+        record.add_xpath('collaborations', "./*[self::head | self::simple-head]/author-group/collaboration/text/text()")
 
         record.add_value('journal_title', meta['articles'][doi]['journal'])
         record.add_value('journal_issue', meta['issue'])
