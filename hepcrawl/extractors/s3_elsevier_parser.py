@@ -117,29 +117,28 @@ class S3ElsevierParser(object):
         """Get the authors."""
         authors = []
 
-        if node.xpath("./head/author-group/author"):
-            for author_group in node.xpath("./head/author-group"):
-                for author in author_group.xpath("./author"):
-                    surname = author.xpath("./surname/text()")
-                    given_names = author.xpath("./given-name/text()")
-                    affiliations = self._get_affiliations(author_group, author, dois)
-                    orcid = self._get_orcid(author)
-                    emails = author.xpath("./e-address/text()")
+        for author_group in node.xpath("//author-group"):
+            for author in author_group.xpath("./author"):
+                surname = author.xpath("./surname/text()")
+                given_names = author.xpath("./given-name/text()")
+                affiliations = self._get_affiliations(author_group, author, dois)
+                orcid = self._get_orcid(author)
+                emails = author.xpath("./e-address/text()")
 
-                    auth_dict = {}
+                auth_dict = {}
 
-                    if surname:
-                        auth_dict['surname'] = surname.extract_first()
-                    if given_names:
-                        auth_dict['given_names'] = given_names.extract_first()
-                    if orcid:
-                        auth_dict['orcid'] = orcid
-                    if affiliations:
-                        auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
-                    if emails:
-                        auth_dict['email'] = emails.extract_first()
+                if surname:
+                    auth_dict['surname'] = surname.extract_first()
+                if given_names:
+                    auth_dict['given_names'] = given_names.extract_first()
+                if orcid:
+                    auth_dict['orcid'] = orcid
+                if affiliations:
+                    auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
+                if emails:
+                    auth_dict['email'] = emails.extract_first()
 
-                    authors.append(auth_dict)
+                authors.append(auth_dict)
 
         if not authors:
             logger.error('No authors found for article %s.' % dois)
@@ -194,8 +193,8 @@ class S3ElsevierParser(object):
         # in these cases it seems all group affiliation should be attached to all authors.
         if not affiliations:
             author_ids = author.xpath('./@author-id').extract()
-            logger.error('Not found referenced affiliations, adding all in the group '
-                         'for author with id: %s for article %s' % (dois, author_ids))
+            logger.error('Not found referenced affiliations (%s), adding all in the group for author '
+                         'with id: %s for article %s' % (ref_ids, author_ids, dois))
             affiliations += all_group_affs.extract()
 
         return affiliations

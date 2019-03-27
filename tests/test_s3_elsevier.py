@@ -30,7 +30,7 @@ def results():
             records = []
 
             for test_file in test_files:
-                # unpack path is not created automatically
+                # create unpack path if not created automatically
                 if not path.exists(unpack_dir):
                     makedirs(unpack_dir)
 
