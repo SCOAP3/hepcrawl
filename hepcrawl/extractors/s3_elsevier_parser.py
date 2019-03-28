@@ -54,7 +54,7 @@ class S3ElsevierParser(object):
         node.remove_namespaces()
         record = HEPLoader(item=HEPRecord(), selector=node)
 
-        article_type = node.xpath('//article/@docsubtype').extract()
+        article_type = node.xpath('./@docsubtype').extract()
         article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
         record.add_value('journal_doctype', article_type)
 
@@ -66,12 +66,12 @@ class S3ElsevierParser(object):
             logger.info('Adding related_article_doi for article %s.' % dois)
             record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
 
-        record.add_xpath('abstract', './head/abstract[1]/abstract-sec')
-        record.add_xpath('title', './head/title/text()')
-        record.add_xpath('subtitle', './head/subtitle/text()')
+        record.add_xpath('abstract', './*[self::head | self::simple-head]/abstract[1]/abstract-sec')
+        record.add_xpath('title', './*[self::head | self::simple-head]/title/text()')
+        record.add_xpath('subtitle', './*[self::head | self::simple-head]/subtitle/text()')
 
         record.add_value('authors', self.get_authors(node, dois))
-        record.add_xpath('collaborations', "./head/author-group/collaboration/text/text()")
+        record.add_xpath('collaborations', "./*[self::head | self::simple-head]/author-group/collaboration/text/text()")
 
         record.add_value('journal_title', meta['articles'][doi]['journal'])
         record.add_value('journal_issue', meta['issue'])
@@ -117,29 +117,28 @@ class S3ElsevierParser(object):
         """Get the authors."""
         authors = []
 
-        if node.xpath("./head/author-group/author"):
-            for author_group in node.xpath("./head/author-group"):
-                for author in author_group.xpath("./author"):
-                    surname = author.xpath("./surname/text()")
-                    given_names = author.xpath("./given-name/text()")
-                    affiliations = self._get_affiliations(author_group, author, dois)
-                    orcid = self._get_orcid(author)
-                    emails = author.xpath("./e-address/text()")
+        for author_group in node.xpath("//author-group"):
+            for author in author_group.xpath("./author"):
+                surname = author.xpath("./surname/text()")
+                given_names = author.xpath("./given-name/text()")
+                affiliations = self._get_affiliations(author_group, author, dois)
+                orcid = self._get_orcid(author)
+                emails = author.xpath("./e-address/text()")
 
-                    auth_dict = {}
+                auth_dict = {}
 
-                    if surname:
-                        auth_dict['surname'] = surname.extract_first()
-                    if given_names:
-                        auth_dict['given_names'] = given_names.extract_first()
-                    if orcid:
-                        auth_dict['orcid'] = orcid
-                    if affiliations:
-                        auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
-                    if emails:
-                        auth_dict['email'] = emails.extract_first()
+                if surname:
+                    auth_dict['surname'] = surname.extract_first()
+                if given_names:
+                    auth_dict['given_names'] = given_names.extract_first()
+                if orcid:
+                    auth_dict['orcid'] = orcid
+                if affiliations:
+                    auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
+                if emails:
+                    auth_dict['email'] = emails.extract_first()
 
-                    authors.append(auth_dict)
+                authors.append(auth_dict)
 
         if not authors:
             logger.error('No authors found for article %s.' % dois)
@@ -194,8 +193,8 @@ class S3ElsevierParser(object):
         # in these cases it seems all group affiliation should be attached to all authors.
         if not affiliations:
             author_ids = author.xpath('./@author-id').extract()
-            logger.error('Not found referenced affiliations, adding all in the group '
-                         'for author with id: %s for article %s' % (dois, author_ids))
+            logger.error('Not found referenced affiliations (%s), adding all in the group for author '
+                         'with id: %s for article %s' % (ref_ids, author_ids, dois))
             affiliations += all_group_affs.extract()
 
         return affiliations

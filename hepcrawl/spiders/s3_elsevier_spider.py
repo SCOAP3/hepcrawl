@@ -299,7 +299,7 @@ class S3ElsevierSpider(Spider):
                 'publication-date': publication_date,
             }
 
-            # legacy?
+            # vtex files contain every artcile of a jorunal issue
             if 'vtex' in zip_filepath:
                 pdfa = os.path.join(os.path.split(pdf)[0], 'main_a-2b.pdf')
                 pdfa = os.path.join(target_folder, pdfa)
