@@ -6,6 +6,7 @@
 # hepcrawl is a free software; you can redistribute it and/or modify it
 # under the terms of the Revised BSD License; see LICENSE file for
 # more details.
+from freezegun import freeze_time
 import shutil
 from os import path, makedirs
 
@@ -25,7 +26,8 @@ def results():
     test_files = ('CERNR000000005008A.tar', 'CERNAB00000005657_stripped.tar', 'vtex00403986_a-2b_partial_simple.zip')
 
     with patch('hepcrawl.settings.ELSEVIER_DOWNLOAD_DIR', download_dir),\
-         patch('hepcrawl.settings.ELSEVIER_UNPACK_FOLDER', unpack_dir):
+         patch('hepcrawl.settings.ELSEVIER_UNPACK_FOLDER', unpack_dir), \
+         freeze_time("2019-03-27"):
             from hepcrawl.spiders import s3_elsevier_spider
             records = []
 

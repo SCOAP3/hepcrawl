@@ -41,6 +41,7 @@ tests_require = [
     'pytest-pep8>=1.0.6',
     'responses>=0.5.0',
     'pydocstyle>=1.0.0',
+    'freezegun~=0.3,>=0.3.11'
 ]
 
 extras_require = {
