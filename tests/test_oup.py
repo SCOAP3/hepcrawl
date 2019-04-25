@@ -191,14 +191,12 @@ def test_authors(results):
             {'affiliations': [{'value': u'Helmholtz-Institut Jena, Fr\xf6belstieg 3, Jena D-07743 Germany'}],
              'surname': u'Panahiyan',
              'given_names': u'S',
-             'full_name': u'Panahiyan, S',
-             'email': ''},
+             'full_name': u'Panahiyan, S'},
             {'affiliations': [{'value': u'Physics Department and Biruni Observatory, College of Sciences, Shiraz '
                                         u'University, Shiraz 71454, Iran'}],
              'surname': u'Hendi',
              'given_names': u'S H',
-             'full_name': u'Hendi, S H',
-             'email': ''}],
+             'full_name': u'Hendi, S H'}],
     )
 
     for expected, record in zip(expected_results, results):

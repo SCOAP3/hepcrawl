@@ -90,10 +90,15 @@ class Jats(object):
 
             affiliations = [{'value': self._clean_aff(aff)} for aff in affiliations]
 
-            authors.append({
+            author = {
                 'surname': get_first(surname, ""),
                 'given_names': get_first(given_names, ""),
                 'affiliations': affiliations,
-                'email': get_first(email, ""),
-            })
+            }
+
+            email_addr = get_first(email, "")
+            if email_addr:
+                author['email'] = email_addr
+
+            authors.append(author)
         return authors
