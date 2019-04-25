@@ -178,12 +178,17 @@ class S3SpringerParser(object):
 
             affiliations = self._get_affiliations(node, contrib)
 
-            authors.append({
+            author = {
                 'surname': get_first(surname, ""),
                 'given_names': get_first(given_names, ""),
                 'affiliations': affiliations,
-                'email': get_first(email, ""),
-            })
+            }
+
+            email_addr = get_first(email, "")
+            if email_addr:
+                author['email'] = email_addr
+
+            authors.append(author)
 
         if not authors:
             logger.error('No authors found for article %s.' % dois)
