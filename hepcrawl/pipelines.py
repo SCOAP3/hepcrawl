@@ -18,8 +18,6 @@ import datetime
 import json
 import requests
 
-from inspire_schemas.api import validate as validate_schema
-
 from .utils import get_temporary_file
 
 
@@ -86,15 +84,6 @@ class JsonWriterPipeline(object):
         return item
 
 
-def get_scoap3_creation_date(recid):
-    import urllib2
-    print('Getting creation date from repo.scoap3.org for %s' % (recid,))
-    request = urllib2.urlopen('https://repo.scoap3.org/tools.py/record_creation_date?recid=%s' % (recid,))
-    d = request.read()
-    print('date is: %s' % (d,))
-    return d
-
-
 class InspireAPIPushPipeline(object):
     """Push to INSPIRE API via tasks API."""
 
@@ -113,13 +102,6 @@ class InspireAPIPushPipeline(object):
         cr_date = datetime.datetime.now().isoformat()
         method = source
         acquisition_source_method = source
-
-        if 'control_number' in item:
-            cr_date_tmp = get_scoap3_creation_date(item['control_number'])
-            if cr_date_tmp:
-                cr_date = cr_date_tmp
-                acquisition_source_method = 'scoap3'
-                item['record_creation_date'] = cr_date
 
         item['acquisition_source'] = {
             'source': source,
