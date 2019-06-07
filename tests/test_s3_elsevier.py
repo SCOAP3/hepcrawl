@@ -182,8 +182,7 @@ def test_publication_info(results):
         dict(journal_title="Physics Letters B",
              journal_volume='791 C',
              journal_year=2019,
-             journal_artid='34445',
-             journal_issue='0370-2693'),
+             journal_artid='34445'),
     )
     for expected, record in zip(expected_results, results):
         for k, v in expected.items():
