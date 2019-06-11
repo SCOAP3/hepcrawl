@@ -232,7 +232,6 @@ class S3ElsevierSpider(Spider):
             tmp = {
                 'volume': "%s %s" % (issue.xpath('//volume-issue-number/vol-first/text()')[0].extract(),
                                      issue.xpath('//volume-issue-number/suppl/text()')[0].extract()),
-                'issue': issue.xpath('//issn/text()')[0].extract()
             }
             issue_file = os.path.join(target_folder, filename,
                                       issue.xpath('./files-info/ml/pathname/text()')[0].extract())

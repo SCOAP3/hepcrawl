@@ -74,7 +74,6 @@ class S3ElsevierParser(object):
         record.add_xpath('collaborations', "./*[self::head | self::simple-head]/author-group/collaboration/text/text()")
 
         record.add_value('journal_title', meta['articles'][doi]['journal'])
-        record.add_value('journal_issue', meta['issue'])
         record.add_value('journal_volume', meta['volume'])
         record.add_xpath('journal_artid', '//item-info/aid/text()')
 
