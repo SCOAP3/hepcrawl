@@ -11,6 +11,7 @@
 
 from __future__ import absolute_import, print_function
 
+import logging
 import os
 
 from scrapy import Request
@@ -18,7 +19,10 @@ from scrapy.spiders import XMLFeedSpider
 
 from ..items import HEPRecord
 from ..loaders import HEPLoader
-from ..utils import get_license, get_first
+from ..utils import get_license
+
+
+logger = logging.getLogger(__name__)
 
 
 class Scoap3Spider(XMLFeedSpider):
@@ -120,7 +124,6 @@ class Scoap3Spider(XMLFeedSpider):
             ar = arxiv.xpath("./subfield[@code='a']/text()").extract_first()
             if ar:
                 arxivs.append({
-                    'source': 'arXiv',
                     'value': ar
                 })
         return arxivs
@@ -179,15 +182,21 @@ class Scoap3Spider(XMLFeedSpider):
                          "./datafield[@tag='245']/subfield[@code='a']/text()")
         record.add_xpath('date_published',
                          "./datafield[@tag='260']/subfield[@code='c']/text()")
-        record.add_xpath('page_nr',
-                         "./datafield[@tag='300']/subfield[@code='a']/text()")
-        record.add_xpath('dois',
-                         "./datafield[@tag='024' and @ind1='7'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()")
+        dois = node.xpath("./datafield[@tag='024' and @ind1='7'][subfield[@code='2'][contains(text(), 'DOI')]]/subfield[@code='a']/text()").extract()
+        record.add_value('dois', dois)
+        page_nr = node.xpath("./datafield[@tag='300']/subfield[@code='a']/text()")
+        if page_nr:
+            try:
+                page_nr = map(int, page_nr.extract())
+                record.add_value('page_nr', page_nr)
+            except ValueError as e:
+                logger.error('Failed to parse last_page or first_page for artcile %s: %s' % (dois, e))
+
         record.add_value('journal_title', self.get_journal_title(node))
         record.add_xpath('journal_volume',
                          "./datafield[@tag='773']/subfield[@code='a']/text()")
 
-        record.add_value('report_numbers', self.get_arxivs(node))
+        record.add_value('arxiv_eprints', self.get_arxivs(node))
         journal_year = node.xpath(
             "./datafield[@tag='773']/subfield[@code='y']/text()"
         ).extract()
@@ -229,8 +238,5 @@ class Scoap3Spider(XMLFeedSpider):
         record.add_value('local_files', local_files)
         record.add_xpath('source',
                          "./datafield[@tag='260']/subfield[@code='b']/text()")
-
-        control_number = node.xpath("./controlfield[@tag='001']/text()").extract_first()
-        record.add_value('control_number', control_number)
 
         return record.load_item()
