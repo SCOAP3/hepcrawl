@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://repo.scoap3.org/css/oai2.xsl.v1.0" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2019-06-18T09:54:31Z</responseDate>
+    <request from="2019-05-20" verb="ListRecords" set="CHINESE_PHYSICS_C" metadataPrefix="marcxml">
+        http://repo.scoap3.org/oai2d
+    </request>
+    <ListRecords>
+        <record>
+            <header>
+                <identifier>oai:repo.scoap3.org:32655</identifier>
+                <datestamp>2019-05-20T12:56:46Z</datestamp>
+                <setSpec>PR_China</setSpec>
+                <setSpec>CHINESE_PHYSICS_C</setSpec>
+            </header>
+            <metadata>
+                <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                             xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
+                             type="Bibliographic">
+                    <marc:leader>00000coc 2200000uu 4500</marc:leader>
+                    <marc:controlfield tag="001">32655</marc:controlfield>
+                    <marc:controlfield tag="005">20190520145645.0</marc:controlfield>
+                    <marc:datafield tag="022" ind1=" " ind2=" ">
+                        <marc:subfield code="a">1674-1137</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="024" ind1="7" ind2=" ">
+                        <marc:subfield code="a">10.1088/1674-1137/43/6/063101</marc:subfield>
+                        <marc:subfield code="2">DOI</marc:subfield>
+                        <marc:subfield code="t">2019-05-20T10:21:36Z</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="037" ind1=" " ind2=" ">
+                        <marc:subfield code="a">arXiv:1903.11243</marc:subfield>
+                        <marc:subfield code="9">arXiv</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="100" ind1=" " ind2=" ">
+                        <marc:subfield code="a">Zhao, Ya-Peng</marc:subfield>
+                        <marc:subfield code="v">
+                            School of Physics, Nanjing University, Nanjing 210093, China
+                        </marc:subfield>
+                        <marc:subfield code="w">China</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="245" ind1=" " ind2=" ">
+                        <marc:subfield code="a">Chiral phase transition from the Dyson-Schwinger equations in a finite
+                            spherical volume Supported by the National Natural Science Foundation of China (11475085,
+                            11535005, 11690030, 11574145)
+                        </marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="260" ind1=" " ind2=" ">
+                        <marc:subfield code="c">2019-06-01</marc:subfield>
+                        <marc:subfield code="b">Institute of Physics Publishing/Chinese Academy of Sciences
+                        </marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="300" ind1=" " ind2=" ">
+                        <marc:subfield code="a">5</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="520" ind1=" " ind2=" ">
+                        <marc:subfield code="a">Within the framework of the Dyson-Schwinger equations and by means of
+                            Multiple Reflection Expansion, we study the effect of finite volume on the chiral phase
+                            transition in a sphere, and discuss in particular its influence on the possible location of
+                            the critical end point (CEP). According to our calculations, when we take a sphere instead
+                            of a cube, the influence of finite volume on phase transition is not as significant as
+                            previously calculated. For instance, as the radius of the spherical volume decreases from
+                            infinite to 2 fm, the critical temperature
+                            , at zero chemical potential and finite temperature, drops only slightly. At finite chemical
+                            potential and finite temperature, the location of CEP shifts towards smaller temperature and
+                            higher chemical potential, but the amplitude of the variation does not exceed 20%. As a
+                            result, we find that not only the size of the volume but also its shape have a considerable
+                            impact on the phase transition.
+                        </marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="540" ind1=" " ind2=" ">
+                        <marc:subfield code="a">CC-BY-3.0</marc:subfield>
+                        <marc:subfield code="u">http://creativecommons.org/licenses/by/3.0/</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="542" ind1=" " ind2=" ">
+                        <marc:subfield code="f">© 2019 Chinese Physical Society and the Institute of High Energy Physics
+                            of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese
+                            Academy of Sciences and IOP Publishing Ltd
+                        </marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="592" ind1=" " ind2=" ">
+                        <marc:subfield code="a">2019-05-20</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="700" ind1=" " ind2=" ">
+                        <marc:subfield code="a">Zhang, Rui-Rui</marc:subfield>
+                        <marc:subfield code="v">
+                            School of Physics, Nanjing University, Nanjing 210093, China
+                        </marc:subfield>
+                        <marc:subfield code="w">China</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="700" ind1=" " ind2=" ">
+                        <marc:subfield code="a">Zhang, Han</marc:subfield>
+                        <marc:subfield code="v">
+                            School of Physics, Nanjing University, Nanjing 210093, China
+                        </marc:subfield>
+                        <marc:subfield code="v">
+                            Collaborative Innovation Center of Advanced Microstructures, Nanjing University, Nanjing
+                            210093, China
+                        </marc:subfield>
+                        <marc:subfield code="w">China</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="700" ind1=" " ind2=" ">
+                        <marc:subfield code="a">Zong, Hong-Shi</marc:subfield>
+                        <marc:subfield code="v">
+                            School of Physics, Nanjing University, Nanjing 210093, China
+                        </marc:subfield>
+                        <marc:subfield code="v">
+                            State Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, CAS, Beijing
+                            100190, China
+                        </marc:subfield>
+                        <marc:subfield code="v">
+                            Joint Center for Particle, Nuclear Physics and Cosmology, Nanjing 210093, China
+                        </marc:subfield>
+                        <marc:subfield code="w">China</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="773" ind1=" " ind2=" ">
+                        <marc:subfield code="p">Chinese Phys. C</marc:subfield>
+                        <marc:subfield code="v">43</marc:subfield>
+                        <marc:subfield code="n">6</marc:subfield>
+                        <marc:subfield code="c">063101</marc:subfield>
+                        <marc:subfield code="y">2019</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="856" ind1="4" ind2=" ">
+                        <marc:subfield code="s">587604</marc:subfield>
+                        <marc:subfield code="u">http://repo.scoap3.org/record/32655/files/fulltext.pdf</marc:subfield>
+                    </marc:datafield>
+                    <marc:datafield tag="856" ind1="4" ind2=" ">
+                        <marc:subfield code="s">82930</marc:subfield>
+                        <marc:subfield code="u">http://repo.scoap3.org/record/32655/files/fulltext.xml</marc:subfield>
+                    </marc:datafield>
+                </marc:record>
+            </metadata>
+        </record>
+    </ListRecords>
+</OAI-PMH>
+
