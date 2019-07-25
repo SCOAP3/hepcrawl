@@ -6,7 +6,7 @@
 # hepcrawl is a free software; you can redistribute it and/or modify it
 # under the terms of the Revised BSD License; see LICENSE file for
 # more details.
-
+import ftplib
 import os
 import re
 from operator import itemgetter
@@ -18,6 +18,7 @@ from urlparse import urlparse
 
 import ftputil
 import requests
+from ftputil import session
 
 from scrapy import Selector
 
@@ -25,6 +26,13 @@ from .mappings import LICENSES, LICENSE_TEXTS
 
 RE_FOR_THE = re.compile(r'\b(?:for|on behalf of|representing)\b', re.IGNORECASE)
 INST_PHRASES = ['for the development', ]
+
+ftp_session_factory = session.session_factory(
+    base_class=ftplib.FTP,
+    port=21,
+    encrypt_data_channel=False,
+    use_passive_mode=True
+)
 
 
 def unzip_files(filename, target_folder, type=None):
@@ -56,7 +64,7 @@ def ftp_connection_info(ftp_host, netrc_file):
 
 def ftp_list_files(server_folder, target_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
-    with ftputil.FTPHost(server, user, password) as host:
+    with ftputil.FTPHost(server, user, password, session_factory=ftp_session_factory) as host:
         files = host.listdir(host.curdir + '/' + server_folder)
         missing_files = []
         all_files = []
@@ -71,7 +79,7 @@ def ftp_list_files(server_folder, target_folder, server, user, password):
 
 def ftp_list_folders(server_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
-    with ftputil.FTPHost(server, user, password) as host:
+    with ftputil.FTPHost(server, user, password, session_factory=ftp_session_factory) as host:
         folders = host.listdir(host.curdir + '/' + server_folder)
         all_folders = []
         for folder in folders:
