@@ -15,6 +15,7 @@ import logging
 import os
 
 import ftputil
+from ftputil.error import FTPOSError
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
 from time import localtime, strftime
@@ -78,50 +79,104 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
 
         self.log('Harvest started.', logging.INFO)
 
+        # if package_path is defined, don't connect to FTP server
         if self.package_path:
-            # local package handling.
             self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
-            yield Request(self.package_path, callback=self.handle_package_ftp, meta={'local': True})
-        else:
-            files = self.download_files_from_ftp()
-            for f in files:
-                yield f
+            # return value has to be iterable
+            return [Request(self.package_path, callback=self.handle_package_ftp), ]
 
-    def download_files_from_ftp(self):
-        self.log('Downloading files from FTP...', logging.INFO)
-        # connect to ftp and download files
+        # connect to FTP server, yield the files to download and process
+        # at the end of the process FTP will be cleaned up, all processed files will be deleted
+        return self.download_files_from_ftp(self.ftp_folder)
+
+    def delete_empty_folders(self, host, ftp_folder):
+        """Delete all empty folders under 'ftp_folder'"""
+
+        for folder_path in host.listdir(ftp_folder):
+            if not host.listdir(folder_path):
+                host.rmdir(folder_path)
+                self.log('Deleted folder: %s' % folder_path, logging.INFO)
+            else:
+                self.log('Deleted folder: %s' % folder_path, logging.INFO)
+
+    def delete_downloaded_files(self, host, downloaded_files):
+        """Delete all files in the 'downloaded_files' list"""
+        for file_path in downloaded_files:
+            host.remove(file_path)
+            self.log('Deleted file: %s' % file_path, logging.INFO)
+
+    def cleanup_ftp(self, host, ftp_folder, downloaded_files):
+        """Deleting all files which has been downloaded and empty folders under 'ftp_folder'."""
+        self.log('Cleaning up FTP...', logging.INFO)
+
+        try:
+            self.delete_downloaded_files(host, downloaded_files)
+            self.delete_empty_folders(host, ftp_folder)
+            self.log('FTP cleanup done.', logging.INFO)
+        except FTPOSError as e:
+            self.log('Failed to cleanup ftp! Error: %s' % e, logging.ERROR)
+
+    def collect_files_to_download(self, host, ftp_folder):
+        """
+        Collects all the files in under the 'ftp_folder' folder.
+
+        Files starting with a dot (.) are omitted.
+        :param host:
+        :return: list of all found file's path
+        """
+
+        collected_files = []
+
+        for path, _, files in host.walk(ftp_folder):
+            for filename in files:
+                if filename.startswith('.'):
+                    continue
+
+                full_path = os.path.join(path, filename)
+                if filename.endwith('.zip') or filename == 'go.xml':
+                    collected_files.append(full_path)
+                else:
+                    self.log('File with invalid extension on FTP path=%s' % full_path, logging.WARNING)
+
+        return collected_files
+
+    def download_files_from_ftp(self, ftp_folder):
+        """"""
+
+        filename_prefix = strftime('%Y-%m-%d_%H:%M:%S', localtime())
+
+        # open the FTP connection
         ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
-        self.log('Creating FTP host...', logging.INFO)
         with ftputil.FTPHost(ftp_host, ftp_params['ftp_user'], ftp_params['ftp_password'],
                              session_factory=ftp_session_factory) as host:
 
-            self.log('Listing available folders', logging.INFO)
-            for folder in ftp_list_folders_with_host(self.ftp_folder, host):
-                new_download_name = strftime('%Y-%m-%d_%H:%M:%S', localtime())
-                new_files, _ = ftp_list_files_with_host(
-                    os.path.join(self.ftp_folder, folder), self.target_folder,
-                    host
-                )
+            self.log('FTP connection established.', logging.INFO)
 
-                self.log('Found new files on FTP: %s' % new_files, logging.INFO)
-                for remote_file in new_files:
-                    self.log('Downloading file: %s' % remote_file, logging.INFO)
-                    # Cast to byte-string for scrapy compatibility
-                    remote_file = str(remote_file)
-                    if '.zip' in remote_file:
-                        local_filename = os.path.join(
-                            self.target_folder, "_".join([new_download_name, os.path.basename(remote_file)])
-                        )
-                        host.download(remote_file, local_filename)
-                        yield Request('file://' + local_filename, callback=self.handle_package_ftp, meta={'local': True})
+            # find all the files it's needed to download
+            files_to_download = self.collect_files_to_download(host, ftp_folder)
+            for file_path in files_to_download:
+                if file_path.endswith('go.xml'):
+                    # skip go.xml
+                    self.log('Skipping file: %s' % file_path, logging.INFO)
+                    continue
+
+                # create the filename and download the file
+                self.log('Downloading file: %s' % file_path, logging.INFO)
+                file_name = '%s_%s' % (filename_prefix, os.path.basename(file_path))
+                local_filename = os.path.join(self.target_folder, file_name)
+                host.download(file_path, local_filename)
+
+                # yield the downloaded file
+                yield Request('file://' + local_filename, callback=self.handle_package_ftp)
+
+        # after processing the files clean up FTP
+        self.cleanup_ftp(host, ftp_folder, files_to_download)
 
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""
-        if 'local' in response.meta:
-            # add local package name without 'file://'
-            zip_filepath = response.url.replace('file://', '')
-        else:
-            zip_filepath = response.body
+
+        # remove local schema from path
+        zip_filepath = response.url.replace('file://', '')
 
         self.log('Processing ftp package: %s' % zip_filepath, logging.INFO)
 
