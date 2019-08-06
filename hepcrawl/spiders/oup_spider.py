@@ -113,7 +113,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                             self.target_folder, "_".join([new_download_name, os.path.basename(remote_file)])
                         )
                         host.download(remote_file, local_filename)
-                        yield Request(local_filename, callback=self.handle_package_ftp, meta={'local': True})
+                        yield Request('file://' + local_filename, callback=self.handle_package_ftp, meta={'local': True})
 
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""
