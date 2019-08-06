@@ -14,15 +14,16 @@ from __future__ import absolute_import, print_function
 import logging
 import os
 
+import ftputil
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
 from time import localtime, strftime
 
 from hepcrawl.extractors.oup_parser import OUPParser
 from ..utils import (
-    ftp_list_files,
-    ftp_connection_info,
-    unzip_files, ftp_list_folders)
+    ftp_connection_info, unzip_files, ftp_session_factory,
+    ftp_list_folders_with_host, ftp_list_files_with_host
+)
 
 from ..settings import OXFORD_DOWNLOAD_DIR
 
@@ -82,38 +83,37 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
             self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
             yield Request(self.package_path, callback=self.handle_package_ftp, meta={'local': True})
         else:
-            # connect to ftp and download files
-            ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
-            for folder in ftp_list_folders(
-                self.ftp_folder,
-                server=ftp_host,
-                user=ftp_params['ftp_user'],
-                password=ftp_params['ftp_password']
-            ):
+            files = self.download_files_from_ftp()
+            for f in files:
+                yield f
+
+    def download_files_from_ftp(self):
+        self.log('Downloading files from FTP...', logging.INFO)
+        # connect to ftp and download files
+        ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
+        self.log('Creating FTP host...', logging.INFO)
+        with ftputil.FTPHost(ftp_host, ftp_params['ftp_user'], ftp_params['ftp_password'],
+                             session_factory=ftp_session_factory) as host:
+
+            self.log('Listing available folders', logging.INFO)
+            for folder in ftp_list_folders_with_host(self.ftp_folder, host):
                 new_download_name = strftime('%Y-%m-%d_%H:%M:%S', localtime())
-                new_files, _ = ftp_list_files(
-                    os.path.join(self.ftp_folder, folder),
-                    self.target_folder,
-                    server=ftp_host,
-                    user=ftp_params['ftp_user'],
-                    password=ftp_params['ftp_password']
+                new_files, _ = ftp_list_files_with_host(
+                    os.path.join(self.ftp_folder, folder), self.target_folder,
+                    host
                 )
 
-                self.log('New files on FTP: %s' % new_files, logging.INFO)
+                self.log('Found new files on FTP: %s' % new_files, logging.INFO)
                 for remote_file in new_files:
-                    self.log('Processing file: %s' % remote_file, logging.INFO)
+                    self.log('Downloading file: %s' % remote_file, logging.INFO)
                     # Cast to byte-string for scrapy compatibility
                     remote_file = str(remote_file)
                     if '.zip' in remote_file:
-                        ftp_params["ftp_local_filename"] = os.path.join(
+                        local_filename = os.path.join(
                             self.target_folder, "_".join([new_download_name, os.path.basename(remote_file)])
                         )
-                        remote_url = "ftp://{0}/{1}".format(ftp_host, remote_file)
-                        yield Request(
-                            str(remote_url),
-                            meta=ftp_params,
-                            callback=self.handle_package_ftp
-                        )
+                        host.download(remote_file, local_filename)
+                        yield Request(local_filename, callback=self.handle_package_ftp, meta={'local': True})
 
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""

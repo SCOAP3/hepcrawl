@@ -62,30 +62,40 @@ def ftp_connection_info(ftp_host, netrc_file):
     return ftp_host, connection_params
 
 
+def ftp_list_files_with_host(server_folder, target_folder, host):
+    """List files from given FTP's server folder to target folder."""
+    files = host.listdir(host.curdir + '/' + server_folder)
+    missing_files = []
+    all_files = []
+    for filename in files:
+        destination_file = os.path.join(target_folder, filename)
+        source_file = os.path.join(server_folder, filename)
+        if not os.path.exists(destination_file):
+            missing_files.append(source_file)
+        all_files.append(source_file)
+    return all_files, missing_files
+
+
+def ftp_list_folders_with_host(server_folder, host):
+    """List files from given FTP's server folder to target folder."""
+    folders = host.listdir(host.curdir + '/' + server_folder)
+    all_folders = []
+    for folder in folders:
+        if not folder.startswith('.'):
+            all_folders.append(folder)
+    return all_folders
+
+
 def ftp_list_files(server_folder, target_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
     with ftputil.FTPHost(server, user, password, session_factory=ftp_session_factory) as host:
-        files = host.listdir(host.curdir + '/' + server_folder)
-        missing_files = []
-        all_files = []
-        for filename in files:
-            destination_file = os.path.join(target_folder, filename)
-            source_file = os.path.join(server_folder, filename)
-            if not os.path.exists(destination_file):
-                missing_files.append(source_file)
-            all_files.append(source_file)
-    return all_files, missing_files
+        return ftp_list_files_with_host(server_folder, target_folder, host)
 
 
 def ftp_list_folders(server_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
     with ftputil.FTPHost(server, user, password, session_factory=ftp_session_factory) as host:
-        folders = host.listdir(host.curdir + '/' + server_folder)
-        all_folders = []
-        for folder in folders:
-            if not folder.startswith('.'):
-                all_folders.append(folder)
-    return all_folders
+        return ftp_list_folders_with_host(server_folder, host)
 
 
 def get_first(iterable, default=None):
