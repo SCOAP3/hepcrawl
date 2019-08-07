@@ -21,10 +21,7 @@ from scrapy.spiders import XMLFeedSpider
 from time import localtime, strftime
 
 from hepcrawl.extractors.oup_parser import OUPParser
-from ..utils import (
-    ftp_connection_info, unzip_files, ftp_session_factory,
-    ftp_list_folders_with_host, ftp_list_files_with_host
-)
+from ..utils import ftp_connection_info, unzip_files, ftp_session_factory
 
 from ..settings import OXFORD_DOWNLOAD_DIR
 
@@ -97,7 +94,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 host.rmdir(folder_path)
                 self.log('Deleted folder: %s' % folder_path, logging.INFO)
             else:
-                self.log('Deleted folder: %s' % folder_path, logging.INFO)
+                self.log('Skipping non-empty folder: %s' % folder_path, logging.INFO)
 
     def delete_downloaded_files(self, host, downloaded_files):
         """Delete all files in the 'downloaded_files' list"""
@@ -114,7 +111,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
             self.delete_empty_folders(host, ftp_folder)
             self.log('FTP cleanup done.', logging.INFO)
         except FTPOSError as e:
-            self.log('Failed to cleanup ftp! Error: %s' % e, logging.ERROR)
+            self.log('Failed to cleanup FTP! Error: %s' % e, logging.ERROR)
 
     def collect_files_to_download(self, host, ftp_folder):
         """
