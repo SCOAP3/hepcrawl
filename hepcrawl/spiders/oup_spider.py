@@ -90,9 +90,16 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
         """Delete all empty folders under 'ftp_folder'"""
 
         for folder_path in host.listdir(ftp_folder):
+            if os.path.basename(folder_path).startswith('.'):
+                self.log('Skipping hidden directory: %s' % folder_path, logging.INFO)
+                continue
+
             if not host.listdir(folder_path):
-                host.rmdir(folder_path)
-                self.log('Deleted folder: %s' % folder_path, logging.INFO)
+                try:
+                    host.rmdir(folder_path)
+                    self.log('Deleted folder: %s' % folder_path, logging.INFO)
+                except FTPOSError as e:
+                    self.log('Failed to delete folder. folder_path=%s error=%s' % (folder_path, e.message), logging.ERROR)
             else:
                 self.log('Skipping non-empty folder: %s' % folder_path, logging.INFO)
 
