@@ -130,7 +130,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                     continue
 
                 full_path = os.path.join(path, filename)
-                if filename.endwith('.zip') or filename == 'go.xml':
+                if filename.endswith('.zip') or filename == 'go.xml':
                     collected_files.append(full_path)
                 else:
                     self.log('File with invalid extension on FTP path=%s' % full_path, logging.WARNING)
@@ -166,8 +166,8 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 # yield the downloaded file
                 yield Request('file://' + local_filename, callback=self.handle_package_ftp)
 
-        # after processing the files clean up FTP
-        self.cleanup_ftp(host, ftp_folder, files_to_download)
+            # after processing the files clean up FTP
+            self.cleanup_ftp(host, ftp_folder, files_to_download)
 
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""
