@@ -90,6 +90,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
         """Delete all empty folders under 'ftp_folder'"""
 
         for folder_path in host.listdir(ftp_folder):
+            folder_path = os.path.join(ftp_folder, folder_path)
             if os.path.basename(folder_path).startswith('.'):
                 self.log('Skipping hidden directory: %s' % folder_path, logging.INFO)
                 continue
