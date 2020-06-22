@@ -15,7 +15,7 @@ readme = open('README.rst').read()
 
 install_requires = [
     'autosemver>=0.1.4',
-    'inspire-schemas~=1.0',
+    'inspire-schemas==59.4.2',
     'inspire-crawler==1.1.2',
     'Scrapy>=1.1.0',
     # TODO: unpin once they support wheel building again

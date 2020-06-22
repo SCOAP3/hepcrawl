@@ -116,9 +116,12 @@ CELERY_DISABLE_RATE_LIMITS = True
 # ====
 JOBDIR = "jobs"
 
+#ELSEVIER_WORKING_DIR = "/eos/project/s/scoap3repo/BETA/harvesting/Elsevier"
+ELSEVIER_WORKING_DIR = "/virtualenv/data/elsevier"
+
 ELSEVIER_SOURCE_DIR = "/mnt/elsevier-sftp"
-ELSEVIER_DOWNLOAD_DIR = "/eos/project/s/scoap3repo/BETA/harvesting/Elsevier/download"
-ELSEVIER_UNPACK_FOLDER = "/eos/project/s/scoap3repo/BETA/harvesting/Elsevier/unpacked"
+ELSEVIER_DOWNLOAD_DIR = os.path.join(ELSEVIER_WORKING_DIR, "download")
+ELSEVIER_UNPACK_FOLDER = os.path.join(ELSEVIER_WORKING_DIR, "unpacked")
 
 OXFORD_DOWNLOAD_DIR = "/eos/project/s/scoap3repo/BETA/harvesting/OUP/download"
 OXFORD_UNPACK_FOLDER = "/eos/project/s/scoap3repo/BETA/harvesting/OUP/unpacked"
