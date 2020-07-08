@@ -116,11 +116,10 @@ CELERY_DISABLE_RATE_LIMITS = True
 # ====
 JOBDIR = "jobs"
 
-BASE_WORKING_DIR = '/eos/project/s/scoap3repo/BETA/harvesting/'
-# BASE_WORKING_DIR = "/virtualenv/data/"  # to be used with local docker environment. TODO: autoselect
+# these directory configs will be overwritten in production configuration
+BASE_WORKING_DIR = "/virtualenv/data/"
 
 ELSEVIER_WORKING_DIR = os.path.join(BASE_WORKING_DIR, "Elsevier")
-
 ELSEVIER_SOURCE_DIR = "/mnt/elsevier-sftp"
 ELSEVIER_DOWNLOAD_DIR = os.path.join(ELSEVIER_WORKING_DIR, "download")
 ELSEVIER_UNPACK_FOLDER = os.path.join(ELSEVIER_WORKING_DIR, "unpacked")
