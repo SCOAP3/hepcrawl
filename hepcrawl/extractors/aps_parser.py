@@ -111,7 +111,8 @@ class APSParser(object):
                 if 'affiliations' in article and 'affiliationIds' in author:
                     affiliations = build_dict(article['affiliations'], 'id')
                     for aff_id in author['affiliationIds']:
-                        author_affiliations.append({'value': affiliations[aff_id]['name']})
+                        if aff_id in affiliations:
+                            author_affiliations.append({'value': affiliations[aff_id]['name']})
 
                 surname = ''
                 given_name = ''
