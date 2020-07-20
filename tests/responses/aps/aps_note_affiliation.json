@@ -1,0 +1,150 @@
+{
+  "data": [
+    {
+      "abstract": {
+        "value": "<p>We study the behavior of a universal combination of susceptibility and correlation length in the Ising model in two and three dimensions, in presence of both magnetic and thermal perturbations, in the neighborhood of the critical point. In three dimensions we address the problem using a parametric representation of the equation of state. In two dimensions we make use of the exact integrability of the model along the thermal and the magnetic axes. Our results can be used as a sort of “reference frame” to chart the critical region of the model. While our results can be applied in principle to any possible realization of the Ising universality class, we address in particular, as specific examples, three instances of Ising behavior in finite temperature QCD related in various ways to the deconfinement transition. In particular, in the last of these examples, we study the critical ending point in the finite density, finite temperature phase diagram of QCD. In this finite density framework, due to the well-known sign problem, Monte Carlo simulations are not possible and thus a direct comparison of experimental results with quantum field theory & statistical mechanics predictions like the one we discuss in this paper may be important. Moreover in this example it is particularly difficult to disentangle “magnetic-like” from “thermal-like” observables and thus an explicit charting of the neighborhood of the critical point can be particularly useful.</p>",
+        "format": "html"
+      },
+      "articleType": "article",
+      "authors": [
+        {
+          "type": "Person",
+          "name": "Michele Caselle",
+          "firstname": "Michele",
+          "surname": "Caselle",
+          "affiliationIds": [
+            "a1"
+          ]
+        },
+        {
+          "type": "Person",
+          "name": "Marianna Sorba",
+          "firstname": "Marianna",
+          "surname": "Sorba",
+          "affiliationIds": [
+            "a1",
+            "a2",
+            "n1"
+          ]
+        }
+      ],
+      "affiliations": [
+        {
+          "name": "Department of Physics, University of Turin and INFN, Turin, Via Pietro Giuria 1, I-10125 Turin, Italy",
+          "id": "a1"
+        },
+        {
+          "name": "SISSA and INFN, Sezione di Trieste, Via Bonomea 265, 34136 Trieste, Italy",
+          "id": "a2"
+        }
+      ],
+      "notes": [
+        {
+          "format": "html",
+          "value": "<p>msorba@sissa.it</p>",
+          "label": "*",
+          "id": "n1",
+          "type": "contrib"
+        }
+      ],
+      "date": "2020-07-10",
+      "type": "article",
+      "metadata_last_modified_at": "2020-07-10T15:14:50+0000",
+      "last_modified_at": "2020-07-10T15:14:50+0000",
+      "id": "10.1103/PhysRevD.102.014505",
+      "identifiers": {
+        "doi": "10.1103/PhysRevD.102.014505",
+        "arxiv": "arXiv:2003.12332"
+      },
+      "issue": {
+        "number": "1"
+      },
+      "pageStart": "014505",
+      "hasArticleId": true,
+      "numPages": 12,
+      "classificationSchemes": {
+        "physh": {
+          "concepts": [
+            {
+              "id": "60c0e91144c3422489b10c5a46dc82c3",
+              "facet": {
+                "id": "b96dac97-ab85-4320-892d-9b245caf097f"
+              },
+              "primary": false
+            },
+            {
+              "id": "f2a9db7816514a94b66e3e3d72056760",
+              "facet": {
+                "id": "bdb1ef91-b776-4e36-8f8f-3e93666bac1e"
+              },
+              "primary": false
+            },
+            {
+              "id": "b9110fa60c374c22b39be90d8cacdc6f",
+              "facet": {
+                "id": "bdb1ef91-b776-4e36-8f8f-3e93666bac1e"
+              },
+              "primary": false
+            },
+            {
+              "id": "ee82ad04-6c47-46a4-a70d-c9a7d7989f6a",
+              "facet": {
+                "id": "bdb1ef91-b776-4e36-8f8f-3e93666bac1e"
+              },
+              "primary": false
+            },
+            {
+              "id": "0660b3fe-654b-49c9-a7fa-79f18efe2aa0",
+              "facet": {
+                "id": "bdb1ef91-b776-4e36-8f8f-3e93666bac1e"
+              },
+              "primary": false
+            },
+            {
+              "id": "8bf49057-d087-4218-b1ad-0678d26c2751",
+              "facet": {
+                "id": "f45b3c40-959c-4e90-ba0e-38232980802a"
+              },
+              "primary": true
+            }
+          ],
+          "disciplines": [
+            "9f5c878e-b7b7-4030-bdb9-21a24ad97422",
+            "0213a5a0-0742-43f3-804b-3ccea08a13c0",
+            "419d860ece5c42f1b6ad4dee9f4fbf60"
+          ]
+        }
+      },
+      "publisher": {
+        "name": "APS"
+      },
+      "rights": {
+        "rightsStatement": "Published by the American Physical Society",
+        "copyrightYear": 2020,
+        "copyrightHolders": [],
+        "creativeCommons": true,
+        "licenses": [
+          {
+            "url": "https://creativecommons.org/licenses/by/4.0/",
+            "licenseStatement": "Published by the American Physical Society under the terms of the <a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International</a> license. Further distribution of this work must maintain attribution to the author(s) and the published article’s title, journal citation, and DOI. Funded by SCOAP<sup>3</sup>."
+          }
+        ]
+      },
+      "journal": {
+        "id": "PRD",
+        "abbreviatedName": "Phys. Rev. D",
+        "name": "Physical Review D"
+      },
+      "title": {
+        "value": "Charting the scaling region of the Ising universality class in two and three dimensions",
+        "format": "html"
+      },
+      "tocSection": {
+        "label": "Lattice field theories, lattice QCD"
+      },
+      "volume": {
+        "number": "102"
+      }
+    }
+  ]
+}

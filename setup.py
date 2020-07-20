@@ -14,34 +14,51 @@ from setuptools import setup, find_packages
 readme = open('README.rst').read()
 
 install_requires = [
-    'autosemver>=0.1.4',
-    'inspire-schemas==59.4.2',
+    'autosemver==0.5.2',
+    'jsonresolver==0.2.1',
+    'Twisted==17.5.0',
+    'Automat==0.6.0',
+    'dulwich==0.17.3',
+    'inspire-schemas==59.3.2',
     'inspire-crawler==1.1.2',
-    'Scrapy>=1.1.0',
+    'invenio-celery==1.0.0b2',
+    'invenio-pidstore==1.0.0',
+    'invenio-i18n==1.0.0',
+    'invenio-rest==1.0.0',
+    'invenio-files-rest==1.0.0b1',
+    'invenio-records-rest==1.4.2',
+    'invenio-records-files==1.0.0a11',
+    'invenio-accounts==1.0.2',
+    'pluggy==0.12.0',
+    'cookiecutter==1.4.0',
+    'invenio-base==1.0.2',
+    'Flask-Breadcrumbs==0.4.0',
+    'pyasn1-modules==0.0.9',
+    'Scrapy==1.4.0',
     # TODO: unpin once they support wheel building again
     'scrapyd==1.2.0',
-    'scrapyd-client>=1.0.1',
-    'six>=1.9.0',
-    'requests>=2.8.1',
-    'celery>=3.1.23,<4.0',
-    'redis>=2.10.5',
-    'pyasn1>=0.1.8',  # Needed for dependency resolving.
-    'LinkHeader>=0.4.3',
-    'furl>=0.4.95',
-    'ftputil>=3.3.1',
-    'python-dateutil>=2.4.2',
+    'scrapyd-client==1.0.1',
+    'six==1.11.0',
+    'requests==2.20.0',
+    'celery==3.1.26.post2',
+    'redis==2.10.6',
+    'pyasn1==0.2.3',  # Needed for dependency resolving.
+    'LinkHeader==0.4.3',
+    'furl==0.5.6',
+    'ftputil==3.3.1',
+    'python-dateutil==2.6.1',
 ]
 
 tests_require = [
-    'check-manifest>=0.25',
-    'coverage>=4.0',
+    'check-manifest==0.41',
+    'coverage==4.5.4',
     'isort==4.2.2',
-    'pytest>=3.6.0,~=3.6',
-    'pytest-cov>=2.1.0',
-    'pytest-pep8>=1.0.6',
-    'responses>=0.5.0',
-    'pydocstyle>=1.0.0',
-    'freezegun~=0.3,>=0.3.11'
+    'pytest==4.6.4',
+    'pytest-cov==2.10.0',
+    'pytest-pep8==1.0.6',
+    'responses==0.5.1',
+    'pydocstyle==1.0.0',
+    'freezegun==0.3.11'
 ]
 
 extras_require = {
@@ -56,8 +73,7 @@ extras_require = {
 }
 
 setup_requires = [
-    'autosemver>=0.1.4',
-    'pytest-runner>=2.7.0',
+    'pytest-runner~=2.7.0',
 ]
 
 extras_require['all'] = []
