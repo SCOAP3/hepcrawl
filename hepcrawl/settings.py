@@ -117,7 +117,10 @@ CELERY_DISABLE_RATE_LIMITS = True
 JOBDIR = "jobs"
 
 # these directory configs will be overwritten in production configuration
-BASE_WORKING_DIR = "/virtualenv/data/"
+BASE_WORKING_DIR = os.environ.get(
+    'HEPCRAWL_BASE_WORKING_DIR',
+    '/virtualenv/data/'
+)
 
 ELSEVIER_WORKING_DIR = os.path.join(BASE_WORKING_DIR, "Elsevier")
 ELSEVIER_SOURCE_DIR = "/mnt/elsevier-sftp"
