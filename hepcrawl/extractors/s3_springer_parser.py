@@ -103,9 +103,9 @@ class S3SpringerParser(object):
         return dict(record.load_item())
 
     def _get_published_date(self, node):
-        year = node.xpath('//OnlineDate/Year/text()').extract()[0]
-        month = node.xpath('//OnlineDate/Month/text()').extract()[0]
-        day = node.xpath('//OnlineDate/Day/text()').extract()[0]
+        year = node.xpath('//ArticleInfo/*/OnlineDate/Year/text()').extract()[0]
+        month = node.xpath('//ArticleInfo/*/OnlineDate/Month/text()').extract()[0]
+        day = node.xpath('//ArticleInfo/*/OnlineDate/Day/text()').extract()[0]
         return datetime.date(day=int(day), month=int(month), year=int(year))
 
     def _get_license(self, node, dois):
