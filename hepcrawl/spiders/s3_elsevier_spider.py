@@ -14,6 +14,7 @@ from __future__ import absolute_import, print_function
 import datetime
 import logging
 import os
+import pysftp
 import re
 import tarfile
 import zipfile
@@ -30,18 +31,6 @@ from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from scrapy.utils.python import re_rsearch
 from tempfile import mkdtemp
-
-
-def list_files(path, target_folder):
-    files = os.listdir(path)
-    missing_files = []
-    all_files = []
-    for filename in files:
-        destination_file = os.path.join(target_folder, filename)
-        if not os.path.exists(destination_file):
-            missing_files.append(filename)
-        all_files.append(os.path.join(path, filename))
-    return all_files, missing_files
 
 
 def uncompress(filename, target_folder):
@@ -138,53 +127,97 @@ class S3ElsevierSpider(Spider):
 
     ERROR_CODES = range(400, 432)
 
-    def __init__(self, package_path=None, folder=ELSEVIER_SOURCE_DIR, *args, **kwargs):
+    def __init__(self, package_path=None, ftp_host='sftp', ftp_user='foo', ftp_password='pass',
+                 ftp_dir='upload', ftp_port=22, *args, **kwargs):
         """Construct Elsevier spider."""
         super(S3ElsevierSpider, self).__init__(*args, **kwargs)
-        self.folder = folder
-        self.target_folder = ELSEVIER_DOWNLOAD_DIR,
         self.package_path = package_path
-        self.target_folder = self.target_folder[0]
-
-        if not os.path.exists(self.target_folder):
-            os.makedirs(self.target_folder)
+        self.ftp_host = ftp_host
+        self.ftp_user = ftp_user
+        self.ftp_password = ftp_password
+        self.ftp_dir = ftp_dir
+        self.ftp_post = ftp_port
 
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
         self.log('Harvest started.', logging.INFO)
 
+        self.create_directories()
+
         if self.package_path:
-            # add local package name without 'file://'
+            # process only the package received as parameter
             self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
-            meta = {'local_filename': self.package_path.replace('file://', '')}
-
-            yield Request(self.package_path, callback=self.handle_package, meta=meta)
+            yield Request(self.package_path, callback=self.handle_package)
         else:
-            # if running without package path, download missing files from self.folder
-            params = {}
-            _, missing_files = list_files(self.folder, self.target_folder)
+            # if running without package path, download missing files from sftp
+            new_packages = self.download_files_from_sftp()
 
-            self.log('New files: %s' % missing_files, logging.INFO)
-            for remote_file in missing_files:
-                # TODO download only packages where _ready.xml exists
-                if '.tar' in remote_file or '.zip' in remote_file:
-                    params["local_filename"] = os.path.join(self.target_folder, remote_file)
-                    remote_url = 'file://' + os.path.join('localhost', '/mnt/elsevier-sftp', remote_file)
-                    yield Request(
-                        str(remote_url),
-                        meta=params,
-                        callback=self.handle_package)
+            for new_package in new_packages:
+                # add file:// prefix as it's needed for scrapy
+                full_path = 'file://' + new_package
+
+                yield Request(
+                    str(full_path),
+                    callback=self.handle_package
+                )
+
+    def download_files_from_sftp(self):
+        """
+        Downloads all files from SFTP server which doesn't exist locally.
+        Returns list of newly downloaded files with their absolute local path.
+        """
+        new_packages = []
+
+        # ignore remote server hostkey
+        cnopts = pysftp.CnOpts()
+        cnopts.hostkeys = None
+
+        self.log("Connecting to SFTP server...", logging.INFO)
+
+        # Connect to the ftp server
+        with pysftp.Connection(self.ftp_host, username=self.ftp_user, password=self.ftp_password,
+                               port=self.ftp_port,cnopts=cnopts) as ftp:
+            self.log("SFTP connection established.", logging.INFO)
+
+            # change dir to remote folder.
+            # if doesn't exist there's no packages in it, so exit.
+            if self.ftp_dir:
+                if not ftp.isdir(self.ftp_dir):
+                    self.log("Remote directory doesn't exist. Abort connection.", logging.ERROR)
+                    return
+                ftp.chdir(self.ftp_dir)
+
+            # download all new package files
+            for remote_path in ftp.listdir():
+                if not ftp.isfile(remote_path):
+                    self.log("Skipping '%s' as it's not a file." % remote_path, logging.INFO)
+                    continue
+
+                if not (remote_path.endswith('.tar') or remote_path.endswith('.zip')):
+                    self.log("Skipping '%s' as it doesn't end with .tar or .zip" % remote_path, logging.INFO)
+                    continue
+
+                # get local file path with filename.
+                # Here path is just the filename, doesn't contain any additional path parts.
+                local_file = os.path.join(ELSEVIER_DOWNLOAD_DIR, remote_path)
+
+                if os.path.exists(local_file):
+                    self.log("Skipping '%s' as it is already present locally at %s." % (remote_path, local_file))
+                    continue
+
+                self.log("Copy file from SFTP to %s" % local_file)
+
+                # download file while preserving the timestamps
+                ftp.get(remote_path, local_file, preserve_mtime=True)
+                new_packages.append(local_file)
+
+        return new_packages
 
     def handle_package(self, response):
-        """Handle the zip package and yield a request for every XML found."""
+        """Handle the package and yield a request for every XML found."""
 
-        # write response to local file
-        # fixme: what happens if the local file already exists? E.g. when we are running it manually...
-        zip_filepath = response.meta["local_filename"]
-        with open(zip_filepath, 'w') as destination_file:
-            destination_file.write(response.body)
-
-        self.log('Handling package: %s' % zip_filepath, logging.INFO)
+        package_path = response.url.replace('file://', '')
+        self.log('Handling package: %s' % package_path, logging.INFO)
 
         # extract the name of the package without extension
         filename = os.path.basename(response.url).rstrip("A.tar").rstrip('.zip')
@@ -193,13 +226,13 @@ class S3ElsevierSpider(Spider):
         target_folder = mkdtemp(prefix=filename + "_", dir=ELSEVIER_UNPACK_FOLDER)
 
         # uncompress files to temp directory
-        files = uncompress(zip_filepath, target_folder)
+        files = uncompress(package_path, target_folder)
 
         self.log('Files uncompressed to: %s' % target_folder, logging.INFO)
 
         for f in files:
             if 'dataset.xml' in f:
-                return self.parse_dataset(target_folder, filename, zip_filepath, f)
+                return self.parse_dataset(target_folder, filename, package_path, f)
 
     def parse_dataset(self, target_folder, filename, zip_filepath, f):
         """Parse the dataset and other xml files.
@@ -315,3 +348,15 @@ class S3ElsevierSpider(Spider):
         self.log('Parsing node...', logging.INFO)
         parser = S3ElsevierParser()
         return parser.parse_node(meta_data, node)
+
+    @staticmethod
+    def create_directories():
+        """Creates download and unpack directories in case they do not exist."""
+
+        # create download directory if doesn't exist
+        if not os.path.exists(ELSEVIER_DOWNLOAD_DIR):
+            os.makedirs(ELSEVIER_DOWNLOAD_DIR)
+
+        # create unpack directory if doesn't exist
+        if not os.path.exists(ELSEVIER_UNPACK_FOLDER):
+            os.makedirs(ELSEVIER_UNPACK_FOLDER)

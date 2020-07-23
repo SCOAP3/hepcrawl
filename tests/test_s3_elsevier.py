@@ -38,8 +38,7 @@ def results():
 
                 fake_response = fake_response_from_file(
                     path.join('s3_elsevier', test_file),
-                    response_type=TextResponse,
-                    url='http://example.com/' + test_file
+                    response_type=TextResponse
                 )
                 fake_response.meta['local_filename'] = path.join(download_dir, test_file)
 
