@@ -136,7 +136,7 @@ class S3ElsevierSpider(Spider):
         self.ftp_user = ftp_user
         self.ftp_password = ftp_password
         self.ftp_dir = ftp_dir
-        self.ftp_post = ftp_port
+        self.ftp_port = ftp_port
 
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
@@ -176,7 +176,7 @@ class S3ElsevierSpider(Spider):
 
         # Connect to the ftp server
         with pysftp.Connection(self.ftp_host, username=self.ftp_user, password=self.ftp_password,
-                               port=self.ftp_port,cnopts=cnopts) as ftp:
+                               port=self.ftp_port, cnopts=cnopts) as ftp:
             self.log("SFTP connection established.", logging.INFO)
 
             # change dir to remote folder.
