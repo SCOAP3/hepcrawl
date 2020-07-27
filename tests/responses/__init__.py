@@ -24,7 +24,6 @@ def fake_response_from_file(file_name, url='http://www.example.com', response_ty
 
     :returns: A scrapy HTTP response which can be used for unittesting.
     """
-    meta = {}
     request = Request(url=url)
 
     if not file_name[0] == '/':
@@ -36,7 +35,7 @@ def fake_response_from_file(file_name, url='http://www.example.com', response_ty
     file_content = open(file_path, 'r').read()
 
     response = response_type(
-        url=url,
+        url=file_path,
         request=request,
         body=file_content,
         **{'encoding': 'utf-8'}

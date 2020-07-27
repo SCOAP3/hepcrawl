@@ -38,7 +38,7 @@ install_requires = [
     # TODO: unpin once they support wheel building again
     'scrapyd==1.2.0',
     'scrapyd-client==1.0.1',
-    'six==1.11.0',
+    'six==1.12.0',
     'requests==2.20.0',
     'celery==3.1.26.post2',
     'redis==2.10.6',
@@ -46,6 +46,7 @@ install_requires = [
     'LinkHeader==0.4.3',
     'furl==0.5.6',
     'ftputil==3.3.1',
+    'pysftp==0.2.9',
     'python-dateutil==2.6.1',
 ]
 
