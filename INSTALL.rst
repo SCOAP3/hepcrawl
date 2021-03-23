@@ -81,3 +81,15 @@ article workflow.
     inspirehep oaiharvester harvest -m arXiv -u http://export.arxiv.org/oai2 -f 2016-06-24 -t 2016-06-26 -s 'physics:hep-th' -a 'spider=arXiv' -a 'workflow=article'
     
 Thanks for contributing!
+
+
+Specific Scoap3 Instructions
+----------------------------
+
+In order to use hepcrawl for Scoap3, make sure that the ``BASE_WORKING_DIR`` exists,
+and follows the path rules, e.g. ``~/docker_scoap_data/tmp/virtualenv/data/``
+
+* Create a virtual environment (Python 2) and install everything there with ``pip install -e .``
+* Remove the ``twistd.pid`` file and run scrapy using ``- rm -f twistd.pid && exec scrapyd``
+* In a new window run ``scrapyd-deploy``
+* Make sure that hepcrawl is one of the scrapy projects that appear in ``localhost:6800``
