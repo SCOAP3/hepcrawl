@@ -25,7 +25,7 @@ before_install:
   - "travis_retry pip install twine wheel coveralls check-manifest"
 
 install:
-  - "travis_retry pip install -e .[${EXTRAS}]"
+  - "travis_retry pip install -r requirements.txt -e .[${EXTRAS}]"
 
 script:
   - pip freeze
