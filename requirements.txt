@@ -12,7 +12,7 @@ backports.functools-lru-cache==1.6.1
 bcrypt==3.1.7
 billiard==3.3.0.23
 binaryornot==0.4.4
-bleach==3.1.5
+bleach==3.3.0
 blinker==1.4
 celery==3.1.26.post2
 certifi==2018.10.15
