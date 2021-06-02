@@ -168,7 +168,7 @@ Twisted==17.5.0
 typing==3.6.6
 ua-parser==0.10.0
 Unidecode==1.1.1
-urllib3==1.23
+urllib3==1.26.5
 virtualenv==16.1.0
 virtualenv-clone==0.4.0
 w3lib==1.22.0
