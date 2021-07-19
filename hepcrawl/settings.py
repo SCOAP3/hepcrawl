@@ -119,7 +119,7 @@ JOBDIR = "jobs"
 # these directory configs will be overwritten in production configuration
 BASE_WORKING_DIR = os.environ.get(
     'HEPCRAWL_BASE_WORKING_DIR',
-    '/virtualenv/data/'
+    '~/docker_scoap_data/tmp/virtualenv/data/'
 )
 
 ELSEVIER_WORKING_DIR = os.path.join(BASE_WORKING_DIR, "Elsevier")
@@ -134,6 +134,11 @@ OXFORD_UNPACK_FOLDER = os.path.join(OXFORD_WORKING_DIR, "unpacked")
 SPRINGER_WORKING_DIR = os.path.join(BASE_WORKING_DIR, "Springer")
 SPRINGER_DOWNLOAD_DIR = os.path.join(SPRINGER_WORKING_DIR, "download")
 SPRINGER_UNPACK_FOLDER = os.path.join(SPRINGER_WORKING_DIR, "unpacked")
+
+IOP_SOURCE_DIR = ""
+IOP_WORKING_DIR = os.path.join(BASE_WORKING_DIR, "IOP")
+IOP_DOWNLOAD_DIR = os.path.join(SPRINGER_WORKING_DIR, "download")
+IOP_UNPACK_FOLDER = os.path.join(SPRINGER_WORKING_DIR, "unpacked")
 
 # Location of last run information
 LAST_RUNS_PATH = os.environ.get(
