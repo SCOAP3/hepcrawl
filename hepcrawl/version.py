@@ -13,7 +13,7 @@ This file is imported by ``hepcrawl.__init__``,
 and parsed by ``setup.py``.
 """
 
-from __future__ import absolute_import, print_function
+
 
 from autosemver.packaging import get_current_version
 

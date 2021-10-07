@@ -9,7 +9,7 @@
 
 """Spider for SCOAP3 Springer."""
 
-from __future__ import absolute_import, print_function
+
 
 import logging
 import os
@@ -58,7 +58,7 @@ class S3SpringerSpider(XMLFeedSpider):
     iterator = 'iternodes'
     itertag = 'Publisher'
 
-    ERROR_CODES = range(400, 432)
+    ERROR_CODES = list(range(400, 432))
 
     def __init__(self, package_path=None, ftp_folder="data/in", ftp_host=None, ftp_netrc=None, *args, **kwargs):
         """Construct Elsevier spider."""
@@ -123,10 +123,10 @@ class S3SpringerSpider(XMLFeedSpider):
         # be later uploaded to Inspire. So don't remove any tmp files here.
         for xml_file in files:
             if '.scoap' in xml_file or '.Meta' in xml_file:
-                xml_url = u"file://{0}".format(os.path.abspath(xml_file))
+                xml_url = "file://{0}".format(os.path.abspath(xml_file))
                 pdfa_name = "{0}.pdf".format(os.path.basename(xml_file).split('.')[0])
                 pdfa_path = os.path.join(os.path.dirname(xml_file), 'BodyRef', 'PDF', pdfa_name)
-                pdfa_url = u"file://{0}".format(pdfa_path)
+                pdfa_url = "file://{0}".format(pdfa_path)
                 yield Request(
                     xml_url,
                     meta={"package_path": zip_filepath,

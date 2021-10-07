@@ -27,7 +27,7 @@ class HindawiParser(object):
         page_nr = node.xpath("./datafield[@tag='300']/subfield[@code='a']/text()")
         if page_nr:
             try:
-                page_nr = map(int, page_nr.extract())
+                page_nr = list(map(int, page_nr.extract()))
                 record.add_value('page_nr', page_nr)
             except ValueError as e:
                 logger.error('Failed to parse last_page or first_page for artcile %s: %s' % (dois, e))

@@ -9,7 +9,7 @@
 
 """Common extraction from the JATS XML format."""
 
-from __future__ import absolute_import, print_function
+
 
 import datetime
 import xml.etree.ElementTree as ET

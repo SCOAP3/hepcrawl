@@ -118,11 +118,11 @@ class APSParser(object):
                 given_name = ''
                 raw_name = ''
                 if author.get('surname'):
-                    surname = author.get('surname').replace('\u2009', ' ')
+                    surname = author.get('surname').replace('\\u2009', ' ')
                 if author.get('firstname'):
-                    given_name = author.get('firstname').replace('\u2009', ' ')
+                    given_name = author.get('firstname').replace('\\u2009', ' ')
                 if author.get('name'):
-                    raw_name = author.get('name').replace('\u2009', ' ')
+                    raw_name = author.get('name').replace('\\u2009', ' ')
 
                 authors.append({
                     'surname': surname,

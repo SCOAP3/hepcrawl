@@ -70,7 +70,7 @@ def parse_authors(value):
         value['surname'], value['given_names'] = split_fullname(value['raw_name'])
     if 'given_names' in value and value['given_names']:
         value['given_names'] = collapse_initials(value['given_names'])
-        value['full_name'] = u'{0}, {1}'.format(
+        value['full_name'] = '{0}, {1}'.format(
             value['surname'],
             value['given_names']
         )
@@ -92,7 +92,7 @@ def parse_thesis_supervisors(value):
 def add_author_full_name(value):
     """Add `full_name` combination value for an author, if required."""
     if "full_name" not in value:
-        value['full_name'] = u'{0}, {1}'.format(
+        value['full_name'] = '{0}, {1}'.format(
             value['surname'],
             collapse_initials(value['given_names']),
         ).title()
@@ -127,7 +127,7 @@ def translate_language(lang):
     english = ['en', 'eng', 'english']
 
     if lang.lower() not in english:
-        if lang.lower() in LANGUAGES.keys():
+        if lang.lower() in list(LANGUAGES.keys()):
             language = LANGUAGES[lang.lower()]
         else:
             language = lang.title()

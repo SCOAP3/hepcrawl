@@ -60,16 +60,16 @@ def test_abstract(results):
         "mathematical theorems to applications in models relevant for materials science, such as the prediction of "
         "equilibrium phases of systems with competing ordering tendencies, and quantum criticality.",
 
-        u"The quantization of black hole parameters is a long-standing topic in physics. Adiabatic invariance, "
-        u"periodicity of outgoing waves, quantum tunneling, and quasi-normal modes are the typical tools via which the "
-        u"area and the entropy of a black hole are quantized. In this paper, the quantum spectra of area and entropy of "
-        u"quantum-corrected Schwarzschild black hole are investigated. The deformation in the space\u2013time of "
-        u"Schwarzschild black hole was perused by Kazakov and Solodukhin. Here the deformed Schwarzschild metric is "
-        u"taken into account, and the effect of the space\u2013time modification on the minimal area and entropy "
-        u"increment for the Schwarzschild black hole is scrutinized, utilizing two different procedure: Jiang-Han's "
-        u"method of the adiabatic invariant integral and Zeng et al.'s approach of the periodic property of outgoing "
-        u"waves. The analyses of this paper draw the conclusion that the quantum correction to the space\u2013time does "
-        u"not alter the quantum characteristics of the Schwarzschild black hole.",
+        "The quantization of black hole parameters is a long-standing topic in physics. Adiabatic invariance, "
+        "periodicity of outgoing waves, quantum tunneling, and quasi-normal modes are the typical tools via which the "
+        "area and the entropy of a black hole are quantized. In this paper, the quantum spectra of area and entropy of "
+        "quantum-corrected Schwarzschild black hole are investigated. The deformation in the space\u2013time of "
+        "Schwarzschild black hole was perused by Kazakov and Solodukhin. Here the deformed Schwarzschild metric is "
+        "taken into account, and the effect of the space\u2013time modification on the minimal area and entropy "
+        "increment for the Schwarzschild black hole is scrutinized, utilizing two different procedure: Jiang-Han's "
+        "method of the adiabatic invariant integral and Zeng et al.'s approach of the periodic property of outgoing "
+        "waves. The analyses of this paper draw the conclusion that the quantum correction to the space\u2013time does "
+        "not alter the quantum characteristics of the Schwarzschild black hole.",
 
         "<math><mi>N</mi><mo>=</mo><mn>3</mn></math> Weyl multiplet in four dimensions was first constructed in J. van "
         "Muiden et al. (2017) where the authors used the current multiplet approach to obtain the linearized transforma"
@@ -90,9 +90,9 @@ def test_abstract(results):
 
 def test_title(results):
     """Test extracting title."""
-    titles = (u"Renormalization in condensed matter: Fermionic systems \u2013 from mathematics to materials",
+    titles = ("Renormalization in condensed matter: Fermionic systems \u2013 from mathematics to materials",
               "Spectroscopy of quantum-corrected Schwarzschild black hole",
-              u"Comment on \u201cThe Weyl multiplet in four dimensions\u201d")
+              "Comment on \u201cThe Weyl multiplet in four dimensions\u201d")
     for title, record in zip(titles, results):
         assert 'title' in record
         assert record['title'] == title
@@ -184,7 +184,7 @@ def test_publication_info(results):
              journal_artid='34445'),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 
@@ -192,8 +192,8 @@ def test_publication_info(results):
 def test_authors(results):
     """Test authors."""
     expected_results = (
-        [{'affiliations': [{'value': u'Institut f\xfcr Theoretische Physik, Universit\xe4t Heidelberg, '
-                                     u'Philosophenweg 19, 69120 Heidelberg, Germany'}],
+        [{'affiliations': [{'value': 'Institut f\xfcr Theoretische Physik, Universit\xe4t Heidelberg, '
+                                     'Philosophenweg 19, 69120 Heidelberg, Germany'}],
           'email': 'salmhofer@uni-heidelberg.de',
           'full_name': 'Salmhofer, Manfred',
           'given_names': 'Manfred',
@@ -241,7 +241,7 @@ def test_copyrights(results):
              copyright_statement="The Authors"),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 

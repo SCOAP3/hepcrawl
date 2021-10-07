@@ -39,7 +39,7 @@ class S3SpringerParser(object):
         record = HEPLoader(item=HEPRecord(), selector=node, response=response)
 
         article_type = node.xpath('//Article/ArticleInfo/@ArticleType').extract()
-        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
+        article_type = [self.article_type_mapping.get(x, 'other') for x in article_type]
         record.add_value('journal_doctype', article_type)
 
         dois = node.xpath("//ArticleDOI/text()").extract()
@@ -56,7 +56,7 @@ class S3SpringerParser(object):
         last_pages = node.xpath('//ArticleLastPage/text()').extract()
         if first_pages and last_pages:
             try:
-                page_nrs = map(lambda (first, last): int(last) - int(first) + 1, zip(first_pages, last_pages))
+                page_nrs = [int(first_last[1]) - int(first_last[0]) + 1 for first_last in zip(first_pages, last_pages)]
                 record.add_value('page_nr', page_nrs)
             except ValueError as e:
                 logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
@@ -164,8 +164,7 @@ class S3SpringerParser(object):
                 affiliations.append(cleaned_aff)
 
         mapped_affiliations = list(
-            map(lambda (aff, org, country): {'value': aff, 'organization': org, 'country': country},
-                affiliations))
+            [{'value': aff_org_country[0], 'organization': aff_org_country[1], 'country': aff_org_country[2]} for aff_org_country in affiliations])
 
         return mapped_affiliations
 

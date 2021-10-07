@@ -7,7 +7,7 @@
 # under the terms of the Revised BSD License; see LICENSE file for
 # more details.
 
-from __future__ import absolute_import, print_function, unicode_literals
+
 
 import pytest
 
@@ -22,7 +22,7 @@ def json_spider_record(tmpdir):
     from scrapy.http import TextResponse
     spider = aps_spider.APSSpider()
     items = spider.parse(fake_response_from_file('aps/aps_single_response.json', response_type=TextResponse))
-    parsed_record = items.next()
+    parsed_record = next(items)
     assert parsed_record
     return spider, parsed_record
 
@@ -39,7 +39,7 @@ def inspire_record():
             response_type=TextResponse
         )
     )
-    parsed_record = items.next()
+    parsed_record = next(items)
     pipeline = InspireAPIPushPipeline()
     assert parsed_record
     return pipeline.process_item(parsed_record, spider)

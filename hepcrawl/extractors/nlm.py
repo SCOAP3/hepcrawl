@@ -9,7 +9,7 @@
 
 """Common extraction from the NLM XML format."""
 
-from __future__ import absolute_import, print_function
+
 
 
 class NLM(object):

@@ -9,7 +9,7 @@
 
 """Spider for SCOAP3 Elsevier."""
 
-from __future__ import absolute_import, print_function
+
 
 import datetime
 import logging
@@ -125,7 +125,7 @@ class S3ElsevierSpider(Spider):
         'NUPHB': 'Nuclear Physics B'
     }
 
-    ERROR_CODES = range(400, 432)
+    ERROR_CODES = list(range(400, 432))
 
     def __init__(self, package_path=None, ftp_host='sftp', ftp_user='foo', ftp_password='pass',
                  ftp_dir='upload', ftp_port=22, *args, **kwargs):
@@ -246,7 +246,7 @@ class S3ElsevierSpider(Spider):
             self.parse_journal_items(dataset, target_folder, filename, zip_filepath, journal_data)
 
             for i in range(len(journal_data)):
-                for doi, data in journal_data[i]['articles'].items():
+                for doi, data in list(journal_data[i]['articles'].items()):
                     with open(data['files']['xml'], 'r') as xml_file:
                         xml_file_content = xml_file.read()
                         for nodename in self.itertag:

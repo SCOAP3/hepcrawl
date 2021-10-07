@@ -81,18 +81,18 @@ def test_extraction(results):
 def test_abstract(results):
     """Test extracting abstract."""
     abstracts = (
-        u"Abstract Regarding the significant interests in massive gravity and combining it with gravity\u2019s rainbow "
-        u"and also BTZ black holes, we apply the formalism introduced by Jiang and Han in order to investigate the quan"
-        u"tization of the entropy of black holes. We show that the entropy of BTZ black holes in massive gravity\u2019s"
-        u" rainbow is quantized with equally spaced spectra and it depends on the black holes\u2019 properties includin"
-        u"g massive parameters, electrical charge, the cosmological constant, and also rainbow functions. In addition, "
-        u"we show that quantization of the entropy results in the appearance of novel properties for this quantity, suc"
-        u"h as the existence of divergences, non-zero entropy in a vanishing horizon radius, and the possibility of tra"
-        u"cing out the effects of the black holes\u2019 properties. Such properties are absent in the non-quantized ver"
-        u"sion of the black hole entropy. Furthermore, we investigate the effects of quantization on the thermodynamica"
-        u"l behavior of the solutions. We confirm that due to quantization, novel phase transition points are introduce"
-        u"d and stable solutions are limited to only de Sitter black holes (anti-de Sitter and asymptotically flat solu"
-        u"tions are unstable).",
+        "Abstract Regarding the significant interests in massive gravity and combining it with gravity\u2019s rainbow "
+        "and also BTZ black holes, we apply the formalism introduced by Jiang and Han in order to investigate the quan"
+        "tization of the entropy of black holes. We show that the entropy of BTZ black holes in massive gravity\u2019s"
+        " rainbow is quantized with equally spaced spectra and it depends on the black holes\u2019 properties includin"
+        "g massive parameters, electrical charge, the cosmological constant, and also rainbow functions. In addition, "
+        "we show that quantization of the entropy results in the appearance of novel properties for this quantity, suc"
+        "h as the existence of divergences, non-zero entropy in a vanishing horizon radius, and the possibility of tra"
+        "cing out the effects of the black holes\u2019 properties. Such properties are absent in the non-quantized ver"
+        "sion of the black hole entropy. Furthermore, we investigate the effects of quantization on the thermodynamica"
+        "l behavior of the solutions. We confirm that due to quantization, novel phase transition points are introduce"
+        "d and stable solutions are limited to only de Sitter black holes (anti-de Sitter and asymptotically flat solu"
+        "tions are unstable).",
     )
     for abstract, record in zip(abstracts, results):
         if abstract:
@@ -104,7 +104,7 @@ def test_abstract(results):
 
 def test_title(results):
     """Test extracting title."""
-    titles = (u"Entropy spectrum of charged BTZ black holes in massive gravity\u2019s rainbow",)
+    titles = ("Entropy spectrum of charged BTZ black holes in massive gravity\u2019s rainbow",)
     for title, record in zip(titles, results):
         assert 'title' in record
         assert record['title'] == title
@@ -172,7 +172,7 @@ def test_publication_info(results):
              journal_artid='013E02'),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 
@@ -182,21 +182,21 @@ def test_authors(results):
     expected_results = (
         [
             {'affiliations': [{
-                'value': u'Physics Department and Biruni Observatory, College of Sciences, Shiraz University, '
-                         u'Shiraz 71454, Iran'}],
-                'surname': u'Panah',
-                'given_names': u'B Eslam',
-                'full_name': u'Panah, B Eslam',
-                'email': u'beslampanah@shirazu.ac.ir'},
-            {'affiliations': [{'value': u'Helmholtz-Institut Jena, Fr\xf6belstieg 3, Jena D-07743 Germany'}],
-             'surname': u'Panahiyan',
-             'given_names': u'S',
-             'full_name': u'Panahiyan, S'},
-            {'affiliations': [{'value': u'Physics Department and Biruni Observatory, College of Sciences, Shiraz '
-                                        u'University, Shiraz 71454, Iran'}],
-             'surname': u'Hendi',
-             'given_names': u'S H',
-             'full_name': u'Hendi, S H'}],
+                'value': 'Physics Department and Biruni Observatory, College of Sciences, Shiraz University, '
+                         'Shiraz 71454, Iran'}],
+                'surname': 'Panah',
+                'given_names': 'B Eslam',
+                'full_name': 'Panah, B Eslam',
+                'email': 'beslampanah@shirazu.ac.ir'},
+            {'affiliations': [{'value': 'Helmholtz-Institut Jena, Fr\xf6belstieg 3, Jena D-07743 Germany'}],
+             'surname': 'Panahiyan',
+             'given_names': 'S',
+             'full_name': 'Panahiyan, S'},
+            {'affiliations': [{'value': 'Physics Department and Biruni Observatory, College of Sciences, Shiraz '
+                                        'University, Shiraz 71454, Iran'}],
+             'surname': 'Hendi',
+             'given_names': 'S H',
+             'full_name': 'Hendi, S H'}],
     )
 
     for expected, record in zip(expected_results, results):
@@ -207,12 +207,12 @@ def test_authors(results):
 def test_copyrights(results):
     """Test extracting copyright."""
     expected_results = (
-        dict(copyright_statement=u"\xa9  The Author(s) 2019. Published by Oxford University Press on behalf of the "
-                              u"Physical Society of Japan.",
+        dict(copyright_statement="\xa9  The Author(s) 2019. Published by Oxford University Press on behalf of the "
+                              "Physical Society of Japan.",
              copyright_year="2019"),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 

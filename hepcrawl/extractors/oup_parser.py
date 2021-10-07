@@ -27,7 +27,7 @@ class OUPParser(Jats):
         record.add_value('dois', dois)
 
         raw_article_type = node.xpath('./@article-type').extract()
-        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), raw_article_type)
+        article_type = [self.article_type_mapping.get(x, 'other') for x in raw_article_type]
         record.add_value('journal_doctype', article_type)
 
         if 'other' in article_type:
@@ -47,7 +47,7 @@ class OUPParser(Jats):
         page_nr = node.xpath("//counts/page-count/@count")
         if page_nr:
             try:
-                page_nr = map(int, page_nr.extract())
+                page_nr = list(map(int, page_nr.extract()))
                 record.add_value('page_nr', page_nr)
             except ValueError as e:
                 logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))

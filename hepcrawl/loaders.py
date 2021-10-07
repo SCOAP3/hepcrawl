@@ -80,7 +80,7 @@ class HEPLoader(ItemLoader):
         convert_html_subscripts_to_latex,
         remove_attributes_from_tags,
         selective_remove_tags(keep=MATHML_ELEMENTS),
-        unicode.strip,
+        str.strip,
     )
 
     abstract_out = TakeFirst()
@@ -98,7 +98,7 @@ class HEPLoader(ItemLoader):
         fix_title_capitalization,
         remove_attributes_from_tags,
         selective_remove_tags(keep=MATHML_ELEMENTS),
-        unicode.strip,
+        str.strip,
     )
 
     subtitle_in = MapCompose(
@@ -107,7 +107,7 @@ class HEPLoader(ItemLoader):
         fix_title_capitalization,
         remove_attributes_from_tags,
         selective_remove_tags(keep=MATHML_ELEMENTS),
-        unicode.strip,
+        str.strip,
     )
 
     subtitle_out = TakeFirst()

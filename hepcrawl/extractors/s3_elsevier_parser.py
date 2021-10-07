@@ -55,7 +55,7 @@ class S3ElsevierParser(object):
         record = HEPLoader(item=HEPRecord(), selector=node)
 
         article_type = node.xpath('./@docsubtype').extract()
-        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
+        article_type = [self.article_type_mapping.get(x, 'other') for x in article_type]
         record.add_value('journal_doctype', article_type)
 
         dois = node.xpath('./item-info/doi/text()').extract()
@@ -182,7 +182,7 @@ class S3ElsevierParser(object):
         all_group_affs = author_group.xpath(".//affiliation/textfn/text()")
 
         # Don't take correspondence (cor1) or deceased (fn1):
-        ref_ids = filter(lambda x: 'aff' in x, ref_ids)
+        ref_ids = [x for x in ref_ids if 'aff' in x]
 
         affiliations = []
         affiliations += self._find_affiliations_by_id(author_group, ref_ids)

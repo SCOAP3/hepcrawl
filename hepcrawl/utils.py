@@ -14,7 +14,7 @@ from itertools import groupby
 from netrc import netrc
 from tempfile import mkstemp
 from zipfile import ZipFile
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import ftputil
 import requests
@@ -53,7 +53,7 @@ def unzip_files(filename, target_folder, type=None):
 def ftp_connection_info(ftp_host, netrc_file):
     """Return ftp connection info from netrc and optional host address."""
     if not ftp_host:
-        ftp_host = netrc(netrc_file).hosts.keys()[0]
+        ftp_host = list(netrc(netrc_file).hosts.keys())[0]
     logininfo = netrc(netrc_file).authenticators(ftp_host)
     connection_params = {
         "ftp_user": logininfo[0],
@@ -152,7 +152,7 @@ def get_temporary_file(prefix="tmp_",
                                     suffix=suffix,
                                     dir=directory)
         os.close(file_fd)
-    except IOError, e:
+    except IOError as e:
         try:
             os.remove(filepath)
         except Exception:
@@ -211,8 +211,8 @@ def range_as_string(data):
     """
     data = [int(i) for i in data]
     ranges = []
-    for key, group in groupby(enumerate(data), lambda (index, item): index - item):
-        group = map(itemgetter(1), group)
+    for key, group in groupby(enumerate(data), lambda index_item: index_item[0] - index_item[1]):
+        group = list(map(itemgetter(1), group))
         if len(group) > 1:
             rangestring = "{}-{}".format(str(group[0]), str(group[-1]))
             ranges.append(rangestring)
@@ -261,7 +261,7 @@ def get_journal_and_section(publication):
     journal_title = ''
     possible_sections = ["A", "B", "C", "D", "E"]
     try:
-        split_pub = filter(None, re.split(r'(\W+)', publication))
+        split_pub = [_f for _f in re.split(r'(\W+)', publication) if _f]
         if split_pub[-1] in possible_sections:
             section = split_pub.pop(-1)
         journal_title = "".join(
@@ -299,7 +299,7 @@ def get_license_by_url(license_url):
         return []
 
     license_str = ''
-    for key in LICENSES.keys():
+    for key in list(LICENSES.keys()):
         if key in license_url.lower():
             license_str = re.sub(
                 '(?i)^.*%s' % key,
@@ -314,7 +314,7 @@ def get_license_by_text(license_text):
     if not license_text:
         return []
 
-    for key in LICENSE_TEXTS.keys():
+    for key in list(LICENSE_TEXTS.keys()):
         if license_text.lower() in key.lower():
             license = get_license_by_url(license_url=LICENSE_TEXTS[key])
 

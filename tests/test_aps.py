@@ -7,7 +7,7 @@
 # under the terms of the Revised BSD License; see LICENSE file for
 # more details.
 
-from __future__ import absolute_import, print_function, unicode_literals
+
 
 import pytest
 
@@ -144,7 +144,7 @@ def test_publication_info(results):
              journal_issue="5"),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 
@@ -175,7 +175,7 @@ def test_copyrights(results):
              copyright_statement="Published by the American Physical Society"),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 

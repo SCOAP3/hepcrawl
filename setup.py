@@ -44,7 +44,7 @@ setup_requires = [
 ]
 
 extras_require['all'] = []
-for name, reqs in extras_require.items():
+for name, reqs in list(extras_require.items()):
     extras_require['all'].extend(reqs)
 
 

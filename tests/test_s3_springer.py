@@ -83,20 +83,20 @@ def test_abstract(results):
         "nucleon, we also present several possible connections between hadronic physics and compact stars, like e.g. "
         "the study of the equation of state for matter under extreme conditions and stability constraints.",
 
-        u"This paper describes a strategy for a general search used by the ATLAS Collaboration to find potential "
-        u"indications of new physics. Events are classified according to their final state into many event classes. For "
-        u"each event class an automated search algorithm tests whether the data are compatible with the Monte Carlo "
-        u"simulated expectation in several distributions sensitive to the effects of new physics. The significance of a "
-        u"deviation is quantified using pseudo-experiments. A data selection with a significant deviation defines a "
-        u"signal region for a dedicated follow-up analysis with an improved background expectation. The analysis of the "
-        u"data-derived signal regions on a new dataset allows a statistical interpretation without the large "
-        u"look-elsewhere effect. The sensitivity of the approach is discussed using Standard Model processes and "
-        u"benchmark signals of new physics. As an example, results are shown for 3.2 fb$$^{-1}$$ <math><msup><mrow>"
-        u"</mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></math>  of proton\u2013proton collision data at a "
-        u"centre-of-mass energy of 13 $$\\text {TeV}$$ <math><mtext>TeV</mtext></math>  collected with the ATLAS "
-        u"detector at the LHC in 2015, in which more than 700 event classes and more than $$10^5$$ <math><msup><mn>10"
-        u"</mn><mn>5</mn></msup></math>  regions have been analysed. No significant deviations are found and "
-        u"consequently no data-derived signal regions for a follow-up analysis have been defined."
+        "This paper describes a strategy for a general search used by the ATLAS Collaboration to find potential "
+        "indications of new physics. Events are classified according to their final state into many event classes. For "
+        "each event class an automated search algorithm tests whether the data are compatible with the Monte Carlo "
+        "simulated expectation in several distributions sensitive to the effects of new physics. The significance of a "
+        "deviation is quantified using pseudo-experiments. A data selection with a significant deviation defines a "
+        "signal region for a dedicated follow-up analysis with an improved background expectation. The analysis of the "
+        "data-derived signal regions on a new dataset allows a statistical interpretation without the large "
+        "look-elsewhere effect. The sensitivity of the approach is discussed using Standard Model processes and "
+        "benchmark signals of new physics. As an example, results are shown for 3.2 fb$$^{-1}$$ <math><msup><mrow>"
+        "</mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></math>  of proton\u2013proton collision data at a "
+        "centre-of-mass energy of 13 $$\\text {TeV}$$ <math><mtext>TeV</mtext></math>  collected with the ATLAS "
+        "detector at the LHC in 2015, in which more than 700 event classes and more than $$10^5$$ <math><msup><mn>10"
+        "</mn><mn>5</mn></msup></math>  regions have been analysed. No significant deviations are found and "
+        "consequently no data-derived signal regions for a follow-up analysis have been defined."
     )
     for abstract, record in zip(abstracts, results):
         if abstract:
@@ -212,7 +212,7 @@ def test_publication_info(results):
              journal_artid='s10052-019-6540-y'),
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 
@@ -252,29 +252,29 @@ def test_authors(results):
              "full_name": "Nosaka, Tomoki",
              "email": "nosaka@yukawa.kyoto-u.ac.jp"}],
         [
-            {"affiliations": [{"organization": u"Universit\u00e9 Paris-Saclay",
-                               "value": u"Centre de Physique Th\u00e9orique, \u00c9cole polytechnique, CNRS, "
-                                        u"Universit\u00e9 Paris-Saclay, Palaiseau, 91128, France",
+            {"affiliations": [{"organization": "Universit\u00e9 Paris-Saclay",
+                               "value": "Centre de Physique Th\u00e9orique, \u00c9cole polytechnique, CNRS, "
+                                        "Universit\u00e9 Paris-Saclay, Palaiseau, 91128, France",
                                "country": "France"}],
-             "surname": u"Lorc\u00e9",
-             "given_names": u"C\u00e9dric",
-             "full_name": u"Lorc\u00e9, C\u00e9dric"},
-            {"affiliations": [{"organization": u"Universit\u00e9 Paris-Saclay",
-                               "value": u"IRFU, CEA, Universit\u00e9 Paris-Saclay, Gif-sur-Yvette, 91191, France",
+             "surname": "Lorc\u00e9",
+             "given_names": "C\u00e9dric",
+             "full_name": "Lorc\u00e9, C\u00e9dric"},
+            {"affiliations": [{"organization": "Universit\u00e9 Paris-Saclay",
+                               "value": "IRFU, CEA, Universit\u00e9 Paris-Saclay, Gif-sur-Yvette, 91191, France",
                                "country": "France"}],
              "surname": "Moutarde",
-             "given_names": u"Herv\u00e9",
-             "full_name": u"Moutarde, Herv\u00e9"},
-            {"affiliations": [{"organization": u"Universit\u00e9 Paris-Saclay",
-                               "value": u"Centre de Physique Th\u00e9orique, \u00c9cole polytechnique, CNRS, "
-                                        u"Universit\u00e9 Paris-Saclay, Palaiseau, 91128, France",
+             "given_names": "Herv\u00e9",
+             "full_name": "Moutarde, Herv\u00e9"},
+            {"affiliations": [{"organization": "Universit\u00e9 Paris-Saclay",
+                               "value": "Centre de Physique Th\u00e9orique, \u00c9cole polytechnique, CNRS, "
+                                        "Universit\u00e9 Paris-Saclay, Palaiseau, 91128, France",
                                "country": "France"},
-                              {"organization": u"Universit\u00e9 Paris-Saclay",
-                               "value": u"IRFU, CEA, Universit\u00e9 Paris-Saclay, Gif-sur-Yvette, 91191, France",
+                              {"organization": "Universit\u00e9 Paris-Saclay",
+                               "value": "IRFU, CEA, Universit\u00e9 Paris-Saclay, Gif-sur-Yvette, 91191, France",
                                "country": "France"}],
-             "surname": u"Trawi\u0144ski",
+             "surname": "Trawi\u0144ski",
              "given_names": "Arkadiusz",
-             "full_name": u"Trawi\u0144ski, Arkadiusz",
+             "full_name": "Trawi\u0144ski, Arkadiusz",
              "email": "Arkadiusz.Trawinski@cea.fr"}]
 
     )
@@ -307,7 +307,7 @@ def test_copyrights(results):
              copyright_year='2019')
     )
     for expected, record in zip(expected_results, results):
-        for k, v in expected.items():
+        for k, v in list(expected.items()):
             assert k in record
             assert record[k] == v
 

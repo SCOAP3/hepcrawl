@@ -9,7 +9,7 @@
 
 """Spider for Hindawi."""
 
-from __future__ import absolute_import, print_function
+
 
 import logging
 import os
@@ -164,7 +164,7 @@ class Scoap3Spider(XMLFeedSpider):
             "Phys. Rev. Lett.": "Physical Review Letters"
         }
         title = node.xpath("./datafield[@tag='773']/subfield[@code='p']/text()").extract_first()
-        for abreviation, full_name in JOURNAL_FULL_NAMES.items():
+        for abreviation, full_name in list(JOURNAL_FULL_NAMES.items()):
             if title == abreviation:
                 title = full_name
                 break
@@ -187,7 +187,7 @@ class Scoap3Spider(XMLFeedSpider):
         page_nr = node.xpath("./datafield[@tag='300']/subfield[@code='a']/text()")
         if page_nr:
             try:
-                page_nr = map(int, page_nr.extract())
+                page_nr = list(map(int, page_nr.extract()))
                 record.add_value('page_nr', page_nr)
             except ValueError as e:
                 logger.error('Failed to parse last_page or first_page for artcile %s: %s' % (dois, e))

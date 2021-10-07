@@ -1,4 +1,4 @@
-from __future__ import absolute_import, print_function, unicode_literals
+
 
 from scrapy.http import TextResponse
 from .responses import fake_response_from_file
