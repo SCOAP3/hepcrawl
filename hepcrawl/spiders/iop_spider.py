@@ -42,7 +42,8 @@ def uncompress(filename, target_folder):
             archive_name = os.path.basename(archive.filename).rstrip('.zip')
             for zip_info in archive.filelist:
                 if "dataset.xml" in zip_info.filename:
-                    datasets.append(os.path.join(target_folder, zip_info.filename))
+                    datasets.append(os.path.join(
+                        target_folder, zip_info.filename))
             if not os.path.exists(os.path.join(target_folder, archive_name)):
                 archive.extractall(path=target_folder)
     return datasets
@@ -68,7 +69,8 @@ def xmliter(text, nodename):
     header_end = re_rsearch(HEADER_END_RE, text)
     header_end = text[header_end[1]:].strip() if header_end else ''
 
-    r = re.compile(r'<%(np)s[\s>].*?</%(np)s>' % {'np': nodename_patt}, re.DOTALL)
+    r = re.compile(r'<%(np)s[\s>].*?</%(np)s>' %
+                   {'np': nodename_patt}, re.DOTALL)
     for match in r.finditer(text):
         nodetext = header_start + match.group() + header_end
         tmp = Selector(text=nodetext, type='xml')
@@ -109,11 +111,10 @@ class IOPSpider(Spider):
     start_urls = []
     itertag = ['article', 'simple-article']
 
-
     ERROR_CODES = range(400, 432)
 
-    def __init__(self, package_path=None, ftp_host='sftp', ftp_user='foo',
-                 ftp_dir='upload', ftp_port=22, *args, **kwargs):
+    def __init__(self, package_path=None, ftp_host=None, ftp_user=None,
+                 ftp_dir='/', ftp_port=22, *args, **kwargs):
         """Construct Elsevier spider."""
         super(IOPSpider, self).__init__(*args, **kwargs)
         self.package_path = package_path
@@ -130,7 +131,8 @@ class IOPSpider(Spider):
 
         if self.package_path:
             # process only the package received as parameter
-            self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
+            self.log('Harvesting locally: %s' %
+                     self.package_path, logging.INFO)
             yield Request(self.package_path, callback=self.handle_package)
         else:
             # if running without package path, download missing files from sftp
@@ -157,24 +159,23 @@ class IOPSpider(Spider):
         cnopts.hostkeys = None
 
         self.log("Connecting to SFTP server...", logging.INFO)
-        ssh_path = os.environ.get('IOP_SFTP_SSH_KEY')
+        password = os.environ.get('IOP_SFTP_PASSWORD')
 
         # Connect to the ftp server
-        with pysftp.Connection(self.ftp_host, username=self.ftp_user, private_key=ssh_path,
-                               port=self.ftp_port, cnopts=cnopts) as ftp:
-            self.log("SFTP connection established.", logging.INFO)
-
-            # change dir to remote folder.
-            # if doesn't exist there's no packages in it, so exit.
+        
+        
+        
+        with pysftp.Connection(host=self.ftp_host, username=self.ftp_user, password=password) as sftp:
+            print( "Connection succesfully stablished ... ")
             if self.ftp_dir:
-                if not ftp.isdir(self.ftp_dir):
+                if not sftp.isdir(self.ftp_dir):
                     self.log("Remote directory doesn't exist. Abort connection.", logging.ERROR)
                     return
-                ftp.chdir(self.ftp_dir)
+                sftp.chdir(self.ftp_dir)
 
             # download all new package files
-            for remote_path in ftp.listdir():
-                if not ftp.isfile(remote_path):
+            for remote_path in sftp.listdir():
+                if not sftp.isfile(remote_path):
                     self.log("Skipping '%s' as it's not a file." % remote_path, logging.INFO)
                     continue
 
@@ -193,7 +194,7 @@ class IOPSpider(Spider):
                 self.log("Copy file from SFTP to %s" % local_file)
 
                 # download file while preserving the timestamps
-                ftp.get(remote_path, local_file, preserve_mtime=True)
+                sftp.get(remote_path, local_file, preserve_mtime=True)
                 new_packages.append(local_file)
 
         return new_packages
@@ -205,7 +206,8 @@ class IOPSpider(Spider):
         self.log('Handling package: %s' % package_path, logging.INFO)
 
         # extract the name of the package without extension
-        filename = os.path.basename(response.url).rstrip("A.tar").rstrip('.zip')
+        filename = os.path.basename(
+            response.url).rstrip("A.tar").rstrip('.zip')
 
         # create temporary directory to extract zip packages:
         target_folder = mkdtemp(prefix=filename + "_", dir=IOP_UNPACK_FOLDER)
@@ -213,7 +215,6 @@ class IOPSpider(Spider):
         # uncompress files to temp directory
         files = uncompress(package_path, target_folder)
         self.log('Files uncompressed to: %s' % target_folder, logging.INFO)
-
 
     def parse_node(self, meta_data, node):
         self.log('Parsing node...', logging.INFO)
@@ -231,3 +232,4 @@ class IOPSpider(Spider):
         # create unpack directory if doesn't exist
         if not os.path.exists(IOP_UNPACK_FOLDER):
             os.makedirs(IOP_UNPACK_FOLDER)
+

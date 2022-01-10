@@ -119,7 +119,7 @@ JOBDIR = "jobs"
 # these directory configs will be overwritten in production configuration
 BASE_WORKING_DIR = os.environ.get(
     'HEPCRAWL_BASE_WORKING_DIR',
-    '~/docker_scoap_data/tmp/virtualenv/data/'
+    '/virtualenv/data/'
 )
 
 ELSEVIER_WORKING_DIR = os.path.join(BASE_WORKING_DIR, "Elsevier")
@@ -170,3 +170,4 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
