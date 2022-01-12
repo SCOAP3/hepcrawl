@@ -165,7 +165,7 @@ class IOPSpider(Spider):
         
         
         
-        with pysftp.Connection(host=self.ftp_host, username=self.ftp_user, password=password) as sftp:
+        with pysftp.Connection(host=self.ftp_host, username=self.ftp_user, password=password, cnopts=cnopts) as sftp:
             print( "Connection succesfully stablished ... ")
             if self.ftp_dir:
                 if not sftp.isdir(self.ftp_dir):
