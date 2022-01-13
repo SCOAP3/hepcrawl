@@ -162,25 +162,26 @@ class IOPSpider(Spider):
         password = os.environ.get('IOP_SFTP_PASSWORD')
 
         # Connect to the ftp server
-        
-        
-        
+
         with pysftp.Connection(host=self.ftp_host, username=self.ftp_user, password=password, cnopts=cnopts) as sftp:
-            print( "Connection succesfully stablished ... ")
+            print("Connection succesfully stablished ... ")
             if self.ftp_dir:
                 if not sftp.isdir(self.ftp_dir):
-                    self.log("Remote directory doesn't exist. Abort connection.", logging.ERROR)
+                    self.log(
+                        "Remote directory doesn't exist. Abort connection.", logging.ERROR)
                     return
                 sftp.chdir(self.ftp_dir)
 
             # download all new package files
             for remote_path in sftp.listdir():
                 if not sftp.isfile(remote_path):
-                    self.log("Skipping '%s' as it's not a file." % remote_path, logging.INFO)
+                    self.log("Skipping '%s' as it's not a file." %
+                             remote_path, logging.INFO)
                     continue
 
                 if not (remote_path.endswith('.tar') or remote_path.endswith('.zip')):
-                    self.log("Skipping '%s' as it doesn't end with .tar or .zip" % remote_path, logging.INFO)
+                    self.log("Skipping '%s' as it doesn't end with .tar or .zip" %
+                             remote_path, logging.INFO)
                     continue
 
                 # get local file path with filename.
@@ -188,7 +189,8 @@ class IOPSpider(Spider):
                 local_file = os.path.join(IOP_DOWNLOAD_DIR, remote_path)
 
                 if os.path.exists(local_file):
-                    self.log("Skipping '%s' as it is already present locally at %s." % (remote_path, local_file))
+                    self.log("Skipping '%s' as it is already present locally at %s." % (
+                        remote_path, local_file))
                     continue
 
                 self.log("Copy file from SFTP to %s" % local_file)
@@ -214,7 +216,30 @@ class IOPSpider(Spider):
 
         # uncompress files to temp directory
         files = uncompress(package_path, target_folder)
-        self.log('Files uncompressed to: %s' % target_folder, logging.INFO)
+        self.log('Files uncompressed to: %s' % target_folder,  logging.INFO)
+
+        for path, _, files in os.walk(target_folder):
+            for filename in files:
+                if filename.startswith('.'):
+                    continue
+
+                full_path = os.path.join(path, filename)
+                if filename.endswith('.xml'):
+                    with open(full_path, 'r') as file:
+                        dir_path = os.path.dirname(full_path)
+                        filename = os.path.basename(full_path).split('.')[0]
+                        pdf_url = os.path.join(
+                            dir_path, "%s.%s" % (filename, 'pdf'))
+
+                        class Meta:
+                            meta = {"package_path": package_path,
+                                    "xml_url": full_path,
+                                    "pdf_url": pdf_url, }
+                        selector = Selector(text=file.read(), type='xml')
+                        yield self.parse_node(Meta(), selector)
+                else:
+                    print('File with invalid extension on FTP path=%s' %
+                          full_path)
 
     def parse_node(self, meta_data, node):
         self.log('Parsing node...', logging.INFO)
@@ -232,4 +257,3 @@ class IOPSpider(Spider):
         # create unpack directory if doesn't exist
         if not os.path.exists(IOP_UNPACK_FOLDER):
             os.makedirs(IOP_UNPACK_FOLDER)
-
