@@ -53,7 +53,7 @@ class IOPParser(Jats):
                 logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
 
         record.add_xpath('abstract', '(//abstract[1]//text())[2]')
-        record.add_xpath('title', '//article-title/text()')
+        record.add_xpath('title', '//title-group/article-title/text()')
         record.add_xpath('subtitle', '//subtitle/text()')
 
         authors = self._get_authors(node)
