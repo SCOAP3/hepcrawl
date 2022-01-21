@@ -1,4 +1,5 @@
 import logging
+import re
 
 from hepcrawl.extractors.jats import Jats
 from hepcrawl.items import HEPRecord
@@ -52,8 +53,16 @@ class IOPParser(Jats):
             except ValueError as e:
                 logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
 
-        record.add_xpath('abstract', '(//abstract[1]//text())[2]')
-        record.add_xpath('title', '//article-title/text()')
+        all_nodes = node.xpath('//abstract/p/child::node()').getall()
+
+        string_node_joined= ''.join(all_nodes)
+        cdata_pattern = "<\?CDATA(.*)\?>"
+        match = re.search(cdata_pattern, string_node_joined)
+        if match:
+            string_node_joined = re.sub(cdata_pattern, match.group(1).replace('\\', '\\\\'), string_node_joined)
+
+        record.add_value('abstract', ''.join(string_node_joined))
+        record.add_xpath('title', '//title-group/article-title/text()')
         record.add_xpath('subtitle', '//subtitle/text()')
 
         authors = self._get_authors(node)
