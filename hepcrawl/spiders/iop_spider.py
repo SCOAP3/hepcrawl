@@ -148,10 +148,10 @@ class IOPSpider(Spider):
                 )
 
     def download_files_from_sftp(self):
-        # """
-        # Downloads all files from SFTP server which doesn't exist locally.
-        # Returns list of newly downloaded files with their absolute local path.
-        # """
+        """
+        Downloads all files from SFTP server which doesn't exist locally.
+        Returns list of newly downloaded files with their absolute local path.
+        """
         new_packages = []
 
         # ignore remote server hostkey
