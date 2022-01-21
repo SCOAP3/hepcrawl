@@ -60,7 +60,7 @@ class IOPParser(Jats):
         match = re.search(cdata_pattern, string_node_joined)
         if match:
             string_node_joined = re.sub(cdata_pattern, match.group(1).replace('\\', '\\\\'), string_node_joined)
-
+          
         record.add_value('abstract', ''.join(string_node_joined))
         record.add_xpath('title', '//title-group/article-title/text()')
         record.add_xpath('subtitle', '//subtitle/text()')
