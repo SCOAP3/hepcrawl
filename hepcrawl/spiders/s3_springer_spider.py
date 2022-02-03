@@ -15,7 +15,7 @@ import logging
 import os
 
 from hepcrawl.extractors.s3_springer_parser import S3SpringerParser
-from ..utils import ftp_list_files, ftp_connection_info, unzip_files
+from ..utils import sftp_list_files, ftp_connection_info, unzip_files
 from ..settings import SPRINGER_DOWNLOAD_DIR, SPRINGER_UNPACK_FOLDER
 
 from tempfile import mkdtemp
@@ -70,7 +70,6 @@ class S3SpringerSpider(XMLFeedSpider):
         self.package_path = package_path
         if not os.path.exists(self.target_folder):
             os.makedirs(self.target_folder)
-
     def start_requests(self):
         """List selected folder on remote FTP and yield new zip files."""
         if self.package_path:
@@ -80,7 +79,7 @@ class S3SpringerSpider(XMLFeedSpider):
             ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
             missing_files = []
             for journal in ['EPJC', 'JHEP']:
-                _, tmp_missing_files = ftp_list_files(
+                _, tmp_missing_files = sftp_list_files(
                     os.path.join(self.ftp_folder, journal),
                     os.path.join(self.target_folder, journal),
                     server=ftp_host,
@@ -138,3 +137,4 @@ class S3SpringerSpider(XMLFeedSpider):
         self.log('Parsing node...', logging.INFO)
         parser = S3SpringerParser()
         return parser.parse_node(response, node)
+
