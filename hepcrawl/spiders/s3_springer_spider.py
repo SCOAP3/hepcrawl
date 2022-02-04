@@ -15,12 +15,13 @@ import logging
 import os
 
 from hepcrawl.extractors.s3_springer_parser import S3SpringerParser
-from ..utils import sftp_list_files, ftp_connection_info, unzip_files
-from ..settings import SPRINGER_DOWNLOAD_DIR, SPRINGER_UNPACK_FOLDER
+from ..utils import ftp_connection_info, unzip_files
+from ..settings import SPRINGER_DOWNLOAD_DIR, SPRINGER_UNPACK_FOLDER, SPRINGER_WORKING_DIR
 
 from tempfile import mkdtemp
 from scrapy import Request
 from scrapy.spiders import XMLFeedSpider
+import pysftp
 
 
 class S3SpringerSpider(XMLFeedSpider):
@@ -60,7 +61,7 @@ class S3SpringerSpider(XMLFeedSpider):
 
     ERROR_CODES = range(400, 432)
 
-    def __init__(self, package_path=None, ftp_folder="data/in", ftp_host=None, ftp_netrc=None, *args, **kwargs):
+    def __init__(self, package_path=None, ftp_folder="/data/in", ftp_host=None, ftp_netrc=None, *args, **kwargs):
         """Construct Elsevier spider."""
         super(S3SpringerSpider, self).__init__(*args, **kwargs)
         self.ftp_folder = ftp_folder
@@ -68,53 +69,77 @@ class S3SpringerSpider(XMLFeedSpider):
         self.ftp_netrc = ftp_netrc
         self.target_folder = SPRINGER_DOWNLOAD_DIR
         self.package_path = package_path
-        if not os.path.exists(self.target_folder):
-            os.makedirs(self.target_folder)
+        self.journals = ['JHEP', 'EPJC']
+        self.ftp_port = ftp_port
+
+        # Creating target folders
+        paths_of_folders = [
+            os.path.join(SPRINGER_DOWNLOAD_DIR, 'EPJC'),
+            os.path.join(SPRINGER_DOWNLOAD_DIR, 'JHEP'), 
+            os.path.join(SPRINGER_UNPACK_FOLDER, 'EPJC'), 
+            os.path.join(SPRINGER_UNPACK_FOLDER, 'JHEP')
+            ]
+
+        for path_of_folder in paths_of_folders: 
+            if not os.path.exists(path_of_folder):
+                os.makedirs(path_of_folder)
+
     def start_requests(self):
         """List selected folder on remote FTP and yield new zip files."""
+
+        self.log('Harvest started.', logging.INFO)
         if self.package_path:
-            ftp_params = {"ftp_local_filename": self.package_path}
-            yield Request(self.package_path, meta=ftp_params, callback=self.handle_package_ftp)
-        else:
-            ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
-            missing_files = []
-            for journal in ['EPJC', 'JHEP']:
-                _, tmp_missing_files = sftp_list_files(
-                    os.path.join(self.ftp_folder, journal),
-                    os.path.join(self.target_folder, journal),
-                    server=ftp_host,
-                    user=ftp_params['ftp_user'],
-                    password=ftp_params['ftp_password']
-                )
-                missing_files.extend(tmp_missing_files)
-            # TODO - add checking if the package was already downloaded
+            self.log('Harvesting locally: %s' %
+                     self.package_path, logging.INFO)
+            return [Request(self.package_path, callback=self.handle_package_sftp), ]
+        return self.download_files_from_sftp()
 
-            for remote_file in missing_files:
-                journal = 'EPJC' if 'EPJC' in remote_file else 'JHEP'
-                remote_file = str(remote_file).strip('/data/in/%s/' % journal)
-                ftp_params["ftp_local_filename"] = os.path.join(
-                    self.target_folder,
-                    journal,
-                    remote_file
-                )
-                remote_url = "ftp://{0}/{1}".format(ftp_host, os.path.join('data/in/', journal, remote_file))
-                yield Request(
-                    str(remote_url),
-                    meta=ftp_params,
-                    callback=self.handle_package_ftp)
+    def download_files_from_sftp(self):
+        sftp_host, sftp_params = ftp_connection_info(
+            self.ftp_host, self.ftp_netrc)
+        cnopts = pysftp.CnOpts()
+        cnopts.hostkeys = None
 
-    def handle_package_ftp(self, response):
+        self.log("Connecting to SFTP server...", logging.INFO)
+        # Connect to the ftp server
+        with pysftp.Connection(sftp_host, username=sftp_params['ftp_user'], password=sftp_params['ftp_password'], cnopts=cnopts) as sftp:
+            self.log("SFTP connection established.", logging.INFO)
+
+            if self.ftp_folder:
+                if not sftp.isdir(self.ftp_folder):
+                    self.log(
+                        "Remote directory doesn't exist. Abort connection.", logging.ERROR)
+                    return
+                sftp.chdir(self.ftp_folder)
+
+            # sorting packages by journals
+            for journal in self.journals:
+                sftp.chdir(os.path.join(self.ftp_folder, journal))
+                for file in sftp.listdir():
+                    if file.endswith('.zip') or file.endswith('.tar'):
+                        remote_path = os.path.join(
+                            self.ftp_folder, journal, file)
+                        local_path = os.path.join(
+                            SPRINGER_WORKING_DIR, self.target_folder, journal, file)
+                        if os.path.exists(local_path):
+                            self.log("Skipping '%s' as it is already present locally at %s." % (
+                                remote_path, local_path))
+                            continue
+
+                        sftp.get(remote_path, local_path, preserve_mtime=True)
+                        yield Request('file://' + local_path, callback=self.handle_package_sftp)
+
+    def handle_package_sftp(self, response):
         """Handle the zip package and yield a request for every XML found."""
         self.log('Handling package: %s' % response.url, logging.INFO)
-
+        package_path = response.url.replace('file://', '')
         filename = os.path.basename(response.url).rstrip(".zip")
-
+        unzipped_files_folder = package_path.replace(SPRINGER_DOWNLOAD_DIR, SPRINGER_UNPACK_FOLDER)
         # TMP dir to extract zip packages:
-        target_folder = mkdtemp(prefix=filename + "_", dir=SPRINGER_UNPACK_FOLDER)
+        target_folder = mkdtemp(prefix=filename + "_",
+                                dir=os.path.dirname(unzipped_files_folder))
 
-        zip_filepath = response.meta["ftp_local_filename"]
-        if zip_filepath.startswith('file://'):
-            zip_filepath = zip_filepath[7:]
+        zip_filepath = response.url.replace('file://', '')
 
         files = unzip_files(zip_filepath, target_folder)
         self.log('Extracted files to %s' % target_folder, logging.INFO)
@@ -123,8 +148,10 @@ class S3SpringerSpider(XMLFeedSpider):
         for xml_file in files:
             if '.scoap' in xml_file or '.Meta' in xml_file:
                 xml_url = u"file://{0}".format(os.path.abspath(xml_file))
-                pdfa_name = "{0}.pdf".format(os.path.basename(xml_file).split('.')[0])
-                pdfa_path = os.path.join(os.path.dirname(xml_file), 'BodyRef', 'PDF', pdfa_name)
+                pdfa_name = "{0}.pdf".format(
+                    os.path.basename(xml_file).split('.')[0])
+                pdfa_path = os.path.join(os.path.dirname(
+                    xml_file), 'BodyRef', 'PDF', pdfa_name)
                 pdfa_url = u"file://{0}".format(pdfa_path)
                 yield Request(
                     xml_url,
@@ -137,4 +164,3 @@ class S3SpringerSpider(XMLFeedSpider):
         self.log('Parsing node...', logging.INFO)
         parser = S3SpringerParser()
         return parser.parse_node(response, node)
-
