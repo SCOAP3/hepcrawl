@@ -90,14 +90,6 @@ def sftp_list_files_with_host(server_folder, target_folder, host):
         all_files.append(source_file)
     return all_files, missing_files
 
-def sftp_list_folders_with_host(server_folder, host):
-    """List files from given FTP's server folder to target folder."""
-    folders = host.listdir('/' + server_folder)
-    all_folders = []
-    for folder in folders:
-        if not folder.startswith('.'):
-            all_folders.append(folder)
-    return all_folders
 
 def ftp_list_folders_with_host(server_folder, host):
     """List files from given FTP's server folder to target folder."""
@@ -112,15 +104,6 @@ def ftp_list_files(server_folder, target_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
     with ftputil.FTPHost(server, user, password, session_factory=ftp_session_factory) as host:
         return ftp_list_files_with_host(server_folder, target_folder, host)
-
-def sftp_list_files(server_folder, target_folder, server, user, password):
-    """List files from given FTP's server folder to target folder."""
-    # ignore remote server hostkey
-    cnopts = pysftp.CnOpts()
-    cnopts.hostkeys = None
-
-    with pysftp.Connection(host=server, username=user, password=password, cnopts=cnopts) as sftp:
-        return sftp_list_files_with_host(server_folder, target_folder, sftp)
 
 def ftp_list_folders(server_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
