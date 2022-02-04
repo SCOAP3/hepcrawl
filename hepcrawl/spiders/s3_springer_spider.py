@@ -70,7 +70,6 @@ class S3SpringerSpider(XMLFeedSpider):
         self.target_folder = SPRINGER_DOWNLOAD_DIR
         self.package_path = package_path
         self.journals = ['JHEP', 'EPJC']
-        self.ftp_port = ftp_port
 
         # Creating target folders
         paths_of_folders = [
