@@ -13,6 +13,8 @@ from __future__ import absolute_import, print_function
 
 import logging
 import os
+import backoff
+import requests
 
 import ftputil
 from ftputil.error import FTPOSError
@@ -25,6 +27,9 @@ from ..utils import ftp_connection_info, unzip_files, ftp_session_factory
 
 from ..settings import OXFORD_DOWNLOAD_DIR
 
+@backoff.on_exception(backoff.expo, Exception, max_tries=3)
+def download_file_from_ftp(host, file_path, local_filename):
+    host.download(file_path, local_filename)
 
 class OxfordUniversityPressSpider(XMLFeedSpider):
     """Oxford University Press SCOAP3 crawler.
@@ -192,12 +197,12 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 file_name = '%s_%s' % (
                     filename_prefix, os.path.basename(file_path))
                 local_filename = os.path.join(self.target_folder, file_name)
-                host.download(file_path, local_filename)
 
+                download_file_from_ftp()
                 # yield the downloaded file
                 yield Request('file://' + local_filename, callback=self.handle_package_ftp)
 
-            # after processing the files clean up FTP
+            # if download was successful, after processing the files clean up FTP
             self.cleanup_ftp(host, ftp_folder, files_to_download)
 
     def handle_package_ftp(self, response):
