@@ -83,7 +83,6 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
             # return value has to be iterable
             return [Request(self.package_path, callback=self.handle_package_ftp), ]
             # connect to FTP server, yield the files to download and process
-            # at the end of the process FTP will be cleaned up, all processed files will be deleted
         return self.download_files_from_ftp(self.ftp_folder)
 
     def delete_empty_folders(self, host, ftp_folder):
@@ -107,22 +106,6 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 self.log('Skipping non-empty folder: %s' %
                          folder_path, logging.INFO)
 
-    def delete_downloaded_files(self, host, downloaded_files):
-        """Delete all files in the 'downloaded_files' list"""
-        for file_path in downloaded_files:
-            host.remove(file_path)
-            self.log('Deleted file: %s' % file_path, logging.INFO)
-
-    def cleanup_ftp(self, host, ftp_folder, downloaded_files):
-        """Deleting all files which has been downloaded and empty folders under 'ftp_folder'."""
-        self.log('Cleaning up FTP...', logging.INFO)
-
-        try:
-            self.delete_downloaded_files(host, downloaded_files)
-            self.delete_empty_folders(host, ftp_folder)
-            self.log('FTP cleanup done.', logging.INFO)
-        except FTPOSError as e:
-            self.log('Failed to cleanup FTP! Error: %s' % e, logging.ERROR)
 
     def collect_files_to_download(self, host, ftp_folder):
         """
@@ -165,40 +148,29 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
             files_to_download = self.collect_files_to_download(
                 host, ftp_folder)
 
+            all_files_in_target_folder =  os.listdir(self.target_folder)
+            ## removing prefexes from files in targer folder
+            files_wihtout_prefixs = [file_name[len(filename_prefix) + 1:] for file_name in all_files_in_target_folder ]
+            print(files_wihtout_prefixs, files_to_download)
             for file_path in files_to_download:
                 if file_path.endswith('go.xml'):
                     # skip go.xml
                     self.log('Skipping file: %s' % file_path, logging.INFO)
                     continue
-                file_name_without_time_prefix = os.path.basename(file_path)
-                all_files_names_in_target_folder = os.listdir(
-                    self.target_folder)
+                if os.path.basename(file_path) in files_wihtout_prefixs:
+                    self.log("Skipping '%s' as it is already present locally." % (
+                    file_path))
+                    continue
+                else:
+                    # create the filename and download the file
+                    self.log('Downloading file: %s' % file_path, logging.INFO)
+                    file_name = '%s_%s' % (
+                        filename_prefix, os.path.basename(file_path))
+                    local_filename = os.path.join(self.target_folder, file_name)
+                    host.download(file_path, local_filename)
 
-                for file_name in all_files_names_in_target_folder:
-                    # removing prefix, +1 because new file name looks like prefix_filename
-                    file_name_without_time_prefix_in_target_folder = file_name[len(
-                        filename_prefix) + 1:]
-
-                    # checking is the file is already downloaded
-                    if file_name_without_time_prefix_in_target_folder == file_name_without_time_prefix:
-                        full_file_path_in_target_folder = os.path.join(
-                            self.target_folder, file_name)
-                        self.log("Skipping '%s' as it is already present locally at %s." % (
-                            file_name_without_time_prefix, full_file_path_in_target_folder))
-                        continue
-
-                # create the filename and download the file
-                self.log('Downloading file: %s' % file_path, logging.INFO)
-                file_name = '%s_%s' % (
-                    filename_prefix, os.path.basename(file_path))
-                local_filename = os.path.join(self.target_folder, file_name)
-                host.download(file_path, local_filename)
-
-                # yield the downloaded file
-                yield Request('file://' + local_filename, callback=self.handle_package_ftp)
-
-            # after processing the files clean up FTP
-            self.cleanup_ftp(host, ftp_folder, files_to_download)
+                    # yield the downloaded file
+                    yield Request('file://' + local_filename, callback=self.handle_package_ftp)
 
     def handle_package_ftp(self, response):
         """Handle a zip package and yield every XML found."""
