@@ -78,12 +78,12 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
 
         # if package_path is defined, don't connect to FTP server
         if self.package_path:
-            self.log('Harvesting locally: %s' %
-                     self.package_path, logging.INFO)
+            self.log('Harvesting locally: %s' % self.package_path, logging.INFO)
             # return value has to be iterable
             return [Request(self.package_path, callback=self.handle_package_ftp), ]
-            # connect to FTP server, yield the files to download and process
-            # at the end of the process FTP will be cleaned up, all processed files will be deleted
+
+        # connect to FTP server, yield the files to download and process
+        # at the end of the process FTP will be cleaned up, all processed files will be deleted
         return self.download_files_from_ftp(self.ftp_folder)
 
     def delete_empty_folders(self, host, ftp_folder):
@@ -92,8 +92,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
         for folder_path in host.listdir(ftp_folder):
             folder_path = os.path.join(ftp_folder, folder_path)
             if os.path.basename(folder_path).startswith('.'):
-                self.log('Skipping hidden directory: %s' %
-                         folder_path, logging.INFO)
+                self.log('Skipping hidden directory: %s' % folder_path, logging.INFO)
                 continue
 
             if not host.listdir(folder_path):
@@ -101,11 +100,9 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                     host.rmdir(folder_path)
                     self.log('Deleted folder: %s' % folder_path, logging.INFO)
                 except FTPOSError as e:
-                    self.log('Failed to delete folder. folder_path=%s error=%s' % (
-                        folder_path, e.message), logging.ERROR)
+                    self.log('Failed to delete folder. folder_path=%s error=%s' % (folder_path, e.message), logging.ERROR)
             else:
-                self.log('Skipping non-empty folder: %s' %
-                         folder_path, logging.INFO)
+                self.log('Skipping non-empty folder: %s' % folder_path, logging.INFO)
 
     def delete_downloaded_files(self, host, downloaded_files):
         """Delete all files in the 'downloaded_files' list"""
@@ -144,53 +141,33 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 if filename.endswith('.zip') or filename == 'go.xml':
                     collected_files.append(full_path)
                 else:
-                    self.log('File with invalid extension on FTP path=%s' %
-                             full_path, logging.WARNING)
+                    self.log('File with invalid extension on FTP path=%s' % full_path, logging.WARNING)
 
         return collected_files
 
     def download_files_from_ftp(self, ftp_folder):
         """"""
+
         filename_prefix = strftime('%Y-%m-%d_%H:%M:%S', localtime())
 
         # open the FTP connection
-        ftp_host, ftp_params = ftp_connection_info(
-            self.ftp_host, self.ftp_netrc)
+        ftp_host, ftp_params = ftp_connection_info(self.ftp_host, self.ftp_netrc)
         with ftputil.FTPHost(ftp_host, ftp_params['ftp_user'], ftp_params['ftp_password'],
                              session_factory=ftp_session_factory) as host:
 
             self.log('FTP connection established.', logging.INFO)
 
             # find all the files it's needed to download
-            files_to_download = self.collect_files_to_download(
-                host, ftp_folder)
-
+            files_to_download = self.collect_files_to_download(host, ftp_folder)
             for file_path in files_to_download:
                 if file_path.endswith('go.xml'):
                     # skip go.xml
                     self.log('Skipping file: %s' % file_path, logging.INFO)
                     continue
-                file_name_without_time_prefix = os.path.basename(file_path)
-                all_files_names_in_target_folder = os.listdir(
-                    self.target_folder)
-
-                for file_name in all_files_names_in_target_folder:
-                    # removing prefix, +1 because new file name looks like prefix_filename
-                    file_name_without_time_prefix_in_target_folder = file_name[len(
-                        filename_prefix) + 1:]
-
-                    # checking is the file is already downloaded
-                    if file_name_without_time_prefix_in_target_folder == file_name_without_time_prefix:
-                        full_file_path_in_target_folder = os.path.join(
-                            self.target_folder, file_name)
-                        self.log("Skipping '%s' as it is already present locally at %s." % (
-                            file_name_without_time_prefix, full_file_path_in_target_folder))
-                        continue
 
                 # create the filename and download the file
                 self.log('Downloading file: %s' % file_path, logging.INFO)
-                file_name = '%s_%s' % (
-                    filename_prefix, os.path.basename(file_path))
+                file_name = '%s_%s' % (filename_prefix, os.path.basename(file_path))
                 local_filename = os.path.join(self.target_folder, file_name)
                 host.download(file_path, local_filename)
 
@@ -222,8 +199,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
 
         if zip_target_folder.endswith("_archival"):
             self.log('Unzipping archival...', logging.INFO)
-            zip_target_folder = zip_target_folder[0:zip_target_folder.find(
-                "_archival")]
+            zip_target_folder = zip_target_folder[0:zip_target_folder.find("_archival")]
             zip_target_folder = os.path.join(zip_target_folder, "archival")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
 
@@ -231,14 +207,11 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
         if ".xml" in zip_filepath:
             self.log('Unzipping and parsing xml...', logging.INFO)
             xml_files = unzip_files(zip_filepath, zip_target_folder, '.xml')
-
             for xml_file in xml_files:
                 dir_path = os.path.dirname(xml_file)
                 filename = os.path.basename(xml_file).split('.')[0]
-                pdf_url = os.path.join(
-                    dir_path, "pdf", "%s.%s" % (filename, 'pdf'))
-                pdfa_url = os.path.join(
-                    dir_path, "archival", "%s.%s" % (filename, 'pdf'))
+                pdf_url = os.path.join(dir_path, "pdf", "%s.%s" % (filename, 'pdf'))
+                pdfa_url = os.path.join(dir_path, "archival", "%s.%s" % (filename, 'pdf'))
                 yield Request(
                     "file://{0}".format(xml_file),
                     meta={"package_path": zip_filepath,
