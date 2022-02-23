@@ -177,7 +177,7 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
                 for file_name in all_files_names_in_target_folder:
                     # removing prefix, +1 because new file name looks like prefix_filename
                     file_name_without_time_prefix_in_target_folder = file_name[len(
-                        filename_prefix + 1):]
+                        filename_prefix) + 1:]
 
                     # checking is the file is already downloaded
                     if file_name_without_time_prefix_in_target_folder == file_name_without_time_prefix:
