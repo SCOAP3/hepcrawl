@@ -151,7 +151,6 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
             all_files_in_target_folder =  os.listdir(self.target_folder)
             ## removing prefexes from files in targer folder
             files_wihtout_prefixs = [file_name[len(filename_prefix) + 1:] for file_name in all_files_in_target_folder ]
-            print(files_wihtout_prefixs, files_to_download)
             for file_path in files_to_download:
                 if file_path.endswith('go.xml'):
                     # skip go.xml
