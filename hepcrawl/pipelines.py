@@ -228,7 +228,7 @@ class InspireCeleryPushPipeline(InspireAPIPushPipeline):
 
     def open_spider(self, spider):
         self.celery.conf.update(dict(
-            BROKER_URL=spider.settings['BROKER_URL'],
+            CELERY_BROKER_URL=spider.settings['BROKER_URL'],
             CELERY_RESULT_BACKEND=spider.settings['CELERY_RESULT_BACKEND'],
             CELERY_ACCEPT_CONTENT=spider.settings['CELERY_ACCEPT_CONTENT'],
             CELERY_TIMEZONE=spider.settings['CELERY_TIMEZONE'],
