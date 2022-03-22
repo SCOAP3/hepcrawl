@@ -71,7 +71,8 @@ class OUPParser(Jats):
         record.add_xpath('journal_artid', '//elocation-id/text()')
 
         published_date = self._get_published_date(node)
-        record.add_value('journal_year', int(published_date[:4]))
+        volume = self.get_volume_year(node)
+        record.add_value('journal_year', int(volume))
         record.add_value('date_published', published_date)
 
         record.add_xpath('copyright_holder', '//copyright-holder/text()')
@@ -107,3 +108,8 @@ class OUPParser(Jats):
                 arxiv_eprints.append({'value': ar})
 
         return arxiv_eprints
+
+    def get_volume_year(self, node):
+        raw_volume = node.xpath('//volume/text()')
+        volume_year = raw_volume.extract()[0]
+        return volume_year
