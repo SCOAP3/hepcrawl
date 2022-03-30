@@ -47,7 +47,7 @@ def results():
                 spider = s3_springer_spider.S3SpringerSpider()
 
                 # extract files from package and create response for xml files
-                xml_requests = list(spider.handle_package_ftp(fake_response))
+                xml_requests = list(spider.handle_package_sftp(fake_response))
                 xml_responses = []
                 for req in xml_requests:
                     xml_path = fake_response_from_file(req.meta['xml_url'].replace('file://', ''))
