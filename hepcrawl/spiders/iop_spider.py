@@ -198,7 +198,7 @@ class IOPSpider(Spider):
                 # download file while preserving the timestamps
                 sftp.get(remote_path, local_file, preserve_mtime=True)
                 new_packages.append(local_file)
-                
+
         return new_packages
 
     def handle_package(self, response):
@@ -216,7 +216,7 @@ class IOPSpider(Spider):
 
         # uncompress files to temp directory
         files = uncompress(package_path, target_folder)
-        self.log('Files uncompressed to: %s' % target_folder,  logging.INFO)
+        self.log('Files uncompressed to: %s' % target_folder, logging.INFO)
 
         for path, _, files in os.walk(target_folder):
             for filename in files:

@@ -100,10 +100,12 @@ def ftp_list_folders_with_host(server_folder, host):
             all_folders.append(folder)
     return all_folders
 
+
 def ftp_list_files(server_folder, target_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""
     with ftputil.FTPHost(server, user, password, session_factory=ftp_session_factory) as host:
         return ftp_list_files_with_host(server_folder, target_folder, host)
+
 
 def ftp_list_folders(server_folder, server, user, password):
     """List files from given FTP's server folder to target folder."""

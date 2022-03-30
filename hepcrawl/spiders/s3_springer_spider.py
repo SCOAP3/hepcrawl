@@ -74,12 +74,11 @@ class S3SpringerSpider(XMLFeedSpider):
         # Creating target folders
         paths_of_folders = [
             os.path.join(SPRINGER_DOWNLOAD_DIR, 'EPJC'),
-            os.path.join(SPRINGER_DOWNLOAD_DIR, 'JHEP'), 
-            os.path.join(SPRINGER_UNPACK_FOLDER, 'EPJC'), 
-            os.path.join(SPRINGER_UNPACK_FOLDER, 'JHEP')
-            ]
+            os.path.join(SPRINGER_DOWNLOAD_DIR, 'JHEP'),
+            os.path.join(SPRINGER_UNPACK_FOLDER, 'EPJC'),
+            os.path.join(SPRINGER_UNPACK_FOLDER, 'JHEP')]
 
-        for path_of_folder in paths_of_folders: 
+        for path_of_folder in paths_of_folders:
             if not os.path.exists(path_of_folder):
                 os.makedirs(path_of_folder)
 
