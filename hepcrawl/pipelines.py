@@ -239,7 +239,7 @@ class InspireCeleryPushPipeline(InspireAPIPushPipeline):
 
     def close_spider(self, spider):
         """Post results to BROKER API."""
-        if 'SCRAPY_JOB' in os.environ and self.count > 0:
+        if 'SCRAPY_JOB' in os.environ:
             task_endpoint = spider.settings['API_PIPELINE_TASK_ENDPOINT_MAPPING'].get(
                 spider.name, spider.settings['API_PIPELINE_TASK_ENDPOINT_DEFAULT']
             )
