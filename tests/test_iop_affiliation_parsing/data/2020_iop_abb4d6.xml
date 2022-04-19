@@ -1,0 +1,2322 @@
+<article article-type="research-article" dtd-version="3.0" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">  
+	<front> 
+		<journal-meta> 
+			<journal-id journal-id-type="publisher-id">cpc</journal-id>  
+			<journal-title-group> 
+				<journal-title xml:lang="en">Chinese Physics C</journal-title> 
+			</journal-title-group>  
+			<issn pub-type="ppub">1674-1137</issn>  
+			<publisher> 
+				<publisher-name>Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd</publisher-name> 
+			</publisher> 
+		</journal-meta>  
+		<article-meta> 
+			<article-id pub-id-type="publisher-id">cpc_44_12_125104</article-id>  
+			<article-id pub-id-type="doi">10.1088/1674-1137/abb4d6</article-id>  
+			<article-id pub-id-type="manuscript">abb4d6</article-id>  
+			<article-categories> 
+				<subj-group subj-group-type="article-type"> 
+					<subject>Paper</subject> 
+				</subj-group>  
+				<subj-group subj-group-type="section"> 
+					<subject>Particle and nuclear astrophysics and cosmology</subject> 
+				</subj-group> 
+			</article-categories>  
+			<title-group> 
+				<article-title>Accurate correction of arbitrary spin fermion quantum tunneling from non-stationary Kerr-de Sitter black hole based on corrected Lorentz dispersion relation <xref ref-type="fn" rid="cpc_44_12_125104_fn1">*</xref>  
+					<fn id="cpc_44_12_125104_fn1"> 
+						<label>*</label>  
+						<p>Supported by National Natural Science Foundation of China (11573022), National Natural Science Foundation of China (11273020) and Natural Science Foundation of Shandong Province, China (ZR2019MA059)</p> 
+					</fn> 
+				</article-title>  
+				<alt-title alt-title-type="ascii">Accurate correction of arbitrary spin fermion quantum tunneling from non-stationary Kerr-de Sitter black hole based on corrected Lorentz dispersion relation</alt-title> 
+			</title-group>  
+			<contrib-group content-type="all"> 
+				<contrib contrib-type="author" xlink:type="simple"> 
+					<name name-style="western"> 
+						<surname>Sha</surname>  
+						<given-names>Bei</given-names> 
+					</name>  
+					<name content-type="non-latin-no-space" name-style="eastern"> 
+						<surname>沙</surname>  
+						<given-names>贝</given-names> 
+					</name> <xref ref-type="aff" rid="cpc_44_12_125104_af1">1</xref> <xref ref-type="aff" rid="cpc_44_12_125104_em1">†</xref> 
+				</contrib>  
+				<contrib contrib-type="author" xlink:type="simple"> 
+					<name name-style="western"> 
+						<surname>Liu</surname>  
+						<given-names>Zhi-E</given-names> 
+					</name>  
+					<name content-type="non-latin-no-space" name-style="eastern"> 
+						<surname>刘</surname>  
+						<given-names>志娥</given-names> 
+					</name> <xref ref-type="aff" rid="cpc_44_12_125104_af1">1</xref> <xref ref-type="aff" rid="cpc_44_12_125104_em2">†</xref> 
+				</contrib>  
+				<contrib contrib-type="author" xlink:type="simple"> 
+					<name name-style="western"> 
+						<surname>Liu</surname>  
+						<given-names>Yu-Zhen</given-names> 
+					</name>  
+					<name content-type="non-latin-no-space" name-style="eastern"> 
+						<surname>刘</surname>  
+						<given-names>玉真</given-names> 
+					</name> <xref ref-type="aff" rid="cpc_44_12_125104_af1">1</xref> <xref ref-type="aff" rid="cpc_44_12_125104_em3">†</xref> 
+				</contrib>  
+				<contrib contrib-type="author" xlink:type="simple"> 
+					<name name-style="western"> 
+						<surname>Tan</surname>  
+						<given-names>Xia</given-names> 
+					</name>  
+					<name content-type="non-latin-no-space" name-style="eastern"> 
+						<surname>谭</surname>  
+						<given-names>霞</given-names> 
+					</name> <xref ref-type="aff" rid="cpc_44_12_125104_af1">1</xref> <xref ref-type="aff" rid="cpc_44_12_125104_em4">†</xref> 
+				</contrib>  
+				<contrib contrib-type="author" xlink:type="simple"> 
+					<name name-style="western"> 
+						<surname>Zhang</surname>  
+						<given-names>Jie</given-names> 
+					</name>  
+					<name content-type="non-latin-no-space" name-style="eastern"> 
+						<surname>张</surname>  
+						<given-names>洁</given-names> 
+					</name> <xref ref-type="aff" rid="cpc_44_12_125104_af1">1</xref> <xref ref-type="aff" rid="cpc_44_12_125104_em5">†</xref> 
+				</contrib>  
+				<contrib contrib-type="author" xlink:type="simple"> 
+					<name name-style="western"> 
+						<surname>Yang</surname>  
+						<given-names>Shu-Zheng</given-names> 
+					</name>  
+					<name content-type="non-latin-no-space" name-style="eastern"> 
+						<surname>杨</surname>  
+						<given-names>树政</given-names> 
+					</name> <xref ref-type="aff" rid="cpc_44_12_125104_af2">2</xref> <xref ref-type="aff" rid="cpc_44_12_125104_em6">†</xref> 
+				</contrib>  
+				<aff id="cpc_44_12_125104_af1"> 
+					<label>1</label> School of Physics and Electronic Engineering, Qilu Normal University, Jinan 250200, China
+				</aff>  
+				<aff id="cpc_44_12_125104_af2"> 
+					<label>2</label> College of Physics and Space Science, China West Normal University, Nanchong 637002, China
+				</aff>  
+				<ext-link ext-link-type="email" id="cpc_44_12_125104_em1" xlink:type="simple">shabei@qlnu.edu.cn</ext-link>  
+				<ext-link ext-link-type="email" id="cpc_44_12_125104_em2" xlink:type="simple">zhieliu@163.com</ext-link>  
+				<ext-link ext-link-type="email" id="cpc_44_12_125104_em3" xlink:type="simple">liuyz249@sina.com</ext-link>  
+				<ext-link ext-link-type="email" id="cpc_44_12_125104_em4" xlink:type="simple">adfyt@163.com</ext-link>  
+				<ext-link ext-link-type="email" id="cpc_44_12_125104_em5" xlink:type="simple">327093017@qq.com</ext-link>  
+				<ext-link ext-link-type="email" id="cpc_44_12_125104_em6" xlink:type="simple">szyangphys@126.com</ext-link> 
+			</contrib-group>  
+			<pub-date pub-type="ppub">
+				<month>12</month>
+				<year>2020</year>
+			</pub-date>  
+			<pub-date pub-type="open-access"> 
+				<day>23</day>  
+				<month>9</month>  
+				<year>2020</year> 
+			</pub-date>  
+			<volume>44</volume>
+			<issue>12</issue>  
+			<elocation-id content-type="artnum">125104</elocation-id>  
+			<history> 
+				<date date-type="received"> 
+					<day>11</day>  
+					<month>2</month>  
+					<year>2020</year> 
+				</date>  
+				<date date-type="published-online"> 
+					<day>23</day>  
+					<month>9</month>  
+					<year>2020</year> 
+				</date>  
+				<date date-type="oa-requested"> 
+					<day>11</day>  
+					<month>2</month>  
+					<year>2020</year> 
+				</date> 
+			</history>  
+			<permissions> 
+				<copyright-statement>© 2020Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd</copyright-statement>  
+				<copyright-year>2019</copyright-year>  
+				<license license-type="cc-by" xlink:href="http://creativecommons.org/licenses/by/3.0/" xlink:type="simple"> 
+					<license-p> 
+						<graphic content-type="online" orientation="portrait" position="float" xlink:href="ccby.gif" xlink:type="simple"/>Content from this work may be used under the terms of the 
+						<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/3.0" xlink:type="simple">Creative Commons Attribution 3.0 licence</ext-link>. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. Article funded by SCOAP<sup>3</sup> and published under licence by Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd
+					</license-p> 
+				</license> 
+			</permissions>  
+			<abstract> 
+				<title>Abstract</title>  
+				<p>According to a corrected dispersion relation proposed in the study on the string theory and quantum gravity theory, the Rarita-Schwinger equation was precisely modified, which resulted in the Rarita-Schwinger-Hamilton-Jacobi equation. Using this equation, the characteristics of arbitrary spin fermion quantum tunneling radiation from non-stationary Kerr-de Sitter black holes were determined. A number of accurately corrected physical quantities, such as surface gravity, chemical potential, tunneling probability, and Hawking temperature, which describe the properties of black holes, were derived. This research has enriched the research methods and enabled increased precision in black hole physics research.</p> 
+			</abstract>  
+			<kwd-group kwd-group-type="author"> 
+				<kwd>black hole</kwd>  
+				<kwd>rermions</kwd>  
+				<kwd>tunneling radiation</kwd>  
+				<kwd>Lorentz dispersion relation</kwd> 
+			</kwd-group>  
+			<kwd-group kwd-group-type="author-pacs"> 
+				<kwd>04.70.DY</kwd>  
+				<kwd>04.62.+V</kwd>  
+				<kwd>11.30.-j</kwd> 
+			</kwd-group>  
+			<funding-group> 
+				<open-access> 
+					<p content-type="scoap3">Article funded by SCOAP<sup>3</sup></p> 
+				</open-access> 
+			</funding-group>  
+			<counts> 
+				<page-count count="8"/> 
+			</counts> 
+		</article-meta> 
+	</front>  
+	<body>
+		<sec id="cpc_44_12_125104_s01">
+			<label>1.</label>
+			<title>Introduction</title>
+			<p>Hawking used the quantum theory to postulate that a black hole radiates particles outside its event horizon. Presently, this radiation is known as the Hawking radiation. The Hawking black hole radiation theory profoundly reveals intimate connections among the gravitation theory, the quantum theory, and the thermodynamic statistical physics. Hawking did not use the concepts of quantum tunneling and potential barrier in his specific calculation, nor did he consider the influence of the particles' emission on the black hole's mass or its event horizon, although he had used the quantum tunneling effect when proposing the black hole radiation [<xref ref-type="bibr" rid="cpc_44_12_125104_bib1">1</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib2">2</xref>]. Such a calculation resulted in the Hawking radiation having a precise form of the Planck blackbody radiation, but also led to the paradox of the black hole “information loss”. Such an information loss (non-conservation) would lead to a major crisis in quantum theory.
+			</p>
+			<p>Hawking's theory of tunneling radiation spurred researchers to study black holes. Kraus, Parikh, Wilczek <italic>et al</italic>. studied the quantum tunneling radiation of black holes by considering the energy conservation conditions in the radiation process, and explained Hawking's thermal radiation satisfactorily. This theory not only revised Hawking's pure thermal radiation theory, but also promoted the research and development of black hole physics [<xref ref-type="bibr" rid="cpc_44_12_125104_bib3">3</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib10">10</xref>]. Then, the semi-classical Hamilton-Jacobi method was proposed for studying the black holes' tunneling radiation [<xref ref-type="bibr" rid="cpc_44_12_125104_bib11">11</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib12">12</xref>]. Using this method, the Klein-Gordon equation describing the behavior of "spin 0" particles was rewritten as action, and then was expanded using the Wentzel-Kramers-Brillouin (WKB) approximation. The terms containing 
+				<inline-formula>
+					<tex-math><?CDATA $ \hbar $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M1.jpg" xlink:type="simple"/>
+				</inline-formula> (which was considered as a small quantity) were ignored, and the semi-classical Hamilton-Jacobi equation (herein referred to as the H-J equation) was obtained. Subsequently, the semi-classical H-J method was extensively developed to study Hawking radiation and black hole temperature. Kenner and Mann <italic>et al</italic>. firstly used the semi-classical method to study the quantum tunneling of fermions with spin-1/2 [<xref ref-type="bibr" rid="cpc_44_12_125104_bib13">13</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib14">14</xref>]. They decomposed the field equation into the "spin up" and "spin down" cases, and obtained the tunneling rate of Dirac particles and the temperature of black holes. Banerjee <italic>et al</italic>. proposed an extended Hamilton-Jacobi method, beyond the semi-classical approximation, by considering all the terms in the expansion of the one-particle action [<xref ref-type="bibr" rid="cpc_44_12_125104_bib15">15</xref>]. Yang and Lin developed the semi-classical method and derived the H-J equation from the Dirac equation for spin-1/2 fermions by selecting the gamma matrix in higher-dimensional and lower-dimensional curved space-time [<xref ref-type="bibr" rid="cpc_44_12_125104_bib16">16</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib17">17</xref>]. Later, this semi-classical H-J method was generalized to the Rarita-Schwinger equation (herein referred to as the R-S equation) for spin-3/2 fermions, from which the H-J equation was also obtained [<xref ref-type="bibr" rid="cpc_44_12_125104_bib18">18</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib21">21</xref>]. That is to say, the H-J equation can uniformly describe the dynamic behavior of arbitrary spin fermions in the curved space-time. Chen, Gecim <italic>et al</italic>. studied the effects of quantum gravity on black holes utilizing the semi-classical H-J method and introducing the generalized uncertainty principle (GUP) [<xref ref-type="bibr" rid="cpc_44_12_125104_bib22">22</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib32">32</xref>]. Through this semi-classical H-J method, the calculation process was simplified, and so the amount of calculations was greatly reduced.
+			</p>
+			<p>Recent research on the quantum gravity theory suggested that the Lorentz dispersion relation needed to be modified for high energies [<xref ref-type="bibr" rid="cpc_44_12_125104_bib33">33</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib38">38</xref>]. Accordingly, the quantum tunneling radiation at the event horizon of a black hole has to be modified, owing to the conservation of energy and momentum. Since the H-J equation in the curved space-time corresponds to the Lorentz relation of energy and momentum in the curved space-time, the correction of the Lorentz dispersion relation will inevitably correct the H-J equation of particles in a strong gravitational field, which will lead to the correction of physical quantities such as the quantum tunneling rates of fermions or bosons and the black hole temperature. Although the modification of the Lorentz dispersion relation is only a small correction on the Planck scale, it significantly impacts the quantum tunneling radiation properties of black holes [<xref ref-type="bibr" rid="cpc_44_12_125104_bib39">39</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib43">43</xref>]. Accurately correcting the tunneling of arbitrary spin fermions at the event horizon of a black hole is a subject that merits further studies.
+			</p>
+			<p>Some studies have been done on the correction of the tunneling radiation of static and stationary black holes [<xref ref-type="bibr" rid="cpc_44_12_125104_bib19">19</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib21">21</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib44">44</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib51">51</xref>]. Actually, real black holes in the universe appear as non-stationary black holes, owing to evaporation, accretion, or mergers. For non-stationary black holes, Zhao <italic>et al</italic>. proposed a method for determining the black hole temperature at the event horizon – the so-called tortoise coordinate transformation [<xref ref-type="bibr" rid="cpc_44_12_125104_bib52">52</xref>]. Subsequently, a series of studies were conducted on non-stationary black holes [<xref ref-type="bibr" rid="cpc_44_12_125104_bib53">53</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib57">57</xref>]. However, only a few studies have been reported on the correction of the quantum tunneling radiation from non-stationary black holes based on the corrected Lorentz dispersion relation, which merits further studies. In this paper, the arbitrary spin fermion quantum tunneling from a non-stationary Kerr-de Sitter black hole is studied, using the corrected Lorentz dispersion relation.
+			</p>
+			<p>The remainder of this paper is organized as follows. In section 2, the dynamics equation of fermions in the non-stationary Kerr-de Sitter space-time is derived, based on the corrected Lorentz dispersion relation. In section 3, some precisely corrected, important physical quantities describing the quantum tunneling characteristics of arbitrary spin fermions are obtained, subsequently yielding the black hole temperature. In section 4, the study conclusions and some discussions, including that on the black hole entropy, are presented.</p>
+		</sec>
+		<sec id="cpc_44_12_125104_s02">
+			<label>2.</label>
+			<title>Correction of the dynamic equation for arbitrary spin fermions in non-stationary Kerr-de Sitter space-time</title>
+			<p>The modified Lorentz dispersion relation proposed in string theory and quantum gravity theory is [<xref ref-type="bibr" rid="cpc_44_12_125104_bib36">36</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib38">38</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib58">58</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib59">59</xref>]
+			</p>
+			<p>
+				<disp-formula> 
+					<label>1</label>  
+					<tex-math id="cpc_44_12_125104_E1"> <?CDATA $ p_{0}^{2} = p^{2}+m^{2}-(Lp_{0})^{\alpha}p^{2}, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E1.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where <italic>L</italic> is a constant on the Planck scale. When 
+				<inline-formula>
+					<tex-math><?CDATA $ \alpha = 2 $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M2.jpg" xlink:type="simple"/>
+				</inline-formula> is considered, the general fermions' dynamic equation—R-S equation [<xref ref-type="bibr" rid="cpc_44_12_125104_bib60">60</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib61">61</xref>] can be extended to the Kerr-de Sitter curved space-time as [<xref ref-type="bibr" rid="cpc_44_12_125104_bib19">19</xref>-<xref ref-type="bibr" rid="cpc_44_12_125104_bib21">21</xref>]
+			</p>
+			<p>
+				<disp-formula> 
+					<label>2</label>  
+					<tex-math id="cpc_44_12_125104_E2"> <?CDATA $ \left(\gamma^{\mu}D_{\mu}+\frac{m}{\hbar}-\sigma\hbar\gamma^{t}D_{t}\gamma^{j}D_{j}\right)\psi_{\alpha_{1}\cdots\alpha_{k}} = 0, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E2.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where 
+				<inline-formula>
+					<tex-math><?CDATA $ \gamma^{\mu} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M3.jpg" xlink:type="simple"/>
+				</inline-formula> is the gamma matrix in curved space-time, satisfying the following condition:
+			</p>
+			<p>
+				<disp-formula> 
+					<label>3</label>  
+					<tex-math id="cpc_44_12_125104_E3"> <?CDATA $ \{\gamma^{\mu},\gamma^{\nu}\} = 2g^{\mu\nu}I, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E3.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>and 
+				<inline-formula>
+					<tex-math><?CDATA $ D_{\mu} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M4.jpg" xlink:type="simple"/>
+				</inline-formula> is the covariant derivative operation symbol of curved space-time, that is
+			</p>
+			<p>
+				<disp-formula> 
+					<label>4</label>  
+					<tex-math id="cpc_44_12_125104_E4"> <?CDATA $ D_{\mu} = \partial_{\mu}+\Omega_{\mu}+\frac{i}{\hbar}eA_{\mu}, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E4.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where 
+				<inline-formula>
+					<tex-math><?CDATA $ \Omega_{\mu} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M5.jpg" xlink:type="simple"/>
+				</inline-formula> is the rotational connection in curved space-time. As quantum scale corrections, 
+				<inline-formula>
+					<tex-math><?CDATA $ 0 \lt \sigma\ll1 $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M6.jpg" xlink:type="simple"/>
+				</inline-formula>, so 
+				<inline-formula>
+					<tex-math><?CDATA $ \sigma\hbar\gamma^{t}D_{t}\gamma^{j}D_{j}\psi_{\alpha_{1}\cdots\alpha_{k}} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M7.jpg" xlink:type="simple"/>
+				</inline-formula> is a small term. This matrix equation can only be solved in the specific curved space-time, so the fermions' wave function is set first as
+			</p>
+			<p>
+				<disp-formula> 
+					<label>5</label>  
+					<tex-math id="cpc_44_12_125104_E5"> <?CDATA $ \psi_{\alpha_{1}\cdots\alpha_{k}} = \xi_{\alpha_{1}\cdots\alpha_{k}}e^{\frac{i}{\hbar}S}, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E5.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where <italic>S</italic> is the action of fermions with mass <italic>m</italic> in the space-time of the Kerr-de Sitter black hole.
+			</p>
+			<p>In order to solve Eq. (2), we rewrite it as</p>
+			<p>
+				<disp-formula> 
+					<label>6</label>  
+					<tex-math id="cpc_44_12_125104_E6"> <?CDATA $ (i\gamma^{\mu}\partial_{\mu}S+m+\sigma\gamma^{v}\partial_{v}S\gamma^{j}\partial_{j}S)\xi_{\alpha_{1}\cdots\alpha_{k}} = 0, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E6.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where 
+				<inline-formula>
+					<tex-math><?CDATA $ \mu = 0,1,2,3; j = 1,2,3 $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M8.jpg" xlink:type="simple"/>
+				</inline-formula>. For a non-stationary black hole, we use the advanced Eddington coordinate <italic>v</italic> to represent the dynamic characteristics. To solve Eq. (6), define
+			</p>
+			<p>
+				<disp-formula> 
+					<label>7</label>  
+					<tex-math id="cpc_44_12_125104_E7"> <?CDATA $ \begin{aligned}[b] & \Gamma^{\mu} = i\gamma^{\mu}+\sigma\partial_{v}S\gamma^{v}\gamma^{\mu},\;\;\;\;\Gamma^{\nu} = i\gamma^{\nu}+\sigma\partial_{v}S\gamma^{v}\gamma^{\nu},\\ & m_{D} = m-\sigma g^{vv}(\partial_{v}S)^{2}, \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E7.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>so Eq. (6) becomes</p>
+			<p>
+				<disp-formula> 
+					<label>8</label>  
+					<tex-math id="cpc_44_12_125104_E8"> <?CDATA $ (\Gamma^{\mu}\partial_{\mu}S+m_{D})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E8.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Multiplying both sides of Eq. (8) by 
+				<inline-formula>
+					<tex-math><?CDATA $ \Gamma^{\mu}\partial_{\mu}S $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M9.jpg" xlink:type="simple"/>
+				</inline-formula>, we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>9</label>  
+					<tex-math id="cpc_44_12_125104_E9"> <?CDATA $ (\Gamma^{\nu}\Gamma^{\mu}\partial_{\nu}S\partial_{\mu}S-m_{D}^{2})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E9.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>
+				<disp-formula> 
+					<label>10</label>  
+					<tex-math id="cpc_44_12_125104_E10"> <?CDATA $ (\Gamma^{\mu}\Gamma^{\nu}\partial_{\mu}S\partial_{\nu}S-m_{D}^{2})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E10.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Eqs. (9) and (10) are equivalent. Adding Eqs. (9) and (10) and considering Eqs. (7) and (3), we obtain</p>
+			<p>
+				<disp-formula> 
+					<label>11</label>  
+					<tex-math id="cpc_44_12_125104_E11"> <?CDATA $ [g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S-2i\sigma\partial_{v}Sg^{v\nu}\partial_{\nu}S\gamma^{\mu}\partial_{\mu}S -\sigma^{2}(\partial_{v}Sg^{v\nu}\partial_{\nu}S)^{2}+m^{2}-2m\sigma g^{vv}(\partial_{v}S)^{2} +\sigma^{2} (g^{vv})^{2}(\partial_{v}S)^{4}]\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E11.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Dividing both sides of Eq. (11) by 
+				<inline-formula>
+					<tex-math><?CDATA $ -2\partial_{v}Sg^{v\nu}\partial_{\nu}S $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M10.jpg" xlink:type="simple"/>
+				</inline-formula>, we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>12</label>  
+					<tex-math id="cpc_44_12_125104_E12"> <?CDATA $ \left\{i\sigma\gamma^{\mu}\partial_{\mu}S-\frac{g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S-\sigma^{2}(\partial_{v}Sg^{v\nu}\partial_{\nu}S)^{2}+m^{2}-2m\sigma g^{vv}(\partial_{v}S)^{2}+\sigma^{2}(g^{vv})^{2}(\partial_{v}S)^{4}}{2\partial_{v}S g^{v\nu}\partial_{\nu}S}\right\}\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E12.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Defining</p>
+			<p>
+				<disp-formula> 
+					<label>13</label>  
+					<tex-math id="cpc_44_12_125104_E13"> <?CDATA $ m_{l} = -\frac{g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S-\sigma^{2}(\partial_{v}Sg^{v\nu}\partial_{\nu}S)^{2}+m^{2}-2m\sigma g^{vv}(\partial_{v}S)^{2} +\sigma^{2}(g^{vv})^{2}(\partial_{v}S)^{4}}{2\partial_{v}Sg^{v\nu}\partial_{\nu}S}, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E13.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Eq. (11) becomes</p>
+			<p>
+				<disp-formula> 
+					<label>14</label>  
+					<tex-math id="cpc_44_12_125104_E14"> <?CDATA $ (i\sigma\gamma^{\mu}\partial_{\mu}S+m_{l})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E14.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Multiplying both sides of Eq. (14) by 
+				<inline-formula>
+					<tex-math><?CDATA $ i\sigma\gamma^{\nu}\partial_{\nu}S $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M11.jpg" xlink:type="simple"/>
+				</inline-formula>, we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>15</label>  
+					<tex-math id="cpc_44_12_125104_E15"> <?CDATA $ (\sigma^{2}\gamma^{\mu}\gamma^{\nu}\partial_{\mu}S\partial_{\nu}S+m_{l}^{2})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E15.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>In Eq. (15), 
+				<inline-formula>
+					<tex-math><?CDATA $ \mu $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M12.jpg" xlink:type="simple"/>
+				</inline-formula> and 
+				<inline-formula>
+					<tex-math><?CDATA $ \nu $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M13.jpg" xlink:type="simple"/>
+				</inline-formula> are interchanged, yielding Eq. (16) as
+			</p>
+			<p>
+				<disp-formula> 
+					<label>16</label>  
+					<tex-math id="cpc_44_12_125104_E16"> <?CDATA $ (\sigma^{2}\gamma^{\nu}\gamma^{\mu}\partial_{\nu}S\partial_{\mu}S+m_{l}^{2})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E16.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Adding Eq. (15) and Eq. (16) and combining with Eq. (3), we obtain</p>
+			<p>
+				<disp-formula> 
+					<label>17</label>  
+					<tex-math id="cpc_44_12_125104_E17"> <?CDATA $ (\sigma^{2}g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S+m_{l}^{2})\xi_{\alpha_{1}\cdots\alpha_{k}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E17.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Eq. (17) is a matrix equation. In fact, it is an eigenvalue equation, which has a non-zero solution when its coefficient determinant is zero. That is</p>
+			<p>
+				<disp-formula> 
+					<label>18</label>  
+					<tex-math id="cpc_44_12_125104_E18"> <?CDATA $ \sigma^{2}g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S+\left\{-\dfrac{g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S-\sigma^{2}(\partial_{v}Sg^{v\nu}\partial_{\nu}S)^{2}+m^{2}-2m\sigma g^{vv}(\partial_{v}S)^{2} +\sigma^{2}(g^{vv})^{2}(\partial_{v}S)^{4}}{2\partial_{v}Sg^{v\nu}\partial_{\nu}S}\right\}^{2} = 0.\\ $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E18.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Taking notice of 
+				<inline-formula>
+					<tex-math><?CDATA $ g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S = -m^{2} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M14.jpg" xlink:type="simple"/>
+				</inline-formula>, Eq. (18) becomes
+			</p>
+			<p>
+				<disp-formula> 
+					<label>19</label>  
+					<tex-math id="cpc_44_12_125104_E19"> <?CDATA $ g^{\mu\nu}\partial_{\mu}S\partial_{\nu}S+m^{2}-2m\sigma g^{vv}(\partial_{v}S)^{2}-2m\sigma\partial_{v}Sg^{v\nu}\partial_{\nu}S-\sigma^{2}(\partial_{v}Sg^{v\nu}\partial_{\nu}S)^{2} +\sigma^{2}(g^{vv})^{2}(\partial_{v}S)^{4} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E19.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>We have maintained the correction item of 
+				<inline-formula>
+					<tex-math><?CDATA $ \sigma $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M15.jpg" xlink:type="simple"/>
+				</inline-formula> in Eq. (19), so Eq. (19) is the precisely corrected R-S equation considering the corrected Lorentz dispersion relation. Obviously, it is actually also an accurately corrected H-J equation; we call Eq. (19) the Rarita-Schwinger-Hamilton-Jacobi equation (R-S-H-J equation). In the following, we will use this precisely corrected R-S-H-J equation to study the dynamic behavior of arbitrary spin fermions in the non-stationary Kerr-de Sitter space-time; thus, we will study the properties of black holes.
+			</p>
+		</sec>
+		<sec id="cpc_44_12_125104_s03">
+			<label>3.</label>
+			<title>Accurate correction of arbitrary spin fermion tunneling from the non-stationary Kerr-de Sitter black hole</title>
+			<p>In the advanced Eddington-Finkelstein coordinate, the line element of the non-stationary Kerr-de Sitter black hole can be written as [<xref ref-type="bibr" rid="cpc_44_12_125104_bib62">62</xref>, <xref ref-type="bibr" rid="cpc_44_12_125104_bib63">63</xref>]
+			</p>
+			<p>
+				<disp-formula> 
+					<label>20</label>  
+					<tex-math id="cpc_44_12_125104_E20"> <?CDATA $ \begin{aligned}[b] {\rm d}s^{2} = & A\frac{1}{\Sigma}(\Delta_{\lambda}-\Delta_{\theta}a^{2}\sin^{2}\theta){\rm d}v^{2}\\ & -2\sqrt{A}({\rm d}v-a\sin^{2}\theta {\rm d}\varphi){\rm d}r-\frac{\Sigma}{\Delta_{\theta}}{\rm d}\theta^{2}\\ & + A\frac{2a}{\Sigma}[\Delta_{\theta}(r^{2}+a^{2})-\Delta_{\lambda}]\sin^{2}\theta {\rm d}v{\rm d}\varphi\\ & - A\frac{1}{\Sigma}[\Delta_{\theta}(r^{2}+a^{2})-\Delta_{\lambda}\sin^{2}\theta]\sin^{2}\theta {\rm d}\varphi^{2}, \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E20.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>21</label>  
+					<tex-math id="cpc_44_12_125104_E21"> <?CDATA $ \begin{aligned}[b] A= & \left(1+\frac{1}{3}\Lambda a^{2}\right)^{-2},\\ \Sigma= & r^{2}+a^{2}\cos^{2}\theta,\\ \Delta_{\lambda}= & r^{2}+a^{2}-2Mr-\frac{1}{3}\Lambda r^{2}(r^{2}+a^{2}),\\ \Delta_{\theta}= & 1+\frac{1}{3}\Lambda a^{2}\cos^{2}\theta,\\ M= & M(v),\\ a= & a(v). \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E21.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p><italic>M</italic> is the mass of the black hole, and <italic>a</italic> is the angular momentum per unit mass of the black hole. From Eq. (20), the non-zero components of the contravariant metric tensor of the black hole are
+			</p>
+			<p>
+				<disp-formula> 
+					<label>22</label>  
+					<tex-math id="cpc_44_12_125104_E22"> <?CDATA $ \begin{aligned}[b] g^{00} = & -\frac{a^{2}\sin^{2}\theta}{\Delta_{\theta}A\Sigma},\\ g^{11} = & -\frac{\Delta_{\lambda}}{\Sigma},\\ g^{22} = & -\frac{\Delta_{\theta}}{\Sigma},\\ g^{33} = & -\frac{1}{\Delta_{\theta}A\Sigma\sin^{2}\theta},\\ g^{01} = & g^{10} = -\frac{r^{2}+a^{2}}{\sqrt{A}\Sigma},\\ g^{03} = & g^{30} = -\frac{a}{\Delta_{\theta}A\Sigma},\\ g^{13} = & g^{31} = -\frac{a}{\sqrt{A}\Sigma}. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E22.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>According to the zero hypersurface condition, the event horizon equation satisfies</p>
+			<p>
+				<disp-formula> 
+					<label>23</label>  
+					<tex-math id="cpc_44_12_125104_E23"> <?CDATA $ g^{\mu\nu}\frac{\partial f}{\partial x_{\mu}}\frac{\partial f}{\partial x_{\nu}} = 0, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E23.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where <italic>f</italic> is a hypersurface. Since the Kerr-de Sitter space-time is axisymmetric, Eq. (23) is independent of 
+				<inline-formula>
+					<tex-math><?CDATA $ \varphi $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M16.jpg" xlink:type="simple"/>
+				</inline-formula>, so 
+				<inline-formula>
+					<tex-math><?CDATA $ \frac{\partial f}{\partial\varphi} = 0 $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M17.jpg" xlink:type="simple"/>
+				</inline-formula>, and the equation of the event horizon of the Kerr-de Sitter black hole can be expressed as
+			</p>
+			<p>
+				<disp-formula> 
+					<label>24</label>  
+					<tex-math id="cpc_44_12_125104_E24"> <?CDATA $ \begin{aligned} g^{00}\left\{\frac{\partial f}{\partial v}\right\}^{2}+g^{11}\left\{\frac{\partial f}{\partial r}\right\}^{2} +g^{22}\left\{\frac{\partial f}{\partial \theta}\right\}^{2}+2g^{01}\frac{\partial f}{\partial v}\frac{\partial f}{\partial r} = 0. \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E24.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Its zero hypersurface is</p>
+			<p>
+				<disp-formula> 
+					<label>25</label>  
+					<tex-math id="cpc_44_12_125104_E25"> <?CDATA $ f = f(r,v,\theta) = 0, $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E25.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where <italic>r</italic> is the function of <italic>v</italic> and 
+				<inline-formula>
+					<tex-math><?CDATA $ \theta $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M18.jpg" xlink:type="simple"/>
+				</inline-formula>, 
+				<inline-formula>
+					<tex-math><?CDATA $ r = r(v,\theta) $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M19.jpg" xlink:type="simple"/>
+				</inline-formula>. In order to obtain the position of the event horizon of the black hole, we need to calculate the rate of change of <italic>f</italic> with respect to each of its components. Taking the partial derivative of Eq. (25), we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>26</label>  
+					<tex-math id="cpc_44_12_125104_E26"> <?CDATA $ \begin{aligned}[b] \frac{\partial f}{\partial v} = & -\frac{\partial f}{\partial r}\frac{\partial r}{\partial v},\\ \frac{\partial f}{\partial \theta} = & -\frac{\partial f}{\partial r}\frac{\partial r}{\partial \theta}, \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E26.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>so Eq. (24) becomes</p>
+			<p>
+				<disp-formula> 
+					<label>27</label>  
+					<tex-math id="cpc_44_12_125104_E27"> <?CDATA $ g^{00}\left\{\frac{\partial r}{\partial v}\right\}^{2}+g^{11}+g^{22}\left\{\frac{\partial r}{\partial \theta}\right\}^{2}+2g^{01}\frac{\partial r}{\partial v} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E27.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Substituting the expressions of 
+				<inline-formula>
+					<tex-math><?CDATA $ g^{00},g^{11},g^{22},g^{01} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M20.jpg" xlink:type="simple"/>
+				</inline-formula> in Eq. (22) into Eq. (27), when 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M21.jpg" xlink:type="simple"/>
+				</inline-formula>, the equation of the event horizon is obtained as follows
+			</p>
+			<p>
+				<disp-formula> 
+					<label>28</label>  
+					<tex-math id="cpc_44_12_125104_E28"> <?CDATA $ \begin{aligned} a^{2}\sin^{2}\theta {\dot{r}_H}^{2}-2\Delta_{\theta}\sqrt{A}(r_{H}^{2}+a^{2})\dot{r}_{H} +\Delta_{\lambda}\Delta_{\theta}A+\Delta_{\theta}^{2}A r_{H}^{'2} = 0, \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E28.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>29</label>  
+					<tex-math id="cpc_44_12_125104_E29"> <?CDATA $ \begin{aligned}[b] \dot{r}_{H} = & \frac{\partial r_{H}}{\partial v},\\ r_{H}^{'} = & \frac{\partial r_{H}}{\partial \theta}, \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E29.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>which represents the change of the position of the event horizon with time and angle, respectively. For the Kerr-de Sitter black hole, substituting Eq. (22) into Eq. (19) — the accurately corrected R-S-H-J equation, the specific expression of Eq. (19) is</p>
+			<p>
+				<disp-formula> 
+					<label>30</label>  
+					<tex-math id="cpc_44_12_125104_E30"> <?CDATA $ \begin{aligned}[b] & g^{00}\left\{\frac{\partial S}{\partial v}\right\}^{2}+g^{11}\left\{\frac{\partial S}{\partial r}\right\}^{2}+g^{22}\left\{\frac{\partial S}{\partial \theta}\right\}^{2}+g^{33}\left\{\frac{\partial S}{\partial \varphi}\right\}^{2}\\ & \quad +2g^{01}\frac{\partial S}{\partial v}\frac{\partial S}{\partial r}+2g^{03}\frac{\partial S}{\partial v}\frac{\partial S}{\partial \varphi}+2g^{13}\frac{\partial S}{\partial r}\frac{\partial S}{\partial \varphi}\\ & \quad +m^{2}-2m\sigma\frac{\partial S}{\partial v}\left\{g^{00}\frac{\partial S}{\partial v}+g^{01}\frac{\partial S}{\partial r}+g^{03}\frac{\partial S}{\partial \varphi}\right\}\\ & \quad -2m\sigma g^{00}\left\{\frac{\partial S}{\partial v}\right\}^{2}+\sigma^{2}(g^{00})^{2}\left\{\frac{\partial S}{\partial v}\right\}^{4}\\ & \quad -\sigma^{2}\left\{\frac{\partial S}{\partial v}\right\}^{2}\left\{\left\{g^{00}\frac{\partial S}{\partial v}\right\}^{2}+\left\{g^{01}\frac{\partial S}{\partial r}\right\}^{2}+\left\{g^{03}\frac{\partial S}{\partial \varphi}\right\}^{2}\right\} = 0. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E30.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Since the event horizon of the black hole varies with time, it requires using a generalized tortoise coordinate transformation to solve the tunneling probability of fermions from the event horizon of the black hole. The Kerr-de Sitter black hole is an axisymmetric black hole, so we perform the following transformation</p>
+			<p>
+				<disp-formula> 
+					<label>31</label>  
+					<tex-math id="cpc_44_12_125104_E31"> <?CDATA $ \begin{aligned}[b] r_{\ast} = & r+\frac{1}{2\kappa}\ln \frac{r-r_{H}(v,\theta)}{r_{H}(v_{0},\theta_{0})},\\ v_{\ast} = & v-v_{0},\\ \theta_{\ast} = & \theta-\theta_{0}. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E31.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Taking the partial derivative of Eq. (31), we obtain</p>
+			<p>
+				<disp-formula> 
+					<label>32</label>  
+					<tex-math id="cpc_44_12_125104_E32"> <?CDATA $\begin{aligned}[b] \frac{\partial S}{\partial r} = & \frac{\partial S}{\partial r_{\ast}}\frac{2\kappa[r-r_{H}(v,\theta)]+1}{2\kappa[r-r_{H}(v,\theta)]},\\ \frac{\partial S}{\partial v} = & \frac{\partial S}{\partial v_{\ast}}-\frac{\partial S}{\partial r_{\ast}}\frac{\dot{r}_{H}}{2\kappa[r-r_{H}(v,\theta)]},\\ \frac{\partial S}{\partial \theta} = & \frac{\partial S}{\partial \theta_{\ast}}-\frac{\partial S}{\partial r_{\ast}}\frac{r_{H}^{'}}{2\kappa[r-r_{H}(v,\theta)]}, \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E32.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>33</label>  
+					<tex-math id="cpc_44_12_125104_E33"> <?CDATA $ \begin{aligned}[b] \dot{r}_{H}(v,\theta) = & \frac{\partial r_{H}(v,\theta)}{\partial v},\\ r_{H}^{'}(v,\theta) = & \frac{\partial r_{H}(v,\theta)}{\partial\theta}, \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E33.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>which implies that the position of the event horizon varies with time and angle, respectively. In the Kerr-de Sitter space-time, the action of arbitrary spin fermions can be expressed as follows:</p>
+			<p>
+				<disp-formula> 
+					<label>34</label>  
+					<tex-math id="cpc_44_12_125104_E34"> <?CDATA $ S = S(v_{\ast},r_{\ast},\theta_{\ast},\varphi). $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E34.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Although <italic>S</italic> cannot be separated, it is certain that
+			</p>
+			<p>
+				<disp-formula> 
+					<label>35</label>  
+					<tex-math id="cpc_44_12_125104_E35"> <?CDATA $ \begin{aligned}[b] \frac{\partial S}{\partial v_{\ast}} = & -\omega,\\ \frac{\partial S}{\partial \varphi} = & n, \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E35.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>and let</p>
+			<p>
+				<disp-formula> 
+					<label>36</label>  
+					<tex-math id="cpc_44_12_125104_E36"> <?CDATA $ \frac{\partial S}{\partial \theta_{\ast}} = P_{\theta_{\ast}}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E36.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Eq. (30) is further simplified by writing the second-order small quantity as 
+				<inline-formula>
+					<tex-math><?CDATA $ O(\sigma^{2}) $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M22.jpg" xlink:type="simple"/>
+				</inline-formula>, which is not considered in the separation of variables; thus, we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>37</label>  
+					<tex-math id="cpc_44_12_125104_E37"> <?CDATA $ \begin{aligned}[b] & (1-4m\sigma)g^{00}\left\{\frac{\partial S}{\partial v}\right\}^{2}+g^{11}\left\{\frac{\partial S}{\partial r}\right\}^{2} +g^{22}\left\{\frac{\partial S}{\partial \theta}\right\}^{2}+g^{33}\left\{\frac{\partial S}{\partial \varphi}\right\}^{2}\\ & +2(1-2m\sigma)g^{01}\frac{\partial S}{\partial v}\frac{\partial S}{\partial r}+2(1-m\sigma)g^{03}\frac{\partial S}{\partial v}\frac{\partial S}{\partial \varphi}+2g^{13}\frac{\partial S}{\partial r}\frac{\partial S}{\partial \varphi}+m^{2}+O(\sigma^{2}) = 0. \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E37.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Substituting Eqs. (32), (33), (35), and (36) into Eq. (37), we obtain (for compactness, the symbol (<italic>v</italic>, <italic>θ</italic>) of the independent variables is omitted in the following.)
+			</p>
+			<p>
+				<disp-formula> 
+					<label>38</label>  
+					<tex-math id="cpc_44_12_125104_E38"> <?CDATA $ \begin{aligned}[b] & \frac{(1-4m\sigma)g^{00}\dot{r_{H}}^{2}+g^{11}\{2\kappa[r-r_{H}]+1\}^{2}+g^{22}r_{H}^{'2} -2(1-m\sigma)g^{01}\{2\kappa[r-r_{H}]+1\}\dot{r}_{H}}{2\kappa[r-r_{H}]}\left\{\frac{\partial S}{\partial r_{\ast}}\right\}^{2}\\ & -\{-2(1-4m\sigma)g^{00}\dot{r_{H}}+2(1-m\sigma)g^{01}\{2\kappa[r-r_{H}]+1\}\}\omega\frac{\partial S}{\partial r_{\ast}}\\ & +\{-2(1-m\sigma)g^{03}\dot{r}_{H}n+2g^{13}\{2\kappa[r-r_{H}]+1\}n-2g^{22}r_{H}^{'2}P_{\theta_{\ast}}\}\frac{\partial S}{\partial r_{\ast}}\\ & +[(1-4m\sigma)g^{00}\omega^{2}-2(1-m\sigma)g^{03}\omega n+g^{22}P_{\theta_{\ast}}^{2}+g^{33}n^{2}+m^{2}-O(\sigma^{2})]2\kappa[r-r_{H}] = 0. \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E38.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Substituting Eq. (22) into Eq. (38), and using 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M23.jpg" xlink:type="simple"/>
+				</inline-formula> to simplify the obtained equation, we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>39</label>  
+					<tex-math id="cpc_44_12_125104_E39"> <?CDATA $ \begin{aligned}[b] & \frac{(1-4m\sigma)a^{2}\sin^{2}\theta\dot{r}_{H}^{2}+\Delta_{\lambda}\Delta_{\theta}A\{2\kappa[r-r_{H}]+1\}^{2} +\Delta_{\theta}^{2}r_{H}^{'2} -2(1-m\sigma)\Delta_{\theta}\sqrt{A}(r^{2}+a^{2})\{2\kappa[r-r_{H}]+1\}\dot{r}_{H}}{2\kappa[r-r_{H}]}\left\{\frac{\partial S}{\partial r_{\ast}}\right\}^{2}\\ & -2\{-(1-4m\sigma)a^{2}\sin^{2}\theta\dot{r}_{H}+(1-m\sigma)\Delta_{\theta}\sqrt{A}(r^{2}+a^{2})\{2\kappa[r-r_{H}]+1\}\} \omega\frac{\partial S}{\partial r_{\ast}}\\ & +2\{-a(1-m\sigma)\dot{r}_{H}n+a\Delta_{\theta}\sqrt{A}\{2\kappa[r-r_{H}]+1\}n-\Delta_{\theta}^{2}Ar_{H}^{'2}P_{\theta_{\ast}}\} \frac{\partial S}{\partial r_{\ast}} = 0. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E39.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Let</p>
+			<p>
+				<disp-formula> 
+					<label>40</label>  
+					<tex-math id="cpc_44_12_125104_E40"> <?CDATA $ \begin{aligned}[b] A_{0} = & \frac{(1-4m\sigma)a^{2}\sin^{2}\theta\dot{r}_{H}^{2}+\Delta_{\lambda}\Delta_{\theta}A\{2\kappa[r-r_{H}]+1\}^{2} +\Delta_{\theta}^{2}r_{H}^{'2} -2(1-m\sigma)\Delta_{\theta}\sqrt{A}(r^{2}+a^{2})\{2\kappa[r-r_{H}]+1\}\dot{r}_{H}}{2\kappa[r-r_{H}]},\\ B_{0} = & \{-(1-4m\sigma)a^{2}\sin^{2}\theta\dot{r}_{H}+(1-m\sigma)\Delta_{\theta}\sqrt{A}(r^{2}+a^{2})\{2\kappa[r-r_{H}]+1\}\},\\ C_{0} = & \{-a(1-m\sigma)\dot{r}_{H}n+a\Delta_{\theta}\sqrt{A}\{2\kappa[r-r_{H}]+1\}n-\Delta_{\theta}^{2}Ar_{H}^{'2}P_{\theta_{\ast}}\}. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E40.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Dividing both sides of Eq. (39) by 
+				<inline-formula>
+					<tex-math><?CDATA $ B_{0} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M24.jpg" xlink:type="simple"/>
+				</inline-formula>, Eq. (39) becomes
+			</p>
+			<p>
+				<disp-formula> 
+					<label>41</label>  
+					<tex-math id="cpc_44_12_125104_E41"> <?CDATA $ \frac{A_{0}}{B_{0}}\left\{\frac{\partial S}{\partial r_{\ast}}\right\}^{2}-2\omega\frac{\partial S}{\partial r_{\ast}} +2\frac{C_{0}}{B_{0}}\frac{\partial S}{\partial r_{\ast}} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E41.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>When 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M25.jpg" xlink:type="simple"/>
+				</inline-formula>, the limit of the coefficient of 
+				<inline-formula>
+					<tex-math><?CDATA $ \left\{\frac{\partial S}{\partial r_{\ast}}\right\}^{2} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M26.jpg" xlink:type="simple"/>
+				</inline-formula> at the event horizon should be equal to one, that is
+			</p>
+			<p>
+				<disp-formula> 
+					<label>42</label>  
+					<tex-math id="cpc_44_12_125104_E42"> <?CDATA $ \mathop {\lim }\limits_{r \to {r_H}} \frac{A_{0}}{B_{0}} = \frac{(1-4m\sigma)a^{2}\sin^{2}\theta\dot{r}_{H}^{2}+\Delta_{\lambda}\Delta_{\theta}A\{2\kappa[r-r_{H}]+1\}^{2} +\Delta_{\theta}^{2}r_{H}^{'2} -2(1-m\sigma)\Delta_{\theta}\sqrt{A}(r^{2}+a^{2})\{2\kappa[r-r_{H}]+1\}\dot{r}_{H}}{2\kappa[r-r_{H}]\{-(1-4m\sigma)a^{2}\sin^{2} \theta\dot{r}_{H}+(1-m\sigma)\Delta_{\theta}\sqrt{A}(r^{2}+a^{2})\{2\kappa[r-r_{H}]+1\}\}} = 1. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E42.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>In Eq. (42), the limit of the denominator is zero when 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M27.jpg" xlink:type="simple"/>
+				</inline-formula>; thus, the limit of the numerator should also be zero when 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M28.jpg" xlink:type="simple"/>
+				</inline-formula>. Using L'hopital's rule, we can work out 
+				<inline-formula>
+					<tex-math><?CDATA $ \kappa $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M29.jpg" xlink:type="simple"/>
+				</inline-formula> as
+			</p>
+			<p>
+				<disp-formula> 
+					<label>43</label>  
+					<tex-math id="cpc_44_12_125104_E43"> <?CDATA $ \kappa = \frac{\left(r_{H}-M-\dfrac{2}{3}\Lambda r_{H}^{3}-\dfrac{1}{3}\Lambda a^{2}r_{H}\right)\Delta_{\theta}A-2(1-m\sigma)\sqrt{A}\Delta_{\theta}r_{H}\dot{r}_{H}} {(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta} +2(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}\dot{r}_{H}-a^{2}\sin^{2}\theta\dot{r}_{H}-2\Delta_{\theta}A\Delta_{\lambda}} [1+\sigma \tilde{m}-(\sigma \tilde{m})^{2}+\cdots], $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E43.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>44</label>  
+					<tex-math id="cpc_44_12_125104_E44"> <?CDATA $ \tilde{m} = \frac{m[(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}+2(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}\dot{r}_{H}-4a^{2}\sin^{2}\theta \dot{r}_{H}]} {(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}+2(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}\dot{r}_{H}-a^{2}\sin^{2}\theta \dot{r}_{H}-2\Delta_{\theta}A\Delta_{\lambda}}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E44.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>For the Schwarzschild space-time, it can be proved that 
+				<inline-formula>
+					<tex-math><?CDATA $ \tilde{m} = m $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M30.jpg" xlink:type="simple"/>
+				</inline-formula>. 
+				<inline-formula>
+					<tex-math><?CDATA $ \kappa $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M31.jpg" xlink:type="simple"/>
+				</inline-formula> is the precisely corrected surface gravity at the event horizon. Taking 
+				<inline-formula>
+					<tex-math><?CDATA $ \lim_{r\rightarrow r_{H}}\frac{C_{0}}{B_{0}} = \omega_{0} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M32.jpg" xlink:type="simple"/>
+				</inline-formula>, we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>45</label>  
+					<tex-math id="cpc_44_12_125104_E45"> <?CDATA $ \omega_{0} = \frac{\Delta_{\theta}\sqrt{A}an+\Delta_{\theta}r_{H}^{'}P_{\theta_{\ast}}-(1-m\sigma)a\dot{r}_{H}n} {\Delta_{\theta}\sqrt{A}(r_{H}^{2}+a^{2})-a^{2}\sin^{2}\theta\dot{r}_{H}}[1+\sigma m'-(\sigma m')^{2}+\cdots], $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E45.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>46</label>  
+					<tex-math id="cpc_44_12_125104_E46"> <?CDATA $ m' = \frac{m[\Delta_{\theta}\sqrt{A}(r_{H}^{2}+a^{2})-4a^{2}\sin^{2}\theta\dot{r}_{H}]} {\Delta_{\theta}\sqrt{A}(r_{H}^{2}+a^{2})-a^{2}\sin^{2}\theta\dot{r}_{H}}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E46.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>
+				<inline-formula>
+					<tex-math><?CDATA $ \omega_{0} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M33.jpg" xlink:type="simple"/>
+				</inline-formula> is the exact corrected chemical potential. Combined with Eqs. (42) and (45), Eq. (41) can be written as follows when 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M34.jpg" xlink:type="simple"/>
+				</inline-formula>
+			</p>
+			<p>
+				<disp-formula> 
+					<label>47</label>  
+					<tex-math id="cpc_44_12_125104_E47"> <?CDATA $ \left\{\frac{\partial S}{\partial r_{\ast}}\right\}^{2}-(\omega-\omega_{0})\left\{\frac{\partial S}{\partial r_{\ast}}\right\} = 0. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E47.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>Substituting 
+				<inline-formula>
+					<tex-math><?CDATA $\dfrac{\partial s}{\partial r} = \dfrac{\partial s}{\partial r_{\ast}}\dfrac{2\kappa(r-r_{H})+1}{\kappa(r-r_{H})}$?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M35.jpg" xlink:type="simple"/>
+				</inline-formula> in Eq. (32) into Eq. (47), we obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>48</label>  
+					<tex-math id="cpc_44_12_125104_E48"> <?CDATA $ \left\{\frac{\partial S}{\partial r}\right\}_{\pm} = [(\omega-\omega_{0})\pm(\omega-\omega_{0})]\frac{\kappa(r-r_{H})+1}{\kappa(r-r_{H})}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E48.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>When 
+				<inline-formula>
+					<tex-math><?CDATA $ r\rightarrow r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M36.jpg" xlink:type="simple"/>
+				</inline-formula>, the residue theorem can be applied to obtain
+			</p>
+			<p>
+				<disp-formula> 
+					<label>49</label>  
+					<tex-math id="cpc_44_12_125104_E49"> <?CDATA $ \begin{aligned}[b] S_{\pm} = & \mathop {\lim }\limits_{r \to {r_H}} \int[(\omega-\omega_{0})\pm(\omega-\omega_{0})]\frac{\kappa(r-r_{H})+1}{\kappa(r-r_{H})}{\rm d}r\\ = & \pi i\frac{(\omega-\omega_{0})\pm(\omega-\omega_{0})}{2\kappa}. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E49.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>According to the tunneling theory, we obtain the tunneling probability of an arbitrary spin fermion in the space-time of the Kerr-de Sitter black hole</p>
+			<p>
+				<disp-formula> 
+					<label>50</label>  
+					<tex-math id="cpc_44_12_125104_E50"> <?CDATA $ \begin{aligned}[b] \Gamma = & \exp[-2({\rm Im} S_{+}-{\rm Im} S_{-})]\\ = & \exp\left\{-\frac{2\pi(\omega-\omega_{0})}{\kappa}\right\}\\ = & \exp\left\{-\frac{\omega-\omega_{0}}{T_{H}}\right\}. \end{aligned} $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E50.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>51</label>  
+					<tex-math id="cpc_44_12_125104_E51"> <?CDATA $ T_{H} = \frac{1}{2\pi}\frac{\left(r_{H}-M-\dfrac{2}{3}\Lambda r_{H}^{3}-\dfrac{1}{3}\Lambda a^{2}r_{H}\right)\Delta_{\theta}A-2(1-m\sigma)\sqrt{A}\Delta_{\theta}r_{H}\dot{r}_{H}} {(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta} +2(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}\dot{r}_{H}-a^{2}\sin^{2}\theta\dot{r_{H}}-2\Delta_{\theta}A\Delta_{\lambda}} [1+\sigma \tilde{m}-(\sigma \tilde{m})^{2}+\cdots]. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E51.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>In Eq. (51), 
+				<inline-formula>
+					<tex-math><?CDATA $ T_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M37.jpg" xlink:type="simple"/>
+				</inline-formula> is the precisely corrected Hawking temperature at the event horizon of the black hole. This is a new form of the Hawking temperature expression for the Kerr-de Sitter black holes.
+			</p>
+			<p>From the demonstration in this section, we note that using the modified R-S-H-J equation based on the corrected Lorentz dispersion relation, we have obtained a series of precisely corrected physical quantities of the Kerr-de Sitter black holes, including the surface gravity, chemical potential, tunneling probability of arbitrary spin fermions, and Hawking temperature. The correction is indicated by the parameter 
+				<inline-formula>
+					<tex-math><?CDATA $ \sigma $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M38.jpg" xlink:type="simple"/>
+				</inline-formula>. From Eqs. (43), (45), (50), and (51), it is observed that for a non-stationary Kerr-de Sitter black hole, the surface gravity, chemical potential, tunneling probability, and Hawking temperature change with time as the event horizon surface changes. The chemical potential also varies with angle 
+				<inline-formula>
+					<tex-math><?CDATA $ \theta $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M39.jpg" xlink:type="simple"/>
+				</inline-formula>.
+			</p>
+		</sec>
+		<sec id="cpc_44_12_125104_s04">
+			<label>4.</label>
+			<title>Discussion and conclusion</title>
+			<p>In this paper, based on the modified Lorentz dispersion relation on the quantum scale and with the condition 
+				<inline-formula>
+					<tex-math><?CDATA $ \alpha = 2 $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M40.jpg" xlink:type="simple"/>
+				</inline-formula> selected, we derived the modified R-S-H-J equation by properly selecting the transformation matrix and using the semi-classical method. By using the derived R-S-H-J equation, we solved the dynamic Kerr-de Sitter black hole using the tortoise coordinate transformation, and obtained the accurately corrected surface gravity, chemical potential, tunneling probability, and Hawking temperature. Although the correction term 
+				<inline-formula>
+					<tex-math><?CDATA $ \sigma $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M41.jpg" xlink:type="simple"/>
+				</inline-formula> is a small quantity, it is still worth further studying.
+			</p>
+			<p>Another important physical quantity in the thermodynamics of black holes is the black hole entropy. According to the first law of thermodynamics, the entropy 
+				<inline-formula>
+					<tex-math><?CDATA $ S^{s} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M42.jpg" xlink:type="simple"/>
+				</inline-formula> of a black hole can be expressed as
+			</p>
+			<p>
+				<disp-formula> 
+					<label>52</label>  
+					<tex-math id="cpc_44_12_125104_E52"> <?CDATA $ {\rm d}M = T{\rm d}S^{s}+V{\rm d}J+U{\rm d}Q. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E52.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>For the Kerr-de Sitter black hole,</p>
+			<p>
+				<disp-formula> 
+					<label>53</label>  
+					<tex-math id="cpc_44_12_125104_E53"> <?CDATA $ {\rm d}S^{s} = \frac{{\rm d}M-V{\rm d}J}{T}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E53.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>The exactly corrected entropy at the event horizon 
+				<inline-formula>
+					<tex-math><?CDATA $ r = r_{H} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M43.jpg" xlink:type="simple"/>
+				</inline-formula> of the black hole can be expressed as
+			</p>
+			<p>
+				<disp-formula> 
+					<label>54</label>  
+					<tex-math id="cpc_44_12_125104_E54"> <?CDATA $ \begin{aligned}[b] S^{s}_{r_{H}} = & \int\frac{{\rm d}M-V{\rm d}J}{T_{H}}\\ = & \int\frac{{\rm d}M-V{\rm d}J}{T_{0}}(1-\sigma \tilde{m})[1-\sigma \tilde{\tilde{m}}+(\sigma \tilde{\tilde{m}})^{2}-\cdots], \end{aligned}$?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E54.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>where</p>
+			<p>
+				<disp-formula> 
+					<label>55</label>  
+					<tex-math id="cpc_44_12_125104_E55"> <?CDATA $ \tilde{\tilde{m}} = \frac{2m\sqrt{A}\Delta_{\theta}r_{H}\dot{r}_{H}}{\left(r_{H}-M-\dfrac{2}{3}\Lambda r_{H}^{3}-\dfrac{1}{3}\Lambda a^{2}r_{H}\right)\Delta_{\theta}A-2\sqrt{A}\Delta_{\theta}r_{H}\dot{r}_{H}}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E55.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>In Eq. (53) and Eq. (54), the relational formula 
+				<inline-formula>
+					<tex-math><?CDATA $\dfrac{{\rm d}M-V{\rm d}J}{T_{0}} = {\rm d}S_{0}^{s}$?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M44.jpg" xlink:type="simple"/>
+				</inline-formula> represents the black hole entropy before the correction, and 
+				<inline-formula>
+					<tex-math><?CDATA $ T_{0} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M45.jpg" xlink:type="simple"/>
+				</inline-formula> represents the Hawking temperature before the correction, which is
+			</p>
+			<p>
+				<disp-formula> 
+					<label>56</label>  
+					<tex-math id="cpc_44_12_125104_E56"> <?CDATA $ T_{0} = \frac{1}{2\pi}\frac{\left(r_{H}-M-\dfrac{2}{3}\Lambda r_{H}^{3}-\dfrac{1}{3}\Lambda a^{2}r_{H}\right)\Delta_{\theta}A-2\sqrt{A}\Delta_{\theta}r_{H}\dot{r}_{H}} {(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}+2(r_{H}^{2}+a^{2})\sqrt{A}\Delta_{\theta}\dot{r}_{H}-a^{2}\sin^{2}\theta\dot{r_{H}-2\Delta_{\theta}A\Delta_{\lambda}}}. $?>
+ </tex-math>
+					<graphic orientation="portrait" position="float" xlink:href="cpc_44_12_125104_E56.jpg" xlink:type="simple"/>
+				</disp-formula>
+			</p>
+			<p>When not considering the correction and returning to the Schwarzschild space-time, combining Eqs. (21) and (28), Eqs. (51) and (56) revert to the form of 
+				<inline-formula>
+					<tex-math><?CDATA $ T = \frac{1}{8\pi M} $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M46.jpg" xlink:type="simple"/>
+				</inline-formula>, which also proves the correctness of the obtained results. Equations (43), (45), (50), and (51) are all new expressions with precise corrections. The Lorentz dispersion relation is a theory worth studying in the field of high energies, and is a relation that needs to be considered in both the theories of strong gravitational fields and gravitational waves. It is worth pointing out that in the corrected Lorentz dispersion relation, we considered 
+				<inline-formula>
+					<tex-math><?CDATA $ \alpha = 2 $?></tex-math>
+					<inline-graphic xlink:href="cpc_44_12_125104_M47.jpg" xlink:type="simple"/>
+				</inline-formula> , and considering other values is also worth pursuing; this will be addressed in our future work.
+			</p>
+		</sec>
+	</body>  
+	<back> 
+		<ref-list> 
+			<title>References</title>  
+			<ref id="cpc_44_12_125104_bib1"> 
+				<label>[1]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>W. Hawking</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Nature</source>  
+					<year>1974</year>  
+					<volume>248</volume>  
+					<fpage>30</fpage>  
+					<lpage>31</lpage>  
+					<pub-id pub-id-type="doi">10.1038/248030a0</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib2"> 
+				<label>[2]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>W. Hawking</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Commun. Math. Phys.</source>  
+					<year>1975</year>  
+					<volume>43</volume>  
+					<issue>2</issue>  
+					<fpage>199</fpage>  
+					<lpage>220</lpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib3"> 
+				<label>[3]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Kraus</surname>  
+							<given-names>P.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Wilczek</surname>  
+							<given-names>F.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Nucl. Phys. B</source>  
+					<year>1995</year>  
+					<volume>433</volume>  
+					<issue>2</issue>  
+					<fpage>403</fpage>  
+					<lpage>420</lpage>  
+					<pub-id pub-id-type="doi">10.1016/0550-3213(94)00411-7</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib4"> 
+				<label>[4]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>K. Parikh</surname>  
+							<given-names>M.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Wiltzek</surname>  
+							<given-names>F.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. Lett.</source>  
+					<year>2000</year>  
+					<volume>85</volume>  
+					<issue>4</issue>  
+					<fpage>5042</fpage>  
+					<lpage>5049</lpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib5"> 
+				<label>[5]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>H. Tian</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Liu</surname>  
+							<given-names>L.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>Chin. Phys. Lett.</source>  
+					<year>2006</year>  
+					<volume>23</volume>  
+					<issue>12</issue>  
+					<fpage>3165</fpage>  
+					<lpage>3168</lpage>  
+					<pub-id pub-id-type="doi">10.1088/0256-307X/23/12/012</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib6"> 
+				<label>[6]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Ren</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Y. Zhang</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Chin. Phys. Lett.</source>  
+					<year>2006</year>  
+					<volume>23</volume>  
+					<issue>8</issue>  
+					<fpage>2019</fpage>  
+					<lpage>2022</lpage>  
+					<pub-id pub-id-type="doi">10.1088/0256-307X/23/8/016</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib7"> 
+				<label>[7]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Z. Liu</surname>  
+							<given-names>C.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Y. Zhang</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Lett. B</source>  
+					<year>2009</year>  
+					<volume>639</volume>  
+					<issue>6</issue>  
+					<fpage>670</fpage>  
+					<lpage>674</lpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib8"> 
+				<label>[8]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Z. Fang</surname>  
+							<given-names>H.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Ren</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>J.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Int. J. Mod. Phys. D</source>  
+					<year>2005</year>  
+					<volume>14</volume>  
+					<issue>10</issue>  
+					<fpage>1699</fpage>  
+					<lpage>1750</lpage>  
+					<pub-id pub-id-type="doi">10.1142/S0218271805007103</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib9"> 
+				<label>[9]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Lin</surname>  
+							<given-names>K.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>X. Zeng</surname>  
+							<given-names>X.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Z. Yang</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Chin. Phys. Lett.</source>  
+					<year>2008</year>  
+					<volume>25</volume>  
+					<issue>2</issue>  
+					<fpage>390</fpage>  
+					<lpage>392</lpage>  
+					<pub-id pub-id-type="doi">10.1088/0256-307X/25/2/011</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib10"> 
+				<label>[10]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Banerjee</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>R. Majhi</surname>  
+							<given-names>B.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>2009</year>  
+					<volume>79</volume>  
+					<issue>6</issue>  
+					<fpage>064024</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.79.064024</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib11"> 
+				<label>[11]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Srinivasan</surname>  
+							<given-names>K.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Padmanabhan</surname>  
+							<given-names>T.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>1999</year>  
+					<volume>60</volume>  
+					<issue>2</issue>  
+					<fpage>24007</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.60.024007</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib12"> 
+				<label>[12]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Shankaranarayanan</surname>  
+							<given-names>S.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Padmanabhan</surname>  
+							<given-names>T.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Srinivasan</surname>  
+							<given-names>K.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Class. Quantum Grav.</source>  
+					<year>2002</year>  
+					<volume>19</volume>  
+					<fpage>2671</fpage>  
+					<lpage>2687</lpage>  
+					<pub-id pub-id-type="doi">10.1088/0264-9381/19/10/310</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib13"> 
+				<label>[13]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Kenner</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>B. Mann</surname>  
+							<given-names>R.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Class. Quantum Grav.</source>  
+					<year>2008</year>  
+					<volume>25</volume>  
+					<issue>9</issue>  
+					<fpage>095014</fpage>  
+					<pub-id pub-id-type="doi">10.1088/0264-9381/25/9/095014</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib14"> 
+				<label>[14]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Kenner</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>B. Mann</surname>  
+							<given-names>R.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Lett. B</source>  
+					<year>2008</year>  
+					<volume>665</volume>  
+					<issue>4</issue>  
+					<fpage>277</fpage>  
+					<lpage>283</lpage>  
+					<pub-id pub-id-type="doi">10.1016/j.physletb.2008.06.012</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib15"> 
+				<label>[15]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Banerjee</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>R. Majhi</surname>  
+							<given-names>B.</given-names> 
+						</name> 
+					</person-group>  
+					<source>J. High Energy Phys.</source>  
+					<year>2008</year>  
+					<volume>2008</volume>  
+					<issue>6</issue>  
+					<fpage>095</fpage>  
+					<pub-id pub-id-type="doi">10.1088/1126-6708/2008/06/095</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib16"> 
+				<label>[16]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Lin</surname>  
+							<given-names>K.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Z. Yang</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>2009</year>  
+					<volume>79</volume>  
+					<issue>6</issue>  
+					<fpage>064035</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.79.064035</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib17"> 
+				<label>[17]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Lin</surname>  
+							<given-names>K.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Z. Yang</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Lett. B</source>  
+					<year>2009</year>  
+					<volume>674</volume>  
+					<issue>2</issue>  
+					<fpage>127</fpage>  
+					<lpage>130</lpage>  
+					<pub-id pub-id-type="doi">10.1016/j.physletb.2009.02.055</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib18"> 
+				<label>[18]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Z. Yang</surname>  
+							<given-names>S.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Lin</surname>  
+							<given-names>K.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Sci. Sin-Phy. Mech. Astron.</source>  
+					<year>2010</year>  
+					<volume>40</volume>  
+					<issue>4</issue>  
+					<fpage>507</fpage>  
+					<lpage>512</lpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib19"> 
+				<label>[19]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Z. Yang</surname>  
+							<given-names>S.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Lin</surname>  
+							<given-names>K.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Sci. Sin-Phy. Mech. Astron.</source>  
+					<year>2019</year>  
+					<volume>49</volume>  
+					<fpage>019503</fpage>  
+					<pub-id pub-id-type="doi">10.1360/SSPMA2018-000307</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib20"> 
+				<label>[20]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Sha</surname>  
+							<given-names>B.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>E. Liu</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Tan</surname>  
+							<given-names>X.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>Adv. High Energy Phys.</source>  
+					<year>2020</year>  
+					<volume>2020</volume>  
+					<fpage>3238401</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib21"> 
+				<label>[21]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>E. Liu</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Tan</surname>  
+							<given-names>X.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Sha</surname>  
+							<given-names>B.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>Mod. Phys. Lett. A</source>  
+					<year>2019</year>  
+					<pub-id pub-id-type="doi">10.1142/S0217732320500558</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib22"> 
+				<label>[22]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Y. Chen</surname>  
+							<given-names>D.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Q. Jiang</surname>  
+							<given-names>Q.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Wang</surname>  
+							<given-names>P.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>J. High Energy Phys.</source>  
+					<year>2013</year>  
+					<volume>2013</volume>  
+					<issue>11</issue>  
+					<fpage>176</fpage>  
+					<pub-id pub-id-type="doi">10.1007/JHEP11(2013)176</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib23"> 
+				<label>[23]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Chen</surname>  
+							<given-names>D.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Wu</surname>  
+							<given-names>H.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Yang</surname>  
+							<given-names>H.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Adv. High Energy Phys.</source>  
+					<year>2013</year>  
+					<volume>2013</volume>  
+					<fpage>432412</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib24"> 
+				<label>[24]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Chen</surname>  
+							<given-names>D.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Wu</surname>  
+							<given-names>H.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Yang</surname>  
+							<given-names>H.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>Int. J. Mod. Phys. A</source>  
+					<year>2014</year>  
+					<volume>29</volume>  
+					<issue>26</issue>  
+					<fpage>1430054</fpage>  
+					<pub-id pub-id-type="doi">10.1142/S0217751X14300543</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib25"> 
+				<label>[25]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Sakalli</surname>  
+							<given-names>I.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Övgün</surname>  
+							<given-names>A.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Jusufi</surname>  
+							<given-names>K.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Astrophys. Space Sci.</source>  
+					<year>2016</year>  
+					<volume>361</volume>  
+					<fpage>330</fpage>  
+					<pub-id pub-id-type="doi">10.1007/s10509-016-2922-x</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib26"> 
+				<label>[26]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Gecim</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Sucu</surname>  
+							<given-names>Y.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Lett. B</source>  
+					<year>2017</year>  
+					<volume>773</volume>  
+					<fpage>391</fpage>  
+					<lpage>394</lpage>  
+					<pub-id pub-id-type="doi">10.1016/j.physletb.2017.08.053</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib27"> 
+				<label>[27]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Ibungochouba Singh</surname>  
+							<given-names>T.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Ablu Meitei</surname>  
+							<given-names>I.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Yugindro Singh</surname>  
+							<given-names>K.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Int. J. Theor. Phys.</source>  
+					<year>2017</year>  
+					<volume>56</volume>  
+					<fpage>2640</fpage>  
+					<lpage>2650</lpage>  
+					<pub-id pub-id-type="doi">10.1007/s10773-017-3420-9</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib28"> 
+				<label>[28]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Gecim</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Sucu</surname>  
+							<given-names>Y.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Adv. High Energy Phys.</source>  
+					<year>2018</year>  
+					<volume>2018</volume>  
+					<fpage>8728564</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib29"> 
+				<label>[29]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Gecim</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Sucu</surname>  
+							<given-names>Y.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Mod. Phys. Lett. A</source>  
+					<year>2018</year>  
+					<volume>33</volume>  
+					<issue>28</issue>  
+					<fpage>1850164</fpage>  
+					<pub-id pub-id-type="doi">10.1142/S021773231850164X</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib30"> 
+				<label>[30]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Gecim</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Sucu</surname>  
+							<given-names>Y.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Eur. Phys. J. C</source>  
+					<year>2019</year>  
+					<volume>29</volume>  
+					<fpage>882</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib31"> 
+				<label>[31]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Javed</surname>  
+							<given-names>W.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Babar</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Övgün</surname>  
+							<given-names>A.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Mod. Phys. Lett. A</source>  
+					<year>2019</year>  
+					<volume>34</volume>  
+					<fpage>1950057</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib32"> 
+				<label>[32]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Javed</surname>  
+							<given-names>W.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Ali</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Babar</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>Chin. Phys. C</source>  
+					<year>2020</year>  
+					<volume>44</volume>  
+					<issue>1</issue>  
+					<fpage>015104</fpage>  
+					<pub-id pub-id-type="doi">10.1088/1674-1137/44/1/015104</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib33"> 
+				<label>[33]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Amelino-Camelia</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>V. Ahluwalia</surname>  
+							<given-names>D.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Int. J. Mod. Phys. D</source>  
+					<year>2002</year>  
+					<volume>11</volume>  
+					<issue>1</issue>  
+					<fpage>35</fpage>  
+					<lpage>59</lpage>  
+					<pub-id pub-id-type="doi">10.1142/S0218271802001330</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib34"> 
+				<label>[34]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Magueijo</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Smolin</surname>  
+							<given-names>L.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. Lett.</source>  
+					<year>2002</year>  
+					<volume>88</volume>  
+					<issue>19</issue>  
+					<fpage>190403</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevLett.88.190403</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib35"> 
+				<label>[35]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Ellis</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>E. Mavomatos</surname>  
+							<given-names>N.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>V. Nanopoulos</surname>  
+							<given-names>D.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Lett. B</source>  
+					<year>1992</year>  
+					<volume>293</volume>  
+					<issue>1-2</issue>  
+					<fpage>37</fpage>  
+					<lpage>48</lpage>  
+					<pub-id pub-id-type="doi">10.1016/0370-2693(92)91478-R</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib36"> 
+				<label>[36]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>R. Ellis</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>E. Mavomatos</surname>  
+							<given-names>N.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>S. Sakharov</surname>  
+							<given-names>A.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Astropart. Phys.</source>  
+					<year>2004</year>  
+					<volume>20</volume>  
+					<issue>6</issue>  
+					<fpage>669</fpage>  
+					<lpage>682</lpage>  
+					<pub-id pub-id-type="doi">10.1016/j.astropartphys.2003.12.001</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib37"> 
+				<label>[37]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Jacobson</surname>  
+							<given-names>T.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Liberati</surname>  
+							<given-names>S.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Mattingly</surname>  
+							<given-names>D.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Nature</source>  
+					<year>2003</year>  
+					<volume>424</volume>  
+					<issue>6952</issue>  
+					<fpage>1019</fpage>  
+					<lpage>1021</lpage>  
+					<pub-id pub-id-type="doi">10.1038/nature01882</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib38"> 
+				<label>[38]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>I. Kruglov</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Mod. Phys. Lett. A</source>  
+					<year>2013</year>  
+					<volume>28</volume>  
+					<issue>6</issue>  
+					<fpage>1350014</fpage>  
+					<pub-id pub-id-type="doi">10.1142/S0217732313500144</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib39"> 
+				<label>[39]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>G. Bailey</surname>  
+							<given-names>Q.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>A. Kostelecky</surname>  
+							<given-names>V.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Xu</surname>  
+							<given-names>R</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>2015</year>  
+					<volume>91</volume>  
+					<issue>2</issue>  
+					<fpage>022006</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.91.022006</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib40"> 
+				<label>[40]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>A. Kostelecky</surname>  
+							<given-names>V.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Potting</surname>  
+							<given-names>R.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Nucl. Phys. B</source>  
+					<year>1991</year>  
+					<volume>359</volume>  
+					<issue>2-3</issue>  
+					<fpage>545</fpage>  
+					<lpage>570</lpage>  
+					<pub-id pub-id-type="doi">10.1016/0550-3213(91)90071-5</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib41"> 
+				<label>[41]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>A. Kostelecky</surname>  
+							<given-names>V.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Potting</surname>  
+							<given-names>R.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>1995</year>  
+					<volume>51</volume>  
+					<issue>7</issue>  
+					<fpage>3923</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.51.3923</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib42"> 
+				<label>[42]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>A. Kostelecky</surname>  
+							<given-names>V.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Samuel</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>1989</year>  
+					<volume>39</volume>  
+					<issue>2</issue>  
+					<fpage>683</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib43"> 
+				<label>[43]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>A. Kostelecky</surname>  
+							<given-names>V.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>D. Tasson</surname>  
+							<given-names>J.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. Lett.</source>  
+					<year>2009</year>  
+					<volume>102</volume>  
+					<issue>1</issue>  
+					<fpage>010402</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevLett.102.010402</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib44"> 
+				<label>[44]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Damour</surname>  
+							<given-names>T.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Ruffini</surname>  
+							<given-names>R.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>1976</year>  
+					<volume>14</volume>  
+					<issue>2</issue>  
+					<fpage>332</fpage>  
+					<lpage>334</lpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.14.332</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib45"> 
+				<label>[45]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Sannan</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Gen. Relativ. Gravit.</source>  
+					<year>1988</year>  
+					<volume>20</volume>  
+					<issue>3</issue>  
+					<fpage>239</fpage>  
+					<lpage>246</lpage>  
+					<pub-id pub-id-type="doi">10.1007/BF00759183</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib46"> 
+				<label>[46]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>C. Robinson</surname>  
+							<given-names>D.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. Lett.</source>  
+					<year>1975</year>  
+					<volume>34</volume>  
+					<issue>14</issue>  
+					<fpage>905</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevLett.34.905</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib47"> 
+				<label>[47]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>W. Gibbons</surname>  
+							<given-names>G.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>J. Perry</surname>  
+							<given-names>M.</given-names> 
+						</name> 
+					</person-group>  
+					<source>P. Roy. Soc. A</source>  
+					<year>1978</year>  
+					<volume>358</volume>  
+					<issue>1695</issue>  
+					<fpage>467</fpage>  
+					<lpage>494</lpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib48"> 
+				<label>[48]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>X. Guei</surname>  
+							<given-names>Y.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Chinese Astronomy and Astrophysics</source>  
+					<year>1983</year>  
+					<volume>7</volume>  
+					<issue>3</issue>  
+					<fpage>201</fpage>  
+					<lpage>210</lpage>  
+					<pub-id pub-id-type="doi">10.1016/0275-1062(83)90048-6</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib49"> 
+				<label>[49]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>G. Unruh</surname>  
+							<given-names>W.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>1976</year>  
+					<volume>14</volume>  
+					<issue>4</issue>  
+					<fpage>870</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.14.870</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib50"> 
+				<label>[50]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>B. Hartle</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>W. Hawking</surname>  
+							<given-names>S.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>1976</year>  
+					<volume>13</volume>  
+					<issue>8</issue>  
+					<fpage>2188</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.13.2188</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib51"> 
+				<label>[51]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Sha</surname>  
+							<given-names>B.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>E. Liu</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Tan</surname>  
+							<given-names>X.</given-names> 
+						</name>  
+						<etal>et al</etal> 
+					</person-group>  
+					<source>Advances in Astrophysics</source>  
+					<year>2020</year>  
+					<volume>5</volume>  
+					<issue>1</issue>  
+					<fpage>51002</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib52"> 
+				<label>[52]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>X. Dai</surname>  
+							<given-names>X.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Chin. Phys. Lett.</source>  
+					<year>1991</year>  
+					<volume>8</volume>  
+					<issue>10</issue>  
+					<fpage>548</fpage>  
+					<lpage>550</lpage>  
+					<pub-id pub-id-type="doi">10.1088/0256-307X/8/10/015</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib53"> 
+				<label>[53]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhu</surname>  
+							<given-names>J.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Int. J. Theor. Phys.</source>  
+					<year>1994</year>  
+					<volume>33</volume>  
+					<issue>11</issue>  
+					<fpage>2147</fpage>  
+					<pub-id pub-id-type="doi">10.1007/BF00675798</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib54"> 
+				<label>[54]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Q. Luo</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>G. Huang</surname>  
+							<given-names>C.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Chin. Phys. Lett.</source>  
+					<year>1992</year>  
+					<volume>9</volume>  
+					<issue>5</issue>  
+					<fpage>269</fpage>  
+					<pub-id pub-id-type="doi">10.1088/0256-307X/9/5/013</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib55"> 
+				<label>[55]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>H. Li</surname>  
+							<given-names>Z.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Chin. Phys. Lett.</source>  
+					<year>1994</year>  
+					<volume>11</volume>  
+					<issue>1</issue>  
+					<fpage>8</fpage>  
+					<pub-id pub-id-type="doi">10.1088/0256-307X/11/1/003</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib56"> 
+				<label>[56]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>C. Sun</surname>  
+							<given-names>M.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>R.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name> 
+					</person-group>  
+					<source>IL Nuovo Cimento B</source>  
+					<year>1995</year>  
+					<volume>110</volume>  
+					<issue>7</issue>  
+					<fpage>829</fpage>  
+					<lpage>837</lpage>  
+					<pub-id pub-id-type="doi">10.1007/BF02820151</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib57"> 
+				<label>[57]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Z. Yang</surname>  
+							<given-names>S.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Y. Zhu</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Zhao</surname>  
+							<given-names>Z.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Acta Phys. Sin. (Overseas Edn)</source>  
+					<year>1995</year>  
+					<volume>4</volume>  
+					<issue>2</issue>  
+					<fpage>147</fpage>  
+					<lpage>150</lpage>  
+					<pub-id pub-id-type="doi">10.1088/1004-423X/4/2/010</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib58"> 
+				<label>[58]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Magueijo</surname>  
+							<given-names>J.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Smolin</surname>  
+							<given-names>L.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev. D</source>  
+					<year>2003</year>  
+					<volume>67</volume>  
+					<issue>4</issue>  
+					<fpage>044017</fpage>  
+					<pub-id pub-id-type="doi">10.1103/PhysRevD.67.044017</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib59"> 
+				<label>[59]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Amelino-Camelia</surname>  
+							<given-names>G.</given-names> 
+						</name> 
+					</person-group>  
+					<source>New J. Phys.</source>  
+					<year>2004</year>  
+					<volume>6</volume>  
+					<fpage>188</fpage>  
+					<pub-id pub-id-type="doi">10.1088/1367-2630/6/1/188</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib60"> 
+				<label>[60]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Rarita</surname>  
+							<given-names>W.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Schwinger</surname>  
+							<given-names>J.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Phys. Rev.</source>  
+					<year>1941</year>  
+					<volume>60</volume>  
+					<fpage>61</fpage> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib61"> 
+				<label>[61]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>W. Gibbons</surname>  
+							<given-names>G.</given-names> 
+						</name> 
+					</person-group>  
+					<source>J. Phys. A: Math. Gen.</source>  
+					<year>1976</year>  
+					<volume>9</volume>  
+					<issue>1</issue>  
+					<fpage>145</fpage>  
+					<lpage>148</lpage>  
+					<pub-id pub-id-type="doi">10.1088/0305-4470/9/1/019</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib62"> 
+				<label>[62]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Carmeli</surname>  
+							<given-names>M.</given-names> 
+						</name>  
+						<name name-style="western"> 
+							<surname>Kaye</surname>  
+							<given-names>M.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Ann. Phys.</source>  
+					<year>1977</year>  
+					<volume>103</volume>  
+					<issue>1</issue>  
+					<fpage>97</fpage>  
+					<lpage>120</lpage>  
+					<pub-id pub-id-type="doi">10.1016/0003-4916(77)90263-9</pub-id> 
+				</element-citation> 
+			</ref>  
+			<ref id="cpc_44_12_125104_bib63"> 
+				<label>[63]</label>  
+				<element-citation publication-type="journal" xlink:type="simple"> 
+					<person-group person-group-type="author"> 
+						<name name-style="western"> 
+							<surname>Y. Xu</surname>  
+							<given-names>D.</given-names> 
+						</name> 
+					</person-group>  
+					<source>Class. Quantum Grav.</source>  
+					<year>1998</year>  
+					<volume>15</volume>  
+					<fpage>153</fpage>  
+					<pub-id pub-id-type="doi">10.1088/0264-9381/15/1/011</pub-id> 
+				</element-citation> 
+			</ref> 
+		</ref-list> 
+	</back> 
+</article>

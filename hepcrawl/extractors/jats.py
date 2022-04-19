@@ -13,7 +13,7 @@ from __future__ import absolute_import, print_function
 
 import datetime
 import xml.etree.ElementTree as ET
-
+import re
 from ..utils import get_first
 
 
@@ -30,21 +30,30 @@ class Jats(object):
 
         if node.xpath(".//date[@date-type='published']"):
             return format_date(
-                day=node.xpath(".//date[@date-type='published']/day/text()").extract(),
-                month=node.xpath(".//date[@date-type='published']/month/text()").extract(),
-                year=node.xpath(".//date[@date-type='published']/year/text()").extract(),
+                day=node.xpath(
+                    ".//date[@date-type='published']/day/text()").extract(),
+                month=node.xpath(
+                    ".//date[@date-type='published']/month/text()").extract(),
+                year=node.xpath(
+                    ".//date[@date-type='published']/year/text()").extract(),
             )
         elif node.xpath(".//pub-date[@pub-type='epub']"):
             return format_date(
-                day=node.xpath(".//pub-date[@pub-type='epub']/day/text()").extract(),
-                month=node.xpath(".//pub-date[@pub-type='epub']/month/text()").extract(),
-                year=node.xpath(".//pub-date[@pub-type='epub']/year/text()").extract(),
+                day=node.xpath(
+                    ".//pub-date[@pub-type='epub']/day/text()").extract(),
+                month=node.xpath(
+                    ".//pub-date[@pub-type='epub']/month/text()").extract(),
+                year=node.xpath(
+                    ".//pub-date[@pub-type='epub']/year/text()").extract(),
             )
         elif node.xpath(".//pub-date[@pub-type='ppub']"):
             return format_date(
-                day=node.xpath(".//pub-date[@pub-type='ppub']/day/text()").extract(),
-                month=node.xpath(".//pub-date[@pub-type='ppub']/month/text()").extract(),
-                year=node.xpath(".//pub-date[@pub-type='ppub']/year/text()").extract(),
+                day=node.xpath(
+                    ".//pub-date[@pub-type='ppub']/day/text()").extract(),
+                month=node.xpath(
+                    ".//pub-date[@pub-type='ppub']/month/text()").extract(),
+                year=node.xpath(
+                    ".//pub-date[@pub-type='ppub']/year/text()").extract(),
             )
         elif node.xpath(".//pub-date"):
             return format_date(
@@ -86,14 +95,29 @@ class Jats(object):
             affiliations = contrib.xpath('aff')
             reffered_id = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
             if reffered_id:
-                affiliations += node.xpath(".//aff[@id='{0}']".format(get_first(reffered_id)))
+                affiliations += node.xpath(
+                    ".//aff[@id='{0}']".format(get_first(reffered_id)))
 
-            affiliations = [{'value': self._clean_aff(aff)} for aff in affiliations]
+            affiliations_values = []
+
+            for aff in affiliations:
+                # checking is the aff. value captured by xpath is just new line
+                if self._clean_aff(aff).split():
+                    affiliations_values.append({'value': self._clean_aff(aff)})
+                else:
+                    # if aff. value captured by xpath is just new line, we have to take all data in aff tags.
+                    # because xpath cannot capture data if there is new line and just after different tags.
+                    # it will take just new line, but not further text
+                    string = aff.get().encode('ascii', 'ignore')
+                    without_spaces = ' '.join(string.split())
+                    between_tags = re.search(
+                        '</label>(.*)</aff>', without_spaces).group(1).strip()
+                    affiliations_values.append({'value': between_tags})
 
             author = {
                 'surname': get_first(surname, ""),
                 'given_names': get_first(given_names, ""),
-                'affiliations': affiliations,
+                'affiliations': affiliations_values,
             }
 
             email_addr = get_first(email, "")

@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article article-type="research-article" xml:lang="en" xmlns="http://specifications.silverchair.com/xsd/1/24/SCJATS-journalpublishing.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://specifications.silverchair.com/xsd/1/24/SCJATS-journalpublishing.xsd 1/24/SCJATS-journalpublishing.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">ptep</journal-id>
+<journal-title-group>
+<journal-title>Progress of Theoretical and Experimental Physics</journal-title>
+<abbrev-journal-title abbrev-type="pubmed">Prog. Theor. Exp. Phys.</abbrev-journal-title>
+<abbrev-journal-title abbrev-type="publisher">PTEPHY</abbrev-journal-title>
+</journal-title-group>
+<issn pub-type="epub">2050-3911</issn>
+<publisher>
+<publisher-name>Oxford University Press</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.1093/ptep/ptab168</article-id>
+<article-id pub-id-type="publisher-id">ptab168</article-id>
+<article-id pub-id-type="arxiv">arXiv:2109.07665</article-id>
+<article-categories>
+<subj-group subj-group-type="category-toc-heading">
+<subject>Paper</subject>
+</subj-group>
+<subj-group subj-group-type="category-taxonomy-collection">
+<subject>AcademicSubjects/SCI01970</subject>
+</subj-group>
+<subj-group subj-group-type="category-taxonomy-collection">
+<subject>PTEP/B64</subject>
+<subject>PTEP/B69</subject>
+<subject>PTEP/D34</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Derivative expansion in the HAL QCD method for a separable potential</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8515-4388</contrib-id>
+<name><surname>Aoki</surname> <given-names>Sinya</given-names></name>
+<email xlink:type="simple">saoki@het.ph.tsukuba.ac.jp</email>
+<aff><institution>Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University</institution>, <addr-line>Kyoto 606-8502</addr-line>, <country country="JP">Japan</country></aff>
+<aff><institution>Theoretical Research Division, Nishina Center</institution>, <addr-line>RIKEN, Saitama 351-0198</addr-line>, <country country="JP">Japan</country></aff>
+<xref ref-type="corresp" rid="cor1"/>
+</contrib>
+<contrib contrib-type="author">
+<name><surname>Yazaki</surname> <given-names>Koichi</given-names></name>
+<aff><institution>Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS)</institution>, <addr-line>RIKEN Saitama 351-0198</addr-line>, <country country="JP">Japan</country></aff>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1">E-mail: <email xlink:type="simple">saoki@het.ph.tsukuba.ac.jp</email></corresp>
+</author-notes>
+<pub-date pub-type="cover"><month>03</month><year>2022</year></pub-date>
+<pub-date pub-type="collection" iso-8601-date="2022-03-09"><day>09</day><month>03</month><year>2022</year></pub-date>
+<pub-date pub-type="epub" iso-8601-date="2021-12-31"><day>31</day><month>12</month><year>2021</year></pub-date>
+<volume>2022</volume>
+<issue>3</issue>
+<elocation-id>033B04</elocation-id>
+<history>
+<date date-type="received"><day>28</day><month>09</month><year>2021</year></date>
+<date date-type="rev-recd"><day>02</day><month>12</month><year>2021</year></date>
+<date date-type="accepted"><day>23</day><month>12</month><year>2021</year></date>
+</history>
+<permissions>
+<copyright-statement>&#x00A9; The Author(s) 2021. Published by Oxford University Press on behalf of the Physical Society of Japan.</copyright-statement>
+<copyright-year>2021</copyright-year>
+<license license-type="cc-by" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<license-p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+<license-p>Funded by SCOAP<sup>3</sup></license-p>
+</license>
+</permissions>
+<self-uri xlink:href="ptab168.pdf"/>
+<abstract abstract-type="abstract"><title>Abstract</title>
+<p>We investigate how the derivative expansion in the HAL QCD method works to extract physical observables, using a separable potential in quantum mechanics, which is solvable but highly non-local in the coordinate system. We consider three cases for inputs to determine the HAL QCD potential in the derivative expansion: (1)&#x00A0;energy eigenfunctions, (2)&#x00A0;time-dependent wave functions as solutions to the time-dependent Schr&#x00F6;dinger equation with some boundary conditions, and (3)&#x00A0;a time-dependent wave function made by a linear combination of a finite number of eigenfunctions at low energy to mimic the finite volume effect. We have found that, for all three cases, the potentials provide reasonable scattering phase shifts even at the leading order of the derivative expansion, and they give more accurate results as the order of the expansion increases. By comparing the above results with those from the formal derivative expansion for the separable potential, we conclude that the derivative expansion is not a way to obtain the potential but a method to extract physical observables such as phase shifts and binding energies, and that the scattering phase shifts from the derivative expansion in the HAL QCD method converge to the exact ones much faster than those from the formal derivative expansion of the separable potential.</p>
+</abstract>
+<kwd-group kwd-group-type="jel">
+<kwd>B64</kwd>
+<kwd>B69</kwd>
+<kwd>D00</kwd>
+<kwd>D34</kwd>
+</kwd-group>
+<funding-group>
+<award-group award-type="grant">
+<funding-source>
+<institution-wrap>
+<institution>SCOAP</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+</funding-group>
+<counts>
+<page-count count="16"/>
+</counts>
+</article-meta>
+</front>
+<body>
+<sec id="sec1" sec-type="intro">
+<label>1.</label>
+<title>Introduction</title>
+<p>Nowadays, in addition to simple quantities such as hadron masses and matrix elements, more complicated quantities such as hadron interactions can be extracted in lattice quantum chromodynamics (QCD). Hadron interactions have been investigated in lattice QCD by two main methods. One is the finite volume method [<xref ref-type="bibr" rid="bib1">1</xref>], the other is the HAL QCD potential method [<xref ref-type="bibr" rid="bib2 bib3 bib4">2&#x2013;4</xref>]. While both methods utilize the fact that the Nambu&#x2013;Bethe&#x2013;Salpeter wave function encodes information of the S-matrix in QCD [<xref ref-type="bibr" rid="bib1 bib2 bib3 bib4 bib5 bib6 bib7 bib8 bib9 bib10">1&#x2013;10</xref>], they each have their own pros and cons. In particular, the systematic errors of these methods are very different. The systematic errors associated with the finite volume method are well understood, once finite volume spectra are precisely determined. On the other hand, the non-local potential in the HAL QCD method, which by definition correctly reproduces the scattering phase shift, needs in practice to be approximated by the derivative expansion, whose systematic errors are difficult to quantify. Indeed, there was some misunderstanding on this point in the literature; see some correspondence in Refs.&#x00A0;[<xref ref-type="bibr" rid="bib11 bib12 bib13">11&#x2013;13</xref>].</p>
+<p>In this paper we investigate how the derivative expansion of the potential works in the HAL QCD method by applying it to a solvable model in quantum mechanics whose potential has a separable form. Separable potentials are suitable for this purpose, since they are in general solvable but highly non-local in the coordinate space. In addition, the solvable potential is formally expanded in terms of derivatives, which can be compared with the derivative expansion in the HAL QCD method. We give the basic properties of the separable potential we consider in Sect.&#x00A0;<xref ref-type="sec" rid="sec2">2</xref>. We investigate how the derivative expansion works in the HAL QCD method for three cases in Sect.&#x00A0;<xref ref-type="sec" rid="sec3">3</xref>. The first one is to construct potentials from energy eigenfunctions. This is the cleanest case, where the systematic errors for the derivative expansion are easy to estimate. In Appendix&#x00A0;<xref ref-type="app" rid="sec7">Appendix A</xref>, the coefficient functions in the derivative expansion of the potential are presented for this case. We compare them with those in the formal derivative expansion of the separable potential. The second case is to evaluate potentials from time-dependent wave functions in an infinite volume, constructed as a solution of the time-dependent Schr&#x00F6;dinger equation with some initial condition. While the finite volume method by definition does not work in this case, the time-dependent HAL QCD method works to extract physical observables [<xref ref-type="bibr" rid="bib14">14</xref>]. An issue in this case is how reliable the results from the derivative expansion are. We compare phase shifts obtained from the potentials at the lowest few orders in the derivative expansion with the exact result. Finally, we consider the construction of the potential from time-dependent wave functions composed of a finite sum of eigenfunctions, which mimic time-dependent wave functions in the finite volume. This is most similar to actual setups in lattice QCD simulations performed on a finite volume with a finite lattice spacing. We give our conclusions in Sect.&#x00A0;<xref ref-type="sec" rid="sec4">4</xref>. Details of the calculation of time-dependent wave functions are presented in Appendix&#x00A0;<xref ref-type="app" rid="sec9">Appendix&#x00A0;C</xref>.</p>
+<p>Preliminary results of a similar analysis with a different separable potential can be found in Refs.&#x00A0;[<xref ref-type="bibr" rid="bib15">15</xref>,<xref ref-type="bibr" rid="bib16">16</xref>].</p>
+</sec>
+<sec id="sec2">
+<label>2.</label>
+<title>Separable potential</title>
+<p>Let us consider the Schr&#x00F6;dinger equation with non-local potential,
+<disp-formula id="equ1">
+<label>(1)</label>
+<tex-math id="TM0001" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+(E_k - H_0) \psi _k(\vec{x}) = \int d^3y\, V(\vec{x}, \vec{y}) \psi _k(\vec{y})= \omega v(\vec{x}) \int d^3y\, v^\dagger (\vec{y}) \psi _k(\vec{y}),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ2">
+<label>(2)</label>
+<tex-math id="TM0002" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+E_k := {\vec{k}^2\over 2m}, \qquad H_0= -{\vec{\nabla }^2\over 2m},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>and we take a separable potential <inline-formula><tex-math id="TM0003" notation="LaTeX"><![CDATA[$V(\vec{x}, \vec{y}) := \omega v(\vec{x}) v^\dagger (\vec{y})$]]></tex-math></inline-formula> in the last line. For the general method for investigating scattering problems with separable potentials, see, for example, Ref.&#x00A0;[<xref ref-type="bibr" rid="bib17">17</xref>].</p>
+<p>The corresponding Lippmann&#x2013;Schwinger equation becomes
+<disp-formula id="equ3">
+<label>(3)</label>
+<tex-math id="TM0004" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\psi _k(\vec{x}) = e^{i \vec{k}\cdot \vec{x}} -\omega \int d^3 y G_k(\vec{x},\vec{y}) v(\vec{y}) \int d^3z\, v^\dagger (\vec{z}) \psi _k(\vec{z}),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where the Green&#x2019;s function is given by
+<disp-formula id="equ4">
+<label>(4)</label>
+<tex-math id="TM0005" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+G_k(\vec{x},\vec{y}) := \int \frac{d^3 p}{(2\pi )^3} \frac{2m e^{i \vec{p} (\vec{x}-\vec{y})}}{\vec{p}^2-k^2-i\epsilon } =\frac{m}{2\pi } \frac{e^{i k\vert \vec{x}-\vec{y}\vert }}{\vert \vec{x}-\vec{y}\vert } .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Equation&#x00A0;(<xref ref-type="disp-formula" rid="equ3">3</xref>) can be solved as
+<disp-formula id="equ5">
+<label>(5)</label>
+<tex-math id="TM0006" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\psi _k(\vec{x}) = e^{i \vec{k}\cdot \vec{x}} - \langle \vec{x} \vert G_k \vert v\rangle \frac{\langle v \vert \vec{k}\rangle }{ \dfrac{1}{\omega } + \langle v\vert G\vert v\rangle }, \qquad e^{i\vec{k}\vec{x}} = 4\pi \sum _{lm} i^l j_l(kr) Y_{lm}(\Omega _{\vec{x}})Y_{lm}(\Omega _{\vec{k}})^\dagger ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where we define
+<disp-formula id="equ6">
+<label>(6)</label>
+<tex-math id="TM0007" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\langle v \vert \vec{k}\rangle := \int d^3x v^\dagger (\vec{x}) e^{i \vec{k}\cdot \vec{x}} ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ7">
+<label>(7)</label>
+<tex-math id="TM0008" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\langle \vec{x} \vert G_k \vert v\rangle := \int d^3 y\, G_k(\vec{x},\vec{y}) v(\vec{y}), \qquad \langle v\vert G_k\vert v\rangle := \int d^3x \, v^\dagger (\vec{x}) \langle \vec{x} \vert G_k \vert v\rangle .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>In this paper we take one choice for <inline-formula><tex-math id="TM0009" notation="LaTeX"><![CDATA[$v(\vec{x})$]]></tex-math></inline-formula> as
+<disp-formula id="equ8">
+<label>(8)</label>
+<tex-math id="TM0010" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+v(\vec{x}) = {e^{-\mu x}\over x} = v^\dagger (\vec{x}), \qquad x=\vert \vec{x}\vert .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<sec id="sec2-1">
+<label>2.1</label>
+<title>Explicit solutions</title>
+<p>Using the formula
+<disp-formula id="equ9">
+<label>(9)</label>
+<tex-math id="TM0011" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\frac{e^{i k \vert \vec{x}-\vec{y}\vert }}{\vert \vec{x} -\vec{y}\vert } = 4\pi i k\sum _{l=0}^\infty \sum _{m=-l}^l h^{(+)}_l (k r_{\gt} ) j_l(k r_{\lt} ) Y_{lm}(\Omega _{\vec{x}}) Y_{lm}^\dagger (\Omega _{\vec{y}}),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where <italic>r</italic><sub>&#x003E;</sub> &#x2254; max&#x2009;(<italic>x</italic>, <italic>y</italic>) and <italic>r</italic><sub>&#x003C;</sub> &#x2254; min&#x2009;(<italic>x</italic>, <italic>y</italic>), we obtain
+<disp-formula id="equ10">
+<label>(10)</label>
+<tex-math id="TM0012" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\langle v \vert \vec{k}\rangle &=& {4\pi \over \mu ^2+k^2}, \\\langle v\vert G\vert v\rangle &=& {8\pi m\over (\mu ^2+k^2)^2}\left[{\mu ^2-k^2\over 2\mu } + ik\right], \\\langle \vec{x} \vert G \vert v\rangle &=& {2m (e^{ikx} -e^{-\mu x})\over (\mu ^2+k^2) x},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where we use
+<disp-formula id="equ11">
+<label>(11)</label>
+<tex-math id="TM0013" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+Y_{00}(\Omega _{\vec{x}}) :={1\over \sqrt{4\pi }}, \qquad h_0^{(+)}(z) := -i \frac{e^{i z}}{z}, \qquad j_0(z) := \frac{\sin z}{z} .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Thus, scattering states exist only for the <italic>S</italic>-wave (<italic>l</italic> &#x003D; 0) as
+<disp-formula id="equ12">
+<label>(12)</label>
+<tex-math id="TM0014" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\psi _k^0(x) = {\sin (kx +\delta (k) ) -\sin \delta (k) e^{-\mu x}\over k x}
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>for <italic>k</italic> &#x2265; 0, and the scattering phase shift becomes
+<disp-formula id="equ13">
+<label>(13)</label>
+<tex-math id="TM0015" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+k \cot \delta (k) ={1\over a_0} + {r_{\rm eff}\over 2} k^2 + P_4 k^4,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where the scattering length, the effective range, and the shape parameter are respectively given by
+<disp-formula id="equ14">
+<label>(14)</label>
+<tex-math id="TM0016" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+{1\over a_0} = -{\mu \over 2}\left[ 1+{\mu ^3\over c}\right], \qquad r_{\rm eff} = {1\over \mu }\left[1- {2\mu ^3\over c}\right],\qquad P_4= -{1\over 2c} ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>with <italic>c</italic> &#x2254; 4&#x03C0;<italic>m</italic>&#x03C9;.</p>
+<p>For the bound state &#x007C;<italic>B</italic>&#x232A;, Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ3">3</xref>) leads to
+<disp-formula id="equ15">
+<label>(15)</label>
+<tex-math id="TM0017" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\langle v\vert B\rangle = -\omega \langle v\vert G_k\vert v\rangle \langle v\vert B\rangle , \qquad \langle \vec{x}\vert B\rangle = -\omega \langle \vec{x}\vert G_k\vert v\rangle \langle v\vert B\rangle ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>which determines the binding momentum <italic>k</italic> &#x003D; <italic>i</italic>&#x03B3;<sub><italic>B</italic></sub> and the normalized bound state as
+<disp-formula id="equ16">
+<label>(16)</label>
+<tex-math id="TM0018" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\gamma _B = \sqrt{- c\over \mu } -\mu , \quad \langle \vec{x}\vert B\rangle = {\mu N_B \over 2\pi x (\mu -\gamma _B)} \left(e^{-\gamma _B x} -e^{-\mu x}\right), \quad N_B^2:= {2\pi \gamma _B(\mu +\gamma _B)\over \mu }.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+</sec>
+<sec id="sec2-2">
+<label>2.2</label>
+<title>Infrared cutoff</title>
+<p>The effective range expansion of the scattering phase shift in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ13">13</xref>) is too simple, as it is a second-order polynomial of <italic>k</italic><sup>2</sup>. In order to make the effective range expansion of the phase shift a more complicated function of <italic>k</italic><sup>2</sup>, we introduce an infrared cutoff <italic>R</italic> and modify the wave function as
+<disp-formula id="equ17">
+<label>(17)</label>
+<tex-math id="TM0019" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\psi _k^R(x) = \left\lbrace \begin{array}{ll}\psi _k^0(x) & \quad ( r \lt R) , \\\displaystyle C(k) {\sin ( k x +\delta _R(k) ) \over kx} & \quad ( r\ge R) , \\\end{array} \right.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where the continuity of the wave function and its derivative at <italic>x</italic> &#x003D; <italic>R</italic> leads to
+<disp-formula id="equ18">
+<label>(18)</label>
+<tex-math id="TM0020" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C(k) = {X\over \sin (kR +\delta _R(k) )}, \qquad k\cot \delta _R(k) = k{X +\cot (kR) Y\over \cot (kR) X -Y},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ19">
+<label>(19)</label>
+<tex-math id="TM0021" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+X = \sin (kR +\delta (k)) -\sin \delta (k) e^{-\mu R}, \qquad Y = \cos (kR +\delta (k)) +{\mu \over k} \sin \delta (k) e^{-\mu R}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Thus, the scattering length <italic>a</italic><sub><italic>R</italic></sub> is given by
+<disp-formula id="equ20">
+<label>(20)</label>
+<tex-math id="TM0022" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+a_R = a_0 {1-(1+\mu R) e^{-\mu R}\over 1+ a_0\mu e^{-\mu R}}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Note that the introduction of <italic>R</italic> also modifies &#x03B3;<sub><italic>B</italic></sub> and <inline-formula><tex-math id="TM0023" notation="LaTeX"><![CDATA[$\langle \vec{x} \vert B\rangle$]]></tex-math></inline-formula>, where &#x03B3;<sub><italic>B</italic></sub> in the presence of the infrared cutoff <italic>R</italic> is estimated by an analytic continuation of <inline-formula><tex-math id="TM0024" notation="LaTeX"><![CDATA[$k \cot \delta _R(k)$]]></tex-math></inline-formula>, as will be shown later.</p>
+</sec>
+<sec id="sec2-3">
+<label>2.3</label>
+<title>Formal derivative expansion</title>
+<p>Using the Taylor expansion, we decompose the separable potential directly in terms of derivatives as
+<disp-formula id="equ21">
+<label>(21)</label>
+<tex-math id="TM0025" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+V(\vec{x},\vec{y}) = \sum _{n=0}^\infty V^{\mu _1\cdots \mu _n}_n(\vec{x}) \partial ^x_{\mu _1}\cdots \partial ^x_{\mu _n} \delta ^{(3)}(\vec{x}- \vec{y}) ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ22">
+<label>(22)</label>
+<tex-math id="TM0026" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+V^{\mu _1\cdots \mu _n}_n(\vec{x}) = {1\over n!} \omega v(\vec{x}) \int d^3y\, v(\vec{y})(y-x)^{\mu _1}\cdots (y-x)^{\mu _n} .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>The lowest few orders corresponding to <inline-formula><tex-math id="TM0027" notation="LaTeX"><![CDATA[$V(\vec{x})$]]></tex-math></inline-formula> in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ8">8</xref>) are given by
+<disp-formula id="equ23">
+<label>(23)</label>
+<tex-math id="TM0028" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+V_0(x) = {4\pi \omega e^{-\mu x} \over \mu ^2 x}, \qquad V_1^\mu (\vec{x}) = -V_0(x) x^\mu , \qquad V_2^{\mu \nu }(\vec{x}) = V_0(x) \left[ {\delta ^{\mu \nu }\over \mu ^2} + {x^\mu x^\nu \over 2}\right] .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Defining <inline-formula><tex-math id="TM0029" notation="LaTeX"><![CDATA[$V_n:= V_n^{\mu _1\cdot \mu _n}\partial _{\mu _1}\cdots \partial _{\mu _n}$]]></tex-math></inline-formula>, we obtain
+<disp-formula id="equ24">
+<label>(24)</label>
+<tex-math id="TM0030" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+V_1\left(x,{d\over dx}\right) &=& V_0(x)-V_0(x){d\over d x}x, \\V_2\left(x,{d\over dx}\right) &=& V_1\left(x,{d\over dx}\right) +V_0(x)\left({1\over \mu ^2} +{x^2\over 2}\right){1\over x}{d^2\over dx^2} x .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>By introducing the infrared cutoff <italic>R</italic> again as <italic>V</italic><sub>0</sub>(<italic>x</italic>) &#x2192; <italic>V</italic><sub>0</sub>(<italic>x</italic>)&#x03B8;(<italic>R</italic> &#x2212; <italic>x</italic>) in the above expressions, we calculate the scattering phase shifts with the potential <inline-formula><tex-math id="TM0031" notation="LaTeX"><![CDATA[$U_n:=\displaystyle \sum _{i=0}^n V_i$]]></tex-math></inline-formula> for <italic>n</italic> &#x003D; 0, 1, 2. In the presence of the infrared cutoff, the exact phase shift, denoted by <inline-formula><tex-math id="TM0032" notation="LaTeX"><![CDATA[$\tilde{\delta }_R(k)$]]></tex-math></inline-formula>, is given by
+<disp-formula id="equ25">
+<label>(25)</label>
+<tex-math id="TM0033" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+k \cot \tilde{\delta }_R(k) = -k {{\rm Re} (1- S(k) )\over {\rm Im}(1-S(k))},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ26">
+<label>(26)</label>
+<tex-math id="TM0034" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S(k) := {c \over \mu ( k+i\mu )^2}\left( 1- {e^{-\mu R}\lbrace e^{-\mu R}(k+i\mu ) -2i \mu e^{i kR}\rbrace \over k-i\mu }\right),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>which is obtained by replacing &#x007C;<italic>v</italic>&#x232A; &#x2192; &#x007C;<italic>v</italic><sub><italic>c</italic></sub>&#x232A; with <inline-formula><tex-math id="TM0035" notation="LaTeX"><![CDATA[$v_c(\vec{x}) := \theta (R-x) v(\vec{x})$]]></tex-math></inline-formula> in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ11">11</xref>). The resulting potential is no longer Hermitian, but the on-shell T-matrix satisfies the unitarity condition and the scattering can be described by a real phase shift, <inline-formula><tex-math id="TM0036" notation="LaTeX"><![CDATA[$\tilde{\delta }_{R} (k)$]]></tex-math></inline-formula>. Although <inline-formula><tex-math id="TM0037" notation="LaTeX"><![CDATA[$\tilde{\delta }_R(k)$]]></tex-math></inline-formula> and &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>) in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ18">18</xref>) are different in their expressions, they are almost identical in numbers as long as <italic>R</italic> is reasonably large.</p>
+<p>Figure&#x00A0;<xref ref-type="fig" rid="fig1">1</xref> shows the scattering phase shift with <italic>m</italic> &#x003D; 0.5 and &#x03BC; &#x003D; 0.3. In the left panel we take <italic>c</italic> &#x003D; &#x2212;0.012 and <italic>R</italic> &#x003D; 9.5, which is attractive but without bound states, while in the right we take <italic>c</italic> &#x003D; &#x2212;0.0048 and <italic>R</italic> &#x003D; 8 to have one bound state whose binding energy is given by <inline-formula><tex-math id="TM0038" notation="LaTeX"><![CDATA[$\gamma _B^2\simeq 0.00570$]]></tex-math></inline-formula>. In the figure, the red, blue, and orange lines represent the phase shift obtained with <italic>U</italic><sub>0</sub>, <italic>U</italic><sub>1</sub>, and <italic>U</italic><sub>2</sub>, respectively; the exact one, <inline-formula><tex-math id="TM0039" notation="LaTeX"><![CDATA[$\tilde{\delta }_R(k)$]]></tex-math></inline-formula> in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ25">25</xref>), is shown by the black line for comparison. In both cases (with and without bound state), while <italic>U</italic><sub>0</sub> reasonably approximates the behavior at low energies, <italic>U</italic><sub>1</sub> worsens but <italic>U</italic><sub>2</sub> improves the agreement.<xref ref-type="fn" rid="fn1"><sup>1</sup></xref> The approximation is a little better for <italic>c</italic> &#x003D; &#x2212;0.012. The binding energy is approximated as <inline-formula><tex-math id="TM0040" notation="LaTeX"><![CDATA[$\gamma _B^2\simeq 0.0685$]]></tex-math></inline-formula> (<italic>U</italic><sub>0</sub>), 0.384 (<italic>U</italic><sub>1</sub>), and 0.000471 (<italic>U</italic><sub>2</sub>).</p>
+<fig id="fig1" position="float">
+<label>Fig. 1.</label>
+<caption><p>The scattering phase shift calculated with the potential in the formal derivative expansion plotted as a function of <inline-formula><tex-math id="TM0041" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> with <italic>m</italic> &#x003D; 0.5 and &#x03BC; &#x003D; 0.3. the results with <italic>U</italic><sub>0</sub>, <italic>U</italic><sub>1</sub>, and <italic>U</italic><sub>2</sub> are shown by red, blue, and orange lines, respectively; the exact one, <inline-formula><tex-math id="TM0042" notation="LaTeX"><![CDATA[$\tilde{\delta }_R(k)$]]></tex-math></inline-formula>, is shown by a black line. (Left)&#x00A0;<italic>c</italic> &#x003D; &#x2212;0.012 and <italic>R</italic> &#x003D; 9.5, which allows no bound state. (Right)&#x00A0;<italic>c</italic> &#x003D; &#x2212;0.048 and <italic>R</italic> &#x003D; 8, which produces one bound state.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig1.jpg" mimetype="image"/>
+</fig>
+<p>In the next section we consider the HAL QCD method, and we reconstruct the potential in a derivative expansion of a similar kind, using behaviors of wave functions under the separable potential in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ8">8</xref>).</p>
+</sec>
+</sec>
+<sec id="sec3">
+<label>3.</label>
+<title>Derivative expansion in the HAL QCD method</title>
+<sec id="sec3-1">
+<label>3.1</label>
+<title>Potential from eigenfunctions</title>
+<p>In this subsection we assume that <italic>n</italic> eigenfunctions <inline-formula><tex-math id="TM0043" notation="LaTeX"><![CDATA[$\psi ^R_k$]]></tex-math></inline-formula> in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ17">17</xref>) are available for us to construct the potential, which thus satisfies
+<disp-formula id="equ27">
+<label>(27)</label>
+<tex-math id="TM0044" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+(E_{k_i} - H_0) \psi _{k_i}^R(x) = V_n\left(x,{d\over dx} \right) \psi _{k_i}^R(x),\qquad i=0,1,\ldots , n ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where <inline-formula><tex-math id="TM0045" notation="LaTeX"><![CDATA[$V(\vec{x}, \nabla )$]]></tex-math></inline-formula> is replaced by <inline-formula><tex-math id="TM0046" notation="LaTeX"><![CDATA[$V_n\big (x, {d\over d x}\big )$]]></tex-math></inline-formula>, since the scattering occurs only in <italic>S</italic>-wave by the separable potential defined with Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ8">8</xref>).</p>
+<p>Equation&#x00A0;(<xref ref-type="disp-formula" rid="equ27">27</xref>) for <italic>n</italic> &#x002B; 1 eigenfunctions determines <italic>n</italic> &#x002B; 1 independent local functions in <italic>V</italic><sub><italic>n</italic></sub>(<italic>x</italic>, &#x2207;) for <italic>n</italic> &#x003D; 0, 1, 2, &#x2026;, which is taken as
+<disp-formula id="equ28">
+<label>(28)</label>
+<tex-math id="TM0047" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+V_n(x,\nabla ) = \sum _{i=0}^{n} V_{n,i}(x) (\nabla ^2)^i, \qquad \nabla ^2 ={1\over x}{d^2\over d x^2} x,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where the absence of odd-derivative terms is our choice for a <italic>scheme</italic> to define potentials in the HAL QCD method. Although it is certainly possible to take another scheme including odd-derivative terms for the potential, we think that our scheme without them is more efficient. Since odd-derivative terms are absent in the Hermitian potential with rotational and time-reversal symmetries, we do not need such terms to describe the scattering phase shift. Indeed, the first-derivative term in the formal derivative expansion worsens the approximation, as seen in the previous section.</p>
+<p>Equation&#x00A0;(<xref ref-type="disp-formula" rid="equ27">27</xref>) leads to <italic>V</italic><sub><italic>n</italic>, <italic>i</italic></sub> as
+<disp-formula id="equ29">
+<label>(29)</label>
+<tex-math id="TM0048" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\sum _{j=0}^{n}T_{ij}(x) V_{n,j}(x) = K_i(x) \Rightarrow V_{n,i}(x) = \sum _{j=0}^{n}\left[T^{-1}(x)\right]_{ij} K_j(x),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ30">
+<label>(30)</label>
+<tex-math id="TM0049" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+T_{ij}(x) := {1\over x} {d^{2 j}\over d x^{2j}} \left\lbrace x\psi ^R_{k_i}(x)\right\rbrace , \qquad K_i(x) := {1\over 2m}\left( k_i^2 + {1\over x} {d^2\over dx^2}x\right)\psi _{k_i}^R(x).
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Note that <italic>V</italic><sub><italic>n</italic></sub> is an approximated potential, which depends on the choice of <italic>k</italic><sub><italic>i</italic></sub> (<italic>i</italic> &#x003D; 0, 1, 2, &#x2026;, <italic>n</italic>) as it gives correct results only at <italic>k</italic><sub><italic>i</italic></sub> (<italic>i</italic> &#x003D; 0, 1, 2, &#x2026;, <italic>n</italic>). In this subsection we show the results with the leading order (LO), <italic>n</italic> &#x003D; 0, next-to-leading order (NLO), <italic>n</italic> &#x003D; 1, and next-to-next-to-leading order (NNLO), <italic>n</italic> &#x003D; 2.</p>
+<p>Figure&#x00A0;<xref ref-type="fig" rid="fig2">2</xref> represents the scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0050" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> (left) and <inline-formula><tex-math id="TM0051" notation="LaTeX"><![CDATA[$\frac{k}{\mu }\cot \delta (k)$]]></tex-math></inline-formula> as a function of <inline-formula><tex-math id="TM0052" notation="LaTeX"><![CDATA[$\frac{k^2}{\mu ^2}$]]></tex-math></inline-formula> (right) at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.012, and <italic>R</italic> &#x003D; 9.5, which produces no bound state. The LO result from the eigenfunction at <italic>k</italic> &#x003D; 0 (low energy) shown by the red line correctly reproduces the exact one shown by the black line at <italic>k</italic> &#x003D; 0. The LO result from the eigenfunction at <italic>k</italic> &#x003D; &#x03BC; (high energy) shown by the blue line, on the other hand, agrees with the exact one at <italic>k</italic> &#x003D; &#x03BC;. Pretending that &#x03BC; in <inline-formula><tex-math id="TM0053" notation="LaTeX"><![CDATA[$V(\vec{x})$]]></tex-math></inline-formula> is a mass exchange particle, we may regard <italic>k</italic> &#x2243; &#x03BC; as the threshold of the inelastic scattering in quantum field theory. We obtain the NLO result, plotted by the green line, by using two eigenfunctions, which by definition agree with the exact ones at <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; &#x03BC;, and give a reasonable approximation in the energy range between the two. Adding a third eigenfunction at <italic>k</italic> &#x003D; &#x03BC;/2 we can calculate the NNLO result, which is nearly exact from <italic>k</italic> &#x003D; 0 to <italic>k</italic> &#x003D; &#x03BC;, as shown by the magenta line. This analysis demonstrates how the derivative expansion works in the HAL QCD method. In contrast to the formal expansion, the HAL QCD method can incorporate information from the eigenfunction at high energy to improve the accuracy of the approximation.</p>
+<fig id="fig2" position="float">
+<label>Fig. 2.</label>
+<caption><p>(Left) Scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0054" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.012 and <italic>R</italic> &#x003D; 9.5. The LO results from eigenfunctions at <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; &#x03BC; are plotted by red and blue lines, respectively, while the NLO and NNLO results are given by green and magenta lines, respectively; the exact results, &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>), are shown by the black line. (Right)&#x00A0;The corresponding <inline-formula><tex-math id="TM0055" notation="LaTeX"><![CDATA[$\frac{k}{\mu }\cot \delta (k)$]]></tex-math></inline-formula> as a function of <inline-formula><tex-math id="TM0056" notation="LaTeX"><![CDATA[$\frac{k^2}{\mu ^2}$]]></tex-math></inline-formula> with the same parameters.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig2.jpg" mimetype="image"/>
+</fig>
+<p>In Appendix&#x00A0;<xref ref-type="app" rid="sec7">Appendix A</xref> we plot the coefficient functions of the potential for these parameters as a function of <italic>x</italic>. In this paper we consider only attractive interactions (<italic>c</italic> &#x003C; 0), which are physically more interesting than repulsive ones, in the main text. However, show LO and NLO analyses for repulsive interactions in Appendix&#x00A0;<xref ref-type="app" rid="sec8">Appendix B</xref>.</p>
+<p>Figure&#x00A0;<xref ref-type="fig" rid="fig3">3</xref> shows the scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0057" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> (upper left) and <inline-formula><tex-math id="TM0058" notation="LaTeX"><![CDATA[$\frac{k}{\mu }\cot \delta (k)$]]></tex-math></inline-formula> as a function of <inline-formula><tex-math id="TM0059" notation="LaTeX"><![CDATA[$\frac{k^2}{\mu ^2}$]]></tex-math></inline-formula> (upper right) at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.048, and <italic>R</italic> &#x003D; 8.0, which produces one bound state. As before, red and blue lines represent the LO results from the eigenfunctions at <italic>k</italic> &#x003D; 0 (low energy) and <italic>k</italic> &#x003D; 0.7&#x03BC; (high energy), respectively, while the green line gives the NLO result from two eigenfunctions at <italic>k</italic> &#x003D; 0 and 0.7&#x03BC;. Finally, we obtain the NNLO result (magenta line) by adding the third eigenfunction at <italic>k</italic> &#x003D; 0.35&#x03BC;. As seen from the figure, the NLO (green) and the NNLO (magenta) results agree with the exact one (black line) between <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; 0.7&#x03BC; with these parameters. The derivative expansion in the HAL QCD method also works well for a coupling strong enough to have a bound state.</p>
+<fig id="fig3" position="float">
+<label>Fig. 3.</label>
+<caption><p>(Upper left) Scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0060" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.048, and <italic>R</italic> &#x003D; 8.0. The LO results from eigenfunctions at <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; 0.7&#x03BC; are plotted by red and blue lines, respectively, while the NLO and NNLO results are given by green and magenta lines, respectively; the exact results, &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>), are shown by the black line. (Upper right)&#x00A0;The corresponding <inline-formula><tex-math id="TM0061" notation="LaTeX"><![CDATA[$\frac{k}{\mu }\cot \delta (k)$]]></tex-math></inline-formula> as a function of <inline-formula><tex-math id="TM0062" notation="LaTeX"><![CDATA[$\frac{k^2}{\mu ^2}$]]></tex-math></inline-formula> with the same parameters. (Lower)&#x00A0;<inline-formula><tex-math id="TM0063" notation="LaTeX"><![CDATA[$k\cot \delta (k)$]]></tex-math></inline-formula> for <italic>k</italic><sup>2</sup> &#x003C; 0, together with the bound state condition <inline-formula><tex-math id="TM0064" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula> shown by the orange dotted line.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig3.jpg" mimetype="image"/>
+</fig>
+<p>The lower panel shows analytic continuations of <inline-formula><tex-math id="TM0065" notation="LaTeX"><![CDATA[$k \cot \delta (k)$]]></tex-math></inline-formula> to <italic>k</italic><sup>2</sup> &#x003C; 0, where the meanings of the colors are the same, while the orange dotted line represents the bound state condition, <inline-formula><tex-math id="TM0066" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula>, as a function of <italic>k</italic><sup>2</sup> &#x003C; 0. Note that <italic>k</italic> is <italic>not</italic> normalized by &#x03BC; in this figure. The existence of an intersection <inline-formula><tex-math id="TM0067" notation="LaTeX"><![CDATA[$k_0^2$]]></tex-math></inline-formula> between <inline-formula><tex-math id="TM0068" notation="LaTeX"><![CDATA[$k \cot \delta (k)$]]></tex-math></inline-formula> and <inline-formula><tex-math id="TM0069" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula> means the existence of a bound state whose binding energy is given by <inline-formula><tex-math id="TM0070" notation="LaTeX"><![CDATA[${-k_0^2\over 2m}$]]></tex-math></inline-formula>. As we increase the order of the expansion (LO (red), NLO (green), and NNLO (magenta)), the intersection moves toward the exact one, <inline-formula><tex-math id="TM0071" notation="LaTeX"><![CDATA[$k_0^2 = -\gamma _B^2 = -0.0052$]]></tex-math></inline-formula>, estimated by an intersection between <inline-formula><tex-math id="TM0072" notation="LaTeX"><![CDATA[$k\cot \delta _R(k)$]]></tex-math></inline-formula> (black solid line) and <inline-formula><tex-math id="TM0073" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula> (orange dotted line), which is nearly reproduced by the the NNLO result. Note that we do not include the wave function for the bound state to construct the potentials. The eigenfunction at low energy at <italic>k</italic> &#x2243; 0 in some sense &#x201C;knows&#x201D; information of the bound state. Interestingly, the LO result (blue line) from the eigenfunction at high energy (<italic>k</italic> &#x003D; 0.7&#x03BC;) leads to the worst result of all, <inline-formula><tex-math id="TM0074" notation="LaTeX"><![CDATA[$\gamma _B^2\simeq 0.0022$]]></tex-math></inline-formula>, a factor of 2.6 smaller than the exact value, <inline-formula><tex-math id="TM0075" notation="LaTeX"><![CDATA[$\gamma _B^2\simeq 0.0057$]]></tex-math></inline-formula>.</p>
+</sec>
+<sec id="sec3-2">
+<label>3.2</label>
+<title>Potential from correlation functions in the time-dependent HAL QCD method</title>
+<p>Since it is not so easy to obtain each eigenfunction separately from correlation functions, which are linear combinations of eigenfunctions, the time-dependent HAL QCD method [<xref ref-type="bibr" rid="bib14">14</xref>] has been proposed to extract the potential directly from correlation functions without decomposing them into eigenfunctions. In this subsection we apply the derivative expansion in the time-dependent HAL QCD method to extract the potential from correlation functions.</p>
+<p>The time-dependent correlation function is defined by
+<disp-formula id="equ31">
+<label>(31)</label>
+<tex-math id="TM0076" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+R(t,\vec{x}) = \int {d^3k\over (2\pi )^3} e^{-E_k t} f(\vec{k}) \psi _k (\vec{x}) + f_B e^{-E_B t} \langle \vec{x}\vert B\rangle ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ32">
+<label>(32)</label>
+<tex-math id="TM0077" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+E_k^\lambda = {k^2\over 2m}, \qquad E_B^\lambda =- {\gamma _B^2\over 2m} ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>and <inline-formula><tex-math id="TM0078" notation="LaTeX"><![CDATA[$f(\vec{k})$]]></tex-math></inline-formula> and <italic>f</italic><sub><italic>B</italic></sub> are determined so as to satisfy a given initial condition as <inline-formula><tex-math id="TM0079" notation="LaTeX"><![CDATA[$R(0,\vec{x}) = {\sigma ^2 e^{-\sigma x} \over 4\pi x}$]]></tex-math></inline-formula> with a parameter &#x03C3;, which leads to <inline-formula><tex-math id="TM0080" notation="LaTeX"><![CDATA[$R(0,\vec{x}) =\delta (\vec{x})$]]></tex-math></inline-formula> in the &#x03C3; &#x2192; &#x221E; limit. Details of the calculations for <italic>R</italic> and its derivative are presented in Appendix&#x00A0;<xref ref-type="app" rid="sec9">Appendix&#x00A0;C</xref>.</p>
+<p>Suppose that we prepare <italic>n</italic> &#x002B; 1 independent correlation functions by taking <italic>n</italic> &#x002B; 1 different &#x03C3;, denoted as <inline-formula><tex-math id="TM0081" notation="LaTeX"><![CDATA[$R_{\sigma _i}(t,x)$]]></tex-math></inline-formula> (<italic>i</italic> &#x003D; 0, 1, &#x2026;, <italic>n</italic>) since they are functions of <inline-formula><tex-math id="TM0082" notation="LaTeX"><![CDATA[$x=\vert \vec{x}\vert$]]></tex-math></inline-formula>. As before, <italic>n</italic> local terms are extracted as
+<disp-formula id="equ33">
+<label>(33)</label>
+<tex-math id="TM0083" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+V_{n,i}(t,x) = \sum _{j=0}^{n} \left[T^{-1}(t,x)\right]_{ij} K_j(t,x),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="update1646098581226">
+<label>(34)</label>
+<tex-math id="TM0084" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+T_{ij}(t,x) := {1\over x}{d^{2j}\over d x^{2j}} \left\lbrace x R_{\sigma _i}(t,x)\right\rbrace , \qquad K_j(t,x) = \left( -{\partial \over \partial t} + {1\over x}{d^2 \over dx^2} x\right) R_{\sigma _j}(t,x).
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>We then introduce the infrared cutoff as <inline-formula><tex-math id="TM0085" notation="LaTeX"><![CDATA[$V_{n,i}^R(t,x) = \theta (R-x) V_{n,i}(t,x)$]]></tex-math></inline-formula>. As in the previous subsection, we calculate the scattering phase shifts for <italic>n</italic> &#x003D; 0 (LO), 1&#x00A0;(NLO), and 2&#x00A0;(NNLO), and compare them with the exact one.</p>
+<p>Figure&#x00A0;<xref ref-type="fig" rid="fig4">4</xref> show the scattering phase shifts &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0086" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5 and &#x03BC; &#x003D; 0.3. We take <italic>c</italic> &#x003D; &#x2212;0.012 (<italic>c</italic> &#x003D; &#x2212;0.048) and <italic>R</italic> &#x003D; 9.5 (<italic>R</italic> &#x003D; 8) in the left (right) panels, where the LO results from <italic>R</italic><sub>&#x03C3;</sub>(<italic>t</italic>, <italic>x</italic>) at &#x03C3; &#x003D; &#x221E; and &#x03C3; &#x003D; 0.3 with <italic>t</italic> &#x003D; 28 are denoted by red and blue lines, respectively, while the NLO from both is shown by the green line. One more additional <italic>R</italic><sub>&#x03C3;</sub>(<italic>t</italic>, <italic>x</italic>) at &#x03C3; &#x003D; 0.6 leads to the NNLO result, the magenta line, and the black line represents the exact one, &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>).</p>
+<fig id="fig4" position="float">
+<label>Fig. 4.</label>
+<caption><p>The scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0087" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5 and &#x03BC; &#x003D; 0.3. (Left)&#x00A0;<italic>c</italic> &#x003D; &#x2212;0.012 and <italic>R</italic> &#x003D; 9.5. (Right)&#x00A0;<italic>c</italic> &#x003D; &#x2212;0.048 and <italic>R</italic> &#x003D; 8. The LO results from <italic>R</italic><sub>&#x03C3;</sub>(<italic>t</italic> &#x003D; 28, <italic>x</italic>) at &#x03C3; &#x003D; &#x221E; and &#x03C3; &#x003D; 0.3 are plotted by red and blue lines, respectively, while the NLO and NNLO results are given by green and magenta lines, respectively; the exact results, &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>), are shown by the black line.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig4.jpg" mimetype="image"/>
+</fig>
+<p>As Fig.&#x00A0;<xref ref-type="fig" rid="fig4">4</xref> shows, the LO results reproduce the exact one at low energy at <italic>k</italic> &#x2243; 0. At <italic>k</italic> &#x2264; 1.2&#x03BC;, which is a little larger than &#x03BC;, the LO results at &#x03C3; &#x003D; &#x221E; (red) and &#x03C3; &#x003D; 0.3 (blue) are not so different, and are almost identical for <italic>c</italic> &#x003D; &#x2212;0.048 (right). Combining these two, we obtain the NLO (green), which is not so much better than the LOs for <italic>c</italic> &#x003D; &#x2212;0.012 (left), but is certainly better than the LOs for <italic>c</italic> &#x003D; &#x2212;0.048 (right). In both cases, the NNLO result nearly reproduces the exact one between <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; &#x03BC;. In particular, the agreement is excellent for <italic>c</italic> &#x003D; &#x2212;0.048. This indicates that the derivative expansion in the (time-dependent) HAL QCD method can be applied not only to eigenfunctions but also to <italic>t</italic>-dependent correlation functions.</p>
+</sec>
+<sec id="sec3-3">
+<label>3.3</label>
+<title>Potential from correlation functions with finite volume spectra</title>
+<p>Since lattice QCD simulations are usually performed in a finite box with a finite lattice spacing, the energy eigenvalues are discrete and bounded from above. Thus, the integral over <inline-formula><tex-math id="TM0088" notation="LaTeX"><![CDATA[$\vec{k}$]]></tex-math></inline-formula> in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ31">31</xref>) becomes a summation over discrete momentum with the ultraviolet cutoff. It is natural to ask how this discrete summation for the definition of <italic>R</italic> affects the previous analysis for the derivative expansion in the HAL QCD method. Since it is difficult to solve the Sch&#x00F6;dinger equation in a finite box analytically, however, we emulate a similar situation by replacing the integral in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ31">31</xref>) with a finite discrete summation by hand.</p>
+<p>Explicitly, we construct an <italic>S</italic>-wave correlation function as a sum over discrete momenta, <inline-formula><tex-math id="TM0089" notation="LaTeX"><![CDATA[$\vec{k}_{\vec{\nu }} = \frac{2\pi }{L} \vec{\nu } = \frac{2\pi }{L} (\nu _{1}, \nu _{2}, \nu _{3})$]]></tex-math></inline-formula> with &#x03BD;<sub><italic>i</italic></sub> &#x003D; 0, &#x00B1;1, &#x00B1;2, &#x2026; Defining <inline-formula><tex-math id="TM0090" notation="LaTeX"><![CDATA[$n \equiv \vec{\nu }^{2} = \nu _{1}^{2} + \nu _{2}^{2} + \nu _{3}^{2}$]]></tex-math></inline-formula>, we can express the correlation function as
+<disp-formula id="equ35">
+<label>(35)</label>
+<tex-math id="TM0091" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+R_{L}(x; \tau , s) = \sum _{n=0} ^{N} c(\tau ,s,n) \psi _{k_{n}}^0(x),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ36">
+<label>(36)</label>
+<tex-math id="TM0092" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+c(\tau ,s, n) = w(n) s^{n} e^{ - \tau E_n}, \qquad E_n :={k^2_n\over 2m}, \qquad k_n := {2\pi \over L}\sqrt{n},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p><italic>L</italic> is a spatial extension of the box, and <italic>w</italic>(<italic>n</italic>) is the number of states whose energy is <italic>E</italic><sub><italic>n</italic></sub>. The parameters &#x03C4; and <italic>s</italic> &#x003D; &#x00B1;1 control the size and the sign of the coefficient for each state. In this subsection we consider three correlation functions with (a)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (5, 1), (b)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (20, &#x2212;1), and (c)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (40, 1), taking <italic>L</italic> &#x003D; 48 and <italic>N</italic> &#x003D; 4 for all cases. Table&#x00A0;<xref ref-type="table" rid="tbl1">1</xref> shows <italic>w</italic>(<italic>n</italic>) and <italic>c</italic>(&#x03C4;, <italic>s</italic>, <italic>n</italic>) for each case. The size of the maximum momentum gives <italic>k</italic> &#x2243; 0.26. Note that the bound state is not included.</p>
+<table-wrap position="float" id="tbl1">
+<label>Table 1.</label>
+<caption><p>Parameters for three wave functions.</p></caption>
+<table>
+<thead>
+<tr>
+<th/>
+<th/>
+<th/>
+<th colspan="3" align="center"><italic>c</italic>(&#x03C4;, <italic>s</italic>, <italic>n</italic>)</th>
+</tr>
+<tr>
+<th><italic>n</italic></th>
+<th align="center"><italic>w</italic>(<italic>n</italic>)</th>
+<th align="center"><italic>k</italic><sub><italic>n</italic></sub></th>
+<th align="center">(a) (&#x03C4;, <italic>s</italic>) &#x003D; (5, 1)</th>
+<th align="center">(b) (&#x03C4;, <italic>s</italic>) &#x003D; (20, &#x2212;1)</th>
+<th align="center">(c) (&#x03C4;, <italic>s</italic>) &#x003D; (40, 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>0.1309</td>
+<td>5.50736</td>
+<td>&#x2212;4.25913</td>
+<td>3.02336</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12</td>
+<td>0.18512</td>
+<td>10.1103</td>
+<td>6.04673</td>
+<td>3.04691</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td>0.226725</td>
+<td>6.18682</td>
+<td>&#x2212;2.86153</td>
+<td>1.02355</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>0.261799</td>
+<td>4.25913</td>
+<td>1.52346</td>
+<td>0.386819</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Figure&#x00A0;<xref ref-type="fig" rid="fig5">5</xref> presents the scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0093" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5 and <italic>m</italic> &#x003D; 0.3 with <italic>L</italic> &#x003D; 48 and <italic>N</italic> &#x003D; 4. In the left (right) panel we take <italic>c</italic> &#x003D; &#x2212;0.012 and <italic>R</italic> &#x003D; 9.5 (<italic>c</italic> &#x003D; &#x2212;0.048 and <italic>R</italic> &#x003D; 8) as before, where the LO results are obtained from <italic>R</italic><sub><italic>L</italic></sub>(<italic>x</italic>; &#x03C4;, <italic>s</italic>) at (a)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (5, 1) (red) and (b)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (20, &#x2212;1) (blue), while the NLO from both and the NNLO from these two plus an additional <italic>R</italic><sub><italic>L</italic></sub>(<italic>x</italic>; &#x03C4;, <italic>s</italic>) at (c)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (40, 1) are shown by green and magenta lines, respectively.</p>
+<fig id="fig5" position="float">
+<label>Fig. 5.</label>
+<caption><p>The scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0094" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3 with <italic>L</italic> &#x003D; 48 and <italic>N</italic> &#x003D; 4. (Left)&#x00A0;<italic>c</italic> &#x003D; &#x2212;0.012 and <italic>R</italic> &#x003D; 9.5. (Right)&#x00A0;<italic>c</italic> &#x003D; &#x2212;0.048 and <italic>R</italic> &#x003D; 8. In both figures, the LO results are plotted in red ((a)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (5, 1)) and blue ((b)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (20, &#x2212;1)) lines, while the NLO and NNLO results are given by green and magenta lines, respectively; the exact results, &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>), are shown by the black line. To obtain the NNLO result, we combine one more <italic>R</italic><sub><italic>L</italic></sub> (c)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (40, 1)) with the previous two.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig5.jpg" mimetype="image"/>
+</fig>
+<p>As can be seen from the left panel, the LO results from <italic>R</italic><sub><italic>L</italic></sub>(<italic>x</italic>; &#x03C4;, <italic>s</italic>) at both&#x00A0;(a) (red) and&#x00A0;(b) (blue) roughly reproduce the overall behavior of the exact phase shift (black), but the agreements are not so good. While the NLO (green) improves the agreement a little, the NNLO (magenta) almost reproduces the exact phase shift at <italic>k</italic> &#x2264; 0.8&#x03BC;, but deviates a lot from the exact one at <italic>k</italic> &#x003E; &#x03BC;. This is understandable, since the correlation functions <italic>R</italic><sub><italic>L</italic></sub> do not contain any states with <italic>k</italic> &#x003E; 0.9&#x03BC;. From this point of view, the agreement between the NLO (green) and the exact one (black) at <italic>k</italic> &#x003E; 0.9&#x03BC; is unexpected. It might be accidental, or states with <italic>k</italic> &#x003C; 0.9&#x03BC; might &#x201C;know&#x201D; &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>) at <italic>k</italic> &#x003E; 0.9&#x03BC;. A similar but much milder tendency is also found in the right panel.</p>
+<p>In Fig.&#x00A0;<xref ref-type="fig" rid="fig6">6</xref> we plot <inline-formula><tex-math id="TM0095" notation="LaTeX"><![CDATA[$k\cot \delta (k)$]]></tex-math></inline-formula> as a function of <italic>k</italic><sup>2</sup> for <italic>k</italic><sup>2</sup> &#x003C; 0 at <italic>c</italic> &#x003D; &#x2212;0.048, keeping <italic>m</italic>, &#x03BC;, <italic>R</italic>, and <italic>L</italic> the same as before, together with the bound state condition <inline-formula><tex-math id="TM0096" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula>, so that the crossing point between <inline-formula><tex-math id="TM0097" notation="LaTeX"><![CDATA[$k\cot \delta (k)$]]></tex-math></inline-formula> and <inline-formula><tex-math id="TM0098" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula> gives the binding energy. Let us first consider the LO results, plotted in red ((a)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (5, 1)), blue ((b)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (20, &#x2212;1)), and brown ((c)&#x00A0;(&#x03C4;, <italic>s</italic>) &#x003D; (40, 1)). The LO result from&#x00A0;(a) (red) is better than the LO from&#x00A0;(b) (blue), and is almost as good as the NLO (green) to give the bound state energy, while the LO from&#x00A0;(c) (brown) is a factor of three larger than the exact value. This seems counterintuitive, since the correlation function&#x00A0;(c) contains low-energy states more than other two, as seen in Table&#x00A0;<xref ref-type="table" rid="tbl1">1</xref>. It might be that the low-energy states are more affected by the presence of the bound state, which is not included in the correlation function. The NNLO results (magenta), obtained using all three correlation functions, almost reproduce the exact value of the bound state, even though a bound state is not included in <italic>R</italic><sub><italic>L</italic></sub>(<italic>x</italic>; &#x03C4;, <italic>s</italic>).</p>
+<fig id="fig6" position="float">
+<label>Fig. 6.</label>
+<caption><p><inline-formula><tex-math id="TM0099" notation="LaTeX"><![CDATA[$k\cot \delta (k)$]]></tex-math></inline-formula> as a function of <italic>k</italic><sup>2</sup> &#x003C; 0 at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.048, <italic>R</italic> &#x003D; 8, <italic>N</italic> &#x003D; 4, and <italic>L</italic> &#x003D; 48. The LO results are plotted in red&#x00A0;(a), blue&#x00A0;(b), and brown&#x00A0;(c) solid lines, while the NLO and NNLO results are given by green and magenta solid lines, respectively; the exact results, <inline-formula><tex-math id="TM0100" notation="LaTeX"><![CDATA[$k\cot \delta _R(k)$]]></tex-math></inline-formula>, are given by the black solid line, and the bound state condition <inline-formula><tex-math id="TM0101" notation="LaTeX"><![CDATA[$-\sqrt{-k^2}$]]></tex-math></inline-formula> by the orange dotted line.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig6.jpg" mimetype="image"/>
+</fig>
+</sec>
+</sec>
+<sec id="sec4" sec-type="discussion">
+<label>4.</label>
+<title>Conclusion and discussion</title>
+<p>We have demonstrated how the derivative expansion of the potential works to reproduce the scattering phase shift and the possible binding energy by applying the HAL QCD method to a highly non-local but solvable potential, the separable potential in quantum mechanics. Our results strongly indicate that the derivative expansion in the HAL QCD potential method is <italic>not</italic> a way to reproduce the potential approximately. This can be easily seen from Fig.&#x00A0;<xref ref-type="fig" rid="fig7">A.1</xref>. In addition, the formal derivative expansion for the separable potential does not give better results for the scattering phase shift, as we increase the order of the expansion. Instead, our results show that the derivative expansion in the HAL QCD method gives an approximate way to extract scattering phase shifts from correlation functions as inputs. The more inputs we employ, the better the approximation for the phase shift obtained. Even though the potential sometimes becomes singular in the coordinate space, as seen in Appendix&#x00A0;A (Fig.&#x00A0;<xref ref-type="fig" rid="fig7">A.1</xref> at NNLO), the scattering phase shift shows reasonable behavior and gives a better approximation. Interestingly, even without the eigenfunction for the bound state, the binding energy is well reproduced in the HAL QCD method, probably because the position of the bound state in <italic>k</italic><sup>2</sup> &#x003C; 0 is well constrained by <inline-formula><tex-math id="TM0102" notation="LaTeX"><![CDATA[$k\cot \delta (k)$]]></tex-math></inline-formula> at <italic>k</italic><sup>2</sup> &#x003E; 0 through analyticity. The analyses in this paper can be extended to interactions in coupled channels such as the &#x039B;&#x039B;&#x2013;<italic>N</italic>&#x039E;&#x2013;&#x03A3;&#x03A3; system, though the analyses become more complicated because more parameters need to be controlled. We leave such studies for future investigation.</p>
+<fig id="fig7" position="float">
+<label>Figure A.1.</label>
+<caption><p>The shape of the potentials at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.012, and <italic>R</italic> &#x003D; 9.5. (Upper left)&#x00A0;The LO potential <italic>V</italic><sub>0, 0</sub>(<italic>x</italic>) from eigenfunctions at <italic>k</italic> &#x003D; 0 (red), <italic>k</italic> &#x003D; 0.5&#x03BC;, and <italic>k</italic> &#x003D; &#x03BC; (blue). (Upper right)&#x00A0;The NLO potentials <italic>V</italic><sub>1, 0</sub>(<italic>x</italic>) (black) and <italic>V</italic><sub>1, 1</sub>(<italic>x</italic>) (green) from two eigenfunctions at <italic>k</italic> &#x003D; 0 and &#x03BC;. (Lower)&#x00A0;The NNLO potentials <italic>V</italic><sub>2, 0</sub>(<italic>x</italic>) (magenta), <italic>V</italic><sub>2, 1</sub>(<italic>x</italic>) (orange), and <italic>V</italic><sub>2, 2</sub>(<italic>x</italic>) (purple) from all three eigenfunctions.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig7.jpg" mimetype="image"/>
+</fig>
+<p>The lessons learned from this work are as follows. Even the LO approximations give reasonable results for the phase shift, and the results can be improved as the order of the derivative expansion is increased. Singular behaviors, which may appear at higher order such as the next-to-leading order in the derivative expansion, are not obstructions for the potential method in principle. In practice, however, less singular behavior is better to reduce statistical fluctuations. The approximation for the scattering phase shift may break down at higher energy. However, we know the applicable range of the method in QCD, since the HAL QCD potential method, as well as L&#x00FC;scher&#x2019;s finite volume method, work only below the inelastic threshold. In principle, by comparing results among different orders of the derivative expansion, we can estimate the size of the systematics associated with the approximation. In practice, however, it is not so easy to extract the potential at higher orders reliably. Therefore, combining both the HAL QCD method and the finite volume method to extract scattering phase shifts seems the best way to increase the reliability and validity for lattice QCD calculations on hadron interactions.</p>
+</sec>
+</body>
+<back>
+<ack id="ack1"><title>Acknowledgements</title>
+<p>We would like to thank Dr. Takumi Iritani for his contributions at an early stage of this work, Dr. Takumi Doi for his useful comments and suggestions, and other members of the HAL QCD collaboration for useful discussions. SA is supported in part by Grants-in-Aid of the Japanese Ministry of Education, Sciences and Technology, Sports and Culture (MEXT) for Scientific Research (Nos. JP16H03978, JP18H05236), by a priority issue (Elucidation of the fundamental laws and evolution of the universe) to be tackled by using Post &#x201C;K&#x201D; Computer, and by the Joint Institute for Computational Fundamental Science (JICFuS).</p></ack>
+<sec id="sec6">
+<title>Funding</title>
+<p>Open Access funding: SCOAP<sup>3</sup>.</p>
+</sec>
+<app-group>
+<app id="sec7">
+<title>Appendix A. LO, NLO, and NNLO potentials</title>
+<p>As a representative example, we present the shapes of the LO, NLO, and NNLO potentials constructed from eigenfunctions at <italic>k</italic> &#x003D; 0, &#x03BC;/2, and &#x03BC; with <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; &#x2212;0.012, and <italic>R</italic> &#x003D; 9.5. In Fig.&#x00A0;<xref ref-type="fig" rid="fig7">A.1</xref> (upper left), we plot the LO potential <italic>V</italic><sub>0, 0</sub>(<italic>x</italic>) obtained from an eigenfunction at <italic>k</italic> &#x003D; 0 (red), 0.5&#x03BC; (brown), and &#x03BC; (blue), while we show coefficient functions of the NLO potentials <italic>V</italic><sub>1, 0</sub>(<italic>x</italic>) (black) and <italic>V</italic><sub>1, 1</sub>(<italic>x</italic>) (green) obtained from two eigenfunctions at <italic>k</italic> &#x003D; 0, and &#x03BC; in the upper right panel of Fig.&#x00A0;<xref ref-type="fig" rid="fig7">A.1</xref>. The NNLO potential obtained from all three eigenfunctions is plotted in the lower panel, where <italic>V</italic><sub>2, 0</sub>(<italic>x</italic>) (magenta), <italic>V</italic><sub>2, 1</sub>(<italic>x</italic>) (orange), and <italic>V</italic><sub>2, 2</sub>(<italic>x</italic>) (purple) are shown. As can be seen, the potential may become larger near the infrared cutoff, even for the LO potential. In addition, each term of the NNLO potential shows very singular behavior at <italic>x</italic> &#x2243; 2. As already observed in the main text, however, the corresponding phase shift shows smooth behavior as a function of <italic>k</italic> and improves the agreement with the exact result.</p>
+</app>
+<app id="sec8">
+<title>Appendix B. Analysis for repulsive interactions</title>
+<p>Figure&#x00A0;<xref ref-type="fig" rid="fig8">B.1</xref> represents the scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0103" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> (left) and <inline-formula><tex-math id="TM0104" notation="LaTeX"><![CDATA[$\frac{k}{\mu }\cot \delta (k)$]]></tex-math></inline-formula> as a function of <inline-formula><tex-math id="TM0105" notation="LaTeX"><![CDATA[$\frac{k^2}{\mu ^2}$]]></tex-math></inline-formula> (right) for a repulsive interaction with <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; 0.02, and <italic>R</italic> &#x003D; 8. As in the case of attractive interactions in the main text, the LO result from the eigenfunction at <italic>k</italic> &#x003D; 0 (low energy) shown by the red line correctly reproduces the exact one shown by the black line at <italic>k</italic> &#x003D; 0, while the LO result from the eigenfunction at <italic>k</italic> &#x003D; &#x03BC; (high energy) shown by the blue line agrees with the exact one at <italic>k</italic> &#x003D; &#x03BC;. The NLO result obtained from two eigenfunctions at <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; &#x03BC;, plotted by the green line, agrees with the exact ones at <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; &#x03BC; by definition, and gives a reasonable approximation in the energy range between the two.</p>
+<fig id="fig8" position="float">
+<label>Figure B.1.</label>
+<caption><p>(Left) The scattering phase shift &#x03B4;(<italic>k</italic>) as a function of <inline-formula><tex-math id="TM0106" notation="LaTeX"><![CDATA[$\frac{k}{\mu }$]]></tex-math></inline-formula> at <italic>m</italic> &#x003D; 0.5, &#x03BC; &#x003D; 0.3, <italic>c</italic> &#x003D; 0.02, and <italic>R</italic> &#x003D; 8. The LO results from eigenfunctions at <italic>k</italic> &#x003D; 0 and <italic>k</italic> &#x003D; &#x03BC; are plotted by red and blue lines, respectively, while the NLO result is given by the green line; the exact result, &#x03B4;<sub><italic>R</italic></sub>(<italic>k</italic>), is shown by the black line. (Right)&#x00A0;The corresponding <inline-formula><tex-math id="TM0107" notation="LaTeX"><![CDATA[$\frac{k}{\mu } \cot \delta (k)$]]></tex-math></inline-formula> as a function of <inline-formula><tex-math id="TM0108" notation="LaTeX"><![CDATA[$\frac{k^2}{\mu ^2}$]]></tex-math></inline-formula> with the same parameters.</p></caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ptab168fig8.jpg" mimetype="image"/>
+</fig>
+</app>
+<app id="sec9">
+<title>Appendix C. Construction of correlation functions</title>
+<p>We define a correlation function through the Schr&#x00F6;dinger equation as
+<disp-formula id="equ37">
+<label>(C1)</label>
+<tex-math id="TM0109" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\left(-\partial _t -H_0\right) R(t,\vec{x}) = \int d^3 y\, V(\vec{x},\vec{y}) R(t,\vec{y})
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>for <italic>t</italic> &#x2265; 0, with an initial condition <inline-formula><tex-math id="TM0110" notation="LaTeX"><![CDATA[$R(0,\vec{x}) =\frac{\sigma ^2 e^{-\sigma x}}{4\pi x}$]]></tex-math></inline-formula>, where <inline-formula><tex-math id="TM0111" notation="LaTeX"><![CDATA[$V(\vec{x},\vec{y})$]]></tex-math></inline-formula> is the separable potential in the main text.</p>
+<p>With this initial condition, <inline-formula><tex-math id="TM0112" notation="LaTeX"><![CDATA[$R(t,\vec{x})$]]></tex-math></inline-formula> is given in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ31">31</xref>), where
+<disp-formula id="equ38">
+<label>(C2)</label>
+<tex-math id="TM0113" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+f(\vec{k}) = \int d^3x\, \psi _k(\vec{x})^\dagger R(0,\vec{x}), \qquad f_B = \int d^3x\, \langle B \vert \vec{x}\rangle R(0,\vec{x}) .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>After straightforward but tedious calculations, we obtain
+<disp-formula id="equ39">
+<label>(C3)</label>
+<tex-math id="TM0114" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+R(t,\vec{x}) &=& R_0(t,\vec{x}) + R_1(t,\vec{x}),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ40">
+<label>(C4)</label>
+<tex-math id="TM0115" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+K(t,\vec{x}) &:=& (-\partial _t -H_0) R(t,\vec{x}) = (-\partial _t -H_0) R_1(t,\vec{x}) ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where
+<disp-formula id="equ41">
+<label>(C5),(C6)</label>
+<tex-math id="TM0116" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+R_0(t,\vec{x}) &=& {\sigma ^2e^{ -\frac{m x^2}{2t}}\over 8\pi x}\left[ e^{\frac{t}{2m}(\sigma +\nu )^2}\left\lbrace {\rm erf} \left(\sqrt{t\over 2m}(\sigma +\nu )\right)-1\right\rbrace \right. \\&&- \left. e^{\frac{t}{2m}(\sigma +\nu )^2}\left\lbrace {\rm erf} \left(\sqrt{t\over 2m}(\sigma -\nu )\right)-1\right\rbrace \right] \\&\longrightarrow& \left({m\over 2\pi t}\right)^{3\over 2} e^{ -\frac{m x^2}{2t}}, \quad \sigma \rightarrow \infty ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ43">
+<label>(C7)</label>
+<tex-math id="TM0117" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+R_1(t,\vec{x}) &=& {\sigma ^2 \mu \gamma _B(\mu +\gamma _B)(e^{-\gamma _B x} -e^{-\mu x})\over 2\pi x (\sigma +\mu )(\sigma +\gamma _B)(\mu -\gamma _B)} e^{-E_B t} \theta ({\rm Re}(\gamma _B)) +{\sigma ^2\mu (\mu +\gamma _B)^2\over 2\pi x (\sigma +\mu )} \\&&\times \left[ {\mu e^{{t\mu ^2\over 2m}-\mu x}\over (\mu -\gamma _B)(3\mu +\gamma _B)(\sigma +\mu )} \left\lbrace {\rm erf} \left(\sqrt{t\over 2m}(\nu -\mu )\right) + {\rm erf}\left(\sqrt{t\over 2m}\mu \right)\right\rbrace \right. \\&&-\; {\gamma _B e^{t\gamma _B^2\over 2m}\over 2(\mu -\gamma _B)(\mu +\gamma _B)(\sigma +\gamma _B)} \left\lbrace e^{-\gamma _B x}\left({\rm erf} \left(\sqrt{t\over 2m}(\nu -\gamma _B)\right)+\epsilon ({\rm Re}(\gamma _B)) \right) \right. \\&&+ \left. e^{-\mu x} \left( {\rm erf}\left(\sqrt{t\over 2m}\gamma _B\right)-\epsilon ({\rm Re}(\gamma _B)) \right)\right\rbrace - {(2\mu +\gamma _B) e^{t(2\mu +\gamma _B)^2\over 2m}\over 2(3\mu +\gamma _B)(\mu +\gamma _B)(\sigma -2\mu -\gamma _B)} \\&&\times \left\lbrace e^{(2\mu +\gamma _B) x}\left({\rm erf} \left(\sqrt{t\over 2m}(\nu +2\mu +\gamma _B)\right)-1 \right) \right. \\&&- \left.e^{-\mu x}\left({\rm erf} \left(\sqrt{t\over 2m}(2\mu +\gamma _B)\right)-1 \right) \right\rbrace + {\sigma e^{t\sigma ^2\over 2m}\over (\sigma +\mu )(\sigma +\gamma _B)(\sigma -2\mu -\gamma _B)} \\&&\times \left. \left\lbrace e^{\sigma x}\left({\rm erf} \left(\sqrt{t\over 2m}(\nu +\sigma )\right)-1 \right) -e^{-\mu x}\left({\rm erf} \left(\sqrt{t\over 2m}\sigma \right)-1 \right) \right\rbrace \right]
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ44">
+<label>(C8)</label>
+<tex-math id="TM0118" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+& \longrightarrow& { \mu \gamma _B(\mu +\gamma _B)(e^{-\gamma _B x} -e^{-\mu x})\over 2\pi x (\mu -\gamma _B)} e^{-E_B t} \theta ({\rm Re}(\gamma _B)) +{\mu (\mu +\gamma _B)^2\over 2\pi x} \\&&\times \left[ {\mu e^{{t\mu ^2\over 2m}-\mu x}\over (\mu -\gamma _B)(3\mu +\gamma _B)} \left\lbrace {\rm erf} \left(\sqrt{t\over 2m}(\nu -\mu )\right) + {\rm erf}\left(\sqrt{t\over 2m}\mu \right)\right\rbrace \right. \\&&- \; {\gamma _B e^{t\gamma _B^2\over 2m}\over 2(\mu -\gamma _B)(\mu +\gamma _B)} \left\lbrace e^{-\gamma _B x}\left({\rm erf} \left(\sqrt{t\over 2m}(\nu -\gamma _B)\right)+\epsilon ({\rm Re}(\gamma _B)) \right) \right. \\&&+ \left. e^{-\mu x} \left( {\rm erf}\left(\sqrt{t\over 2m}\gamma _B\right)-\epsilon ({\rm Re}(\gamma _B)) \right)\right\rbrace - {(2\mu +\gamma _B) e^{t(2\mu +\gamma _B)^2\over 2m}\over 2(3\mu +\gamma _B)(\mu +\gamma _B)} \\&& \times \left\lbrace e^{(2\mu +\gamma _B) x} \left({\rm erf} \left(\sqrt{t\over 2m}(\nu +2\mu +\gamma _B)\right)-1 \right) \right. \\&&- \left.\left. e^{-\mu x}\left({\rm erf} \left(\sqrt{t\over 2m}(2\mu +\gamma _B)\right)-1 \right) \right\rbrace \right], \qquad \sigma \rightarrow \infty ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ45">
+<label>(C9),(C10)</label>
+<tex-math id="TM0119" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+K(t,\vec{x}) &=& - {\sigma ^2 \mu \gamma _B(\mu +\gamma _B)^2 e^{-\mu x}\over 4\pi m x (\sigma +\mu )(\sigma +\gamma _B)} e^{-E_B t} \theta ({\rm Re}(\gamma _B)) -{\sigma ^2\mu (\mu +\gamma _B)^2\over 4\pi m x (\sigma +\mu )}e^{-\mu x} \\&&\times \left[ {\gamma _B e^{t\gamma _B^2\over 2m}\over 2 (\sigma +\gamma _B)} \left\lbrace {\rm erf}\left(\sqrt{t\over 2m}\gamma _B\right)-\epsilon ({\rm Re}(\gamma _B)) \right\rbrace \right. \\&&+\; {(2\mu +\gamma _B) e^{t(2\mu +\gamma _B)^2\over 2m}\over 2(\sigma -2\mu -\gamma _B)} \left\lbrace {\rm erf}\left(\sqrt{t\over 2m}(2\mu +\gamma _B)\right)-1 \right\rbrace \\&&- \left. {\sigma (\sigma -\mu )e^{t\sigma ^2\over 2m}\over (\sigma +\gamma _B)(\sigma -2\mu -\gamma _B)} \left\lbrace {\rm erf} \left(\sqrt{t\over 2m}\sigma \right)-1 \right\rbrace \right] \\&\longrightarrow& - {\mu \gamma _B(\mu +\gamma _B)^2 e^{-\mu x}\over 4\pi m x } e^{-E_B t} \theta ({\rm Re}(\gamma _B)) -{\mu (\mu +\gamma _B)^2\over 4\pi m x }e^{-\mu x} \\&&\times \left[ \sqrt{2m \over \pi t}+ {\gamma _B e^{t\gamma _B^2\over 2m}\over 2} \left\lbrace {\rm erf}\left(\sqrt{t\over 2m}\gamma _B\right)-\epsilon ({\rm Re}(\gamma _B)) \right\rbrace \right. \\&&+ \left. {(2\mu +\gamma _B) e^{t(2\mu +\gamma _B)^2\over 2m}\over 2} \left\lbrace {\rm erf}\left(\sqrt{t\over 2m}(2\mu +\gamma _B)\right)-1 \right\rbrace \right], \qquad \sigma \rightarrow \infty .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Here, &#x03F5;(<italic>x</italic>) &#x2254; 2&#x03B8;(<italic>x</italic>) &#x2212; 1, and the error function is defined as
+<disp-formula id="equ47">
+<label>(C11)</label>
+<tex-math id="TM0120" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+{\rm erf}(x) := {2\over \sqrt{\pi }}\int _0^x ds\, e^{-s^2}\rightarrow 1-{e^{-x^2}\over \sqrt{\pi } x}, \qquad x\rightarrow \infty .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+</app>
+</app-group>
+<fn-group>
+<title>Footnotes</title>
+<fn id="fn1"><label>1</label><p>We also confirm that <italic>U</italic><sub>3</sub> and <italic>U</italic><sub>4</sub> do not improve the approximations at all.</p></fn>
+</fn-group>
+<ref-list id="ref1">
+<title>REFERENCES</title>
+<ref id="bib1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>M.</given-names> <surname>Luscher</surname></string-name></person-group>, <source>Nucl. Phys. B</source>. <volume>354</volume>, <fpage>531</fpage> (<year>1991</year>).<pub-id pub-id-type="doi">10.1016/0550-3213(91)90366-6</pub-id></mixed-citation></ref>
+<ref id="bib2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Ishii</surname></string-name>, <string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Hatsuda</surname></string-name></person-group>, <source>Phys. Rev. Lett.</source> <volume>99</volume>, <fpage>022001</fpage> (<year>2007</year>).<pub-id pub-id-type="doi">10.1103/PhysRevLett.99.022001</pub-id></mixed-citation></ref>
+<ref id="bib3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Hatsuda</surname></string-name>, <string-name name-style="western"><given-names>N.</given-names> <surname>Ishii</surname></string-name></person-group>, <source>Prog. Theor. Phys.</source> <volume>123</volume>, <fpage>89</fpage> (<year>2010</year>).<pub-id pub-id-type="doi">10.1143/PTP.123.89</pub-id></mixed-citation></ref>
+<ref id="bib4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Doi</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Hatsuda</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>Ikeda</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Inoue</surname></string-name>, <string-name name-style="western"><given-names>N.</given-names> <surname>oriyoshi&#x00A0;Ishii</surname></string-name>, <string-name name-style="western"><given-names>K.</given-names> <surname>Murano</surname></string-name>, <string-name name-style="western"><given-names>H.</given-names> <surname>Nemura</surname></string-name>, <string-name name-style="western"><given-names>K.</given-names> <surname>Sasaki</surname></string-name></person-group>, <source>Prog. Theor. Exp. Phys.</source> <volume>2012</volume>, <fpage>01A105</fpage> (<year>2012</year>).</mixed-citation></ref>
+<ref id="bib5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>C. J.</given-names> <surname>David&#x00A0;Lin</surname></string-name>, <string-name name-style="western"><given-names>G.</given-names> <surname>Martinelli</surname></string-name>, <string-name name-style="western"><given-names>C. T.</given-names> <surname>Sachrajda</surname></string-name>, <string-name name-style="western"><given-names>M.</given-names> <surname>Testa</surname></string-name></person-group>, <source>Nucl. Phys. B</source>. <volume>619</volume>, <fpage>467</fpage> (<year>2001</year>).<pub-id pub-id-type="doi">10.1016/S0550-3213(01)00495-3</pub-id></mixed-citation></ref>
+<ref id="bib6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name> <etal>et al.</etal></person-group>, <source>Phys. Rev. D</source>. <volume>71</volume>, <fpage>094504</fpage> (<year>2005</year>).<pub-id pub-id-type="doi">10.1103/PhysRevD.71.094504</pub-id></mixed-citation></ref>
+<ref id="bib7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Ishizuka</surname></string-name></person-group>, <source>PoS</source>. <volume>LAT2009</volume>, <fpage>119</fpage> (<year>2009</year>).</mixed-citation></ref>
+<ref id="bib8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>J.</given-names> <surname>Carbonell</surname></string-name>, <string-name name-style="western"><given-names>V. A.</given-names> <surname>Karmanov</surname></string-name></person-group>, <source>Phys. Lett. B</source>. <volume>754</volume>, <fpage>270</fpage> (<year>2016</year>).<pub-id pub-id-type="doi">10.1016/j.physletb.2016.01.035</pub-id></mixed-citation></ref>
+<ref id="bib9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>N.</given-names> <surname>Ishii</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Doi</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>Ikeda</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Inoue</surname></string-name></person-group>, <source>Phys. Rev. D</source>. <volume>88</volume>, <fpage>014036</fpage> (<year>2013</year>).<pub-id pub-id-type="doi">10.1103/PhysRevD.88.014036</pub-id></mixed-citation></ref>
+<ref id="bib10"><label>[10]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Gongyo</surname></string-name>, <string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name></person-group>, <source>Prog. Theor. Exp. Phys.</source> <volume>2018</volume>, <fpage>093B03</fpage> (<year>2018</year>).<pub-id pub-id-type="doi">10.1093/ptep/pty097</pub-id></mixed-citation></ref>
+<ref id="bib11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>T.</given-names> <surname>Yamazaki</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>Kuramashi</surname></string-name></person-group>, <source>Phys. Rev. D</source>. <volume>96</volume>, <fpage>114511</fpage> (<year>2017</year>).<pub-id pub-id-type="doi">10.1103/PhysRevD.96.114511</pub-id></mixed-citation></ref>
+<ref id="bib12"><label>[12]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Doi</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Hatsuda</surname></string-name>, <string-name name-style="western"><given-names>N.</given-names> <surname>Ishii</surname></string-name></person-group>, <source>Phys. Rev. D</source>. <volume>98</volume>, <fpage>038501</fpage> (<year>2018</year>).<pub-id pub-id-type="doi">10.1103/PhysRevD.98.038501</pub-id></mixed-citation></ref>
+<ref id="bib13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>T.</given-names> <surname>Yamazaki</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>Kuramashi</surname></string-name></person-group>, <source>Phys. Rev. D</source>. <volume>98</volume>, <fpage>038502</fpage> (<year>2018</year>).<pub-id pub-id-type="doi">10.1103/PhysRevD.98.038502</pub-id></mixed-citation></ref>
+<ref id="bib14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Ishii</surname></string-name>, <string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Doi</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Hatsuda</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>Ikeda</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Inoue</surname></string-name>, <string-name name-style="western"><given-names>K.</given-names> <surname>Murano</surname></string-name>, <string-name name-style="western"><given-names>H.</given-names> <surname>Nemura</surname></string-name>, <string-name name-style="western"><given-names>K.</given-names> <surname>Sasaki</surname></string-name></person-group>, <source>Phys. Lett. B</source>. <volume>712</volume>, <fpage>437</fpage> (<year>2012</year>).<pub-id pub-id-type="doi">10.1016/j.physletb.2012.04.076</pub-id></mixed-citation></ref>
+<ref id="bib15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name></person-group>, <source>PoS</source>. <volume>LATTICE2019</volume>, <fpage>020</fpage> (<year>2019</year>).</mixed-citation></ref>
+<ref id="bib16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Aoki</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Doi</surname></string-name></person-group>, <source>Front. Phys.</source> <volume>8</volume>, <fpage>307</fpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.3389/fphy.2020.00307</pub-id></mixed-citation></ref>
+<ref id="bib17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>R.</given-names> <surname>Augusiak</surname></string-name></person-group>, <source>Ann. Phys.</source> <volume>14</volume>, <fpage>398</fpage> (<year>2005</year>).<pub-id pub-id-type="doi">10.1002/andp.200510139</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+</article>

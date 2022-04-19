@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article article-type="research-article" xml:lang="en" xmlns="http://specifications.silverchair.com/xsd/1/24/SCJATS-journalpublishing.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://specifications.silverchair.com/xsd/1/24/SCJATS-journalpublishing.xsd c:/1/24/SCJATS-journalpublishing.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">ptep</journal-id>
+<journal-title-group>
+<journal-title>Progress of Theoretical and Experimental Physics</journal-title>
+<abbrev-journal-title abbrev-type="pubmed">Prog. Theor. Exp. Phys.</abbrev-journal-title>
+<abbrev-journal-title abbrev-type="publisher">PTEPHY</abbrev-journal-title>
+</journal-title-group>
+<issn pub-type="epub">2050-3911</issn>
+<publisher>
+<publisher-name>Oxford University Press</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.1093/ptep/ptac032</article-id>
+<article-id pub-id-type="publisher-id">ptac032</article-id>
+<article-id pub-id-type="arxiv">arXiv:2110.12861</article-id>
+<article-categories>
+<subj-group subj-group-type="category-toc-heading">
+<subject>Paper</subject>
+</subj-group>
+<subj-group subj-group-type="category-taxonomy-collection">
+<subject>AcademicSubjects/SCI01970</subject>
+</subj-group>
+<subj-group subj-group-type="category-taxonomy-collection">
+<subject>PTEP/B00</subject>
+<subject>PTEP/B04</subject>
+<subject>PTEP/B31</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Gapless edge modes in (4&#x002B;1)-dimensional topologically massive tensor gauge theory and anomaly inflow for subsystem symmetry</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<name><surname>Yamaguchi</surname> <given-names>Satoshi</given-names></name>
+<aff><institution>Department of Physics, Graduate School of Science, Osaka University</institution>, <addr-line>Toyonaka, Osaka 560-0043</addr-line>, <country country="JP">Japan</country></aff>
+<email xlink:type="simple">yamaguch@het.phys.sci.osaka-u.ac.jp</email>
+<xref ref-type="corresp" rid="cor1"/>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1">E-mail: <email xlink:type="simple">yamaguch@het.phys.sci.osaka-u.ac.jp</email></corresp>
+</author-notes>
+<pub-date pub-type="cover"><month>03</month><year>2022</year></pub-date>
+<pub-date pub-type="collection" iso-8601-date="2022-03-23"><day>23</day><month>03</month><year>2022</year></pub-date>
+<pub-date pub-type="epub" iso-8601-date="2022-02-18"><day>18</day><month>02</month><year>2022</year></pub-date>
+<volume>2022</volume>
+<issue>3</issue>
+<elocation-id>033B08</elocation-id>
+<history>
+<date date-type="received"><day>29</day><month>10</month><year>2021</year></date>
+<date date-type="rev-recd"><day>04</day><month>02</month><year>2022</year></date>
+<date date-type="accepted"><day>16</day><month>02</month><year>2022</year></date>
+</history>
+<permissions>
+<copyright-statement>&#x00A9; The Author(s) 2022. Published by Oxford University Press on behalf of the Physical Society of Japan.</copyright-statement>
+<copyright-year>2022</copyright-year>
+<license license-type="cc-by" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<license-p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+<license-p>Funded by SCOAP<sup>3</sup></license-p>
+</license>
+</permissions>
+<self-uri xlink:href="ptac032.pdf"/>
+<abstract abstract-type="abstract"><title>Abstract</title>
+<p>We consider the (4 &#x002B; 1)D topologically massive tensor gauge theory. This theory is an analog of the (2 &#x002B; 1)D topologically massive Maxwell&#x2013;Chern&#x2013;Simons theory. If the space has a boundary, we find that a (3 &#x002B; 1)D gapless theory appears at the boundary. This gapless theory is a chiral version of the (3 &#x002B; 1)D &#x03C6; theory. This gapless theory is protected by the anomaly inflow mechanism for subsystem symmetry. We also consider the corner of our topologically massive tensor gauge theory, and find that an infinite number of (1 &#x002B; 1)D chiral bosons appear at the corner.</p>
+</abstract>
+<kwd-group kwd-group-type="jel">
+<kwd>B00</kwd>
+<kwd>B04</kwd>
+<kwd>B31</kwd>
+</kwd-group>
+<funding-group>
+<award-group award-type="grant">
+<funding-source>
+<institution-wrap>
+<institution>SCOAP</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+</funding-group>
+<counts>
+<page-count count="10"/>
+</counts>
+</article-meta>
+</front>
+<body>
+<sec id="sec1" sec-type="intro">
+<label>1.</label>
+<title>Introduction and summary</title>
+<p>Subsystem symmetries are one of the interesting generalizations of symmetry in quantum field theories [<xref ref-type="bibr" rid="bib1 bib2 bib3">1&#x2013;3</xref>]. They play an important role in fracton phases [<xref ref-type="bibr" rid="bib4 bib5 bib6 bib7">4&#x2013;7</xref>]. Such exotic systems are mostly investigated in lattice quantum mechanics [<xref ref-type="bibr" rid="bib8">8</xref>,<xref ref-type="bibr" rid="bib9">9</xref>]. There are other approaches such as foliated quantum field theory [<xref ref-type="bibr" rid="bib10">10</xref>,<xref ref-type="bibr" rid="bib11">11</xref>], infinite-component Chern&#x2013;Simons theory [<xref ref-type="bibr" rid="bib12">12</xref>], and continuous quantum field theory [<xref ref-type="bibr" rid="bib13 bib14 bib15 bib16 bib17 bib18 bib19 bib20 bib21">13&#x2013;21</xref>]. In this paper, we employ the continuous quantum field theory approach. More recently, subsystem symmetry and fracton phases have also been studied from the high-energy physics points of views, such as supersymmetry [<xref ref-type="bibr" rid="bib22">22</xref>], quiver gauge theory [<xref ref-type="bibr" rid="bib23">23</xref>], and string theory [<xref ref-type="bibr" rid="bib24">24</xref>].</p>
+<p>Another important phenomenon in the recent studies of the topological aspects of quantum field theories is the anomaly inflow mechanism [<xref ref-type="bibr" rid="bib25">25</xref>]. An example of this anomaly inflow is that a (1 &#x002B; 1)D chiral boson appears at the boundary of the (2&#x002B;1)D topologically massive Maxwell&#x2013;Chern&#x2013;Simons theory [<xref ref-type="bibr" rid="bib26">26</xref>,<xref ref-type="bibr" rid="bib27">27</xref>]. The anomaly of the (1&#x002B;1)D chiral boson cancels to the anomaly inflow from the (2&#x002B;1)D bulk, and the total system is anomaly-free. The generalization of this example has been investigated in detail in Ref. [<xref ref-type="bibr" rid="bib28">28</xref>]. The anomaly inflow mechanism led to the modern understanding of anomalies in terms of higher-dimensional symmetry-protected topological (SPT) phases (see, e.g., Refs. [<xref ref-type="bibr" rid="bib29">29</xref>,<xref ref-type="bibr" rid="bib30">30</xref>]).</p>
+<p>Combining these two ideas, one may find that subsystem SPT (SSPT) phases are also interesting phases of matter. SSPT phases have been introduced and studied in many papers including Refs. [<xref ref-type="bibr" rid="bib31 bib32 bib33">31&#x2013;33</xref>]. We expect that SSPT phases and anomaly inflow will be useful for understanding the anomalies of subsystem symmetries.</p>
+<p>In this paper, we study an example of the SSPT phase and anomaly inflow. We study (4 &#x002B; 1)D topologically massive tensor gauge theory. This theory is an analog of (3 &#x002B; 1)D topologically massive Maxwell&#x2013;Chern&#x2013;Simons theory. We explicitly construct gapless modes localized at the boundary. They form the chiral version of the (3 &#x002B; 1)D &#x03C6; theory. The (3 &#x002B; 1)D &#x03C6;-theory resembles the (1 &#x002B; 1)D free scalar [<xref ref-type="bibr" rid="bib21">21</xref>]. Thus we expect the chiral version of the &#x03C6; theory to exist. We find that it appears at the boundary of the topologically massive tensor gauge theory.</p>
+<p>This (4 &#x002B; 1)D topologically massive tensor gauge theory has subsystem symmetry called magnetic center symmetry. We find that the boundary chiral &#x03C6; theory is robust due to the anomaly inflow mechanism [<xref ref-type="bibr" rid="bib28">28</xref>] of this magnetic center symmetry.</p>
+<p>We also consider the codimension-3 corner-localized modes of the topologically massive tensor gauge theory. We find that an infinite number of (1 &#x002B; 1)D chiral bosons appear at the corner. The anomaly inflow argument for these corner states is an interesting future problem.</p>
+<p>Another interesting future issue is to develop a more precise formulation of the tensor Chern&#x2013;Simons theory as done in Ref. [<xref ref-type="bibr" rid="bib28">28</xref>]. In other words, it should be nice to have some sort of differential cohomology and differential K-theory for tensor gauge fields for subsystem symmetries.</p>
+<p>The construction of this paper is as follows. In Sect.&#x00A0;<xref ref-type="sec" rid="sec2">2</xref>, we set up the topologically massive tensor gauge theory and find the massless chiral &#x03C6; theory at the boundary of the spacetime. In Sect.&#x00A0;<xref ref-type="sec" rid="sec3">3</xref>, we discuss the anomaly inflow for the magnetic center symmetry. In Sect.&#x00A0;<xref ref-type="sec" rid="sec4">4</xref>, we consider the corner states of the topologically massive tensor gauge theory and find an infinite number of chiral bosons.</p>
+<p>Note added: while writing this manuscript, we noticed that the anomaly inflow mechanism of the chiral &#x03C6; theory has also been discussed in a recent paper [<xref ref-type="bibr" rid="bib34">34</xref>].</p>
+</sec>
+<sec id="sec2">
+<label>2.</label>
+<title>(4&#x002B;1)D topologically massive tensor gauge theory on spacetime with a boundary</title>
+<sec id="sec2-1">
+<label>2.1</label>
+<title>Setup</title>
+<p>We consider here a 5D non-relativistic quantum field theory. The spacetime coordinates are denoted by <italic>x</italic><sup>&#x03BC;</sup>,&#x2009;&#x03BC; &#x003D; 0, 1, 2, 3, 5. Here, <italic>x</italic><sup>4</sup> is not used in the Lorentzian signature. It is reserved for Euclidean time.</p>
+<p>It is convenient to introduce labels <italic>A</italic>, <italic>B</italic>, <italic>C</italic>, &#x2026; &#x003D; 0, &#x266F;, 5,<xref ref-type="fn" rid="fn1"><sup>1</sup></xref> and define the derivatives &#x2202;<sub><italic>A</italic></sub> as
+<disp-formula id="equ1">
+<label>(1)</label>
+<tex-math id="TM0001" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{0}:=\frac{\partial }{\partial x^0},\quad \partial _{5}:=\frac{\partial }{\partial x^5}, \quad \partial _{\sharp }:=\frac{\partial }{\partial x^1}\frac{\partial }{\partial x^2}\frac{\partial }{\partial x^3}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>It is useful to notice the relation for two functions &#x03A6;<sub>1</sub>(<italic>x</italic>),&#x2009;&#x03A6;<sub>2</sub>(<italic>x</italic>):
+<disp-formula id="equ2">
+<label>(2)</label>
+<tex-math id="TM0002" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+(\partial _{A}\Phi _1)\Phi _2+\Phi _1 (\partial _{A}\Phi _2)=(\text{total derivative}).
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This relation allows us to perform integration by parts in a closed spacetime.</p>
+<p>We introduce a 5D tensor gauge field <italic>C</italic><sub><italic>A</italic></sub>,&#x2009;<italic>A</italic> &#x003D; 0, &#x266F;, 5. The gauge transformation is given by
+<disp-formula id="equ3">
+<label>(3)</label>
+<tex-math id="TM0003" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{A}^{\prime }=C_{A}+\partial _{A}\lambda .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Here the parameter &#x03BB; has the same properties as the &#x03C6; field in the &#x03C6; theory in Refs. [<xref ref-type="bibr" rid="bib18">18</xref>,<xref ref-type="bibr" rid="bib21">21</xref>]. For example, the periodicity &#x03BB; &#x223C; &#x03BB; &#x002B; 2&#x03C0; is imposed and a certain discontinuity for &#x03BB; is allowed.</p>
+<p>The gauge invariant field strength <italic>G</italic><sub><italic>AB</italic></sub> is defined as
+<disp-formula id="equ4">
+<label>(4)</label>
+<tex-math id="TM0004" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+G_{AB}:=\partial _{A}C_{B}-\partial _{B}C_{A}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>We impose Lorentz symmetry in the 05-plane, for simplicity. The tensor Maxwell action is given by
+<disp-formula id="equ5">
+<label>(5)</label>
+<tex-math id="TM0005" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{M}=\int d^5x\left[ \frac{1}{2h^2}G_{05}^2+\frac{1}{2g^2}G_{\sharp 0}^2-\frac{1}{2g^2}G_{\sharp 5}^2\right],
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where <italic>g</italic> and <italic>h</italic> are real positive coupling constants. Since we only impose the Lorentz symmetry in the 05-plane, there are two coupling constants.</p>
+<p>We would also like to consider tensor Chern&#x2013;Simons theory:
+<disp-formula id="equ6">
+<label>(6)</label>
+<tex-math id="TM0006" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{\mathrm{CS}}=\frac{k}{4\pi }\int d^5x \epsilon ^{ABC}C_{A}\partial _{B}C_{C},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where &#x03F5;<sup><italic>ABC</italic></sup> is a totally anti-symmetric symbol and &#x03F5;<sup>0&#x266F;5</sup> &#x003D; 1. <italic>k</italic> is an analog of the Chern&#x2013;Simons level and it must be an integer for the gauge invariance as discussed in Appendix&#x00A0;<xref ref-type="app" rid="sec7">A</xref>.</p>
+<p>We consider the theory including both the Maxwell term and the Chern&#x2013;Simons term with <italic>k</italic> &#x003D; 1. The total action is given by
+<disp-formula id="equ7">
+<label>(7)</label>
+<tex-math id="TM0007" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S=\int d^5x\left[ \frac{1}{2h^2}G_{05}^2+\frac{1}{2g^2}G_{\sharp 0}^2-\frac{1}{2g^2}G_{\sharp 5}^2+\frac{1}{4\pi }\epsilon ^{ABC}C_{A}\partial _{B}C_{C} \right].
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The equations&#x00A0;of motion derived from this action are given by
+<disp-formula id="equ8">
+<label>(8)</label>
+<tex-math id="TM0008" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+-\frac{1}{h^2}\partial _{0}G_{05}+\frac{1}{g^2}\partial _{\sharp }G_{\sharp 5}+\frac{1}{2\pi }G_{0\sharp }=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ9">
+<label>(9)</label>
+<tex-math id="TM0009" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\frac{1}{h^2}\partial _{5}G_{05}-\frac{1}{g^2}\partial _{\sharp }G_{\sharp 0} +\frac{1}{2\pi } G_{\sharp 5}=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ10">
+<label>(10)</label>
+<tex-math id="TM0010" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\frac{1}{g^2}\partial _{0}G_{\sharp 0}-\frac{1}{g^2}\partial _{5}G_{\sharp 5}-\frac{1}{2\pi }G_{05}=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+</sec>
+<sec id="sec2-2">
+<label>2.2</label>
+<title>Localized modes at the boundary</title>
+<p>Here, we consider the spacetime <italic>x</italic><sup>5</sup> &#x003E; 0 with a boundary at <italic>x</italic><sup>5</sup> &#x003D; 0. We impose the boundary condition
+<disp-formula id="equ11">
+<label>(11)</label>
+<tex-math id="TM0011" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{A}|_{x_5=0}=0
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>up to the gauge transformation at the boundary. It is not only flat but a pure gauge. In other words, all the Wilson loops vanish at the boundary. Even though the theory includes the Chern&#x2013;Simons term and the spacetime has a boundary, the theory is gauge invariant due to the boundary condition (<xref ref-type="disp-formula" rid="equ11">11</xref>).</p>
+<p>We want to find the modes localized at this boundary. To do this, we will solve the equations&#x00A0;of motion (<xref ref-type="disp-formula" rid="equ8">8</xref>), (<xref ref-type="disp-formula" rid="equ9">9</xref>), (<xref ref-type="disp-formula" rid="equ10">10</xref>) under the boundary condition (<xref ref-type="disp-formula" rid="equ11">11</xref>).</p>
+<p>We employ the ansatz
+<disp-formula id="equ12">
+<label>(12)</label>
+<tex-math id="TM0012" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+G_{\sharp 0}=0
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>even in the bulk and look for localized solutions. Then the equations&#x00A0;of motion (<xref ref-type="disp-formula" rid="equ8">8</xref>), (<xref ref-type="disp-formula" rid="equ9">9</xref>), (<xref ref-type="disp-formula" rid="equ10">10</xref>) are rewritten as
+<disp-formula id="equ13">
+<label>(13)</label>
+<tex-math id="TM0013" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+-\frac{1}{h^2}\partial _{0}G_{05}+\frac{1}{g^2}\partial _{\sharp }G_{\sharp 5}=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ14">
+<label>(14)</label>
+<tex-math id="TM0014" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\frac{1}{h^2}\partial _{5}G_{05} +\frac{1}{2\pi } G_{\sharp 5}=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ15">
+<label>(15)</label>
+<tex-math id="TM0015" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+-\frac{1}{g^2}\partial _{5}G_{\sharp 5}-\frac{1}{2\pi }G_{05}=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>respectively. We solve Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ15">15</xref>) for <italic>G</italic><sub>05</sub> and substitute it into Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ14">14</xref>). Then we obtain
+<disp-formula id="equ16">
+<label>(16)</label>
+<tex-math id="TM0016" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{5}^2 G_{\sharp 5}=m^2 G_{\sharp 5},\qquad m:=\frac{hg}{2\pi }\gt 0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>For a normalizable solution, this equation&#x00A0;implies
+<disp-formula id="equ17">
+<label>(17)</label>
+<tex-math id="TM0017" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{5}G_{\sharp 5}=-mG_{\sharp 5}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>In other words, the <italic>x</italic><sup>5</sup> dependence of <italic>G</italic><sub>&#x266F;5</sub> is <inline-formula><tex-math id="TM0018" notation="LaTeX"><![CDATA[$G_{\sharp 5}\propto e^{-mx^5}$]]></tex-math></inline-formula>. Similarly we solve Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ14">14</xref>) for <italic>G</italic><sub>&#x266F;5</sub> and substitute it into Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ15">15</xref>). Then, taking the normalizability into account, we obtain
+<disp-formula id="equ18">
+<label>(18)</label>
+<tex-math id="TM0019" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{5}G_{0 5}=-mG_{0 5}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>By substituting Eqs.&#x00A0;(<xref ref-type="disp-formula" rid="equ17">17</xref>) and (<xref ref-type="disp-formula" rid="equ18">18</xref>) into Eqs.&#x00A0;(<xref ref-type="disp-formula" rid="equ14">14</xref>) and (<xref ref-type="disp-formula" rid="equ15">15</xref>), we obtain
+<disp-formula id="equ19">
+<label>(19)</label>
+<tex-math id="TM0020" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+G_{05}-\alpha G_{\sharp 5}=0,\quad \alpha :=\frac{h}{g}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>We choose the <italic>C</italic><sub>5</sub> &#x003D; 0 gauge. Since <italic>C</italic><sub>0</sub>, <italic>C</italic><sub>&#x266F;</sub> are a pure gauge at the boundary <italic>x</italic><sub>5</sub> &#x003D; 0, they are written using a &#x03C6; field with the periodicity &#x03C6; &#x223C; &#x03C6; &#x002B; 2&#x03C0; of the &#x03C6; theory at the boundary as
+<disp-formula id="equ20">
+<label>(20)</label>
+<tex-math id="TM0021" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{0}|_{x^5=0}=\partial _{0}\varphi ,\quad C_{\sharp }|_{x^5=0}=\partial _{\sharp }\varphi .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The <italic>x</italic><sup>5</sup> dependence is determined by Eqs.&#x00A0;(<xref ref-type="disp-formula" rid="equ17">17</xref>), (<xref ref-type="disp-formula" rid="equ18">18</xref>), and we obtain
+<disp-formula id="equ21">
+<label>(21)</label>
+<tex-math id="TM0022" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{0}=\partial _{0}\varphi e^{-mx^5},\quad C_{\sharp }=\partial _{\sharp }\varphi e^{-mx^5}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<p>Equation&#x00A0;(<xref ref-type="disp-formula" rid="equ13">13</xref>) reads
+<disp-formula id="equ22">
+<label>(22)</label>
+<tex-math id="TM0023" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{0}^2\varphi -\alpha ^2 \partial _{\sharp }^2\varphi =0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This is the equation&#x00A0;of motion of the &#x03C6; theory [<xref ref-type="bibr" rid="bib21">21</xref>] (see also Ref. [<xref ref-type="bibr" rid="bib22">22</xref>]). Actually, our &#x03C6; field must satisfy a stronger constraint from Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ19">19</xref>):
+<disp-formula id="equ23">
+<label>(23)</label>
+<tex-math id="TM0024" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{0}\varphi -\alpha \partial _{\sharp }\varphi =0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This constraint implies that these boundary-localized modes form the chiral &#x03C6; theory.</p>
+<p>Here let us comment on the Chern&#x2013;Simons level. In this paper, we choose <italic>k</italic> &#x003D; &#x002B;1 and obtain the boundary-localized chiral modes. If we consider the case with <italic>k</italic> &#x003D; &#x2212;1, we obtain boundary-localized anti-chiral modes: &#x2202;<sub>0</sub>&#x03C6; &#x002B; &#x03B1;&#x2202;<sub>&#x266F;</sub>&#x03C6; &#x003D; 0. If we consider &#x007C;<italic>k</italic>&#x007C; &#x003E; 1, the story is quite different. The bulk theory is no longer in an SSPT phase but has some topological degrees of freedom. Moreover, we cannot impose the Dirichlet boundary condition (<xref ref-type="disp-formula" rid="equ11">11</xref>). It would be interesting to study this case in more detail.</p>
+</sec>
+</sec>
+<sec id="sec3">
+<label>3.</label>
+<title>Anomaly inflow</title>
+<p>In the previous section, we have shown that the (3 &#x002B; 1)D chiral &#x03C6; theory appears at the boundary of the (4 &#x002B; 1)D topologically massive tensor gauge theory. In this section, we want to show that this boundary theory is robust due to the anomaly inflow mechanism for subsystem symmetry.</p>
+<p>In this subsection, we use the Euclidean formulation. The coordinates are <italic>x</italic><sup>&#x03BC;</sup>,&#x2009;&#x03BC; &#x003D; 1, &#x2026;, 5. <italic>x</italic><sup>4</sup> is Euclidean time. It is convenient to use labels <italic>A</italic>, <italic>B</italic>, <italic>C</italic> &#x003D; &#x266F;, 4, 5. The symbol &#x03F5;<sup><italic>ABC</italic></sup> is totally anti-symmetric and &#x03F5;<sup>&#x266F;45</sup> &#x003D; 1. The Euclidean action of the topologically massive tensor gauge theory is given by
+<disp-formula id="equ24">
+<label>(24)</label>
+<tex-math id="TM0025" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{E}=\int d^5x\left[ \frac{1}{2h^2}G_{45}^2+\frac{1}{2g^2}G_{\sharp 4}^2+\frac{1}{2g^2}G_{\sharp 5}^2+\frac{i}{4\pi }\epsilon ^{ABC}C_{A}\partial _{B}C_{C} \right].
+\end{eqnarray}$$]]></tex-math>
+</disp-formula></p>
+<sec id="sec3-1">
+<label>3.1</label>
+<title>Magnetic center symmetry</title>
+<p>We have a global symmetry called &#x201C;magnetic center symmetry&#x201D; in the topologically massive tensor gauge theory (<xref ref-type="disp-formula" rid="equ7">7</xref>). The current of this symmetry is given by
+<disp-formula id="equ25">
+<label>(25)</label>
+<tex-math id="TM0026" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+M^{A}:= \frac{i}{2\pi }\epsilon ^{ABC}\partial _{B}C_{C}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This current satisfies the conservation law:
+<disp-formula id="equ26">
+<label>(26)</label>
+<tex-math id="TM0027" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{A}M^{A}=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This magnetic center symmetry is a subsystem symmetry. This magnetic center symmetry is preserved even if we introduce a boundary at <italic>x</italic><sup>5</sup> &#x003D; 0 with the boundary condition (<xref ref-type="disp-formula" rid="equ11">11</xref>).</p>
+<p>Let us consider gauging this symmetry by introducing a background gauge field <italic>A</italic><sub><italic>A</italic></sub> and adding the term
+<disp-formula id="equ27">
+<label>(27)</label>
+<tex-math id="TM0028" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{\mathrm{couple}}=\int d^5 x A_{A}M^{A}=\frac{i}{2\pi }\int d^5 x \epsilon ^{ABC}A_{A}\partial _{B}C_{C}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The gauge transformation is given by
+<disp-formula id="equ28">
+<label>(28)</label>
+<tex-math id="TM0029" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+A^{\prime }_{A}=A_{A}+\partial _{A}\rho ,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where &#x03C1; is the parameter of the gauge transformation. In this paper, we only consider infinitesimal gauge transformation for the background gauge field, and thus &#x03C1; is an infinitesimal function on the spacetime. The term (<xref ref-type="disp-formula" rid="equ27">27</xref>) is invariant under the infinitesimal gauge transformation (<xref ref-type="disp-formula" rid="equ28">28</xref>) if the spacetime does not have a boundary.</p>
+</sec>
+<sec id="sec3-2">
+<label>3.2</label>
+<title>Effective theory of the background gauge field</title>
+<p>Let us consider the topologically massive tensor gauge theory coupled to the background magnetic center symmetry gauge field. The partition function with the background gauge field is given by
+<disp-formula id="equ29">
+<label>(29)</label>
+<tex-math id="TM0030" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+Z[A]=\int DCe^{-S_{E}(C)-S_{\mathrm{couple}}(C,A)}=:|Z[A]|e^{-S_{\mathrm{eff}}(A)}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The phase functional <inline-formula><tex-math id="TM0031" notation="LaTeX"><![CDATA[$e^{-S_{\mathrm{eff}}}$]]></tex-math></inline-formula> characterizes the SSPT phase. We only consider the low-energy limit and therefore ignore the Maxwell term. We can rewrite the action as
+<disp-formula id="equ30">
+<label>(30)</label>
+<tex-math id="TM0032" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{E}+S_{\mathrm{couple}}&=& \frac{i}{4\pi }\int d^5x \epsilon ^{ABC}(C_{A}+A_{A})\partial _{B}(C_{C}+A_{C}) -\frac{i}{4 \pi }\int d^5x \epsilon ^{ABC} A_{A}\partial _{B}A_{C} \\
+&&+\;\frac{i}{4\pi }\int d^5x \epsilon ^{ABC}\partial _{B}( A_{A}C_{C}).
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The first term will disappear if we redefine the <italic>C</italic> field and integrate it out. The second term remains and becomes part of <italic>S</italic><sub>eff</sub>. The third term is a total derivative and therefore we can ignore it at least perturbatively. This is enough since we are considering the perturbative anomaly. Then, <italic>S</italic><sub>eff</sub> is given by
+<disp-formula id="equ31">
+<label>(31)</label>
+<tex-math id="TM0033" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{\mathrm{eff}}(A)=-\frac{i}{4 \pi }\int d^5x \epsilon ^{ABC} A_{A}\partial _{B}A_{C}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This is gauge invariant if the spacetime is closed.</p>
+<p>Once we consider the spacetime with a boundary, the effective action (<xref ref-type="disp-formula" rid="equ31">31</xref>) is no longer gauge invariant. Let us consider the spacetime <italic>x</italic><sup>5</sup> &#x003E; 0 with a boundary <italic>x</italic><sup>5</sup> &#x003D; 0. Then the gauge transformation of Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ31">31</xref>) is given by
+<disp-formula id="equ32">
+<label>(32)</label>
+<tex-math id="TM0034" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\delta S_{\mathrm{eff}}(A)=\frac{i}{4 \pi }\int _{x^5=0} d^4x \epsilon ^{5BC} \rho \partial _{B}A_{C}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This should cancel the anomaly of the chiral &#x03C6; theory. Therefore, the chiral &#x03C6; theory at the boundary is robust due to this anomaly inflow mechanism.</p>
+</sec>
+</sec>
+<sec id="sec4">
+<label>4.</label>
+<title>Localized solution at the corner</title>
+<p>In this section, we consider the topologically massive tensor gauge theory (<xref ref-type="disp-formula" rid="equ7">7</xref>) in the spacetime <italic>x</italic><sup><italic>i</italic></sup> &#x003E; 0,&#x2009;<italic>i</italic> &#x003D; 1, 2, 3. Here, we go back to the Lorentzian signature.</p>
+<sec id="sec4-1">
+<label>4.1</label>
+<title>Boundary conditions</title>
+<p>First, we discuss the boundary conditions. We impose the boundary condition such that the gauge symmetry (<xref ref-type="disp-formula" rid="equ3">3</xref>) is preserved. The gauge transformation of the action (<xref ref-type="disp-formula" rid="equ7">7</xref>) is calculated as
+<disp-formula id="equ33">
+<label>(33)</label>
+<tex-math id="TM0035" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S^{\prime }-S=\frac{1}{4\pi }\int d^5 x \Delta \mathcal {L},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ34">
+<label>(34)</label>
+<tex-math id="TM0036" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\Delta \mathcal {L}&=&\epsilon ^{ABC}\left[(C_{A}+\partial _{A}\lambda )\partial _{B}(C_C+\partial _{C}\lambda ) -C_{A}\partial _{B}C_{C} \right] \\
+&=&\epsilon ^{ABC}\partial _{A}\lambda \partial _{B}C_C =\partial _{0}\lambda G_{\sharp 5}+\partial _{5}\lambda G_{0\sharp }+\partial _{\sharp }\lambda G_{50} \\
+&=&\partial _{0}(\lambda G_{\sharp 5})+\partial _{5}(\lambda G_{0\sharp }) +\partial _{\sharp }\lambda G_{50}+\lambda \partial _{\sharp } G_{50}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>In the last expression, the first and second total derivative terms vanish since our spacetime does not have a boundary in the <italic>x</italic><sup>0</sup>, <italic>x</italic><sup>5</sup> directions. Let us look at the third and fourth terms more carefully:
+<disp-formula id="equ35">
+<label>(35)</label>
+<tex-math id="TM0037" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{\sharp }\lambda G_{50}+\lambda \partial _{\sharp } G_{50} =\partial _{1}(\partial _2\partial _3\lambda G_{50}) -\partial _{2}(\partial _3\lambda \partial _1 G_{50}) +\partial _{3}(\lambda \partial _1\partial _2 G_{50}).
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Thus the boundary term at <italic>x</italic><sup>1</sup> &#x003D; 0 becomes
+<disp-formula id="equ36">
+<label>(36)</label>
+<tex-math id="TM0038" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S^{\prime }-S &=&-\frac{1}{4\pi }\int _{x^1=0} d x^0 dx^2 dx^3 dx^5 (\partial _2\partial _3\lambda G_{50})+\cdots \\
+&=&-\frac{1}{4\pi }\int _{x^1=0} d x^0 dx^2 dx^3 dx^5 [\lambda \partial _2 \partial _3 G_{50} -\partial _3(\lambda \partial _2 G_{50})+\partial _2(\partial _3 \lambda G_{50})]+\cdots .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Here &#x22C5;&#x22C5;&#x22C5; represents the other boundary terms at <italic>x</italic><sup>2</sup> &#x003D; 0, <italic>x</italic><sup>3</sup> &#x003D; 0 and corners. The first term in the integrand must vanish to be gauge invariant. Therefore we impose the boundary condition
+<disp-formula id="equ37">
+<label>(37)</label>
+<tex-math id="TM0039" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _2\partial _3 G_{50}=0\quad \text{at } x^1=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The third term of the integrand in Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ36">36</xref>) contributes to the corner <italic>x</italic><sup>1</sup> &#x003D; <italic>x</italic><sup>2</sup> &#x003D; 0. In order to eliminate this contribution, we impose the boundary condition
+<disp-formula id="equ38">
+<label>(38)</label>
+<tex-math id="TM0040" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _3 G_{50}=0\quad \text{at } x^1=x^2=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Here we perform integration by parts again. Finally, we consider the corner <italic>x</italic><sup>1</sup> &#x003D; <italic>x</italic><sup>2</sup> &#x003D; <italic>x</italic><sup>3</sup> &#x003D; 0. The boundary term at this corner is
+<disp-formula id="equ39">
+<label>(39)</label>
+<tex-math id="TM0041" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S^{\prime }-S =-\frac{1}{4\pi }\int _{x^1=x^2=x^3=0} d x^0 dx^5 \lambda G_{50}+\cdots .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Since &#x03BB; may have winding, we impose not only <italic>G</italic><sub>50</sub> &#x003D; 0 but (<italic>C</italic><sub>0</sub>, <italic>C</italic><sub>5</sub>) is a pure gauge in order to be gauge invariant.</p>
+<p>Let us summarize these boundary conditions including permutations of <italic>x</italic><sup>1</sup>, <italic>x</italic><sup>2</sup>, <italic>x</italic><sup>3</sup>. Let <italic>i</italic>, <italic>j</italic>, <italic>k</italic> &#x003D; 1, 2, 3 all be different labels. Then we impose the boundary conditions:
+<disp-formula id="equ40">
+<label>(40)</label>
+<tex-math id="TM0042" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _j\partial _k G_{50}=0\quad \text{at } x^i=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ41">
+<label>(41)</label>
+<tex-math id="TM0043" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _k G_{50}=0\quad \text{at } x^i=x^j=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ42">
+<label>(42)</label>
+<tex-math id="TM0044" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+(C_0,C_5) \text{ is a pure gauge at } x^1=x^2=x^3=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The gauge symmetry is preserved due to these boundary conditions.</p>
+</sec>
+<sec id="sec4-2">
+<label>4.2</label>
+<title>Corner-localized modes</title>
+<p>In this setup, we want to find the modes localized at the corner <italic>x</italic><sup>1</sup> &#x003D; <italic>x</italic><sup>2</sup> &#x003D; <italic>x</italic><sup>3</sup> &#x003D; 0. We employ an ansatz <italic>G</italic><sub>05</sub> &#x003D; 0 in the whole spacetime. Then the equations&#x00A0;of motion (<xref ref-type="disp-formula" rid="equ8">8</xref>), (<xref ref-type="disp-formula" rid="equ9">9</xref>), (<xref ref-type="disp-formula" rid="equ10">10</xref>) become
+<disp-formula id="equ43">
+<label>(43)</label>
+<tex-math id="TM0045" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\frac{1}{g^2} \partial _{\sharp }G_{\sharp 5}-\frac{1}{2\pi } G_{\sharp 0}=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ44">
+<label>(44)</label>
+<tex-math id="TM0046" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+-\frac{1}{g^2} \partial _{\sharp }G_{\sharp 0}+\frac{1}{2\pi }G_{\sharp 5}=0,
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ45">
+<label>(45)</label>
+<tex-math id="TM0047" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{0}G_{\sharp 0}-\partial _{5} G_{\sharp 5}=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>By solving Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ44">44</xref>) in terms of <italic>G</italic><sub>&#x266F;5</sub> and substituting it into Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ43">43</xref>), we find
+<disp-formula id="equ46">
+<label>(46)</label>
+<tex-math id="TM0048" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{\sharp }^2 G_{\sharp 0}=\frac{g^4}{(2\pi )^2} G_{\sharp 0}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>A normalizable solution must satisfy
+<disp-formula id="equ47">
+<label>(47)</label>
+<tex-math id="TM0049" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{\sharp }G_{\sharp 0}=-\frac{g^2}{2\pi }G_{\sharp 0}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>By solving Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ43">43</xref>) in terms of <italic>G</italic><sub>&#x266F;0</sub> and substituting it into Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ44">44</xref>), we find that a normalizable solution satisfies
+<disp-formula id="equ48">
+<label>(48)</label>
+<tex-math id="TM0050" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{\sharp }G_{\sharp 5}=-\frac{g^2}{2\pi }G_{\sharp 5}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>We substitute these equations&#x00A0;into Eqs.&#x00A0;(<xref ref-type="disp-formula" rid="equ43">43</xref>) and (<xref ref-type="disp-formula" rid="equ44">44</xref>), and obtain
+<disp-formula id="equ49">
+<label>(49)</label>
+<tex-math id="TM0051" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+G_{\sharp 5}+G_{\sharp 0}=0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>We choose the <italic>C</italic><sub>&#x266F;</sub> &#x003D; 0 gauge and find the solutions:
+<disp-formula id="equ50">
+<label>(50)</label>
+<tex-math id="TM0052" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{0}&=&\partial _{0}\phi (x^0,x^5)\exp (-m_1x^1-m_2x^2-m_3x^3),\\
+C_{5}&=&\partial _{5}\phi (x^0,x^5)\exp (-m_1x^1-m_2x^2-m_3x^3),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where <italic>m</italic><sub>1</sub>, <italic>m</italic><sub>2</sub>, <italic>m</italic><sub>3</sub> are real positive constants that satisfy
+<disp-formula id="equ51">
+<label>(51)</label>
+<tex-math id="TM0053" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+m_1,m_2,m_3\gt 0,\quad m_1m_2m_3=\frac{g^2}{2\pi }.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Equation&#x00A0;(<xref ref-type="disp-formula" rid="equ49">49</xref>) leads to a constraint for &#x03D5;(<italic>x</italic><sup>0</sup>, <italic>x</italic><sup>5</sup>):
+<disp-formula id="equ52">
+<label>(52)</label>
+<tex-math id="TM0054" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{0}\phi +\partial _5\phi =0.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This constraint implies that &#x03D5; is a (1 &#x002B; 1)D chiral boson.</p>
+<p>Since there are an infinite number of possible <italic>m</italic><sub>1</sub>, <italic>m</italic><sub>2</sub>, <italic>m</italic><sub>3</sub> satisfying Eq.&#x00A0;(<xref ref-type="disp-formula" rid="equ51">51</xref>), we conclude that there are an infinite number of chiral bosons at the corner.</p>
+</sec>
+</sec>
+</body>
+<back>
+<ack id="ack1"><title>Acknowledgements</title>
+<p>The author would like to thank Sinya Aoki, Hidenori Fukaya, Yosuke Imamura, Katsushi Ito, Naoki Kawai, Yoshiyuki Matsuki, Shin&#x2019;ichi Nojiri, Takuya Okuda, Kantaro Omori, Tetsuya Onogi, Tadakatsu Sakai, Sotaro Sugishita, Juven Wang, Shing-Tung Yau, and Yutaka Yoshida for useful discussions and comments. The author also thanks the Yukawa Institute for Theoretical Physics at Kyoto University. Discussions during the YITP workshop YITP-W-21-04 on &#x201C;Strings and Fields 2021&#x201D; were useful in completing this work. This work was supported in part by JSPS KAKENHI Grant Number 21K03574.</p>
+</ack>
+<sec id="sec6">
+<title>Funding</title>
+<p>Open Access funding: SCOAP<sup>3</sup>.</p>
+</sec>
+<app-group>
+<app id="sec7">
+<title>Appendix A. Level of the tensor Chern&#x2013;Simons theory</title>
+<p>In this appendix, we argue that <italic>k</italic> must be an integer in the tensor Chern&#x2013;Simons theory:
+<disp-formula id="equ53">
+<label>(A1)</label>
+<tex-math id="TM0055" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{\mathrm{CS}}=\frac{ik}{4\pi }\int d^5x \epsilon ^{ABC}C_{A}\partial _{B}C_{C}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>We follow the analogous argument to Ref. [<xref ref-type="bibr" rid="bib35">35</xref>]. We only consider the spacetime manifold <italic>T</italic><sup>5</sup> in which all <italic>x</italic><sup><italic>M</italic></sup>,&#x2009;<italic>M</italic> &#x003D; 1, 2, 3, 4, 5 are periodic. We consider gauge invariance of the theory in the following two gauge field configurations:</p>
+<list list-type="number">
+<list-item><p>One unit of tensor electric flux in 1234-space.</p></list-item>
+<list-item><p>One unit of the usual electric flux in the 45-plane.</p></list-item>
+</list>
+<p>Let us start with the first configuration. This implies that
+<disp-formula id="equ54">
+<label>(A2)</label>
+<tex-math id="TM0056" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\int d^4 x(\partial _{\sharp }C_{4}-\partial _{4}C_{\sharp }) = 2\pi .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>For example, we can choose <italic>C</italic><sub>&#x266F;</sub>, <italic>C</italic><sub>4</sub> as
+<disp-formula id="equ55">
+<label>(A3)</label>
+<tex-math id="TM0057" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{4}=0,\qquad C_{\sharp }=-\partial _{\sharp }f(x^1,x^2,x^3) \frac{x^4}{\ell _4},
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>
+<disp-formula id="equ56">
+<label>(A4)</label>
+<tex-math id="TM0058" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+f(x^1,x^2,x^3)&:=&2\pi \Bigg [ \frac{x^1x^2x^3}{\ell _1 \ell _2 \ell _3} -\frac{x^1x^2}{\ell _1\ell _2}\theta (x^3) -\frac{x^2x^3}{\ell _2\ell _3}\theta (x^1) -\frac{x^3x^1}{\ell _3\ell _1}\theta (x^2) \\
+&&+\;\frac{x^1}{\ell _1}\theta (x^2)\theta (x^3) +\frac{x^2}{\ell _2}\theta (x^3)\theta (x^1) +\frac{x^3}{\ell _3}\theta (x^1)\theta (x^2) \Bigg ],
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>where &#x2113;<sub><italic>i</italic></sub> denotes the periodicity of <italic>x</italic><sup><italic>i</italic></sup> as <italic>x</italic><sup><italic>i</italic></sup> &#x223C; <italic>x</italic><sup><italic>i</italic></sup> &#x002B; &#x2113;<sub><italic>i</italic></sub>, and &#x03B8;(<italic>x</italic>) denotes the Heaviside step function. This <italic>f</italic> is a winding number 1 field configuration of the &#x03C6; theory [<xref ref-type="bibr" rid="bib21">21</xref>]. We also introduce flat <italic>C</italic><sub>5</sub> with a parameter <italic>u</italic> given by
+<disp-formula id="equ57">
+<label>(A5)</label>
+<tex-math id="TM0059" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\int dx_5 C_5 = 2\pi u.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>We continuously change <italic>u</italic> from 0 to 1 and see how <italic>S</italic><sub>CS</sub> changes by this deformation. Notice that configurations <italic>u</italic> &#x003D; 0, 1 are connected by a gauge transformation and they must be identical up to <inline-formula><tex-math id="TM0060" notation="LaTeX"><![CDATA[$2\pi i \mathbb {Z}$]]></tex-math></inline-formula> in order to have gauge invariance. It is also useful to notice that, by an arbitrary small change of the gauge field &#x03B4;<italic>C</italic><sub><italic>A</italic></sub>, the change of the action is written as
+<disp-formula id="equ58">
+<label>(A6)</label>
+<tex-math id="TM0061" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\delta S_{\mathrm{CS}}=\frac{ik}{2\pi }\int d^5x \epsilon ^{ABC}\delta C_{A}\partial _{B}C_{C}.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>By using this equation, we obtain
+<disp-formula id="equ59">
+<label>(A7)</label>
+<tex-math id="TM0062" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\partial _{u}S_{\mathrm{CS}}&=&\frac{ik}{2\pi }\int d^5x \epsilon ^{ABC}\partial _{u} C_{A}\partial _{B}C_{C} =\frac{ik}{2\pi }\int d^5x \epsilon ^{5ab}\partial _{u} C_{5}\partial _{a}C_{b} \\
+&=&\frac{ik}{2\pi }\int d^4x \epsilon ^{ab}\partial _{a}C_{b}\; \partial _{u}\int dx^5 C_5 =2\pi i k,\qquad (a,b=\sharp ,4),
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>and therefore
+<disp-formula id="equ60">
+<label>(A8)</label>
+<tex-math id="TM0063" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+S_{\mathrm{CS}}|_{u=1}-S_{\mathrm{CS}}|_{u=0}=\int _{0}^{1}du \partial _{u}S_{\mathrm{CS}}=2\pi i k.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>As a result, we find that <italic>k</italic> must be an integer.</p>
+<p>Next, let us consider the second configuration. In this configuration,
+<disp-formula id="equ61">
+<label>(A9)</label>
+<tex-math id="TM0064" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\int dx^4dx^5(\partial _4 C_5 - \partial _5 C_4) = 2\pi
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>is satisfied. For example, we can choose
+<disp-formula id="equ62">
+<label>(A10)</label>
+<tex-math id="TM0065" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{4}=0,\quad C_{5}=\frac{2\pi }{\ell _{4}\ell _{5}}x^4.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>Let us consider a gauge transformation parameter &#x03BB;<sub>1</sub> that only depends on <italic>x</italic><sub>1</sub>, <italic>x</italic><sub>2</sub>, <italic>x</italic><sub>3</sub> and satisfies
+<disp-formula id="equ63">
+<label>(A11)</label>
+<tex-math id="TM0066" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+\int dx^1dx^2dx^3 \partial _{\sharp }\lambda _1=2\pi .
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>This is a &#x03C6; field configuration with winding number 1 [<xref ref-type="bibr" rid="bib21">21</xref>]. We consider <italic>C</italic><sub>&#x266F;</sub> with a real parameter <italic>v</italic>:
+<disp-formula id="equ64">
+<label>(A12)</label>
+<tex-math id="TM0067" notation="LaTeX"><![CDATA[$$\begin{eqnarray}
+C_{\sharp }= v \partial _{\sharp } \lambda _1.
+\end{eqnarray}$$]]></tex-math>
+</disp-formula>The configurations <italic>v</italic> &#x003D; 0, 1 are connected by a gauge transformation, and thus they must be identical up to <inline-formula><tex-math id="TM0068" notation="LaTeX"><![CDATA[$2\pi i \mathbb {Z}$]]></tex-math></inline-formula>. By the same argument as the first configuration, we find that <italic>k</italic> must be an integer.</p>
+</app>
+</app-group>
+<fn-group>
+<title>Footnotes</title>
+<fn id="fn1"><label>1</label><p>It may become clearer why we call the <italic>C</italic> field a &#x201C;tensor&#x201D; gauge field if we use the label 123 instead of &#x266F;. However, we do not use this notation to avoid confusion when many such labels are used at the same place.</p></fn>
+</fn-group>
+<ref-list id="ref1">
+<title>References</title>
+<ref id="bib1"><label>[1]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>C. D.</given-names> <surname>Batista</surname></string-name>, <string-name name-style="western"><given-names>Z.</given-names> <surname>Nussinov</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>72</volume>, <fpage>045137</fpage> (<year>2005</year>) [<pub-id pub-id-type="arxiv">arXiv:cond-mat/0410599</pub-id>,<comment>] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%20cond-mat/0410599">Search inSPIRE</ext-link>].<pub-id pub-id-type="doi">10.1103/PhysRevB.72.045137</pub-id></mixed-citation></ref>
+<ref id="bib2"><label>[2]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>Z.</given-names> <surname>Nussinov</surname></string-name>, <string-name name-style="western"><given-names>G.</given-names> <surname>Ortiz</surname></string-name></person-group>, <source>Proc. Natl. Acad. Sci.</source> <volume>106</volume>, <fpage>16944</fpage> (<year>2009</year>) [<pub-id pub-id-type="arxiv">arXiv:cond-mat/0605316</pub-id> <comment>] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%20cond-mat/0605316">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib3"><label>[3]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>Z.</given-names> <surname>Nussinov</surname></string-name>, <string-name name-style="western"><given-names>G.</given-names> <surname>Ortiz</surname></string-name></person-group>, <source>Ann. Phys.</source> <volume>324</volume>, <fpage>977</fpage> (<year>2009</year>) [<pub-id pub-id-type="arxiv">arXiv:cond-mat/0702377</pub-id> <comment>] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%20cond-mat/0702377">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib4"><label>[4]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>C.</given-names> <surname>Chamon</surname></string-name></person-group>, <source>Phys. Rev. Lett.</source> <volume>94</volume>, <fpage>040402</fpage> (<year>2005</year>) [<pub-id pub-id-type="arxiv">arXiv:cond-mat/0404182</pub-id> <comment>] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%20cond-mat/0404182">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib5"><label>[5]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>J.</given-names> <surname>Haah</surname></string-name></person-group>, <source>Phys. Rev. A</source>. <volume>83</volume>, <fpage>042330</fpage> (<year>2011</year>) [<pub-id pub-id-type="arxiv">arXiv:1101.1962</pub-id> <comment>[quant-ph]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201101.1962">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib6"><label>[6]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>R. M.</given-names> <surname>Nandkishore</surname></string-name>, <string-name name-style="western"><given-names>M.</given-names> <surname>Hermele</surname></string-name></person-group>, <source>Ann. Rev. Condens. Matter Phys.</source> <volume>10</volume>, <fpage>295</fpage> (<year>2019</year>) [<pub-id pub-id-type="arxiv">arXiv:1803.11196</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201803.11196">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib7"><label>[7]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>M.</given-names> <surname>Pretko</surname></string-name>, <string-name name-style="western"><given-names>X.</given-names> <surname>Chen</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>You</surname></string-name></person-group>, <source>Int. J. Mod. Phys. A</source>. <volume>35</volume>, <fpage>2030003</fpage> (<year>2020</year>) [<pub-id pub-id-type="arxiv">arXiv:2001.01722</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202001.01722">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib8"><label>[8]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Vijay</surname></string-name>, <string-name name-style="western"><given-names>J.</given-names> <surname>Haah</surname></string-name>, <string-name name-style="western"><given-names>L.</given-names> <surname>Fu</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>92</volume>, <fpage>235136</fpage> (<year>2015</year>) [<pub-id pub-id-type="arxiv">arXiv:1505.02576</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201505.02576">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib9"><label>[9]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Vijay</surname></string-name>, <string-name name-style="western"><given-names>J.</given-names> <surname>Haah</surname></string-name>, <string-name name-style="western"><given-names>L.</given-names> <surname>Fu</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>94</volume>, <fpage>235157</fpage> (<year>2016</year>) [<pub-id pub-id-type="arxiv">arXiv:1603.04442</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201603.04442">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib10"><label>[10]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>K.</given-names> <surname>Slagle</surname></string-name></person-group>, <source>Phys. Rev. Lett.</source> <volume>126</volume>, <fpage>101603</fpage> (<year>2021</year>) [<pub-id pub-id-type="arxiv">arXiv:2008.03852</pub-id> <comment>[hep-th]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202008.03852">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib11"><label>[11]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>P.-S.</given-names> <surname>Hsin</surname></string-name>, <string-name name-style="western"><given-names>K.</given-names> <surname>Slagle</surname></string-name></person-group>, <source>SciPost Phys.</source> <volume>11</volume>, <fpage>032</fpage> (<year>2021</year>) [<pub-id pub-id-type="arxiv">arXiv:2105.09363</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202105.09363">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib12"><label>[12]</label><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name name-style="western"><given-names>X.</given-names> <surname>Ma</surname></string-name>, <string-name name-style="western"><given-names>W.</given-names> <surname>Shirley</surname></string-name>, <string-name name-style="western"><given-names>M.</given-names> <surname>Cheng</surname></string-name>, <string-name name-style="western"><given-names>M.</given-names> <surname>Levin</surname></string-name>, <string-name name-style="western"><given-names>J.</given-names> <surname>McGreevy</surname></string-name>, <string-name name-style="western"><given-names>X.</given-names> <surname>Chen</surname></string-name></person-group>, <pub-id pub-id-type="arxiv">arXiv:2010.08917</pub-id> <comment>[cond-mat.str-el] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202010.08917">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib13"><label>[13]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>M.</given-names> <surname>Pretko</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>95</volume>, <fpage>115139</fpage> (<year>2017</year>) [<pub-id pub-id-type="arxiv">arXiv:1604.05329</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201604.05329">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib14"><label>[14]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>M.</given-names> <surname>Pretko</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>96</volume>, <fpage>035119</fpage> (<year>2017</year>) [<pub-id pub-id-type="arxiv">arXiv:1606.08857</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201606.08857">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib15"><label>[15]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>H.</given-names> <surname>Ma</surname></string-name>, <string-name name-style="western"><given-names>M.</given-names> <surname>Hermele</surname></string-name>, <string-name name-style="western"><given-names>X.</given-names> <surname>Chen</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>98</volume>, <fpage>035111</fpage> (<year>2018</year>) [<pub-id pub-id-type="arxiv">arXiv:1802.10108</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201802.10108">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib16"><label>[16]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>D.</given-names> <surname>Bulmash</surname></string-name>, <string-name name-style="western"><given-names>M.</given-names> <surname>Barkeshli</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>97</volume>, <fpage>235112</fpage> (<year>2018</year>) [<pub-id pub-id-type="arxiv">arXiv:1802.10099</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201802.10099">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib17"><label>[17]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Seiberg</surname></string-name></person-group>, <source>SciPost Phys.</source> <volume>8</volume>, <fpage>050</fpage> (<year>2020</year>) [<pub-id pub-id-type="arxiv">arXiv:1909.10544</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201909.10544">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib18"><label>[18]</label><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Seiberg</surname></string-name>, <string-name name-style="western"><given-names>S.-H.</given-names> <surname>Shao</surname></string-name></person-group>, <source>SciPost Phys.</source> <volume>10</volume>,<fpage>027</fpage> (<year>2021</year>)<pub-id pub-id-type="arxiv">arXiv:2003.10466</pub-id> <comment>[cond-mat.str-el] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202003.10466">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib19"><label>[19]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Seiberg</surname></string-name>, <string-name name-style="western"><given-names>S.-H.</given-names> <surname>Shao</surname></string-name></person-group>, <source>SciPost Phys.</source> <volume>9</volume>, <fpage>046</fpage> (<year>2020</year>) [<pub-id pub-id-type="arxiv">arXiv:2004.00015</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202004.00015">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib20"><label>[20]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>N.</given-names> <surname>Seiberg</surname></string-name>, <string-name name-style="western"><given-names>S.-H.</given-names> <surname>Shao</surname></string-name></person-group>, <source>SciPost Phys.</source> <volume>10</volume>, <fpage>003</fpage> (<year>2021</year>) [<pub-id pub-id-type="arxiv">arXiv:2004.06115</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202004.06115">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib21"><label>[21]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>P.</given-names> <surname>Gorantla</surname></string-name>, <string-name name-style="western"><given-names>H. T.</given-names> <surname>Lam</surname></string-name>, <string-name name-style="western"><given-names>N.</given-names> <surname>Seiberg</surname></string-name>, <string-name name-style="western"><given-names>S.-H.</given-names> <surname>Shao</surname></string-name></person-group>, <source>SciPost Phys.</source> <volume>9</volume>, <fpage>073</fpage> (<year>2020</year>) [<pub-id pub-id-type="arxiv">arXiv:2007.04904</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202007.04904">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib22"><label>[22]</label><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Yamaguchi</surname></string-name></person-group>, <source>PTEP</source>. <volume>6</volume>:<year>2021</year>; <pub-id pub-id-type="arxiv">arXiv:2102.04768</pub-id> <comment>[hep-th] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202102.04768">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib23"><label>[23]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S. S.</given-names> <surname>Razamat</surname></string-name></person-group>, <source>Phys. Rev. Lett.</source> <volume>127</volume>, <fpage>141603</fpage> (<year>2021</year>) [<pub-id pub-id-type="arxiv">arXiv:2107.06465</pub-id> <comment>[hep-th]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202107.06465">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib24"><label>[24]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>H.</given-names> <surname>Geng</surname></string-name>, <string-name name-style="western"><given-names>S.</given-names> <surname>Kachru</surname></string-name>, <string-name name-style="western"><given-names>A.</given-names> <surname>Karch</surname></string-name>, <string-name name-style="western"><given-names>R.</given-names> <surname>Nally</surname></string-name>, <string-name name-style="western"><given-names>B. C.</given-names> <surname>Rayhaun</surname></string-name></person-group>, <source>Fortschr. Phys.</source> <volume>69</volume>, <fpage>2100133</fpage> (<year>2021</year>) [<pub-id pub-id-type="arxiv">arXiv:2108.08322</pub-id> <comment>[hep-th]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202108.08322">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib25"><label>[25]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>C. G.</given-names> <surname>Callan&#x00A0;Jr</surname></string-name>, <string-name name-style="western"><given-names>J. A.</given-names> <surname>Harvey</surname></string-name></person-group>, <source>Nucl. Phys. B</source>. <volume>250</volume>, <fpage>427</fpage> (<year>1985</year>).</mixed-citation></ref>
+<ref id="bib26"><label>[26]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Deser</surname></string-name>, <string-name name-style="western"><given-names>R.</given-names> <surname>Jackiw</surname></string-name>, <string-name name-style="western"><given-names>S.</given-names> <surname>Templeton</surname></string-name></person-group>, <source>Ann. Phys.</source> <volume>140</volume>, <fpage>372</fpage> (<year>1982(</year>); <comment><bold>185</bold>, 406 (1988) [erratum].</comment></mixed-citation></ref>
+<ref id="bib27"><label>[27]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Deser</surname></string-name>, <string-name name-style="western"><given-names>R.</given-names> <surname>Jackiw</surname></string-name>, <string-name name-style="western"><given-names>S.</given-names> <surname>Templeton</surname></string-name></person-group>, <source>Phys. Rev. Lett.</source> <volume>48</volume>, <fpage>975</fpage> (<year>1982</year>).</mixed-citation></ref>
+<ref id="bib28"><label>[28]</label><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name name-style="western"><given-names>C.-T.</given-names> <surname>Hsieh</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>Tachikawa</surname></string-name>, <string-name name-style="western"><given-names>K.</given-names> <surname>Yonekura</surname></string-name></person-group>, <pub-id pub-id-type="arxiv">arXiv:2003.11550</pub-id> <comment>[hep-th] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202003.11550">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib29"><label>[29]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>D. S.</given-names> <surname>Freed</surname></string-name></person-group>, <source>Proc. Symp. Pure Math.</source> <volume>88</volume>, <fpage>25</fpage> (<year>2014</year>) [<pub-id pub-id-type="arxiv">arXiv:1404.7224</pub-id> <comment>[hep-th]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201404.7224">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib30"><label>[30]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>S.</given-names> <surname>Monnier</surname></string-name></person-group>, <source>Fortschr. Phys.</source> <volume>67</volume>, <fpage>1910012</fpage> (<year>2019</year>) [<pub-id pub-id-type="arxiv">arXiv:1903.02828</pub-id> <comment>[hep-th]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201903.02828">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib31"><label>[31]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>Y.</given-names> <surname>You</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Devakul</surname></string-name>, <string-name name-style="western"><given-names>F. J.</given-names> <surname>Burnell</surname></string-name>, <string-name name-style="western"><given-names>S. L.</given-names> <surname>Sondhi</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>98</volume>, <fpage>035112</fpage> (<year>2018</year>) [<pub-id pub-id-type="arxiv">arXiv:1803.02369</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201803.02369">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib32"><label>[32]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>T.</given-names> <surname>Devakul</surname></string-name>, <string-name name-style="western"><given-names>D. J.</given-names> <surname>Williamson</surname></string-name>, <string-name name-style="western"><given-names>Y.</given-names> <surname>You</surname></string-name></person-group>, <source>Phys. Rev. B</source>. <volume>98</volume>, <fpage>235121</fpage> (<year>2018</year>) [<pub-id pub-id-type="arxiv">arXiv:1808.05300</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201808.05300">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib33"><label>[33]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>T.</given-names> <surname>Devakul</surname></string-name>, <string-name name-style="western"><given-names>W.</given-names> <surname>Shirley</surname></string-name>, <string-name name-style="western"><given-names>J.</given-names> <surname>Wang</surname></string-name></person-group>, <source>Phys. Rev. Res.</source> <volume>2</volume>, <fpage>012059</fpage> (<year>2020</year>) [<pub-id pub-id-type="arxiv">arXiv:1910.01630</pub-id> <comment>[cond-mat.str-el]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201910.01630">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib34"><label>[34]</label><mixed-citation publication-type="other"><person-group person-group-type="author"><string-name name-style="western"><given-names>F. J.</given-names> <surname>Burnell</surname></string-name>, <string-name name-style="western"><given-names>T.</given-names> <surname>Devakul</surname></string-name>, <string-name name-style="western"><given-names>P.</given-names> <surname>Gorantla</surname></string-name>, <string-name name-style="western"><given-names>H. T.</given-names> <surname>Lam</surname></string-name>, <string-name name-style="western"><given-names>S.-H.</given-names> <surname>Shao</surname></string-name></person-group>, <pub-id pub-id-type="arxiv">arXiv:2110.09529</pub-id> <comment>[cond-mat.str-el] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%202110.09529">Search inSPIRE</ext-link>].</mixed-citation></ref>
+<ref id="bib35"><label>[35]</label><mixed-citation publication-type="journal"><person-group person-group-type="author"><string-name name-style="western"><given-names>E.</given-names> <surname>Witten</surname></string-name></person-group>, <source>Riv. Nuovo Cimento</source>. <volume>39</volume>, <fpage>313</fpage> (<year>2016</year>) [<pub-id pub-id-type="arxiv">arXiv:1510.07698</pub-id> <comment>[cond-mat.mes-hall]] [</comment><ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://inspirehep.net/literature?q=find%20EPRINT%201510.07698">Search inSPIRE</ext-link>].</mixed-citation></ref>
+</ref-list>
+</back>
+</article>

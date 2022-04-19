@@ -24,7 +24,8 @@ tests_require = [
     'pytest-pep8==1.0.6',
     'responses==0.5.1',
     'pydocstyle==1.0.0',
-    'freezegun==0.3.11'
+    'freezegun==0.3.11',
+    'pytest-datadir==1.3.1'
 ]
 
 extras_require = {
