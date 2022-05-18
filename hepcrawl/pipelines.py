@@ -18,6 +18,8 @@ import datetime
 import json
 import requests
 
+import structlog
+
 from .utils import get_temporary_file
 
 
@@ -89,10 +91,25 @@ class InspireAPIPushPipeline(object):
 
     def __init__(self):
         self.count = 0
+        self.dois = []
+
+    def open_spider(self, spider):
+        self.logger = structlog.getLogger(name=spider.name)
 
     def process_item(self, item, spider):
         """Convert internal format to INSPIRE data model."""
         self.count += 1
+
+        if 'dois' in item:
+            value = [doi['value'] for doi in item['dois']]
+            if len(value) > 0:
+                self.logger.info('Processing article.', doi=value[0])
+                self.dois.append(value)
+            else:
+                self.logger.error('Empty DOIs for this article.')
+        else:
+            self.logger.error('Cannot find DOIs for the parsed articles.')
+
         if 'related_article_doi' in item:
             item['dois'] += item.pop('related_article_doi', [])
 
@@ -222,7 +239,9 @@ class InspireAPIPushPipeline(object):
             requests.post(api_url, json={
                 "kwargs": self._prepare_payload(spider)
             })
-
+            self.logger.info('Spider successfully send payload.', dois=self.dois, count=self.count)
+        else:
+            self.logger.error('Spider cannot send payload.', dois=self.dois, count=self.count)
         self._cleanup(spider)
 
 

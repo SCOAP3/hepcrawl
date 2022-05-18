@@ -61,7 +61,7 @@ class S3SpringerSpider(XMLFeedSpider):
 
     ERROR_CODES = range(400, 432)
 
-    def __init__(self, package_path=None, ftp_folder="/data/in", ftp_host=None, ftp_netrc=None, *args, **kwargs):
+    def __init__(self, package_path=None, ftp_folder="/data/in", ftp_host=None, ftp_netrc=None, force=False, *args, **kwargs):
         """Construct Elsevier spider."""
         super(S3SpringerSpider, self).__init__(*args, **kwargs)
         self.ftp_folder = ftp_folder
@@ -70,6 +70,7 @@ class S3SpringerSpider(XMLFeedSpider):
         self.target_folder = SPRINGER_DOWNLOAD_DIR
         self.package_path = package_path
         self.journals = ['JHEP', 'EPJC']
+        self.force = force
 
         # Creating target folders
         paths_of_folders = [
@@ -119,7 +120,7 @@ class S3SpringerSpider(XMLFeedSpider):
                             self.ftp_folder, journal, file)
                         local_path = os.path.join(
                             SPRINGER_WORKING_DIR, self.target_folder, journal, file)
-                        if os.path.exists(local_path):
+                        if os.path.exists(local_path) and not self.force:
                             self.log("Skipping '%s' as it is already present locally at %s." % (
                                 remote_path, local_path))
                             continue

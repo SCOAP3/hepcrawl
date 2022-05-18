@@ -128,7 +128,7 @@ class S3ElsevierSpider(Spider):
     ERROR_CODES = range(400, 432)
 
     def __init__(self, package_path=None, ftp_host='sftp', ftp_user='foo', ftp_password='pass',
-                 ftp_dir='upload', ftp_port=22, *args, **kwargs):
+                 ftp_dir='upload', ftp_port=22, force=False, *args, **kwargs):
         """Construct Elsevier spider."""
         super(S3ElsevierSpider, self).__init__(*args, **kwargs)
         self.package_path = package_path
@@ -137,6 +137,7 @@ class S3ElsevierSpider(Spider):
         self.ftp_password = ftp_password
         self.ftp_dir = ftp_dir
         self.ftp_port = ftp_port
+        self.force = force
 
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
@@ -201,7 +202,7 @@ class S3ElsevierSpider(Spider):
                 # Here path is just the filename, doesn't contain any additional path parts.
                 local_file = os.path.join(ELSEVIER_DOWNLOAD_DIR, remote_path)
 
-                if os.path.exists(local_file):
+                if os.path.exists(local_file) and not self.force:
                     self.log("Skipping '%s' as it is already present locally at %s." % (remote_path, local_file))
                     continue
 
@@ -272,7 +273,7 @@ class S3ElsevierSpider(Spider):
             self.log('Parsing journal issue xml: %s' % issue_file, logging.INFO)
 
             articles = {}
-            with open(issue_file, 'r') as issue_file:
+            with open(issue_file, 'r') as [issue_file:
                 iss = Selector(text=issue_file.read())
                 iss.remove_namespaces()
                 for article in iss.xpath('//include-item'):
@@ -305,7 +306,7 @@ class S3ElsevierSpider(Spider):
             if x_article.xpath(date_xpath):
                 publication_date = x_article.xpath(date_xpath)[0].extract()[:18]  # fixme magic number?
             else:
-                publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+                publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")dataset.xml
 
             journal = x_article.xpath('./journal-item-unique-ids/jid-aid/jid/text()')[0].extract()
             journal = self.journal_mapping.get(journal, journal)

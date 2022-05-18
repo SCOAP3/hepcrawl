@@ -114,7 +114,7 @@ class IOPSpider(Spider):
     ERROR_CODES = range(400, 432)
 
     def __init__(self, package_path=None, ftp_host=None, ftp_user=None,
-                 ftp_dir='/', ftp_port=22, *args, **kwargs):
+                 ftp_dir='/', ftp_port=22, force=False, *args, **kwargs):
         """Construct Elsevier spider."""
         super(IOPSpider, self).__init__(*args, **kwargs)
         self.package_path = package_path
@@ -122,6 +122,7 @@ class IOPSpider(Spider):
         self.ftp_user = ftp_user
         self.ftp_dir = ftp_dir
         self.ftp_port = ftp_port
+        self.force = force
 
     def start_requests(self):
         """List selected folder on locally mounted remote SFTP and yield new tar files."""
@@ -188,7 +189,7 @@ class IOPSpider(Spider):
                 # Here path is just the filename, doesn't contain any additional path parts.
                 local_file = os.path.join(IOP_DOWNLOAD_DIR, remote_path)
 
-                if os.path.exists(local_file):
+                if os.path.exists(local_file) and not self.force:
                     self.log("Skipping '%s' as it is already present locally at %s." % (
                         remote_path, local_file))
                     continue
