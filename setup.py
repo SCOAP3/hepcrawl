@@ -64,7 +64,6 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    autosemver=True,
     setup_requires=setup_requires,
     install_requires=install_requires,
     tests_require=tests_require,
