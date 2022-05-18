@@ -306,7 +306,7 @@ class S3ElsevierSpider(Spider):
             if x_article.xpath(date_xpath):
                 publication_date = x_article.xpath(date_xpath)[0].extract()[:18]  # fixme magic number?
             else:
-                publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")dataset.xml
+                publication_date = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
             journal = x_article.xpath('./journal-item-unique-ids/jid-aid/jid/text()')[0].extract()
             journal = self.journal_mapping.get(journal, journal)
