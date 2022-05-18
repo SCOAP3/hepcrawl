@@ -188,17 +188,26 @@ class InspireAPIPushPipeline(object):
             results_uri=os.environ['SCRAPY_FEED_URI'],
             log_file=os.environ['SCRAPY_LOG_FILE'],
         )
-        payload['errors'] = [
-            (str(err['exception']), str(err['sender']))
-            for err in spider.state.get('errors', [])
-        ]
+        try:
+            payload['errors'] = [
+                (str(err['exception']), str(err['sender']))
+                for err in spider.state.get('errors', [])
+            ]
+        except Exception as e:
+            spider.logger.error("Cannot add errors.")
+            payload['errors'] = [
+                (str(e), 'pipeline')
+            ]
         return payload
 
     def _cleanup(self, spider):
         """Run cleanup."""
         # Cleanup errors
-        if 'errors' in spider.state:
-            del spider.state['errors']
+        try:
+            if 'errors' in spider.state:
+                del spider.state['errors']
+        except Exception:
+            spider.logger.error("Cannot cleanup errors.")
 
     def close_spider(self, spider):
         """Post results to HTTP API."""
