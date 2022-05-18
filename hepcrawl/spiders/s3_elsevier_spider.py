@@ -273,7 +273,7 @@ class S3ElsevierSpider(Spider):
             self.log('Parsing journal issue xml: %s' % issue_file, logging.INFO)
 
             articles = {}
-            with open(issue_file, 'r') as [issue_file:
+            with open(issue_file, 'r') as issue_file:
                 iss = Selector(text=issue_file.read())
                 iss.remove_namespaces()
                 for article in iss.xpath('//include-item'):
