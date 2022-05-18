@@ -101,8 +101,9 @@ class InspireAPIPushPipeline(object):
         if 'dois' in item:
             value = [doi['value'] for doi in item['dois']]
             if len(value) > 0:
-                self.logger.info('Processing article.', name=spider.name, doi=str(value[0]))
-                self.dois.append(value)
+                doi = str(value[0])
+                self.logger.info('Processing article.', name=spider.name, doi=str(doi))
+                self.dois.append(doi)
             else:
                 self.logger.error('Empty DOIs for this article.', name=spider.name)
         else:
