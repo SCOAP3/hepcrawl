@@ -25,12 +25,13 @@ import structlog
 from .utils import get_temporary_file
 
 
-LOG_STASH_HOST = os.environ('LOG_STASH_HOST', default='localhost')
-LOG_STASH_PORT = os.environ('LOG_STASH_PORT', default='5959')
-LOG_STASH_VERSION = os.environ('LOG_STASH_VERSION', default=1)
+LOG_STASH_HOST = os.environ.get('LOG_STASH_HOST', 'localhost')
+LOG_STASH_PORT = os.environ.get('LOG_STASH_PORT', '5959')
+LOG_STASH_VERSION = os.environ.get('LOG_STASH_VERSION', 1)
 LOGGER = logging.getLogger('python-logstash-logger')
 LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(logstash.LogstashHandler(LOG_STASH_HOST, LOG_STASH_PORT, version=LOG_STASH_VERSION))
+
 
 def has_publication_info(item):
     """If any publication info."""
