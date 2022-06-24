@@ -290,7 +290,7 @@ class InspireCeleryPushPipeline(InspireAPIPushPipeline):
             self.logger.info('Spider successfully send payload.', name=spider.name, dois=self.dois, count=self.count)
         else:
             LOGGER.info('The spider successfully send payload.', extra=dict(
-               name=spider.name, dois=self.dois, count=self.count
+                name=spider.name, dois=self.dois, count=self.count
             ))
             self.logger.error('Spider cannot send payload.', name=spider.name, dois=self.dois, count=self.count)
         self._cleanup(spider)
