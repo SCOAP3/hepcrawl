@@ -34,6 +34,7 @@ LOGGER.addHandler(
     logstash.TCPLogstashHandler(LOGSTASH_HOST, LOGSTASH_PORT, version=1)
 )
 
+
 def has_publication_info(item):
     """If any publication info."""
     return item.get('pubinfo_freetext') or item.get('journal_volume') or \
