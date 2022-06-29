@@ -25,13 +25,14 @@ import structlog
 from .utils import get_temporary_file
 
 
-LOG_STASH_HOST = os.environ.get('LOG_STASH_HOST', 'localhost')
-LOG_STASH_PORT = os.environ.get('LOG_STASH_PORT', '5959')
-LOG_STASH_VERSION = os.environ.get('LOG_STASH_VERSION', 1)
-LOGGER = logging.getLogger('python-logstash-logger')
+LOGSTASH_HOST = os.environ.get("LOGSTASH_HOST", "localhost")
+LOGSTASH_PORT = os.environ.get("LOGSTASH_PORT", 6060)
+LOGSTASH_VERSION = os.environ.get("LOGSTASH_VERSION", 1)
+LOGGER = logging.getLogger("python-logstash-logger")
 LOGGER.setLevel(logging.INFO)
-LOGGER.addHandler(logstash.LogstashHandler(LOG_STASH_HOST, LOG_STASH_PORT, version=LOG_STASH_VERSION))
-
+LOGGER.addHandler(
+    logstash.TCPLogstashHandler(LOGSTASH_HOST, LOGSTASH_PORT, version=1)
+)
 
 def has_publication_info(item):
     """If any publication info."""
@@ -285,12 +286,12 @@ class InspireCeleryPushPipeline(InspireAPIPushPipeline):
                 kwargs=self._prepare_payload(spider),
             )
             LOGGER.info('The spider successfully send payload.', extra=dict(
-                name=spider.name, dois=self.dois, count=self.count
+                spider=spider.name, dois=self.dois, count=self.count
             ))
             self.logger.info('Spider successfully send payload.', name=spider.name, dois=self.dois, count=self.count)
         else:
-            LOGGER.info('The spider successfully send payload.', extra=dict(
-                name=spider.name, dois=self.dois, count=self.count
+            LOGGER.error('The cannot send payload.', extra=dict(
+                spider=spider.name, dois=self.dois, count=self.count
             ))
             self.logger.error('Spider cannot send payload.', name=spider.name, dois=self.dois, count=self.count)
         self._cleanup(spider)
