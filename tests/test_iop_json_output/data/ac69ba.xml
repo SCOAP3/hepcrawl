@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.1" xml:lang="en"><front><journal-meta><journal-id journal-id-type="publisher-id">cpc</journal-id><journal-title-group><journal-title xml:lang="en">Chinese Physics C</journal-title></journal-title-group><issn pub-type="ppub">1674-1137</issn><publisher><publisher-name>Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="publisher-id">cpc_46_8_085104</article-id><article-id pub-id-type="doi">10.1088/1674-1137/ac69ba</article-id><article-id pub-id-type="manuscript">ac69ba</article-id><article-categories><subj-group subj-group-type="display-article-type"><subject>Paper</subject></subj-group><subj-group subj-group-type="section"><subject>Particle and nuclear astrophysics and cosmology</subject></subj-group></article-categories><title-group><article-title>Note on surface growth approach for bulk reconstruction <xref ref-type="fn" rid="cpc_46_8_085104_fn1">*</xref>  
+					          <fn id="cpc_46_8_085104_fn1"><label>*</label><p>J.R.S. was supported by the National Natural Science Foundation of China (11675272). This work was also supported by the National Natural Science Foundation of China (12105113) and China Postdoctoral Science Foundation (2019M653137)</p></fn> 
+				        </article-title></title-group><contrib-group><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Yu</surname><given-names>Chao</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>余</surname><given-names>超</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><email>yuch8@mail2.sysu.edu.cn</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Chen</surname><given-names>Fang-Zhong</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>陈</surname><given-names>方中</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><email>chenfzh7@mail2.sysu.edu.cn</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Lin</surname><given-names>Yi-Yu</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>林</surname><given-names>乙裕</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><email>linyy27@mail2.sysu.edu.cn</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Sun</surname><given-names>Jia-Rui</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>孙</surname><given-names>佳睿</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><email>sunjiarui@mail.sysu.edu.cn, corresponding author</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Sun</surname><given-names>Yuan</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>孙</surname><given-names>源</given-names></name><xref ref-type="aff" rid="affiliation02">2</xref><email>sunyuan@jlu.edu.cn</email></contrib><aff id="affiliation01">
+               <label>1</label> 
+					  
+					          <institution xlink:type="simple">School of Physics and Astronomy, Sun Yat-Sen University</institution>, Guangzhou 510275, 
+					<country>China</country> 
+				        </aff><aff id="affiliation02">
+               <label>2</label> 
+					  
+					          <institution xlink:type="simple">Center for Theoretical Physics and College of Physics, Jilin University</institution>, Changchun 130012, 
+					<country>China</country> 
+				        </aff></contrib-group><pub-date pub-type="ppub"><day>01</day><month>8</month><year>2022</year></pub-date><pub-date pub-type="open-access"><day>6</day><month>6</month><year>2022</year></pub-date><volume>46</volume><issue>8</issue><elocation-id content-type="artnum">085104</elocation-id><history><date date-type="received"><day>22</day><month>2</month><year>2022</year></date><date date-type="published-online"><day>6</day><month>6</month><year>2022</year></date><date date-type="oa-requested"><day>22</day><month>2</month><year>2022</year></date></history><permissions><copyright-statement>© 2022 Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd</copyright-statement><copyright-year>2022</copyright-year><license license-type="cc-by" xlink:href="http://creativecommons.org/licenses/by/3.0/" xlink:type="simple"><license-p> 
+						            <graphic content-type="online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_ccby.tif" xlink:type="simple"/>Content from this work may be used under the terms of the 
+						<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/3.0" xlink:type="simple">Creative Commons Attribution 3.0 licence</ext-link>. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. Article funded by SCOAP<sup>3</sup> and published under licence by Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd
+					</license-p></license></permissions><self-uri content-type="pdf" xlink:href="cpc_46_8_085104.pdf" xlink:type="simple"/><abstract><title>Abstract</title><p>In this paper, we show using several examples that the bulk geometry of asymptotically AdS
+					<inline-formula>
+						            <tex-math><?CDATA $ _3 $?></tex-math>
+						            <inline-graphic xlink:href="cpc_46_8_085104_M1.jpg" xlink:type="simple"/>
+					          </inline-formula>spacetimes can be effectively reconstructed using an intuitive and visual method called the surface growth scheme. This new approach for bulk reconstruction was originally proposed in a recent paper, along with its explicit realization using the one-shot entanglement distillation tensor network and the surface/state correspondence. In this paper, we directly analyze the growth of the bulk minimal surfaces to implement this scheme. Our study provides further support for the surface growth approach in entanglement wedge reconstruction.
+				</p></abstract><kwd-group kwd-group-type="author"><kwd>AdS/CFT correspondence</kwd><kwd>gauge/gravity duality</kwd><kwd>models of quantum gravity</kwd></kwd-group><funding-group><open-access><p content-type="scoap3">Article funded by SCOAP<sup>3</sup>
+               </p></open-access></funding-group><counts><page-count count="7"/></counts><custom-meta-group><custom-meta xlink:type="simple"><meta-name>arxivppt</meta-name><meta-value>2010.03167v2</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="cpc_46_8_085104_s01"><label>I.</label><title>INTRODUCTION</title><p>The anti-de Sitter/conformal field theory (AdS/CFT) correspondence has established a bridge between the boundary CFT and gravity in the bulk asymptotically AdS spacetime [<xref ref-type="bibr" rid="cpc_46_8_085104_bib1">1</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib3">3</xref>]. The correspondence also indicates an emergent picture of gravity, namely, the geometry and gravitational dynamics of bulk spacetime should in principle be constructed from the information of the boundary CFT, which is called the bulk reconstruction [<xref ref-type="bibr" rid="cpc_46_8_085104_bib4">4</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib10">10</xref>]. In the reconstruction of bulk gravitational theory, the notion of holographic entanglement entropy plays a key role [<xref ref-type="bibr" rid="cpc_46_8_085104_bib11">11</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib13">13</xref>], which states that the entanglement entropy of a boundary subregion <italic toggle="yes">A</italic> is a quarter of the area of a co-dimensional-2 minimal surface 
+				<inline-formula>
+					          <tex-math><?CDATA $ {{\gamma _A}} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M2.jpg" xlink:type="simple"/>
+				        </inline-formula> growing into the bulk from the boundary of <italic toggle="yes">A</italic> (to leading order in the gravitational coupling constant <italic toggle="yes">G</italic>), i.e.,
+			</p><p>
+				        <disp-formula> 
+					          <label>1</label>  
+					          <tex-math id="cpc_46_8_085104_E1"> <?CDATA $ {S_A} = \frac{{\rm Area}(\gamma _A)}{4 G}. $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E1.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>Studies have shown that field theory information contained in the subregion <italic toggle="yes">A</italic> can determine the information in the spatial region bounded by <italic toggle="yes">A</italic> and the bulk extremal surface, which is called the entanglement wedge [<xref ref-type="bibr" rid="cpc_46_8_085104_bib4">4</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib14">14</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib15">15</xref>]. Subsequently, significant progress has been made along this direction, such as the reconstruction of bulk operators from the boundary CFT operators in subregions [<xref ref-type="bibr" rid="cpc_46_8_085104_bib4">4</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib10">10</xref>], generation of the bulk AdS geometry from the entanglement renormalization of the tensor networks [<xref ref-type="bibr" rid="cpc_46_8_085104_bib16">16</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib21">21</xref>], and investigation of the emergence of gravitational dynamics from the geometry generated from the tensor networks [<xref ref-type="bibr" rid="cpc_46_8_085104_bib22">22</xref>]. According to the RT formula (1), a boundary subregion <italic toggle="yes">A</italic> can at least detect the nonlocal information about the global configuration of the extremal surface 
+				<inline-formula>
+					          <tex-math><?CDATA $ {{\gamma _A}} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M3.jpg" xlink:type="simple"/>
+				        </inline-formula> by reading out its classical area. However, how the information in <italic toggle="yes">A</italic> detects (or reconstructs) the information in the region inside the RT surface 
+				<inline-formula>
+					          <tex-math><?CDATA $ {{\gamma _A}} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M4.jpg" xlink:type="simple"/>
+				        </inline-formula> (i.e., the entanglement wedge of <italic toggle="yes">A</italic>) is not apparent and direct.
+			</p><p>In a recent paper, three of the present authors (Lin, Sun, and Sun) proposed a concrete and very natural approach to reconstructing the bulk geometry in the entanglement wedge from a surface growth procedure, similar to the Hygens' principle of wave propagation. The basic concepts of the approach can be briefly described as follows [<xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>]. First, many minimal surfaces are "growing" out from a set of small boundary subregions side by side. Second, these minimal surface are considered to be the new boundaries, and the points on them are further considered to be the anchor points for the new minimal surfaces to grow into the deeper bulk regions. Subsequently, the procedure is repeated layer by layer such that the new minimal surfaces can probe arbitrary regions in the entanglement wedge. Consequently, the information of these bulk regions can be detected and reconstructed from the initial boundary regions in this manner (<xref ref-type="fig" rid="cpc_46_8_085104_f1">Fig. 1</xref>). A closely related case is the horizon entropy of the brane world black hole, in which its horizon extends into the bulk spacetime and it is exactly a minimal surface when the black hole is stationary, and then the black hole Bekenstein-Hawking entropy can be naturally interpreted as the holographic entanglement entropy between regions in and outside the black hole horzion [<xref ref-type="bibr" rid="cpc_46_8_085104_bib24">24</xref>]. The above picture can be explicitly realized by generalizing the one-shot entanglement distillation (OSED) method and the surface/state correspondence [<xref ref-type="bibr" rid="cpc_46_8_085104_bib25">25</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib18">18</xref>], and the well-known MERA-like tensor network in [<xref ref-type="bibr" rid="cpc_46_8_085104_bib19">19</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib21">21</xref>] can be exactly identified with specific surface growth configurations [<xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>], thus providing a concrete and intuitive method for the entanglement wedge reconstruction [<xref ref-type="bibr" rid="cpc_46_8_085104_bib4">4</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib14">14</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib15">15</xref>].
+			</p><fig id="cpc_46_8_085104_f1" orientation="portrait" position="float"><label>Fig. 1</label><caption id="cpc_46_8_085104_fc1"><p>(color online) Illustration of the surface growth scheme with three layers.</p></caption><graphic content-type="print" id="cpc_46_8_085104_f1_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f1.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f1_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f1.jpg" xlink:type="simple"/></fig><p>Since the surface growth picture is a general geometric description that is independent of the tensor network, in this paper, we further analyze the surface growth approach in asymptotically AdS
+				<inline-formula>
+					          <tex-math><?CDATA $ _3 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M5.jpg" xlink:type="simple"/>
+				        </inline-formula> spacetime by directly calculating the minimal surfaces. We study both homogeneous and inhomogeneous subsystem cases and demonstrate that the spatial region inside the entanglement wedge can be efficiently reconstructed, similar to bubble growing, which presents a clear process of boundary to bulk propagation.
+			</p></sec><sec id="cpc_46_8_085104_s02"><label>II.</label><title>TENSOR NETWORK VIEWPOINT OF THE SURFACE GROWTH SCHEME</title><p>In this section, we briefly review our previous study [<xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>], which provided an interesting perspective on the surface growth scheme based on the tensor network (more explicitly, the so-called OSED tensor network).
+			</p><p>The tensor network was originally used as a numerical simulation tool to effectively represent quantum many-body states in condensed matter physics. It is characterized by relating a bulk graph of a geometric structure with an entanglement structure of a quantum system. Later, specific types of tensor network models were tentatively used to describe the mechanism of the holographic duality [<xref ref-type="bibr" rid="cpc_46_8_085104_bib16">16</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib18">18</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib26">26</xref>−<xref ref-type="bibr" rid="cpc_46_8_085104_bib29">29</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>].
+			</p><p>The OSED tensor network is a tensor network model constructed based on the OSED procedure proposed in [<xref ref-type="bibr" rid="cpc_46_8_085104_bib18">18</xref>]. Let us first briefly describe the concept of OSED. Studies have shown that because of the holographic limits, we can always construct the so-called "smoothed states"
+				<inline-formula>
+					          <tex-math><?CDATA $ \left| {{\Psi ^\varepsilon }} \right\rangle $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M6.jpg" xlink:type="simple"/>
+				        </inline-formula> and 
+				<inline-formula>
+					          <tex-math><?CDATA $ \rho _A^\varepsilon $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M7.jpg" xlink:type="simple"/>
+				        </inline-formula> to approximate the given holographic CFT full, pure state 
+				<inline-formula>
+					          <tex-math><?CDATA $ \left| \Psi \right\rangle $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M8.jpg" xlink:type="simple"/>
+				        </inline-formula> and the reduced density matrix 
+				<inline-formula>
+					          <tex-math><?CDATA $ {\rho _A} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M9.jpg" xlink:type="simple"/>
+				        </inline-formula> for a certain subregion <italic toggle="yes">A</italic> of the CFT. Subsequently, by rearranging the eigenvalues of the smoothed state 
+				<inline-formula>
+					          <tex-math><?CDATA $ \rho _A^\varepsilon $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M10.jpg" xlink:type="simple"/>
+				        </inline-formula> in descending order and dividing them into blocks of size 
+				<inline-formula>
+					          <tex-math><?CDATA $ \Delta = {{\rm e}^{{S_A} - O(\sqrt {{S_A}})}} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M11.jpg" xlink:type="simple"/>
+				        </inline-formula>, we can further approximate the boundary state 
+				<inline-formula>
+					          <tex-math><?CDATA $ \left| \Psi \right\rangle $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M12.jpg" xlink:type="simple"/>
+				        </inline-formula> as the following tensor network representation (see more details in [<xref ref-type="bibr" rid="cpc_46_8_085104_bib18">18</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>]):
+			</p><p>
+				        <disp-formula> 
+					          <label>2</label>  
+					          <tex-math id="cpc_46_8_085104_E2"> <?CDATA $ {\Psi ^{A \bar A}} = {W_1}_{\bar{\beta} \bar{\alpha}}^{A}{W_2}_{\beta \alpha }^{\bar A}\phi ^{\alpha \bar \alpha}{\sigma ^{\beta \bar \beta}} = ({W_1} \otimes {W_2})(\left| \phi \right\rangle \otimes \left| \sigma \right\rangle), $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E2.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where a maximally entangled state 
+				<inline-formula>
+					          <tex-math><?CDATA $ \left| \phi \right\rangle \otimes \left| \sigma \right\rangle $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M13.jpg" xlink:type="simple"/>
+				        </inline-formula> has been distilled out, which is defined by
+			</p><p>
+				        <disp-formula> 
+					          <label>3</label>  
+					          <tex-math id="cpc_46_8_085104_E3"> <?CDATA $ \begin{aligned}[b] & \left| \phi \right\rangle = \sum\limits_{m = 0}^{{{\rm e}^{S - O(\sqrt S )}}} {{{\left| {m\bar m} \right\rangle }_{\alpha \bar \alpha }}}, \\ & \left| \sigma \right\rangle = \sum\limits_{n = 0}^{{{\rm e}^{O(\sqrt S )}}} {\sqrt {\tilde p _{n\Delta }^{{\rm avg}}} {{\left| {n\bar n} \right\rangle }_{\beta \bar \beta}}}, \end{aligned} $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E3.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where <italic toggle="yes">S</italic> is the entanglement entropy of <italic toggle="yes">A</italic>, and 
+				<inline-formula>
+					          <tex-math><?CDATA $ {{\tilde p _{n\Delta }}^{\rm avg}} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M14.jpg" xlink:type="simple"/>
+				        </inline-formula> is the average eigenvalue of each block. Clearly, the logarithm of the Hilbert space dimension of 
+				<inline-formula>
+					          <tex-math><?CDATA $ \left| \phi \right\rangle $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M15.jpg" xlink:type="simple"/>
+				        </inline-formula> matches the entanglement entropy of <italic toggle="yes">A</italic>, and 
+				<inline-formula>
+					          <tex-math><?CDATA $ \left| \sigma \right\rangle $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M16.jpg" xlink:type="simple"/>
+				        </inline-formula> acts as the quantum fluctuation. The tensors 
+				<inline-formula>
+					          <tex-math><?CDATA $ {W_1} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M17.jpg" xlink:type="simple"/>
+				        </inline-formula> and 
+				<inline-formula>
+					          <tex-math><?CDATA $ {W_2} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M18.jpg" xlink:type="simple"/>
+				        </inline-formula> are isometries, which map the auxiliary states represented by the bonds of 
+				<inline-formula>
+					          <tex-math><?CDATA $ {\phi ^{\alpha\bar \alpha}}{\sigma ^{\beta \bar \beta}} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M19.jpg" xlink:type="simple"/>
+				        </inline-formula> into the eigenstates of the reduced density matrices for <italic toggle="yes">A</italic> and 
+				<inline-formula>
+					          <tex-math><?CDATA $ \bar A $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M20.jpg" xlink:type="simple"/>
+				        </inline-formula>, respectively. Eq. (2) is the OSED for a holographic state (<xref ref-type="fig" rid="cpc_46_8_085104_f2">Fig. 2</xref>(a)).
+			</p><fig id="cpc_46_8_085104_f2" orientation="portrait" position="float"><label>Fig. 2</label><caption id="cpc_46_8_085104_fc2"><p>(color online) (a) Simplest OSED tensor network for a bipartite holographic state. (b) Another example: a special OSED tensor network with spherical symmetry and fractal characteristics. It can be identified with the well-known MERA-like tensor network.</p></caption><graphic content-type="print" id="cpc_46_8_085104_f2_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f2.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f2_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f2.jpg" xlink:type="simple"/></fig><p>Subsequently, utilizing a series of nonintersecting RT surfaces starting from the boundary to discretize the bulk spacetime into cells according to appropriate order<sup>
+               <xref ref-type="fn" rid="cpc_46_8_085104_pn1">①</xref>
+            </sup>, Ref. [<xref ref-type="bibr" rid="cpc_46_8_085104_bib18">18</xref>] showed that by iterating the OSED procedure on a holographic boundary state, an isometry tensor can be assigned for each cell to implement the map between the states associated with its minimal surface boundaries, and finally, an entire OSED tensor network can be constructed, which can reproduce the correct boundary state with high fidelity and have a bulk geometry that perfectly matches the bulk AdS spacetime. Interestingly, in [<xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>], we constructed a special OSED tensor network with spherical symmetry and fractal feature in this manner (<xref ref-type="fig" rid="cpc_46_8_085104_f2">Fig. 2</xref>(b)), and we demonstrated that it can be identified with the well-known MERA-like tensor network.
+			</p><p>Moreover, in [<xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>], we further investigated the physical meaning of the OSED tensor network. More specifically, a mixed state 
+				<inline-formula>
+					          <tex-math><?CDATA $ \{ (\left| {\bar m} \right\rangle,{p_m} = {1}/{{{{\rm e}^S}}})\} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M21.jpg" xlink:type="simple"/>
+				        </inline-formula> with equal probabilities to each extremal surface in the bulk is assigned, since in the framework of surface/state correspondence the density matrix corresponding to an extremal surface is a direct product of density matrices at each point. Therefore, the isometry tensor in the OSED tensor network plays the role of implementing the entanglement distillation procedure on the state of the union of the minimal surfaces in the previous layer and then maps it into the state on the next minimal surfaces. This understanding results in the generalization of the OSED tensor network into cases involving more general bulk minimal surfaces whose anchor points are located on the previous bulk minimal surface. Therefore, the generalized OSED tensor network provides a natural interpretation for our surface growth scheme, namely, the emergence of bulk spacetime geometry can be interpreted as layers of minimal surfaces continue to grow into the deeper bulk regions from the initial boundary regions.
+			</p></sec><sec id="cpc_46_8_085104_s03"><label>III.</label><title>GROWTH OF MINIMAL SURFACE IN PURE ADS
+				<inline-formula>
+					          <tex-math><?CDATA $ _3 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M22.jpg" xlink:type="simple"/>
+				        </inline-formula>
+			      </title><p>Now, let us discuss the direct growth of bulk minimal surface in pure AdS
+				<inline-formula>
+					          <tex-math><?CDATA $ _3 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M23.jpg" xlink:type="simple"/>
+				        </inline-formula> spacetime in the global coordinate
+			</p><p>
+				        <disp-formula> 
+					          <label>4</label>  
+					          <tex-math id="cpc_46_8_085104_E4"> <?CDATA $ {\rm d}s^2={\rm d}\rho^2+L^2\left(-\cosh^2\frac{\rho}{L}{\rm d}t^2+\sinh^2\frac{\rho}{L}{\rm d}\phi^2\right), $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E4.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where <italic toggle="yes">L</italic> is the curvature radius of the AdS spacetime. The bulk static co-dimensional-2 surface (which is a curve for AdS
+				<inline-formula>
+					          <tex-math><?CDATA $ _3 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M24.jpg" xlink:type="simple"/>
+				        </inline-formula>) can be expressed as 
+				<inline-formula>
+					          <tex-math><?CDATA $ \rho=\rho(\phi) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M25.jpg" xlink:type="simple"/>
+				        </inline-formula>. Subsequently, the length of the curve is
+			</p><p>
+				        <disp-formula> 
+					          <label>5</label>  
+					          <tex-math id="cpc_46_8_085104_E5"> <?CDATA $ \gamma =\int\sqrt{\left(\rho'^2+L^2\sinh^2\frac{\rho}{L}\right)}{\rm d}\phi{}\equiv \int\mathcal{L}{\rm d}\phi, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E5.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where 
+				<inline-formula>
+					          <tex-math><?CDATA $ \rho'={{\rm d}\rho}/{{\rm d}\phi} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M26.jpg" xlink:type="simple"/>
+				        </inline-formula>. The bulk minimal surface satisfies the Euler-Lagrange equation
+			</p><p>
+				        <disp-formula> 
+					          <label>6</label>  
+					          <tex-math id="cpc_46_8_085104_E6"> <?CDATA $ \frac{\partial \mathcal{L}}{\partial\rho}-\frac{\rm d}{{\rm d}\phi}\frac{\partial\mathcal{L}}{\partial\rho'}=0, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E6.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>which gives</p><p>
+				        <disp-formula> 
+					          <label>7</label>  
+					          <tex-math id="cpc_46_8_085104_E7"> <?CDATA $ \tilde{\rho}''\sinh\tilde{\rho}-2\tilde{\rho}'^2\cosh\tilde{\rho} -\sinh^2\tilde{\rho} \cosh\tilde{\rho} =0, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E7.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where 
+				<inline-formula>
+					          <tex-math><?CDATA $ \tilde{\rho}\equiv\rho/L $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M27.jpg" xlink:type="simple"/>
+				        </inline-formula>. Eq. (7) can be solved as
+			</p><p>
+				        <disp-formula> 
+					          <label>8</label>  
+					          <tex-math id="cpc_46_8_085104_E8"> <?CDATA $ \begin{aligned}[b] \phi = & \pm\arctan\left(\frac{\sinh^2\tilde{\rho}}{\sinh\tilde{\rho}_*} +\cosh\tilde{\rho}\sqrt{\frac{\sinh^2\tilde{\rho}}{\sinh^2\tilde{\rho}_*}-1}\right){}\\ & \mp \arctan\left(\sinh\tilde{\rho}_*\right)+\phi_0, \end{aligned}$?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E8.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>in which 
+				<inline-formula>
+					          <tex-math><?CDATA $ \rho_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M28.jpg" xlink:type="simple"/>
+				        </inline-formula> is the turning point of the bulk geodesic and 
+				<inline-formula>
+					          <tex-math><?CDATA $ \phi_0=\phi(\rho_*) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M29.jpg" xlink:type="simple"/>
+				        </inline-formula>. Note that the value of 
+				<inline-formula>
+					          <tex-math><?CDATA $ \rho_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M30.jpg" xlink:type="simple"/>
+				        </inline-formula> will change for different bulk geodesics. Substituting Eq. (8) into Eq. (5), the length of the geodesic becomes
+			</p><p>
+				        <disp-formula> 
+					          <label>9</label>  
+					          <tex-math id="cpc_46_8_085104_E9"> <?CDATA $ \gamma=L\ln\frac{\left(\cosh\tilde{\rho}_1+\sqrt{\sinh^2\tilde{\rho}_1-\sinh^2\tilde{\rho}_*} \right)\left(\cosh\tilde{\rho}_2+\sqrt{\sinh^2\tilde{\rho}_2-\sinh^2\tilde{\rho}_*} \right)}{\cosh^2\tilde{\rho}_*}, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E9.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where we require that 
+				<inline-formula>
+					          <tex-math><?CDATA $ \tilde{\rho}_* \lt \tilde{\rho}_1 \lt \tilde{\rho}_2 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M31.jpg" xlink:type="simple"/>
+				        </inline-formula>.
+			</p><p>Note that for a given angular size 
+				<inline-formula>
+					          <tex-math><?CDATA $ 2(\phi-\phi_0) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M32.jpg" xlink:type="simple"/>
+				        </inline-formula> of the subsystem <italic toggle="yes">A</italic>, Eq. (8) fixes the bulk geodesic grown from <italic toggle="yes">A</italic> by relating the initial radial (cutoff) position 
+				<inline-formula>
+					          <tex-math><?CDATA $ \tilde{\rho}=\tilde{\rho}_c $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M33.jpg" xlink:type="simple"/>
+				        </inline-formula> of <italic toggle="yes">A</italic> to the turning point position 
+				<inline-formula>
+					          <tex-math><?CDATA $ \tilde{\rho}_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M34.jpg" xlink:type="simple"/>
+				        </inline-formula>. We can then draw the bulk growing minimal curves by iterating this process during which different 
+				<inline-formula>
+					          <tex-math><?CDATA $ \tilde{\rho}_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M35.jpg" xlink:type="simple"/>
+				        </inline-formula> positions are obtained from different starting positions 
+				<inline-formula>
+					          <tex-math><?CDATA $ \tilde{\rho}_c $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M36.jpg" xlink:type="simple"/>
+				        </inline-formula> of the previous step. Now, we can draw the surface growth picture as shown in <xref ref-type="fig" rid="cpc_46_8_085104_f3">Fig. 3</xref>. At the conformal boundary, we first select ten subsystems with equal spatial size, each of which expands at an angle 
+				<inline-formula>
+					          <tex-math><?CDATA $ \phi=\pi/25 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M37.jpg" xlink:type="simple"/>
+				        </inline-formula>. After the growth of the first layers of the geodesics, we select the boundaries of the second layers of geodesics to be at the centers of the first ones; then, the bulk space within the entanglement wedge can be filled after finite steps. An interesting point is that, the outer bulk geodesic that corresponds to all ten subregions (i.e., subsystem <italic toggle="yes">A</italic>) also should be treated as the spatial boundary when considering the surface growth. Otherwise, the region growing from the ten subregions will be smaller than the outer entanglement wedge.
+			</p><fig id="cpc_46_8_085104_f3" orientation="portrait" position="float"><label>Fig. 3</label><caption id="cpc_46_8_085104_fc3"><p>(color online) Surface growth for initial ten subsystems with equal spatial size, where each subsystem expands an angle 
+						<inline-formula>
+							              <tex-math><?CDATA $ \phi=\pi/25 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M38.jpg" xlink:type="simple"/>
+						            </inline-formula>, the conformal boundary is selected as 
+						<inline-formula>
+							              <tex-math><?CDATA $ \rho_0=2 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M39.jpg" xlink:type="simple"/>
+						            </inline-formula> and 
+						<inline-formula>
+							              <tex-math><?CDATA $ L=0.5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M40.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the growing steps are 300.
+					</p></caption><graphic content-type="print" id="cpc_46_8_085104_f3_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f3.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f3_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f3.jpg" xlink:type="simple"/></fig><p>We can also consider the surface growth for ten subregions with arbitrary sizes on the boundary (<xref ref-type="fig" rid="cpc_46_8_085104_f4">Fig. 4</xref>). Because the subregions have different sizes, from the second layer on, some minimal surfaces become asymmetric; thus, when considering the new geodesics connecting two adjacent geodesics, we select the one with the maximal value. Similar to the symmetric case in <xref ref-type="fig" rid="cpc_46_8_085104_f3">Fig. 3</xref>, the outer boundary (the minimal surface corresponding all subregions) is necessary for the growing minimal surfaces to fill the entanglement wedge.
+			</p><fig id="cpc_46_8_085104_f4" orientation="portrait" position="float"><label>Fig. 4</label><caption id="cpc_46_8_085104_fc4"><p>(color online) Surface growth for the initial ten subsystems with different spatial sizes, and the conformal boundary is selected as 
+						<inline-formula>
+							              <tex-math><?CDATA $ \rho_0=2 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M41.jpg" xlink:type="simple"/>
+						            </inline-formula> and 
+						<inline-formula>
+							              <tex-math><?CDATA $ L=0.5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M42.jpg" xlink:type="simple"/>
+						            </inline-formula>; the growing steps are 300.
+					</p></caption><graphic content-type="print" id="cpc_46_8_085104_f4_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f4.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f4_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f4.jpg" xlink:type="simple"/></fig><p>Another interesting case is to construct the full AdS space from the surface growth. To achieve this, we can divide the entire boundary into many subregions. Without loss of generality, we select twenty subregions with identical sizes as in <xref ref-type="fig" rid="cpc_46_8_085104_f5">Fig. 5</xref> and select the boundaries of the next layers of minimal surfaces to be the centers of the previous layers. After finite steps of minimal surface growing, the full AdS space is filled or constructed.
+			</p><fig id="cpc_46_8_085104_f5" orientation="portrait" position="float"><label>Fig. 5</label><caption id="cpc_46_8_085104_fc5"><p>(color online) Surface growth from the entire boundary when they are divided into twenty subsystems with equal spatial size, where each subsystem expands at an angle 
+						<inline-formula>
+							              <tex-math><?CDATA $ \phi=\pi/10 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M43.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the conformal boundary is selected as 
+						<inline-formula>
+							              <tex-math><?CDATA $ \rho_0=2 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M44.jpg" xlink:type="simple"/>
+						            </inline-formula> and 
+						<inline-formula>
+							              <tex-math><?CDATA $ L=0.5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M45.jpg" xlink:type="simple"/>
+						            </inline-formula>; the growing steps are also 300.
+					</p></caption><graphic content-type="print" id="cpc_46_8_085104_f5_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f5.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f5_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f5.jpg" xlink:type="simple"/></fig></sec><sec id="cpc_46_8_085104_s04"><label>IV.</label><title>GROWTH OF MINIMAL SURFACE IN NONROTATING BTZ BLACK HOLE</title><p>In this section, we study the bulk reconstruction from surface growth in a nonrotating BTZ black hole. The metric of the nonrotating BTZ black hole is [<xref ref-type="bibr" rid="cpc_46_8_085104_bib30">30</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib31">31</xref>]
+			</p><p>
+				        <disp-formula> 
+					          <label>10</label>  
+					          <tex-math id="cpc_46_8_085104_E10"> <?CDATA $ {\rm d}s^2=-\frac{r^2}{L^2}f(r){\rm d}t^2+\frac{L^2}{r^2 f(r)}{\rm d}r^2+r^2 {\rm d}\phi^2, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E10.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where 
+				<inline-formula>
+					          <tex-math><?CDATA $ f(r)=1-\dfrac{M}{r^2} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M46.jpg" xlink:type="simple"/>
+				        </inline-formula> and its horizon is located at 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_h=\sqrt{M} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M47.jpg" xlink:type="simple"/>
+				        </inline-formula>. The bulk static curve is 
+				<inline-formula>
+					          <tex-math><?CDATA $ r=r(\phi) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M48.jpg" xlink:type="simple"/>
+				        </inline-formula>, which has a length of
+			</p><p>
+				        <disp-formula> 
+					          <label>11</label>  
+					          <tex-math id="cpc_46_8_085104_E11"> <?CDATA $ \gamma=\int {\rm d}\phi\sqrt{g(r)\dot{r}^2+r^2}, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E11.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where 
+				<inline-formula>
+					          <tex-math><?CDATA $ g(r)=\dfrac{L^2}{r^2 f(r)} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M49.jpg" xlink:type="simple"/>
+				        </inline-formula> and 
+				<inline-formula>
+					          <tex-math><?CDATA $ \dot{r}=\dfrac{{\rm d}r}{{\rm d}\phi} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M50.jpg" xlink:type="simple"/>
+				        </inline-formula>. The bulk geodesic is determined using the Euler-Lagrange equation, which yields
+			</p><p>
+				        <disp-formula> 
+					          <label>12</label>  
+					          <tex-math id="cpc_46_8_085104_E12"> <?CDATA $ 2r^2+4gu^2-rg'u^2-2gruu'=0, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E12.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>with 
+				<inline-formula>
+					          <tex-math><?CDATA $ u=u(\phi)\equiv \dot{r} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M51.jpg" xlink:type="simple"/>
+				        </inline-formula> and 
+				<inline-formula>
+					          <tex-math><?CDATA $ g'=\dfrac{{\rm d}g}{{\rm d}r} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M52.jpg" xlink:type="simple"/>
+				        </inline-formula>. Eq. (12) can be solved as
+			</p><p>
+				        <disp-formula> 
+					          <label>13</label>  
+					          <tex-math id="cpc_46_8_085104_E13"> <?CDATA $ u(\phi)\equiv \frac{{\rm d}r}{{\rm d}\phi}=\pm\sqrt{\frac{r^4-r^2r_*^2}{r_*^2g(r)}}, $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E13.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M53.jpg" xlink:type="simple"/>
+				        </inline-formula> indicates the turning point of the bulk geodesic. Subsequently, we can obtain the solution
+			</p><p>
+				        <disp-formula> 
+					          <label>14</label>  
+					          <tex-math id="cpc_46_8_085104_E14"> <?CDATA $ \begin{aligned}[b] \pm(\phi-\phi_0)= & -\frac{L}{r_h}\ln\left(\sqrt{1-\frac{r_h^2}{r^2}}-\sqrt{\frac{r_h^2}{r_*^2}-\frac{r_h^2}{r^2}}\right)\\ & +\frac{L}{r_h}\ln\sqrt{1-\frac{r_h^2}{r_*^2}}, \end{aligned} $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E14.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>where 
+				<inline-formula>
+					          <tex-math><?CDATA $ \phi_0=\phi(r_*) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M54.jpg" xlink:type="simple"/>
+				        </inline-formula> denotes the center of the bulk geodesic. Consequently, the length for the bulk geodesic is
+			</p><p>
+				        <disp-formula> 
+					          <label>15</label>  
+					          <tex-math id="cpc_46_8_085104_E15"> <?CDATA $ \gamma=L\cosh^{-1}\left(\frac{2r_1^2-(r_h^2+r_*^2)}{r_*^2-r_h^2}\right)+L\cosh^{-1}\left(\frac{2r_2^2-(r_h^2+r_*^2)}{r_*^2-r_h^2}\right), $?>
+ </tex-math>
+					          <graphic orientation="portrait" position="float" xlink:href="cpc_46_8_085104_E15.jpg" xlink:type="simple"/>
+				        </disp-formula>
+			      </p><p>in which we require that 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_* \lt r_1 \lt r_2 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M55.jpg" xlink:type="simple"/>
+				        </inline-formula> and 
+				<inline-formula>
+					          <tex-math><?CDATA $ \phi(r_1) \lt \phi_0 \lt \phi(r_2) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M56.jpg" xlink:type="simple"/>
+				        </inline-formula>.
+			</p><p>Note that Eq. (14) determines the configurations of bulk geodesics in the BTZ black hole. Similar to the AdS case, for a given angular size 
+				<inline-formula>
+					          <tex-math><?CDATA $ 2(\phi-\phi_0) $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M57.jpg" xlink:type="simple"/>
+				        </inline-formula> of the subsystem <italic toggle="yes">A</italic> located at the radial cutoff position 
+				<inline-formula>
+					          <tex-math><?CDATA $ r=r_c $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M58.jpg" xlink:type="simple"/>
+				        </inline-formula>, Eq. (14) fixes a corresponding turning point position 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M59.jpg" xlink:type="simple"/>
+				        </inline-formula>. Subsequently, the bulk growing minimal curves can be drawn by iterating this process during which different 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_* $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M60.jpg" xlink:type="simple"/>
+				        </inline-formula> positions are obtained from different starting positions 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_c $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M61.jpg" xlink:type="simple"/>
+				        </inline-formula> of the previous step. Let us consider the surface growth from ten boundary subregions with equal sizes, where each subregion expands at an angle of 
+				<inline-formula>
+					          <tex-math><?CDATA $ \pi/25 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M62.jpg" xlink:type="simple"/>
+				        </inline-formula>, and also select the boundaries of the next layers of minimal surfaces to be the centers of the previous layers. As shown in <xref ref-type="fig" rid="cpc_46_8_085104_f6">Fig. 6</xref>, owing to the existence of black hole horizon, the growing minimal curves (together with the outer bulk minimal curve of the subsystem <italic toggle="yes">A</italic>) can surround the horizon after finite growing steps [<xref ref-type="bibr" rid="cpc_46_8_085104_bib32">32</xref>]<sup>
+               <xref ref-type="fn" rid="cpc_46_8_085104_pn2">②</xref>
+            </sup>.
+			</p><fig id="cpc_46_8_085104_f6" orientation="portrait" position="float"><label>Fig. 6</label><caption id="cpc_46_8_085104_fc6"><p>(color online) Surface growth from ten boundary subregions with equal size, where each subsystem expands at an angle 
+						<inline-formula>
+							              <tex-math><?CDATA $ \phi=\pi/25 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M63.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the conformal boundary is selected as 
+						<inline-formula>
+							              <tex-math><?CDATA $ r_0=5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M64.jpg" xlink:type="simple"/>
+						            </inline-formula>, the AdS curvature radius is 
+						<inline-formula>
+							              <tex-math><?CDATA $ L=1 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M65.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the black hole horizon radius is 
+						<inline-formula>
+							              <tex-math><?CDATA $ r_h=0.5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M66.jpg" xlink:type="simple"/>
+						            </inline-formula>; the growing steps are 360.
+					</p></caption><graphic content-type="print" id="cpc_46_8_085104_f6_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f6.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f6_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f6.jpg" xlink:type="simple"/></fig><p>Note that the asymptotic boundary of the AdS spacetime is located at 
+				<inline-formula>
+					          <tex-math><?CDATA $ r\rightarrow \infty $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M67.jpg" xlink:type="simple"/>
+				        </inline-formula>. However, this will not affect the bulk reconstruction from the surface growth. Because the surface growth process corresponds to the holographic renormalization group flow, or the MERA of the corresponding tensor network [<xref ref-type="bibr" rid="cpc_46_8_085104_bib23">23</xref>], the bulk minimal surfaces can grow from any finite cutoff surfaces 
+				<inline-formula>
+					          <tex-math><?CDATA $ r=r_c $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M68.jpg" xlink:type="simple"/>
+				        </inline-formula>. For example, we can select the cutoff surface to be located at 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_0=r_c=20 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M69.jpg" xlink:type="simple"/>
+				        </inline-formula> and also consider ten homogeneous subregions (<xref ref-type="fig" rid="cpc_46_8_085104_f7">Fig. 7</xref>). By comparing <xref ref-type="fig" rid="cpc_46_8_085104_f7">Fig. 7</xref> with <xref ref-type="fig" rid="cpc_46_8_085104_f6">Fig. 6</xref>, we observe that after very few steps of surface growing, the minimal surfaces in <xref ref-type="fig" rid="cpc_46_8_085104_f7">Fig. 7</xref> will reach the region 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_c=5 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M70.jpg" xlink:type="simple"/>
+				        </inline-formula>.
+			</p><fig id="cpc_46_8_085104_f7" orientation="portrait" position="float"><label>Fig. 7</label><caption id="cpc_46_8_085104_fc7"><p>(color online) Surface growth from ten boundary subregions with equal size, where each subsystem expands at an angle 
+						<inline-formula>
+							              <tex-math><?CDATA $ \phi=\pi/25 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M71.jpg" xlink:type="simple"/>
+						            </inline-formula>, the cutoff surface is selected as 
+						<inline-formula>
+							              <tex-math><?CDATA $ r_0=r_c=20 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M72.jpg" xlink:type="simple"/>
+						            </inline-formula>, the AdS curvature radius is 
+						<inline-formula>
+							              <tex-math><?CDATA $ L=1 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M73.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the black hole horizon radius is 
+						<inline-formula>
+							              <tex-math><?CDATA $ r_h=0.5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M74.jpg" xlink:type="simple"/>
+						            </inline-formula>; the growing steps are also 360.
+					</p></caption><graphic content-type="print" id="cpc_46_8_085104_f7_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f7.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f7_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f7.jpg" xlink:type="simple"/></fig><p>As a final example, we consider the surface growth from ten inhomogeneous subsystems at a cutoff surface 
+				<inline-formula>
+					          <tex-math><?CDATA $ r_c=5 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M75.jpg" xlink:type="simple"/>
+				        </inline-formula> (<xref ref-type="fig" rid="cpc_46_8_085104_f8">Fig. 8</xref>). Again, from the second layer on, the boundary points of some of the geodesics cannot end at the center of the previous layers; instead, we must select the maximal one connecting the adjacent two geodesics in the previous layer. In addition, <xref ref-type="fig" rid="cpc_46_8_085104_f8">Fig. 8</xref> shows that as the geodesics grow deeper into the BTZ black hole, the surface growth configuration becomes more homogeneous.
+			</p><fig id="cpc_46_8_085104_f8" orientation="portrait" position="float"><label>Fig. 8</label><caption id="cpc_46_8_085104_fc8"><p>(color online) Surface growth from ten inhomogeneous boundary subsystems, where all subsystems expand at an angle 
+						<inline-formula>
+							              <tex-math><?CDATA $ \phi=2\pi/5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M76.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the cutoff surface is selected as 
+						<inline-formula>
+							              <tex-math><?CDATA $ r_0=r_c=5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M77.jpg" xlink:type="simple"/>
+						            </inline-formula>. Additionally, the AdS curvature radius is 
+						<inline-formula>
+							              <tex-math><?CDATA $ L=1 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M78.jpg" xlink:type="simple"/>
+						            </inline-formula>, the black hole horizon radius is 
+						<inline-formula>
+							              <tex-math><?CDATA $ r_h=0.5 $?></tex-math>
+							              <inline-graphic xlink:href="cpc_46_8_085104_M79.jpg" xlink:type="simple"/>
+						            </inline-formula>, and the growing steps are 358.
+					</p></caption><graphic content-type="print" id="cpc_46_8_085104_f8_eps" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f8.eps" xlink:type="simple"/><graphic content-type="online" id="cpc_46_8_085104_f8_online" orientation="portrait" position="float" xlink:href="cpc_46_8_085104_f8.jpg" xlink:type="simple"/></fig></sec><sec id="cpc_46_8_085104_s05"><label>V.</label><title>CONCLUSIONS AND DISCUSSIONS</title><p>In this study, we further investigate the surface growth approach for bulk reconstruction by directly analyzing the growth of bulk minimal surfaces (geodesics) in asymptotically AdS
+				<inline-formula>
+					          <tex-math><?CDATA $ _3 $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M80.jpg" xlink:type="simple"/>
+				        </inline-formula> spacetime<sup>
+               <xref ref-type="fn" rid="cpc_46_8_085104_pn3">③</xref>
+            </sup>. We show using various cases that the spatial region in the outer entanglement wedge can be constructed from the growth of the bulk minimal surfaces layer by layer, which provides further support for the surface growth approach and presents a clear picture of the boundary to bulk propagation and subregion to subregion duality in the gauge/gravity duality. In addition, in the surface growth scheme, each previous layer of growing minimal surfaces acts as the new boundary for the next layer. This corresponds to the holographic Wilsonian renormalization group flow, in which the effective field theory can be located at any radial cutoff surface from UV to IR regions [<xref ref-type="bibr" rid="cpc_46_8_085104_bib33">33</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib34">34</xref>]. Moreover, the surface growth process corresponds to the extended OSED tensor network, and it is also shown to be closely related to the entanglement of purification and bit threads description for bulk reconstruction [<xref ref-type="bibr" rid="cpc_46_8_085104_bib35">35</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib36">36</xref>]. The surface growth approach provides a concrete and intuitive realization of the subregion duality and an efficient method for reconstructing bulk geometry and matter fields. Many interesting problems can be explored with the surface growth approach such as studying its relation with the 
+				<inline-formula>
+					          <tex-math><?CDATA $ T\bar{T} $?></tex-math>
+					          <inline-graphic xlink:href="cpc_46_8_085104_M81.jpg" xlink:type="simple"/>
+				        </inline-formula> deformation in the dual CFT [<xref ref-type="bibr" rid="cpc_46_8_085104_bib37">37</xref>, <xref ref-type="bibr" rid="cpc_46_8_085104_bib38">38</xref>] and the perturbative corrections during the surface growth [<xref ref-type="bibr" rid="cpc_46_8_085104_bib39">39</xref>].
+			</p></sec><sec id="cpc_46_8_085104_s06"><title>ACKNOWLEDGEMENT</title><p>
+            <italic toggle="yes">We would like to thank L.-Y. Hung for helpful discussions.</italic>
+			      </p></sec></body><back><fn-group><fn id="cpc_46_8_085104_pn1"><p>The appropriate order here means the order of adding new RT surfaces such that the corresponding tensor network will describe the AdS spacetime.</p></fn><fn id="cpc_46_8_085104_pn2"><p>There also exists a critical condition: 
+					<inline-formula>
+						            <tex-math><?CDATA $ \gamma_A=\gamma_{\bar{A}}+2\pi r_h $?></tex-math>
+						            <inline-graphic xlink:href="cpc_46_8_085104_M82.jpg" xlink:type="simple"/>
+					          </inline-formula>, (where 
+					<inline-formula>
+						            <tex-math><?CDATA $ \bar{A} $?></tex-math>
+						            <inline-graphic xlink:href="cpc_46_8_085104_M83.jpg" xlink:type="simple"/>
+					          </inline-formula> is the complement of <italic toggle="yes">A</italic>), beyond which the growing minimal curves will no longer surround the black hole horizon. In such a case, the bulk geodesic of <italic toggle="yes">A</italic> becomes two disconnected parts, one of which just shrinks onto the horizon. This is called the entanglement plateaux phenomenon. Besides, the same criterion is valid for both homogeneous and inhomogeneous subregions when considering the surface growth, since the criterion is determined only by the length of the outer bulk minimal curve, i.e. 
+					<inline-formula>
+						            <tex-math><?CDATA $ \gamma_A $?></tex-math>
+						            <inline-graphic xlink:href="cpc_46_8_085104_M84.jpg" xlink:type="simple"/>
+					          </inline-formula>.
+				</p></fn><fn id="cpc_46_8_085104_pn3"><p>The surface growth approach should also be valid for higher dimensional AdS spacetimes. For example, when the boundary subsystems are strip-shaped, the surface growth picture can be easily generalized into higher dimensional AdS spacetime. Due to the translational invariant property of the strip-shaped region, the shape of its bulk minimal surface is determined by its cross section, which is similar to the AdS
+					<inline-formula>
+						            <tex-math><?CDATA $ _3 $?></tex-math>
+						            <inline-graphic xlink:href="cpc_46_8_085104_M85.jpg" xlink:type="simple"/>
+					          </inline-formula> case. But for higher dimensional spherical subsystems, the details of the surface growth become more complicated. Besides, the construction of the corresponding higher dimensional tensor network is less obvious than in the AdS
+					<inline-formula>
+						            <tex-math><?CDATA $ _3 $?></tex-math>
+						            <inline-graphic xlink:href="cpc_46_8_085104_M86.jpg" xlink:type="simple"/>
+					          </inline-formula> case. We will further investigate the surface growth scheme in higher dimensional AdS spacetime in future works.
+				</p></fn></fn-group><ref-list><title>References</title><ref id="cpc_46_8_085104_bib1"><label>[1]</label><element-citation publication-type="other" xlink:type="simple"><comment>J. M. Maldacena, Adv. Theor. Math. Phys. <bold>2</bold>, 231 (1998); Int. J. Theor. Phys. <bold>38</bold>, 1113 (1999), arXiv: hep-th/9711200
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib2"><label>[2]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>S. Gubser</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>R. Klebanov</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>M. Polyakov</surname><given-names>A.</given-names></name>
+               </person-group><source>Phys. Lett. B</source><year>1998</year><volume>428</volume><fpage>105</fpage><pub-id pub-id-type="doi">10.1016/S0370-2693(98)00377-3</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/9802109" xlink:type="simple">hep-th/9802109</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib3"><label>[3]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Witten</surname><given-names>E.</given-names></name>
+               </person-group><source>Adv. Theor. Math. Phys.</source><year>1998</year><volume>2</volume><fpage>253</fpage><pub-id pub-id-type="doi">10.4310/ATMP.1998.v2.n2.a2</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/9802150" xlink:type="simple">hep-th/9802150</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib4"><label>[4]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>L. Jafferis</surname><given-names>D.</given-names></name>
+                  <name name-style="western"><surname>Lewkowycz</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>Maldacena</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JHEP</source><year>2016</year><volume>06</volume><fpage>004</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1512.06431" xlink:type="simple">1512.06431</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib5"><label>[5]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Hamilton</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>Kabat</surname><given-names>D.</given-names></name>
+                  <name name-style="western"><surname>Lifschytz</surname><given-names>G.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. D</source><year>2006</year><volume>74</volume><fpage>066009</fpage><pub-id pub-id-type="doi">10.1103/PhysRevD.74.066009</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/0606141" xlink:type="simple">hep-th/0606141</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib6"><label>[6]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Kabat</surname><given-names>D.</given-names></name>
+                  <name name-style="western"><surname>Lifschytz</surname><given-names>G.</given-names></name>
+               </person-group><source>JHEP</source><year>2017</year><volume>06</volume><fpage>120</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1703.06523" xlink:type="simple">1703.06523</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib7"><label>[7]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Faulkner</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Lewkowycz</surname><given-names>A.</given-names></name>
+               </person-group><source>JHEP</source><year>2017</year><volume>07</volume><fpage>151</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1704.05464" xlink:type="simple">1704.05464</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib8"><label>[8]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Bao</surname><given-names>N.</given-names></name>
+                  <name name-style="western"><surname>Cao</surname><given-names>C.</given-names></name>
+                  <name name-style="western"><surname>Fischetti</surname><given-names>S.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Class. Quant. Grav.</source><year>2019</year><volume>36</volume><issue>18</issue><fpage>185002</fpage><pub-id pub-id-type="doi">10.1088/1361-6382/ab377f</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1904.04834" xlink:type="simple">1904.04834</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib9"><label>[9]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>R. Roy</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>Sarkar</surname><given-names>D.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2018</year><volume>98</volume><issue>6</issue><fpage>066017</fpage><pub-id pub-id-type="doi">10.1103/PhysRevD.98.066017</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1801.07280" xlink:type="simple">1801.07280</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib10"><label>[10]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Faulkner</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Li</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Wang</surname><given-names>H.</given-names></name>
+               </person-group><source>JHEP</source><year>2019</year><volume>04</volume><fpage>119</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1806.10560" xlink:type="simple">1806.10560</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib11"><label>[11]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ryu</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>Takayanagi</surname><given-names>T.</given-names></name>
+               </person-group><source>Phys. Rev. Lett.</source><year>2006</year><volume>96</volume><fpage>181602</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.96.181602</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/0603001" xlink:type="simple">hep-th/0603001</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib12"><label>[12]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ryu</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>Takayanagi</surname><given-names>T.</given-names></name>
+               </person-group><source>JHEP</source><year>2006</year><volume>0608</volume><fpage>045</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/0605073" xlink:type="simple">hep-th/0605073</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib13"><label>[13]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>E. Hubeny</surname><given-names>V.</given-names></name>
+                  <name name-style="western"><surname>Rangamani</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Takayanagi</surname><given-names>T.</given-names></name>
+               </person-group><source>JHEP</source><year>2007</year><volume>0707</volume><fpage>062</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/0705.0016" xlink:type="simple">0705.0016</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib14"><label>[14]</label><element-citation publication-type="other" xlink:type="simple"><comment>X. Dong, D. Harlow, and A. C. Wall, <italic toggle="yes">Reconstruction of Bulk Operators within the Entanglement Wedge in Gauge-Gravity Duality</italic>, [hep-th/1601.05416]
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib15"><label>[15]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Cotler</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>Hayden</surname><given-names>P.</given-names></name>
+                  <name name-style="western"><surname>Penington</surname><given-names>G.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev.</source><year>2019</year><volume>X9</volume><issue>3</issue><fpage>031011</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1704.05839" xlink:type="simple">1704.05839</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib16"><label>[16]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Swingle</surname><given-names>B.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2012</year><volume>86</volume><fpage>065007</fpage><pub-id pub-id-type="doi">10.1103/PhysRevD.86.065007</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/0905.1317[cond-mat.str-el]" xlink:type="simple">0905.1317[cond-mat.str-el]</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib17"><label>[17]</label><element-citation publication-type="other" xlink:type="simple"><comment>B. Swingle, <italic toggle="yes">Constructing holographic spacetimes using entanglement renormalization</italic>, arXiv: 1209.3304[hep-th]
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib18"><label>[18]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Bao</surname><given-names>N.</given-names></name>
+                  <name name-style="western"><surname>Penington</surname><given-names>G.</given-names></name>
+                  <name name-style="western"><surname>Sorce</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JHEP</source><year>2020</year><volume>19</volume><fpage>069</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1812.01171" xlink:type="simple">1812.01171</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib19"><label>[19]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Vidal</surname><given-names>G.</given-names></name>
+               </person-group><source>Phys. Rev. Let.</source><year>2007</year><volume>99</volume><fpage>220405</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.99.220405</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/cond-mat/0512165" xlink:type="simple">cond-mat/0512165</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib20"><label>[20]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Vidal</surname><given-names>G.</given-names></name>
+               </person-group><source>Phys. Rev. Lett.</source><year>2008</year><volume>101</volume><fpage>110501</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.101.110501</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/quant-ph/0610099" xlink:type="simple">quant-ph/0610099</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib21"><label>[21]</label><element-citation publication-type="other" xlink:type="simple"><comment>A. Milsted and G. Vidal, <italic toggle="yes">Geometric interpretation of the multi-scale entanglement renormalization ansatz</italic>, [hep-th/1812.00529]
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib22"><label>[22]</label><element-citation publication-type="other" xlink:type="simple"><comment>J. R. Sun and Y. Sun, <italic toggle="yes">On the emergence of gravitational dynamics from tensor networks</italic>, arXiv: 1912.02070[hep-th]
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib23"><label>[23]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Y. Lin</surname><given-names>Y.</given-names></name>
+                  <name name-style="western"><surname>R. Sun</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>Sun</surname><given-names>Y.</given-names></name>
+               </person-group><source>JHEP</source><year>2020</year><volume>12</volume><fpage>083</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/2010.03167" xlink:type="simple">2010.03167</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib24"><label>[24]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Emparan</surname><given-names>R.</given-names></name>
+               </person-group><source>JHEP</source><year>2006</year><volume>06</volume><fpage>012</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/0603081" xlink:type="simple">hep-th/0603081</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib25"><label>[25]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Miyaji</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Takayanagi</surname><given-names>T.</given-names></name>
+               </person-group><source>Prog. Theor. Exp. Phys.</source><year>2015</year><volume>2015</volume><fpage>073B</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1503.03542" xlink:type="simple">1503.03542</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib26"><label>[26]</label><element-citation publication-type="other" xlink:type="simple"><comment>A. Milsted and G. Vidal, <italic toggle="yes">Geometric interpretation of the multi-scale entanglement renormalization ansatz</italic>, arXiv: 1812.00529[hep-th]
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib27"><label>[27]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Pastawski</surname><given-names>F.</given-names></name>
+                  <name name-style="western"><surname>Yoshida</surname><given-names>B.</given-names></name>
+                  <name name-style="western"><surname>Harlow</surname><given-names>D.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JHEP</source><year>2015</year><volume>06</volume><fpage>149</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1503.06237" xlink:type="simple">1503.06237</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib28"><label>[28]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Hayden</surname><given-names>P.</given-names></name>
+                  <name name-style="western"><surname>Nezami</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>L. Qi</surname><given-names>X.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JHEP</source><year>2016</year><volume>11</volume><fpage>009</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1601.01694" xlink:type="simple">1601.01694</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib29"><label>[29]</label><element-citation publication-type="other" xlink:type="simple"><comment>X. L. Qi, <italic toggle="yes">Exact holographic mapping and emergent space-time geometry</italic>, arXiv: 1309.6282[hep-th]
+					</comment></element-citation></ref><ref id="cpc_46_8_085104_bib30"><label>[30]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Banados</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Henneaux</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Teitelboim</surname><given-names>C.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. D</source><year>1993</year><volume>48</volume><fpage>1506</fpage><lpage>1525</lpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/gr-qc/9302012" xlink:type="simple">gr-qc/9302012</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib31"><label>[31]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Banados</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Teitelboim</surname><given-names>C.</given-names></name>
+                  <name name-style="western"><surname>Zanelli</surname><given-names>J.</given-names></name>
+               </person-group><source>Phys. Rev. Lett.</source><year>1992</year><volume>69</volume><fpage>1849</fpage><lpage>1851</lpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.69.1849</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-th/9204099" xlink:type="simple">hep-th/9204099</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib32"><label>[32]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>E. Hubeny</surname><given-names>V.</given-names></name>
+                  <name name-style="western"><surname>Maxfield</surname><given-names>H.</given-names></name>
+                  <name name-style="western"><surname>Rangamani</surname><given-names>M.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JHEP</source><year>2013</year><volume>08</volume><fpage>092</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1306.4004" xlink:type="simple">1306.4004</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib33"><label>[33]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Faulkner</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Liu</surname><given-names>H.</given-names></name>
+                  <name name-style="western"><surname>Rangamani</surname><given-names>M.</given-names></name>
+               </person-group><source>JHEP</source><year>2011</year><volume>08</volume><fpage>051</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1010.4036" xlink:type="simple">1010.4036</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib34"><label>[34]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Heemskerk</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>Polchinski</surname><given-names>J.</given-names></name>
+               </person-group><source>JHEP</source><year>2011</year><volume>06</volume><fpage>031</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1010.1264" xlink:type="simple">1010.1264</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib35"><label>[35]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Y. Lin</surname><given-names>Y.</given-names></name>
+                  <name name-style="western"><surname>R. Sun</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>Sun</surname><given-names>Y.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2021</year><volume>103</volume><issue>12</issue><fpage>126002</fpage><pub-id pub-id-type="doi">10.1103/PhysRevD.103.126002</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/2012.05737" xlink:type="simple">2012.05737</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib36"><label>[36]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Y. Lin</surname><given-names>Y.</given-names></name>
+                  <name name-style="western"><surname>R. Sun</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>Zhang</surname><given-names>J.</given-names></name>
+               </person-group><source>JHEP</source><year>2021</year><volume>10</volume><fpage>164</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/2105.09176" xlink:type="simple">2105.09176</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib37"><label>[37]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>McGough</surname><given-names>L.</given-names></name>
+                  <name name-style="western"><surname>Mezei</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Verlinde</surname><given-names>H.</given-names></name>
+               </person-group><source>JHEP</source><year>2018</year><volume>04</volume><fpage>010</fpage><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1611.03470" xlink:type="simple">1611.03470</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib38"><label>[38]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Guica</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Monten</surname><given-names>R.</given-names></name>
+               </person-group><source>SciPost Phys.</source><year>2021</year><volume>10</volume><issue>2</issue><fpage>024</fpage><pub-id pub-id-type="doi">10.21468/SciPostPhys.10.2.024</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1906.11251" xlink:type="simple">1906.11251</ext-link>
+					          </comment></element-citation></ref><ref id="cpc_46_8_085104_bib39"><label>[39]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>He</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>R. Sun</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>Q. Zhang</surname><given-names>H.</given-names></name>
+               </person-group><source>Nucl. Phys. B</source><year>2018</year><volume>928</volume><fpage>160</fpage><lpage>181</lpage><pub-id pub-id-type="doi">10.1016/j.nuclphysb.2018.01.015</pub-id><comment>arXiv: 
+						<ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1411.6213" xlink:type="simple">1411.6213</ext-link>
+					          </comment></element-citation></ref></ref-list></back></article>
