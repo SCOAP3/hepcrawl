@@ -107,7 +107,7 @@ class IOPParser(Jats):
     def get_arxiv_eprints(self, node):
         arxiv_eprints = []
 
-        arxivs_raw = node.xpath("//article-id[@pub-id-type='arxiv']/text()")
+        arxivs_raw = node.xpath("//custom-meta-group/custom-meta/meta-value/text()")
         for arxiv in arxivs_raw:
             ar = arxiv.extract().replace('arXiv:', '')
             if ar:
