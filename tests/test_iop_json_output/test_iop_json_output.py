@@ -27,7 +27,7 @@ correct_affiliations = {files_for_testing_affiliations[0]:
 
 files_for_testing_arxiv = ['ac66cc.xml', 'ac69ba.xml']
 correct_arxiv = {files_for_testing_arxiv[0]: [
-    {'value': '2108.04010'}], files_for_testing_arxiv[1]: [{'value': '2010.03167v2'}]}
+    {'value': '2108.04010'}], files_for_testing_arxiv[1]: [{'value': '2010.03167'}]}
 
 
 @pytest.fixture
