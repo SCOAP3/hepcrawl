@@ -1,4 +1,5 @@
 import logging
+from math import fabs
 import re
 
 from hepcrawl.extractors.jats import Jats
@@ -28,7 +29,8 @@ class IOPParser(Jats):
         record.add_value('dois', dois)
 
         raw_article_type = node.xpath('//@article-type').extract()
-        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), raw_article_type)
+        article_type = map(lambda x: self.article_type_mapping.get(
+            x, 'other'), raw_article_type)
         record.add_value('journal_doctype', article_type)
 
         if 'other' in article_type:
@@ -37,7 +39,8 @@ class IOPParser(Jats):
 
         if article_type in ['correction', 'addendum']:
             logger.info('Adding related_article_doi.')
-            record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
+            record.add_xpath('related_article_doi',
+                             "//related-article[@ext-link-type='doi']/@href")
 
         arxiv_eprints = self.get_arxiv_eprints(node)
         if not arxiv_eprints:
@@ -51,7 +54,8 @@ class IOPParser(Jats):
                 page_nr = map(int, page_nr.extract())
                 record.add_value('page_nr', page_nr)
             except ValueError as e:
-                logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
+                logger.error(
+                    'Failed to parse last_page or first_page for article %s: %s' % (dois, e))
 
         all_nodes = node.xpath('//abstract/p/child::node()').getall()
 
@@ -59,7 +63,8 @@ class IOPParser(Jats):
         cdata_pattern = "<\?CDATA(.*)\?>"
         match = re.search(cdata_pattern, string_node_joined)
         if match:
-            string_node_joined = re.sub(cdata_pattern, match.group(1).replace('\\', '\\\\'), string_node_joined)
+            string_node_joined = re.sub(cdata_pattern, match.group(
+                1).replace('\\', '\\\\'), string_node_joined)
         record.add_value('abstract', ''.join(string_node_joined))
         record.add_xpath('title', '//title-group/article-title/text()')
         record.add_xpath('subtitle', '//subtitle/text()')
@@ -72,7 +77,8 @@ class IOPParser(Jats):
 
         record.add_value('date_published', self._get_published_date(node))
 
-        record.add_xpath('journal_title', '//abbrev-journal-title/text()|//journal-title/text()')
+        record.add_xpath(
+            'journal_title', '//abbrev-journal-title/text()|//journal-title/text()')
         record.add_xpath('journal_issue', '//issue/text()')
         record.add_xpath('journal_volume', '//volume/text()')
         record.add_xpath('journal_artid', '//elocation-id/text()')
@@ -86,7 +92,8 @@ class IOPParser(Jats):
         record.add_xpath('copyright_statement', '//copyright-statement/text()')
 
         license = get_license(
-            license_url=node.xpath('//license/license-p/ext-link/text()').extract_first()
+            license_url=node.xpath(
+                '//license/license-p/ext-link/text()').extract_first()
         )
         record.add_value('license', license)
 
@@ -95,22 +102,25 @@ class IOPParser(Jats):
         # local file paths
         local_files = []
         if 'xml_url' in response.meta:
-            local_files.append({'filetype': 'xml', 'path': response.meta['xml_url']})
+            local_files.append(
+                {'filetype': 'xml', 'path': response.meta['xml_url']})
         if 'pdf_url' in response.meta:
-            local_files.append({'filetype': 'pdf', 'path': response.meta['pdf_url']})
+            local_files.append(
+                {'filetype': 'pdf', 'path': response.meta['pdf_url']})
         if 'pdfa_url' in response.meta:
-            local_files.append({'filetype': 'pdf/a', 'path': response.meta['pdfa_url']})
+            local_files.append(
+                {'filetype': 'pdf/a', 'path': response.meta['pdfa_url']})
         record.add_value('local_files', local_files)
 
         return dict(record.load_item())
 
     def get_arxiv_eprints(self, node):
         arxiv_eprints = []
-
-        arxivs_raw = node.xpath("//custom-meta-group/custom-meta/meta-value/text()")
+        arxivs_raw = node.xpath(
+            "//custom-meta-group/custom-meta/meta-value/text()")
+        pattern = re.compile(r'(arxiv:|v[0-9]$)', flags=re.I)
         for arxiv in arxivs_raw:
-            ar = arxiv.extract().replace('arXiv:', '')
-            if ar:
-                arxiv_eprints.append({'value': ar})
+            arxiv_value = arxiv.extract()
+            arxiv_eprints.append({'value': pattern.sub('', arxiv_value)})
 
         return arxiv_eprints
