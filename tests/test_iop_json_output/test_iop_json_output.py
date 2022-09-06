@@ -74,6 +74,5 @@ def arxiv_from_records(shared_datadir):
 def test_arxiv_in_IOP(arxiv_from_records):
     for file_name in files_for_testing_arxiv:
         arxiv_values = [arxiv_from_a_record for arxiv_from_a_record in arxiv_from_records[file_name]]
-        print(arxiv_values)
         assert len(arxiv_values) == len(correct_arxiv[file_name])
         assert sorted(arxiv_values) == sorted(correct_arxiv[file_name])
