@@ -1,0 +1,132 @@
+<marc:record xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <datafield tag="024" ind1="7" ind2=" ">
+                <subfield code="a">10.1155/2022/3603613</subfield>
+                <subfield code="2">DOI</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+                <subfield code="9">arXiv</subfield>
+                <subfield code="a">arXiv:2109.02769</subfield>
+        </datafield>
+        <datafield tag="100" ind1=" " ind2=" ">
+                <subfield code="a">Larios, F.</subfield>
+                <subfield code="u">Departamento de Fsica Aplicada, CINVESTAV-M&#xE9;rida, A.P. 73, 97310 M&#xE9;rida, Yucat&#xE1;n, Mexico</subfield>
+                <subfield code="j">https://orcid.org/0000-0003-3267-5021</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+                <subfield code="a">Two-to-Two Processes at an Electron-Muon Collider</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+                <subfield code="b">Hindawi</subfield>
+                <subfield code="c">2022-01-17</subfield>
+        </datafield>
+        <datafield tag="300" ind1=" " ind2=" ">
+                <subfield code="a">11</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+                <subfield code="a">
+                        Based on a recent proposal to build an electron-muon collider, we study two-to-two production processes
+                        <mml:math id="M1" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                <mml:msup>
+                                        <mml:mrow>
+                                                <mml:mi>e</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mrow>
+                                                <mml:mo>&#x2212;</mml:mo>
+                                        </mml:mrow>
+                                </mml:msup>
+                                <mml:msup>
+                                        <mml:mrow>
+                                                <mml:mi>&#x03BC;</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mrow>
+                                                <mml:mo>+</mml:mo>
+                                        </mml:mrow>
+                                </mml:msup>
+                                <mml:mo>&#x27F6;</mml:mo>
+                                <mml:mi>f</mml:mi>
+                                <mml:mover accent="true">
+                                        <mml:mi>f</mml:mi>
+                                        <mml:mo stretchy="true">&#x00AF;</mml:mo>
+                                </mml:mover>
+                        </mml:math>
+                        ,
+                        <mml:math id="M2" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                <mml:mi>&#x03B3;</mml:mi>
+                                <mml:mi>&#x03B3;</mml:mi>
+                        </mml:math>
+                        that originate from dimension 6 and 8 operators. We compare the sensitivity to those effective couplings obtained at the collider with that of low energy measurements of
+                        <mml:math id="M3" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                <mml:mi>&#x03BC;</mml:mi>
+                                <mml:mo>&#x27F6;</mml:mo>
+                                <mml:mi>e</mml:mi>
+                                <mml:mi>&#x03B3;</mml:mi>
+                        </mml:math>
+                        ,
+                        <mml:math id="M4" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                <mml:mi>&#x03BC;</mml:mi>
+                                <mml:mo>&#x27F6;</mml:mo>
+                                <mml:mi>e</mml:mi>
+                                <mml:mover accent="true">
+                                        <mml:mi>e</mml:mi>
+                                        <mml:mo stretchy="true">&#x00AF;</mml:mo>
+                                </mml:mover>
+                                <mml:mi>e</mml:mi>
+                        </mml:math>
+                        , and
+                        <mml:math id="M5" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                <mml:mi>&#x03BC;</mml:mi>
+                                <mml:mo>&#x27F6;</mml:mo>
+                                <mml:mi>e</mml:mi>
+                        </mml:math>
+                        conversion that have recently been reported in the literature. Whereas for the production of first family fermions, the sensitivity of the collider processes is much weaker; for the second and third family fermions, it is similar or stronger than that of low-energy processes. In the case of
+                        <mml:math id="M6" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                <mml:msup>
+                                        <mml:mrow>
+                                                <mml:mi>e</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mrow>
+                                                <mml:mo>&#x2212;</mml:mo>
+                                        </mml:mrow>
+                                </mml:msup>
+                                <mml:msup>
+                                        <mml:mrow>
+                                                <mml:mi>&#x03BC;</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mrow>
+                                                <mml:mo>+</mml:mo>
+                                        </mml:mrow>
+                                </mml:msup>
+                                <mml:mo>&#x27F6;</mml:mo>
+                                <mml:mi>&#x03B3;</mml:mi>
+                                <mml:mi>&#x03B3;</mml:mi>
+                        </mml:math>
+                        , the sensitivity to a dimension 8 contact operator turns out to be the strongest in comparison.
+                </subfield>
+        </datafield>
+        <datafield tag="540" ind1=" " ind2=" ">
+                <subfield code="a">CC-BY-3.0</subfield>
+                <subfield code="u">http://creativecommons.org/licenses/by/3.0/</subfield>
+        </datafield>
+        <datafield tag="542" ind1=" " ind2=" ">
+                <subfield code="f">Copyright &#x00A9; 2022 Antonio O. Bouzas and F. Larios.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+                <subfield code="a">Bouzas, Antonio O.</subfield>
+                <subfield code="u">Departamento de Fsica Aplicada, CINVESTAV-M&#xE9;rida, A.P. 73, 97310 M&#xE9;rida, Yucat&#xE1;n, Mexico</subfield>
+                <subfield code="j">https://orcid.org/0000-0001-5493-4958</subfield>
+        </datafield>
+        <datafield tag="773" ind1=" " ind2=" ">
+                <subfield code="p">Advances in High Energy Physics</subfield>
+                <subfield code="v">2022</subfield>
+                <subfield code="c">3603613</subfield>
+                <subfield code="y">2022</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+                <subfield code="a">SCOAP3</subfield>
+                <subfield code="b">Hindawi</subfield>
+        </datafield>
+        <datafield tag="856" ind1="4" ind2="0">
+                <subfield code="u">https://doi.org/10.1155/2022/3603613</subfield>
+                <subfield code="z">Full text URL</subfield>
+        </datafield>
+</marc:record>

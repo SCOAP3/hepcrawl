@@ -1,4 +1,5 @@
 import logging
+import re
 
 from ..items import HEPRecord
 from ..loaders import HEPLoader
@@ -98,11 +99,12 @@ class HindawiParser(object):
         """Gets the authors."""
         arxivs_raw = node.xpath("./datafield[@tag='037'][subfield[@code='9'][contains(text(), 'arXiv')]]")
         arxivs = []
-
+        arxiv_pattern = re.compile(r'(arxiv:|v[0-9]$)', flags=re.I)
         for arxiv in arxivs_raw:
-            ar = arxiv.xpath("./subfield[@code='a']/text()").extract_first().replace('arXiv:', '')
-            if ar:
-                arxivs.append({'value': ar})
+            arxiv_value = arxiv.xpath("./subfield[@code='a']/text()").extract_first()
+            value = arxiv_pattern.sub("", arxiv_value)
+            if value:
+                arxivs.append({'value': value})
 
         if not arxivs:
             logger.error('No arxiv found for article %s.' % dois)
