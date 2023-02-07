@@ -26,7 +26,7 @@ def results():
         '2019-01-18_19:30:31_ptep_iss_2019_1.img.zip',
         '2019-01-18_19:30:31_ptep_iss_2019_1.pdf.zip',
         '2019-01-18_19:30:31_ptep_iss_2019_1.xml.zip',
-        '2019-01-18_19:30:31_ptep_iss_2019_1_archival.zip',
+        '2019-01-18_19:30:31_ptep_iss_2019_1.archival.zip',
     )
 
     records = []
