@@ -197,9 +197,8 @@ class OxfordUniversityPressSpider(XMLFeedSpider):
             zip_target_folder = os.path.join(zip_target_folder, "pdf")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
 
-        if zip_target_folder.endswith("_archival"):
+        if ".archival" in zip_filepath:
             self.log('Unzipping archival...', logging.INFO)
-            zip_target_folder = zip_target_folder[0:zip_target_folder.find("_archival")]
             zip_target_folder = os.path.join(zip_target_folder, "archival")
             unzip_files(zip_filepath, zip_target_folder, ".pdf")
 

@@ -24,7 +24,8 @@ jobs:
         run: |
           python --version
           python -m pip install --upgrade pip setuptools wheel
-          pip install -r requirements.txt -e .[tests,docs]
+          pip install --no-cache-dir typing==3.7.4.1
+          pip install --ignore-installed -r requirements.txt -e .[tests,docs]
       
       - name: Run tests with pytest and generate report
         run: coverage run -m pytest
