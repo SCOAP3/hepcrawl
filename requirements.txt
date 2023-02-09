@@ -164,7 +164,7 @@ SQLAlchemy-Utils==0.36.8
 toml==0.10.1
 tqdm==4.48.0
 twine==1.15.0
-Twisted==17.5.0
+Twisted==22.10.0
 ua-parser==0.10.0
 Unidecode==1.1.1
 urllib3==1.23
