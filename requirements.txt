@@ -65,7 +65,7 @@ imagesize==1.2.0
 importlib-metadata==0.18
 incremental==17.5.0
 inspire-crawler==1.1.2
-inspire-schemas==61.4.1
+inspire-schemas==61.5.5
 inspire-utils==3.0.13
 invenio-accounts==1.0.2
 invenio-base==1.0.2
