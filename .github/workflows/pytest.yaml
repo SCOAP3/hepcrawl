@@ -50,9 +50,7 @@ jobs:
           token: ${{ secrets.PAT_FIRE_EVENTS_ON_CERN_SIS_KUBERNETES }}
 
       - name: Deploy PROD
-        uses: cern-sis/gh-workflows/.github/actions/kubernetes-project-new-images@v5.1.0
         if: ${{ github.event_name == 'release'}}
-        with:
         uses: cern-sis/gh-workflows/.github/actions/kubernetes-project-new-images@v5.1.0
         with:
           event-type: release
