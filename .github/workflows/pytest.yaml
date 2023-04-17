@@ -38,8 +38,8 @@ jobs:
         uses: cern-sis/gh-workflows/.github/actions/docker-build@v5.1.0
         with:
           image: scoap3/hepcrawl
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Deploy QA
         if: ${{ github.event_name == 'push'}}
