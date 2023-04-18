@@ -35,11 +35,12 @@ jobs:
       
       - name: Build and push
         id: docker_build
-        uses: cern-sis/gh-workflows/.github/actions/docker-build@v5.2.0
+        uses: cern-sis/gh-workflows/.github/actions/docker-build@main
         with:
           image: scoap3/hepcrawl
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          cache: false
 
       - name: Deploy QA
         if: ${{ github.event_name == 'push'}}
