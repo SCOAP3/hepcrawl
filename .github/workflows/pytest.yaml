@@ -38,7 +38,7 @@ jobs:
         uses: cern-sis/gh-workflows/.github/actions/docker-build@main
         with:
           image: scoap3/hepcrawl
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: scoap3
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           cache: false
 
