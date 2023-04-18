@@ -35,7 +35,7 @@ jobs:
       
       - name: Build and push
         id: build
-        uses: cern-sis/gh-workflows/.github/actions/docker-build@main
+        uses: cern-sis/gh-workflows/.github/actions/docker-build@v5.5.0
         with:
           image: scoap3/hepcrawl
           username: scoap3
@@ -44,16 +44,16 @@ jobs:
 
       - name: Deploy QA
         if: ${{ github.event_name == 'push'}}
-        uses: cern-sis/gh-workflows/.github/actions/kubernetes-project-new-images@v5.4.0
+        uses: cern-sis/gh-workflows/.github/actions/kubernetes-project-new-images@v5.5.0
         with:
           event-type: update
-          images: scoap3/hepcrawl:${{ steps.build.outputs.image-id }}
+          images: ${{ steps.build.outputs.image-tags }}
           token: ${{ secrets.PAT_FIRE_EVENTS_ON_CERN_SIS_KUBERNETES }}
 
       - name: Deploy PROD
         if: ${{ github.event_name == 'release'}}
-        uses: cern-sis/gh-workflows/.github/actions/kubernetes-project-new-images@v5.4.0
+        uses: cern-sis/gh-workflows/.github/actions/kubernetes-project-new-images@v5.5.0
         with:
           event-type: release
-          images: scoap3/hepcrawl:${{ steps.build.outputs.image-id }}
+          images: ${{ steps.build.outputs.image-tags }}
           token: ${{ secrets.PAT_FIRE_EVENTS_ON_CERN_SIS_KUBERNETES }}
