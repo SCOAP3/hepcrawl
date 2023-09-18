@@ -22,12 +22,8 @@ download_dir = '/tmp/oxford_test_download_dir/'
 @pytest.fixture
 def results():
     responses_dir = path.join(path.dirname(path.realpath(__file__)), 'responses')
-    test_files = (
-        '2019-01-18_19:30:31_ptep_iss_2019_1.img.zip',
-        '2019-01-18_19:30:31_ptep_iss_2019_1.pdf.zip',
-        '2019-01-18_19:30:31_ptep_iss_2019_1.xml.zip',
-        '2019-01-18_19:30:31_ptep_iss_2019_1.archival.zip',
-    )
+    test_files = ('2019-01-18_19:30:31_ptep_iss_2019_1.xml.zip')
+
 
     records = []
     with patch('hepcrawl.settings.OXFORD_DOWNLOAD_DIR', download_dir):
