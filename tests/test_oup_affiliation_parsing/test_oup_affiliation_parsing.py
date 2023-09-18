@@ -5,24 +5,21 @@ import os
 
 from scrapy.selector import Selector
 
-files_for_testing = [
-    "2022_oup_ptac032.xml",
-    "2021_oup_ptab168.xml",
-    "2020_oup_ptaa186.xml",
-]
 correct_affiliations = {
-    files_for_testing[0]: [
-        "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan",
-        "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan",
+    "2020_oup_ptaa186.xml": [
+        "Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"
     ],
-    files_for_testing[1]: [
+    "2021_oup_ptab168.xml": [
         "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan",
         "Theoretical Research Division, Nishina Center, RIKEN, Saitama 351-0198, JapanInterdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN Saitama 351-0198, Japan",
     ],
-    files_for_testing[2]: [
-        "Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"
+    "2022_oup_ptac032.xml": [
+        "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan",
+        "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan",
     ],
 }
+
+files_for_testing = correct_affiliations.keys()
 
 @pytest.fixture
 def affiliations_from_records(shared_datadir):
@@ -46,6 +43,5 @@ def test_country_in_OUP(affiliations_from_records):
                 affiliations_values.append(
                     affiliation_value_from_record['value'])
             # checking, are values the same
-            print(correct_affiliations)
             assert len(affiliations_values) == len(correct_affiliations[file_name])
             assert (affiliations_values) == sorted(correct_affiliations[file_name])
