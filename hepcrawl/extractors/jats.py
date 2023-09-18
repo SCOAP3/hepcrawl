@@ -101,8 +101,8 @@ class Jats(object):
             for aff in set(affiliations):
                 # checking is the aff. value captured by xpath is just new line
                 if self._clean_aff(aff).split():
-                    country = get_first(aff.xpath("country']".format(reffered_id)))
-                    institution = get_first(aff.xpath("institution']".format(reffered_id)))
+                    country = get_first(aff.xpath("country"))
+                    institution = get_first(aff.xpath("institution"))
                     country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
                     if 'country' in country_institution and 'institution' in country_institution:
                         affiliations_values['institution'] = ','.join([affiliations_values["institution"], affiliations_values["country"]])
