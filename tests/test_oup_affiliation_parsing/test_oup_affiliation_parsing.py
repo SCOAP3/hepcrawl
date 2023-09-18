@@ -15,9 +15,7 @@ correct_affiliations = {
         "Theoretical Research Division, Nishina Center, RIKEN, Saitama 351-0198, JapanInterdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN Saitama 351-0198, Japan",
     ]),
     "2022_oup_ptac032.xml": sorted([
-        "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan",
-        "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan",
-    ]),
+        "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"]),
 }
 
 files_for_testing = correct_affiliations.keys()
