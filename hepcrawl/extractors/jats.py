@@ -105,7 +105,7 @@ class Jats(object):
                     institution = get_first(aff.xpath("institution"))
                     country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
                     if 'country' in country_institution and 'institution' in country_institution:
-                        affiliations_values['institution'] = ','.join([affiliations_values["institution"], affiliations_values["country"]])
+                        affiliations_values['institution'] = ','.join([country_institution["institution"], country_institution["country"]])
                     affiliations_values.append(country_institution)
                     affiliations_values.append({'value': self._clean_aff(aff)})
                 else:
