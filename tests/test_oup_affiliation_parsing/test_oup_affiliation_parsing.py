@@ -6,15 +6,41 @@ import os
 from scrapy.selector import Selector
 
 correct_affiliations = {
-    "2020_oup_ptaa186.xml": sorted([
-        'Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan',
-        'Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan']),
-    "2021_oup_ptab168.xml": sorted([
-        "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan",
-        "Theoretical Research Division, Nishina Center, RIKEN, Saitama 351-0198, JapanInterdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN Saitama 351-0198, Japan",
-    ]),
-    "2022_oup_ptac032.xml": sorted([
-        "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"]),
+    "2020_oup_ptaa186.xml": [
+        {
+            "affiliations": [
+                {
+                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                }
+            ],
+            "surname": "Haba",
+            "given_names": "Naoyuki",
+        },
+        {
+            "affiliations": [
+                {
+                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                },
+                {
+                    "value": "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan"
+                },
+            ],
+            "surname": "Mimura",
+            "given_names": "Yukihiro",
+        },
+        {
+            "affiliations": [
+                {
+                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                }
+            ],
+            "surname": "Yamada",
+            "given_names": "Toshifumi",
+            "email": "toshifumi@riko.shimane-u.ac.jp",
+        },
+    ],
+    "2021_oup_ptab168.xml": [],
+    "2022_oup_ptac032.xml": [],
 }
 
 files_for_testing = correct_affiliations.keys()
