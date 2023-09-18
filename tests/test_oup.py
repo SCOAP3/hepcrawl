@@ -22,8 +22,12 @@ download_dir = '/tmp/oxford_test_download_dir/'
 @pytest.fixture
 def results():
     responses_dir = path.join(path.dirname(path.realpath(__file__)), 'responses')
-    test_files = ('2019-01-18_19:30:31_ptep_iss_2019_1.xml.zip')
-
+    test_files = (
+        '2019-01-18_19:30:31_ptep_iss_2019_1.img.zip',
+        '2019-01-18_19:30:31_ptep_iss_2019_1.pdf.zip',
+        '2019-01-18_19:30:31_ptep_iss_2019_1.xml.zip',
+        '2019-01-18_19:30:31_ptep_iss_2019_1.archival.zip',
+    )
 
     records = []
     with patch('hepcrawl.settings.OXFORD_DOWNLOAD_DIR', download_dir):
@@ -215,9 +219,9 @@ def test_authors(results):
     sorted_results = sorted(expected_results, key=lambda x: x["full_name"])
     sorted_expected_results = (sorted_results,)
 
-    sorted_record = sorted(results['authors'], key=lambda x: x["full_name"])
-    sorted_expected_record = (sorted_record,)
-    assert sorted_expected_record['authors'] == sorted_expected_results
+    for expected, record in zip(sorted_expected_results, results):
+        assert 'authors' in record
+        assert sorted(record['authors'], key=lambda x: x["full_name"]) == expected
 
 
 def test_copyrights(results):
