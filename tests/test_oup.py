@@ -216,7 +216,7 @@ def test_authors(results):
 ]
 
     )
-    sorted_results = sorted(expected_results[0], key=lambda x: x["full_name"])
+    sorted_results = sorted(expected_results, key=lambda x: x["full_name"])
     sorted_expected_results = (sorted_results,)
 
     for expected, record in zip(expected_results, results):

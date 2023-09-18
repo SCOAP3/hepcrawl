@@ -6,14 +6,14 @@ import os
 from scrapy.selector import Selector
 
 correct_affiliations = {
-    "2020_oup_ptaa186.xml": [
+    "2020_oup_ptaa186.xml": sorted[
         "Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"
     ],
-    "2021_oup_ptab168.xml": [
+    "2021_oup_ptab168.xml": sorted[
         "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan",
         "Theoretical Research Division, Nishina Center, RIKEN, Saitama 351-0198, JapanInterdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN Saitama 351-0198, Japan",
     ],
-    "2022_oup_ptac032.xml": [
+    "2022_oup_ptac032.xml": sorted[
         "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan",
         "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan",
     ],
