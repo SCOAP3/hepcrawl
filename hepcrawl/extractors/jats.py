@@ -94,8 +94,8 @@ class Jats(object):
             affiliations_values = []
 
             affiliations = contrib.xpath('aff')
-            affiliations_values.append({'country': get_first(affiliations.xpath('country/text()')),
-            'institution': get_first(affiliations.xpath('institution/text()'))})
+            affiliations_values.append({'country': get_first(affiliations.xpath('country')),
+            'institution': get_first(affiliations.xpath('institution)'))})
 
             reffered_ids = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
             for reffered_id in reffered_ids:
