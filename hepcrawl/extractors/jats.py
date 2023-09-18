@@ -94,15 +94,16 @@ class Jats(object):
             affiliations_values = []
 
             affiliations = contrib.xpath('aff')
-            affiliations_values.append({'country': get_first(affiliations.xpath('country')),
-            'institution': get_first(affiliations.xpath('institution)'))})
-
             reffered_ids = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
             for reffered_id in reffered_ids:
                 if reffered_id:
-                    affiliations += node.xpath(
-                        ".//aff[@id='{0}']".format(reffered_id))
-
+                    affiliations += node.xpath(".//aff[@id='{0}']".format(reffered_id))
+                    country = get_first(node.xpath(".//aff[@id='{0}/country']".format(reffered_id)))
+                    institution = get_first(node.xpath(".//aff[@id='{0}/institution']".format(reffered_id)))
+                    country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
+                    if 'country' in country_institution and 'institution' in country_institution:
+                        affiliations_values['institution'] = ','.join([affiliations_values["institution"], affiliations_values["country"]])
+                    affiliations_values.append(country_institution)
 
             for aff in set(affiliations):
                 # checking is the aff. value captured by xpath is just new line
