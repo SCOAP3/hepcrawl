@@ -224,7 +224,6 @@ def test_authors(results):
     ]
     for expected, record in zip(expected_results, results):
         assert "authors" in record
-        print(record["authors"])
         assert record["authors"] == expected
 
 

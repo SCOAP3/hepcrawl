@@ -48,6 +48,5 @@ def test_country_in_OUP(affiliations_from_records):
             ]:
                 affiliations_values.append(affiliation_value_from_record["value"])
             # checking, are values the same
-            print(correct_affiliations)
             assert len(affiliations_values) == len(correct_affiliations[file_name])
             assert (affiliations_values) == sorted(correct_affiliations[file_name])
