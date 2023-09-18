@@ -24,14 +24,13 @@ correct_affiliations = {
     ],
 }
 
-
 @pytest.fixture
 def affiliations_from_records(shared_datadir):
     parsed_affiliations = {}
     for file in files_for_testing:
         parser = oup_parser.OUPParser()
-        content = (shared_datadir / file).read_text()
-        selector = Selector(text=content, type="xml")
+        content=(shared_datadir / file).read_text()
+        selector = Selector(text=content, type='xml')
         affiliations = parser._get_authors(selector)
         parsed_affiliations[os.path.basename(file)] = affiliations
     assert parsed_affiliations
@@ -43,10 +42,10 @@ def test_country_in_OUP(affiliations_from_records):
     for file_name in files_for_testing:
         for affiliations_from_record in affiliations_from_records[file_name]:
             affiliations_values = []
-            for affiliation_value_from_record in affiliations_from_record[
-                "affiliations"
-            ]:
-                affiliations_values.append(affiliation_value_from_record["value"])
+            for affiliation_value_from_record in affiliations_from_record['affiliations']:
+                affiliations_values.append(
+                    affiliation_value_from_record['value'])
             # checking, are values the same
+            print(correct_affiliations)
             assert len(affiliations_values) == len(correct_affiliations[file_name])
             assert (affiliations_values) == sorted(correct_affiliations[file_name])
