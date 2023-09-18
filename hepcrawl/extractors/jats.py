@@ -93,14 +93,15 @@ class Jats(object):
             email = contrib.xpath("email/text()").extract()
 
             affiliations = contrib.xpath('aff')
-            reffered_id = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
-            if reffered_id:
-                affiliations += node.xpath(
-                    ".//aff[@id='{0}']".format(get_first(reffered_id)))
+            reffered_ids = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
+            for reffered_id in reffered_ids:
+                if reffered_id:
+                    affiliations += node.xpath(
+                        ".//aff[@id='{0}']".format(reffered_id))
 
             affiliations_values = []
 
-            for aff in affiliations:
+            for aff in set(affiliations):
                 # checking is the aff. value captured by xpath is just new line
                 if self._clean_aff(aff).split():
                     affiliations_values.append({'value': self._clean_aff(aff)})
