@@ -219,11 +219,9 @@ def test_authors(results):
     sorted_results = sorted(expected_results, key=lambda x: x["full_name"])
     sorted_expected_results = (sorted_results,)
 
-    for expected, record in zip(expected_results, results):
-        assert 'authors' in record
-        sorted_record = sorted(record['authors'], key=lambda x: x["full_name"])
-        sorted_expected_record = (sorted_record,)
-        assert sorted_expected_record['authors'] == sorted_expected_results
+    sorted_record = sorted(results['authors'], key=lambda x: x["full_name"])
+    sorted_expected_record = (sorted_record,)
+    assert sorted_expected_record['authors'] == sorted_expected_results
 
 
 def test_copyrights(results):

@@ -6,17 +6,17 @@ import os
 from scrapy.selector import Selector
 
 correct_affiliations = {
-    "2020_oup_ptaa186.xml": sorted[
+    "2020_oup_ptaa186.xml": sorted([
         "Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"
-    ],
-    "2021_oup_ptab168.xml": sorted[
+    ]),
+    "2021_oup_ptab168.xml": sorted([
         "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan",
         "Theoretical Research Division, Nishina Center, RIKEN, Saitama 351-0198, JapanInterdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN Saitama 351-0198, Japan",
-    ],
-    "2022_oup_ptac032.xml": sorted[
+    ]),
+    "2022_oup_ptac032.xml": sorted([
         "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan",
         "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan",
-    ],
+    ]),
 }
 
 files_for_testing = correct_affiliations.keys()
@@ -44,4 +44,4 @@ def test_country_in_OUP(affiliations_from_records):
                     affiliation_value_from_record['value'])
             # checking, are values the same
             assert len(affiliations_values) == len(correct_affiliations[file_name])
-            assert sorted(affiliations_values) == sorted(correct_affiliations[file_name])
+            assert sorted(affiliations_values) == correct_affiliations[file_name]
