@@ -98,16 +98,15 @@ class Jats(object):
             for reffered_id in reffered_ids:
                 if reffered_id:
                     affiliations += node.xpath(".//aff[@id='{0}']".format(reffered_id))
-                    country = get_first(node.xpath(".//aff[@id='{0}/country']".format(reffered_id)))
-                    institution = get_first(node.xpath(".//aff[@id='{0}/institution']".format(reffered_id)))
+            for aff in set(affiliations):
+                # checking is the aff. value captured by xpath is just new line
+                if self._clean_aff(aff).split():
+                    country = get_first(aff.xpath("country']".format(reffered_id)))
+                    institution = get_first(aff.xpath("institution']".format(reffered_id)))
                     country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
                     if 'country' in country_institution and 'institution' in country_institution:
                         affiliations_values['institution'] = ','.join([affiliations_values["institution"], affiliations_values["country"]])
                     affiliations_values.append(country_institution)
-
-            for aff in set(affiliations):
-                # checking is the aff. value captured by xpath is just new line
-                if self._clean_aff(aff).split():
                     affiliations_values.append({'value': self._clean_aff(aff)})
                 else:
                     # if aff. value captured by xpath is just new line, we have to take all data in aff tags.
