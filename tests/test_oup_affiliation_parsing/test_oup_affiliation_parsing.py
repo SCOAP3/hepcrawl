@@ -7,7 +7,8 @@ from scrapy.selector import Selector
 
 correct_affiliations = {
     "2020_oup_ptaa186.xml": sorted([
-       "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+       "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan",
+        "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan"
     ]),
     "2021_oup_ptab168.xml": sorted([
         "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan",
