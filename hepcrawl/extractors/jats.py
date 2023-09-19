@@ -85,28 +85,68 @@ class Jats(object):
                 root.remove(el)
         return ', '.join(root.itertext())
 
+    # def _get_authors(self, node):
+    #     authors = []
+    #     for contrib in node.xpath(".//contrib[@contrib-type='author']"):
+    #         surname = contrib.xpath("name/surname/text()").extract()
+    #         given_names = contrib.xpath("name/given-names/text()").extract()
+    #         email = contrib.xpath("email/text()").extract()
+    #         affiliations_values = []
+    #         affiliations = contrib.xpath('aff')
+
+    #         country = contrib.xpath("aff/country/text()").extract()
+    #         institution = contrib.xpath("aff/institution/text()").extract()
+    #         country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
+    #         if 'country' in country_institution and 'institution' in country_institution:
+    #                 affiliations_values.append({'value':','.join([country_institution["institution"], country_institution["country"]])})
+
+    #         reffered_ids = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
+
+    #         for reffered_id in reffered_ids:
+    #             if reffered_id:
+    #                 affiliations += node.xpath(".//aff[@id='{0}']".format(reffered_id))
+    #         for aff in set(affiliations):
+    #             # checking is the aff. value captured by xpath is just new line
+    #             if self._clean_aff(aff).split():
+    #                 affiliations_values.append({'value': self._clean_aff(aff)})
+    #             else:
+    #                 # if aff. value captured by xpath is just new line, we have to take all data in aff tags.
+    #                 # because xpath cannot capture data if there is new line and just after different tags.
+    #                 # it will take just new line, but not further text
+    #                 string = aff.get().encode('ascii', 'ignore')
+    #                 without_spaces = ' '.join(string.split())
+    #                 between_tags = re.search(
+    #                     '</label>(.*)</aff>', without_spaces).group(1).strip()
+    #                 affiliations_values.append({'value': between_tags})
+
+    #         author = {
+    #             'surname': get_first(surname, ""),
+    #             'given_names': get_first(given_names, ""),
+    #             'affiliations': affiliations_values,
+    #         }
+
+    #         email_addr = get_first(email, "")
+    #         if email_addr:
+    #             author['email'] = email_addr
+
+    #         authors.append(author)
+    #     return authors
     def _get_authors(self, node):
         authors = []
         for contrib in node.xpath(".//contrib[@contrib-type='author']"):
             surname = contrib.xpath("name/surname/text()").extract()
             given_names = contrib.xpath("name/given-names/text()").extract()
             email = contrib.xpath("email/text()").extract()
-            affiliations_values = []
+
             affiliations = contrib.xpath('aff')
+            reffered_id = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
+            if reffered_id:
+                affiliations += node.xpath(
+                    ".//aff[@id='{0}']".format(get_first(reffered_id)))
 
-            country = get_first(contrib.xpath("./aff/country/text()").extract())
-            institution = get_first(contrib.xpath("./aff/institution/text()").extract())
-            country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
-            print(institution, country , "JJJ" )
-            if 'country' in country_institution and 'institution' in country_institution:
-                    affiliations_values.append({'value':','.join([country_institution["institution"], country_institution["country"]])})
+            affiliations_values = []
 
-            reffered_ids = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
-
-            for reffered_id in reffered_ids:
-                if reffered_id:
-                    affiliations += node.xpath(".//aff[@id='{0}']".format(reffered_id))
-            for aff in set(affiliations):
+            for aff in affiliations:
                 # checking is the aff. value captured by xpath is just new line
                 if self._clean_aff(aff).split():
                     affiliations_values.append({'value': self._clean_aff(aff)})
