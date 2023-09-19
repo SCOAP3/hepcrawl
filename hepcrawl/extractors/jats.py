@@ -92,19 +92,20 @@ class Jats(object):
             given_names = contrib.xpath("name/given-names/text()").extract()
             email = contrib.xpath("email/text()").extract()
             affiliations_values = []
-            affiliations = []
+            affiliations = contrib.xpath('aff')
+
+            country = get_first(node.xpath(".//aff/country/text()").extract())
+            institution = get_first(node.xpath(".//aff/institution/text()").extract())
+            country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
+            if 'country' in country_institution and 'institution' in country_institution:
+                    affiliations_values.append({'value':','.join([country_institution["institution"], country_institution["country"]])})
+
             reffered_ids = contrib.xpath("xref[@ref-type='aff']/@rid").extract()
 
             for reffered_id in reffered_ids:
                 if reffered_id:
                     affiliations += node.xpath(".//aff[@id='{0}']".format(reffered_id))
-
             for aff in set(affiliations):
-                country = get_first(aff.xpath("country/text()").extract())
-                institution = get_first(aff.xpath("institution/text()").extract())
-                country_institution = {k: v for k, v in {'country': country, 'institution': institution}.items() if v is not None}
-                if 'country' in country_institution and 'institution' in country_institution:
-                        affiliations_values.append({'value':','.join([country_institution["institution"], country_institution["country"]])})
                 # checking is the aff. value captured by xpath is just new line
                 if self._clean_aff(aff).split():
                     affiliations_values.append({'value': self._clean_aff(aff)})
