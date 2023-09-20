@@ -180,28 +180,48 @@ def test_publication_info(results):
 def test_authors(results):
     """Test authors."""
     expected_results = (
-        [
-            {'affiliations': [{
-                'value': u'Physics Department and Biruni Observatory, College of Sciences, Shiraz University, '
-                         u'Shiraz 71454, Iran'}],
-                'surname': u'Panah',
-                'given_names': u'B Eslam',
-                'full_name': u'Panah, B Eslam',
-                'email': u'beslampanah@shirazu.ac.ir'},
-            {'affiliations': [{'value': u'Helmholtz-Institut Jena, Fr\xf6belstieg 3, Jena D-07743 Germany'}],
-             'surname': u'Panahiyan',
-             'given_names': u'S',
-             'full_name': u'Panahiyan, S'},
-            {'affiliations': [{'value': u'Physics Department and Biruni Observatory, College of Sciences, Shiraz '
-                                        u'University, Shiraz 71454, Iran'}],
-             'surname': u'Hendi',
-             'given_names': u'S H',
-             'full_name': u'Hendi, S H'}],
-    )
+       [
+    {
+        "affiliations": [
+            {
+                "value": u"Physics Department and Biruni Observatory, College of Sciences, Shiraz University, Shiraz 71454, Iran"
+            },
+            {
+                "value": u"Research Institute for Astronomy and Astrophysics of Maragha (RIAAM), P.O. Box 55134-441, Maragha, Iran"
+            },
+        ],
+        "surname": u"Panah",
+        "given_names": u"B Eslam",
+        "full_name": u"Panah, B Eslam",
+        "email": u"beslampanah@shirazu.ac.ir",
+    },
+    {
+        "affiliations": [
+            {"value": u"Helmholtz-Institut Jena, Fr\xf6belstieg 3, Jena D-07743 Germany"}
+        ],
+        "surname": u"Panahiyan",
+        "given_names": u"S",
+        "full_name": u"Panahiyan, S",
+    },
+    {
+        "affiliations": [
+            {
+                "value": u"Physics Department and Biruni Observatory, College of Sciences, Shiraz University, Shiraz 71454, Iran"
+            }
+        ],
+        "surname": u"Hendi",
+        "given_names": u"S H",
+        "full_name": u"Hendi, S H",
+    },
+]
 
-    for expected, record in zip(expected_results, results):
+    )
+    sorted_results = sorted(expected_results, key=lambda x: x["full_name"])
+    sorted_expected_results = (sorted_results,)
+
+    for expected, record in zip(sorted_expected_results, results):
         assert 'authors' in record
-        assert record['authors'] == expected
+        assert sorted(record['authors'], key=lambda x: x["full_name"]) == expected
 
 
 def test_copyrights(results):

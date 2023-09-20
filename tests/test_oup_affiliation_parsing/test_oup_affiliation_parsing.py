@@ -5,15 +5,79 @@ import os
 
 from scrapy.selector import Selector
 
-files_for_testing = ['2022_oup_ptac032.xml',
-                     '2021_oup_ptab168.xml', '2020_oup_ptaa186.xml']
-correct_affiliations = {files_for_testing[0]:
-                        ["Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"],
-                        files_for_testing[1]: [
-                            "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, , , Kyoto 606-8502, , , Japan"],
-                        files_for_testing[2]: [
-                            "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"]}
+correct_affiliations = {
+    "2020_oup_ptaa186.xml": [
+        {
+            "affiliations": [
+                {
+                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                }
+            ],
+            "surname": "Haba",
+            "given_names": "Naoyuki",
+        },
+        {
+            "affiliations": [
+                {
+                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                },
+                {
+                    "value": "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan"
+                },
+            ],
+            "surname": "Mimura",
+            "given_names": "Yukihiro",
+        },
+        {
+            "affiliations": [
+                {
+                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                }
+            ],
+            "surname": "Yamada",
+            "given_names": "Toshifumi",
+            "email": "toshifumi@riko.shimane-u.ac.jp",
+        },
+    ],
+    "2021_oup_ptab168.xml": [
+        {
+            "affiliations": [
+                {
+                    "value": "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, , , Kyoto 606-8502, , , Japan"
+                },
+                {
+                    "value": "Theoretical Research Division, Nishina Center, , , RIKEN, Saitama 351-0198, , , Japan"
+                },
+            ],
+            "surname": "Aoki",
+            "given_names": "Sinya",
+            "email": "saoki@het.ph.tsukuba.ac.jp",
+        },
+        {
+            "affiliations": [
+                {
+                    "value": "Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), , , RIKEN Saitama 351-0198, , , Japan"
+                }
+            ],
+            "surname": "Yazaki",
+            "given_names": "Koichi",
+        },
+    ],
+    "2022_oup_ptac032.xml": [
+        {
+            "affiliations": [
+                {
+                    "value": "Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"
+                }
+            ],
+            "surname": "Yamaguchi",
+            "given_names": "Satoshi",
+            "email": "yamaguch@het.phys.sci.osaka-u.ac.jp",
+        }
+    ],
+}
 
+files_for_testing = correct_affiliations.keys()
 
 @pytest.fixture
 def affiliations_from_records(shared_datadir):
@@ -22,20 +86,14 @@ def affiliations_from_records(shared_datadir):
         parser = oup_parser.OUPParser()
         content=(shared_datadir / file).read_text()
         selector = Selector(text=content, type='xml')
+        selector.remove_namespaces()
         affiliations = parser._get_authors(selector)
+        assert affiliations
         parsed_affiliations[os.path.basename(file)] = affiliations
-    assert parsed_affiliations
     return parsed_affiliations
 
 
 def test_country_in_OUP(affiliations_from_records):
-
     for file_name in files_for_testing:
-        for affiliations_from_record in affiliations_from_records[file_name]:
-            affiliations_values = []
-            for affiliation_value_from_record in affiliations_from_record['affiliations']:
-                affiliations_values.append(
-                    affiliation_value_from_record['value'])
-            # checking, are values the same
-            assert len(affiliations_values) == len(correct_affiliations[file_name])
-            assert (affiliations_values) == sorted(correct_affiliations[file_name])
+        assert len(affiliations_from_records[file_name]) == len(correct_affiliations[file_name])
+        assert sorted(affiliations_from_records[file_name]) == sorted(correct_affiliations[file_name])
