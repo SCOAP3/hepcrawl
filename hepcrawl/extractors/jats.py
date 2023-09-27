@@ -79,7 +79,7 @@ class Jats(object):
         return free_keywords, classification_numbers
 
     def _clean_aff(self, aff):
-        root = ET.fromstring(aff.extract().encode('UTF-8"'))
+        root = ET.fromstring(aff.extract().encode('UTF-8'))
         for el in root:
             if el.tag == 'label':
                 root.remove(el)
