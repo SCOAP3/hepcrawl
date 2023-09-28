@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.1" xml:lang="en"><front><journal-meta><journal-id journal-id-type="publisher-id">cpc</journal-id><journal-title-group><journal-title xml:lang="en">Chinese Physics C</journal-title></journal-title-group><issn pub-type="ppub">1674-1137</issn><publisher><publisher-name>Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd
+                        </publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="publisher-id">cpc_45_6_065102</article-id><article-id pub-id-type="doi">10.1088/1674-1137/abf13a</article-id><article-id pub-id-type="manuscript">abf13a</article-id><article-categories><subj-group subj-group-type="display-article-type"><subject>Paper</subject></subj-group><subj-group subj-group-type="section"><subject>Particle and nuclear astrophysics and cosmology</subject></subj-group></article-categories><title-group><article-title>High energy window for probing dark matter with cosmic-ray antideuterium and antihelium
+								<xref ref-type="fn" rid="fn1">*</xref>
+				           <fn id="fn1"><label>*</label><p>Supported in part by the National Key R&amp;D Program of China (2017YFA0402204) and by the National Natural Science Foundation of China (NSFC) (11825506, 11821505, U1738209, 11851303, 11947302)</p></fn>
+							     </article-title></title-group><contrib-group><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Ding</surname><given-names>Yu-Chen</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>丁</surname><given-names>雨辰</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><xref ref-type="aff" rid="affiliation02">2</xref><email>dingyuchen@itp.ac.cn</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Li</surname><given-names>Nan</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>李</surname><given-names>楠</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><xref ref-type="aff" rid="affiliation02">2</xref><xref ref-type="aff" rid="affiliation04">4</xref><email>linan90@ihep.ac.cn</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Wei</surname><given-names>Chun-Cheng</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>魏</surname><given-names>春成</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><xref ref-type="aff" rid="affiliation02">2</xref><email>ccwei@itp.ac.cn</email></contrib><contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Zhou</surname><given-names>Yu-Feng</given-names></name><name content-type="non-latin-no-space" name-style="eastern"><surname>周</surname><given-names>宇峰</given-names></name><xref ref-type="aff" rid="affiliation01">1</xref><xref ref-type="aff" rid="affiliation02">2</xref><xref ref-type="aff" rid="affiliation03">3</xref><email>yfzhou@itp.ac.cn</email></contrib><aff id="affiliation01">
+               <label>1</label>
+				 CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China
+							</aff><aff id="affiliation02">
+               <label>2</label>
+				 University of Chinese Academy of Sciences, Beijing 100049, China
+							</aff><aff id="affiliation03">
+               <label>3</label>
+				 School of Fundamental Physics and Mathematical Sciences, Hangzhou Institute for Advanced Study, UCAS, and International Centre for Theoretical Physics Asia-Pacific, Beijing/Hangzhou, China
+							</aff><aff id="affiliation04">
+               <label>4</label>
+				 Key Laboratory of Particle Acceleration Physics and Technology, Institute of High Energy Physics, Chinese Academy of Sciences, Beijing 100049, China
+							</aff></contrib-group><pub-date pub-type="ppub"><day>01</day><month>6</month><year>2021</year></pub-date><pub-date pub-type="open-access"><day>19</day><month>4</month><year>2021</year></pub-date><volume>45</volume><issue>6</issue><elocation-id content-type="artnum">065102</elocation-id><history><date date-type="received"><day>20</day><month>2</month><year>2021</year></date><date date-type="published-online"><day>19</day><month>4</month><year>2021</year></date><date date-type="oa-requested"><day>20</day><month>2</month><year>2021</year></date></history><permissions><copyright-statement>© 2021Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd</copyright-statement><copyright-year>2021</copyright-year><license license-type="cc-by" xlink:href="http://creativecommons.org/licenses/by/3.0/" xlink:type="simple"><license-p>
+                  <graphic content-type="online" orientation="portrait" position="float" xlink:href="ccby.gif" xlink:type="simple"/>Content from this work may be used under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/3.0" xlink:type="simple">Creative Commons Attribution 3.0 licence</ext-link>. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. Article funded by SCOAP<sup>3</sup> and published under licence by Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd
+</license-p></license></permissions><self-uri content-type="pdf" xlink:href="cpc_45_6_065102.pdf" xlink:type="simple"/><abstract><title>Abstract</title><p>Cosmic-ray (CR) anti-nuclei are often considered important observables for indirect dark matter (DM) detection at low kinetic energies, below GeV per nucleon. Since the primary CR fluxes drop quickly towards high energies, the secondary anti-nuclei in CR are expected to be significantly suppressed in high energy regions (<inline-formula>
+                  <tex-math id="M1">\begin{document}$\gtrsim 100$\end{document}</tex-math>
+               </inline-formula> GeV per nucleon). If DM particles are heavy, the annihilation productions of DM can be highly boosted, and thus the fluxes of anti-nuclei produced by DM annihilation may exceed the secondary background at high energies, which opens a high energy window for indirect DM detection. We investigate the possibility of detecting heavy DM particles which annihilate into high energy anti-nuclei. We use the Monte Carlo generators PYTHIA, EPOS-LHC and DPMJET and the coalescence model to simulate the production of anti-nuclei, and constrain the DM annihilation cross-sections by using the AMS-02 and HAWC antiproton data and the HESS galactic center <inline-formula>
+                  <tex-math id="M27">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data. We find that the conclusion depends on the choice of DM density profiles. For the “Cored” type profile with a DM particle mass <inline-formula>
+                  <tex-math id="M2">\begin{document}$\gtrsim 10$\end{document}</tex-math>
+               </inline-formula> TeV, the contributions from DM annihilation can exceed the secondary background in high energy regions, which opens the high energy window, while for the “Cuspy” type profile, the excess disappears.</p></abstract><kwd-group kwd-group-type="author"><kwd>dark matter</kwd><kwd>coalescence model</kwd><kwd>antideuterium</kwd><kwd>antihelium</kwd></kwd-group><funding-group><open-access><p content-type="scoap3">Article funded by SCOAP<sup>3</sup>
+               </p></open-access></funding-group><counts><page-count count="14"/></counts><custom-meta-group><custom-meta xlink:type="simple"><meta-name>arxivppt</meta-name><meta-value>2006.14681</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="s01"><label>I.</label><title>INTRODUCTION</title><p>The existence of dark matter (DM) is supported by various astronomical observations at different scales, but the nature of DM particles is still unknown. As an important probe in indirect DM detection, the antiparticles in cosmic rays (CR) may shed light on the properties of DM. In recent years, a number of experiments have shown an unexpected structure in the CR positron data [<xref ref-type="bibr" rid="bib1">1</xref>-<xref ref-type="bibr" rid="bib4">4</xref>], which could be related to DM annihilation or decay [<xref ref-type="bibr" rid="bib5">5</xref>-<xref ref-type="bibr" rid="bib8">8</xref>]. Unlike CR positrons, the CR antiproton flux data from PAMELA [<xref ref-type="bibr" rid="bib9">9</xref>], BESS-polar II [<xref ref-type="bibr" rid="bib10">10</xref>] and AMS-02 [<xref ref-type="bibr" rid="bib11">11</xref>] do not show significant discrepancies with the secondary production of antiprotons, and these null results can be used to place stringent constraints on the DM annihilation cross-sections [<xref ref-type="bibr" rid="bib12">12</xref>-<xref ref-type="bibr" rid="bib15">15</xref>].</p><p>CR heavy anti-nuclei such as antideuterium (<inline-formula>
+               <tex-math id="M3">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula>) and antihelium-3 (<inline-formula>
+               <tex-math id="M4">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula>) are postulated to be important probes for DM [<xref ref-type="bibr" rid="bib16">16</xref>-<xref ref-type="bibr" rid="bib18">18</xref>]. The <inline-formula>
+               <tex-math id="M5">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M6">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> in CR can be generated as secondary productions by collisions between primary CR particles and interstellar gas, or they can be produced by DM annihilation or decay. However, the secondary <inline-formula>
+               <tex-math id="M7">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M8">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> are boosted to high kinetic energies because of the high production threshold in <inline-formula>
+               <tex-math id="M9">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula>-collisions (17<inline-formula>
+               <tex-math id="M10">\begin{document}$ m_{p} $\end{document}</tex-math>
+            </inline-formula> for <inline-formula>
+               <tex-math id="M11">\begin{document}$ \overline{ \rm{D}} $\end{document}</tex-math>
+            </inline-formula> and 31<inline-formula>
+               <tex-math id="M12">\begin{document}$ m_{p} $\end{document}</tex-math>
+            </inline-formula> for <inline-formula>
+               <tex-math id="M13">\begin{document}$ ^{3}\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula>, where <inline-formula>
+               <tex-math id="M14">\begin{document}$ m_{p} $\end{document}</tex-math>
+            </inline-formula> is the proton mass), and thus the signal from DM can be distinguished in low energy regions (below GeV per nucleon). Although the fluxes of anti-nuclei decrease rapidly with the increase of the atomic mass number <italic toggle="yes">A</italic>, the high signal-to-background ratio at low energies and experiments with high sensitivities (such as AMS-02 [<xref ref-type="bibr" rid="bib19">19</xref>, <xref ref-type="bibr" rid="bib20">20</xref>] and GAPS [<xref ref-type="bibr" rid="bib21">21</xref>]) make it possible to distinguish the contributions from DM interactions. Furthermore, an advantage for considering <inline-formula>
+               <tex-math id="M15">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M16">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> is that their productions are highly correlated with CR antiprotons, so the uncertainties of the <inline-formula>
+               <tex-math id="M17">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M18">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> fluxes can be greatly reduced by the CR <inline-formula>
+               <tex-math id="M19">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> data [<xref ref-type="bibr" rid="bib22">22</xref>].</p><p>In the literature (for a recent review, see Ref. [<xref ref-type="bibr" rid="bib23">23</xref>]), the analysis of the DM-produced <inline-formula>
+               <tex-math id="M20">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M21">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> are focused on the low kinetic energy regions, which we refer to as the low energy window. In our previous analysis [<xref ref-type="bibr" rid="bib22">22</xref>], we studied the prospects of detecting DM through low energy antihelium. We systematically analysed the uncertainties from propagation models, DM density profiles and MC generators, and reduced the uncertainties by constraining the DM annihilation cross-sections with the AMS-02 <inline-formula>
+               <tex-math id="M22">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+            </inline-formula> data. However, the low energy window suffers from the uncertainties of solar activity (solar modulations). In this work, we investigate the possibility of probing DM with high energy CR <inline-formula>
+               <tex-math id="M23">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M24">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> particles. In high energy regions (typically above 100 GeV per nucleon), the flux of primary CR particles drops quickly (the flux of CR proton is proportional to <inline-formula>
+               <tex-math id="M25">\begin{document}$ E^{-2.75} $\end{document}</tex-math>
+            </inline-formula>), which leads to a suppression of the high energy secondary CR particles. As a result, the fluxes of anti-nuclei produced by DM annihilation may exceed the secondary background and open a high energy window for probing DM.</p><p>We use the Monte Carlo (MC) event generators PYTHIA 8.2 [<xref ref-type="bibr" rid="bib24">24</xref>, <xref ref-type="bibr" rid="bib25">25</xref>], EPOS-LHC [<xref ref-type="bibr" rid="bib26">26</xref>, <xref ref-type="bibr" rid="bib27">27</xref>] and DPMJET-III [<xref ref-type="bibr" rid="bib28">28</xref>] to fit the coalescence momenta for anti-nuclei with experiments including ALEPH [<xref ref-type="bibr" rid="bib29">29</xref>], CERN ISR [<xref ref-type="bibr" rid="bib30">30</xref>] and ALICE [<xref ref-type="bibr" rid="bib31">31</xref>], and generate the energy spectra of anti-nuclei. The propagation of CR particles is calculated using the GALPROP code. We use the AMS-02 [<xref ref-type="bibr" rid="bib11">11</xref>] and HAWC <inline-formula>
+               <tex-math id="M26">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+            </inline-formula> data [<xref ref-type="bibr" rid="bib32">32</xref>] and the HESS galactic center (GC) <inline-formula>
+               <tex-math id="M27-1">\begin{document}$ \gamma $\end{document}</tex-math>
+            </inline-formula>-ray data [<xref ref-type="bibr" rid="bib33">33</xref>, <xref ref-type="bibr" rid="bib34">34</xref>] to constrain the DM annihilation cross-sections. We find that the conclusion depends on the choice of DM density profiles. For a large DM mass (<inline-formula>
+               <tex-math id="M28">\begin{document}$ \gtrsim 10 $\end{document}</tex-math>
+            </inline-formula> TeV) with the relatively flat “Cored” type DM profile, the high energy window exists, while for a typical steep DM profile like the “Cuspy” type, the high energy window closes.</p><p>This paper is organized as follows. In Section II, we briefly review the coalescence model and determine the coalescence momenta for anti-nuclei by fitting the ALEPH, ALICE and CERN-ISR data. In Section III, we review the theory of CR propagation. In Section IV, we constrain the DM annihilation cross-section by using the <inline-formula>
+               <tex-math id="M29">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+            </inline-formula> data from AMS-02 and HAWC and <inline-formula>
+               <tex-math id="M30">\begin{document}$ \gamma $\end{document}</tex-math>
+            </inline-formula>-ray data from HESS. The fluxes of <inline-formula>
+               <tex-math id="M31">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M32">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> for direct DM annihilation and annihilation through mediator channels are presented in Section V. The conclusions are summarized in Section VI.</p></sec><sec id="s02"><label>II.</label><title>COALESCENCE MODEL AND COALESCENCE MOMENTA</title><p>The formation of anti-nuclei can be described by the coalescence model [<xref ref-type="bibr" rid="bib35">35</xref>-<xref ref-type="bibr" rid="bib37">37</xref>], which uses a single parameter, the coalescence momentum <inline-formula>
+               <tex-math id="M33">\begin{document}$ p_0^{ \bar{{A}}} $\end{document}</tex-math>
+            </inline-formula>, to quantify the probability of anti-nucleons merging into an anti-nucleus <inline-formula>
+               <tex-math id="M34">\begin{document}$ \bar{{A}} $\end{document}</tex-math>
+            </inline-formula>. The basic idea of this model is that anti-nucleons combine into an anti-nucleus if the relative four-momenta of a proper set of nucleons is less than the coalescence momentum. For example, the coalescence criterion for <inline-formula>
+               <tex-math id="M35">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> is written as:</p><p>
+            <disp-formula> 
+               <label>1</label> 
+               <tex-math id="E1"> <?CDATA $ ||k_{\bar{p}}-k_{\bar{n}}|| = \sqrt{(\Delta \vec{k})^2-(\Delta E)^2} \lt , p_0^{ \overline{\mathrm{D}}}, $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M36">\begin{document}$ k_{\bar{p}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M37">\begin{document}$ k_{\bar{n}} $\end{document}</tex-math>
+            </inline-formula> are the four-momenta of the antiproton and antineutron respectively, and <inline-formula>
+               <tex-math id="M38">\begin{document}$ p_0^{\bar{  \mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> is the coalescence momentum of <inline-formula>
+               <tex-math id="M39">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula>. If we assume that the momentum distributions of the <inline-formula>
+               <tex-math id="M40">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M41">\begin{document}$ \bar{n} $\end{document}</tex-math>
+            </inline-formula> in one collision event are uncorrelated and isotropic, the spectrum of <inline-formula>
+               <tex-math id="M42">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> can be derived by the phase-space analysis:</p><p>
+            <disp-formula> 
+               <label>2</label> 
+               <tex-math id="E2"> <?CDATA $ \gamma_{\bar{ \mathrm{D}}} \frac{{\rm d}^{3}N_{\bar{ \mathrm{D}}}}{{\rm d}^{3}\vec{k}_{\bar{ \mathrm{D}}}} (\vec{k}_{\bar{ \mathrm{D}}}) = \frac{\pi}{6} \left(p_{0}^{\bar{ \mathrm{D}}}\right)^{3} \cdot \gamma_{\bar p} \frac{{\rm d}^{3}N_{\bar p}}{{\rm d}^{3}\vec{k}_{\bar p}}(\vec{k}_{\bar p}) \cdot \gamma_{\bar n} \frac{{\rm d}^{3}N_{\bar n}}{{\rm d}^{3}\vec{k}_{\bar n}}(\vec{k}_{\bar n}) , $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M43">\begin{document}$ \gamma_{\bar{  \mathrm{D}}, \bar p, \bar n} $\end{document}</tex-math>
+            </inline-formula> are the Lorentz factors, and <inline-formula>
+               <tex-math id="M44">\begin{document}$ \vec{k}_{\bar p}\approx \vec{k}_{\bar n}\approx \vec{k}_{\bar{  \mathrm{D}}}/2 $\end{document}</tex-math>
+            </inline-formula>.</p><p>For <inline-formula>
+               <tex-math id="M45">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula>, we adopt the same coalescence criterion as in our previous analysis [<xref ref-type="bibr" rid="bib22">22</xref>]. We compose a triangle using the norms of the three relative four-momenta <inline-formula>
+               <tex-math id="M46">\begin{document}$  l_1 = ||k_1-k_2||,\; \;  l_2 = ||k_2-k_3|| $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M47">\begin{document}$  l_3 = ||k_1-k_3|| $\end{document}</tex-math>
+            </inline-formula>, where <inline-formula>
+               <tex-math id="M48">\begin{document}$ k_1, k_2, k_3 $\end{document}</tex-math>
+            </inline-formula> are the four-momenta of the three anti-nucleons respectively. Then, making a circle with minimal diameter to envelop the triangle, if the diameter of this circle is smaller than <inline-formula>
+               <tex-math id="M49">\begin{document}$  p_0^{ \overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula>, an <inline-formula>
+               <tex-math id="M50">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> is generated. If the triangle is acute, the minimal circle is just the circumcircle of this triangle, and the coalescence criterion can be expressed as follows:</p><p>
+            <disp-formula> 
+               <label>3</label> 
+               <tex-math id="E3"> <?CDATA $ d_{\mathrm{circ}} \!=\! \frac{l_1l_2l_3}{\sqrt{(l_1\!+\!l_2\!+\!l_3)(-l_1\!+\!l_2\!+\!l_3)(l_1\!-\!l_2\!+\!l_3)(l_1\!+\!l_2\!-\!l_3)}} \lt , p_0^{ \overline{\mathrm{He}}}. $?> </tex-math>
+            </disp-formula>
+         </p><p>Otherwise, the minimal diameter is equal to the longest side of the triangle, and the criterion can be simply written as <inline-formula>
+               <tex-math id="M51">\begin{document}$ \text{max}\{l_1,l_2,l_3\} &lt; p_0^{    \overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula>. See Ref. [<xref ref-type="bibr" rid="bib22">22</xref>] for more details.</p><p>We use the MC generators PYTHIA 8.2, EPOS-LHC and DPMJET-III to simulate the hadronization after the DM annihilations and <inline-formula>
+               <tex-math id="M52">\begin{document}$ pp- $\end{document}</tex-math>
+            </inline-formula>collisions, then use the coalescence model to produce anti-nuclei from the final state <inline-formula>
+               <tex-math id="M53">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> or <inline-formula>
+               <tex-math id="M54">\begin{document}$ \bar{n} $\end{document}</tex-math>
+            </inline-formula>. The spatial distance between each pair of anti-nucleons also needs to be considered, because the anti-nucleons should be close enough to undergo nuclear reactions then merge into anti-nuclei. We set all the particles with lifetime <inline-formula>
+               <tex-math id="M55">\begin{document}$ \tau \gtrsim 2\,\, \mathrm{fm}/c $\end{document}</tex-math>
+            </inline-formula> to be stable, to ensure that every pair of anti-nucleons is located within a short enough distance [<xref ref-type="bibr" rid="bib17">17</xref>], where 2 fm is approximately the size of the <inline-formula>
+               <tex-math id="M56">\begin{document}$ ^3\overline{ \rm{He}} $\end{document}</tex-math>
+            </inline-formula> nucleus.</p><p>The values of the coalescence momenta should be determined by the experimental data, which are often released in the form of coalescence parameters <inline-formula>
+               <tex-math id="M57">\begin{document}$ B_A $\end{document}</tex-math>
+            </inline-formula>. The definition of the coalescence parameter <inline-formula>
+               <tex-math id="M58">\begin{document}$ B_A $\end{document}</tex-math>
+            </inline-formula> is expressed by the formula:</p><p>
+            <disp-formula> 
+               <label>4</label> 
+               <tex-math id="E4"> <?CDATA $ E_A\frac{{\rm d}^3N_A}{{\rm d}p_A^3} = B_A \left(E_p\frac{{\rm d}^3N_p}{{\rm d}p_p^3}\right)^Z \left(E_n\frac{{\rm d}^3N_n}{{\rm d}p_n^3}\right)^N , \ \ \ \vec{p}_p = \vec{p}_n = \vec{p}_A/A ,$?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M59">\begin{document}$ A = Z+N $\end{document}</tex-math>
+            </inline-formula> is the mass number of the nucleus, and <italic toggle="yes">Z</italic> and <italic toggle="yes">N</italic> are the proton number and the neutron number respectively. Under the assumption that the momentum distributions of the <inline-formula>
+               <tex-math id="M60">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M61">\begin{document}$ \bar{n} $\end{document}</tex-math>
+            </inline-formula> are uncorrelated and isotropic, the relation <inline-formula>
+               <tex-math id="M62">\begin{document}$ B_A\propto p_0^{3(A-1)} $\end{document}</tex-math>
+            </inline-formula> is expected by comparing Eq.  (2) and Eq.  (4). However, the jet structure and the correlation between <inline-formula>
+               <tex-math id="M63">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M64">\begin{document}$ \bar{n} $\end{document}</tex-math>
+            </inline-formula> play important roles in the formation of anti-nuclei. So we derive the coalescence momenta by using the MC generators to fit the experimental data, and thus the effect of jet structures and correlations are included.</p><p>To derive the coalescence momentum of <inline-formula>
+               <tex-math id="M65">\begin{document}$ \overline{\mathrm{D}} $\end{document}</tex-math>
+            </inline-formula> in <inline-formula>
+               <tex-math id="M66">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula> collisions, we follow the procedures described in Ref. [<xref ref-type="bibr" rid="bib22">22</xref>] to fit the coalescence parameter <inline-formula>
+               <tex-math id="M67">\begin{document}$ B_2 $\end{document}</tex-math>
+            </inline-formula> data from the ALICE-7 TeV, 2.76 TeV, 900 GeV [<xref ref-type="bibr" rid="bib31">31</xref>] and ISR-53 GeV [<xref ref-type="bibr" rid="bib30">30</xref>] experiments. We use MC generators to simulate these experiments, and record the momenta information of <inline-formula>
+               <tex-math id="M68">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M69">\begin{document}$ \bar{n} $\end{document}</tex-math>
+            </inline-formula> that are possible to form a <inline-formula>
+               <tex-math id="M70">\begin{document}$ \overline{\mathrm{D}} $\end{document}</tex-math>
+            </inline-formula>. We select the <inline-formula>
+               <tex-math id="M71">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M72">\begin{document}$ \bar{n} $\end{document}</tex-math>
+            </inline-formula> according to a sufficiently large coalescence momentum <inline-formula>
+               <tex-math id="M73">\begin{document}$ p_{0,\text{max}} $\end{document}</tex-math>
+            </inline-formula> (600 MeV for <inline-formula>
+               <tex-math id="M74">\begin{document}$ \overline{\mathrm{D}} $\end{document}</tex-math>
+            </inline-formula>, 1 GeV for <inline-formula>
+               <tex-math id="M75">\begin{document}$ \overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula>), and then calculate the spectra of <inline-formula>
+               <tex-math id="M76">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> for different <inline-formula>
+               <tex-math id="M77">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> values that are smaller than <inline-formula>
+               <tex-math id="M78">\begin{document}$ p_{0,\text{max}} $\end{document}</tex-math>
+            </inline-formula>. The <inline-formula>
+               <tex-math id="M79">\begin{document}$ B_2 $\end{document}</tex-math>
+            </inline-formula> values are calculated by using Eq. (4), and we perform a <inline-formula>
+               <tex-math id="M80">\begin{document}$ \chi^2 $\end{document}</tex-math>
+            </inline-formula> analysis to find the value of <inline-formula>
+               <tex-math id="M81">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula>. The best-fit <inline-formula>
+               <tex-math id="M82">\begin{document}$ B_2 $\end{document}</tex-math>
+            </inline-formula> values are shown in <xref ref-type="fig" rid="f1">Fig. 1</xref>. We find <inline-formula>
+               <tex-math id="M83">\begin{document}$ \chi^2_{\text{min}}/{d.o.f}&lt; 1 $\end{document}</tex-math>
+            </inline-formula> for all these fits, which means the fitting results are in good agreement with the experimental data. As shown by the figure, the <inline-formula>
+               <tex-math id="M84">\begin{document}$ p_T $\end{document}</tex-math>
+            </inline-formula>-dependences are reproduced well by the coalescence model and the MC generators.</p><fig id="f1" orientation="portrait" position="float"><label>Fig. 1</label><caption id="fc1"><p>(color online) Best-fit <inline-formula>
+                     <tex-math id="M85">\begin{document}$ B_2 $\end{document}</tex-math>
+                  </inline-formula> values from MC generators, compared with the ALICE [<xref ref-type="bibr" rid="bib31">31</xref>] and CERN-ISR [<xref ref-type="bibr" rid="bib30">30</xref>] <inline-formula>
+                     <tex-math id="M86">\begin{document}$ pp $\end{document}</tex-math>
+                  </inline-formula>-collision data:  (top left) ALICE-7 TeV,  (top right) ALICE-2.76 TeV,  (bottom left) ALICE-900 GeV, and (bottom right) ISR-53 GeV.</p></caption><graphic content-type="print" id="f1_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-1.eps" xlink:type="simple"/><graphic content-type="online" id="f1_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f1.jpg" xlink:type="simple"/></fig><p>The fitting results for <inline-formula>
+               <tex-math id="M91">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> are listed in <xref ref-type="table" rid="t1">Table 1</xref>. The values in parentheses are the results given by the ALICE group, which are only available for the ALICE 7 TeV and ISR-53 GeV experiments with the PYTHIA 8.2 and EPOS-LHC generators. We can see that for ALICE 7 TeV, our best-fit values are in good agreement with those from the ALICE group, but for ISR-53 GeV, our results are larger. This is partly because the ALICE group has only generated the energy spectra of <inline-formula>
+               <tex-math id="M92">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> for six <inline-formula>
+               <tex-math id="M93">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> values [<xref ref-type="bibr" rid="bib31">31</xref>], and used the isotropic approximation <inline-formula>
+               <tex-math id="M94">\begin{document}$ B_A\approx p_0^{3(A-1)} $\end{document}</tex-math>
+            </inline-formula> to interpolate the spectra for other <inline-formula>
+               <tex-math id="M95">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> values, while we generate the <inline-formula>
+               <tex-math id="M96">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> spectra for every integer number MeV and do not need the approximation. Moreover, in fitting the ISR-53 GeV experiment, the ALICE group has manually rescaled the spectra of <inline-formula>
+               <tex-math id="M97">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> generated by MC to better reproduce the experimental data, while for self-consistency we do not make this correction.</p><table-wrap id="t1" orientation="portrait" position="float"><label>Table 1</label><caption id="tc1"><p>Best-fit values of <inline-formula>
+                     <tex-math id="M98">\begin{document}$ p_0^{\overline{\mathrm{D}}} $\end{document}</tex-math>
+                  </inline-formula> in units of MeV, derived by fitting the <inline-formula>
+                     <tex-math id="M99">\begin{document}$ pp $\end{document}</tex-math>
+                  </inline-formula>-collision data with three MC generators, PYTHIA 8.2 [<xref ref-type="bibr" rid="bib24">24</xref>, <xref ref-type="bibr" rid="bib25">25</xref>], EPOS-LHC [<xref ref-type="bibr" rid="bib26">26</xref>, <xref ref-type="bibr" rid="bib27">27</xref>], and DPMJET-III [<xref ref-type="bibr" rid="bib28">28</xref>]. The <inline-formula>
+                     <tex-math id="M100">\begin{document}$ p_0^{\overline{\mathrm{D}}} $\end{document}</tex-math>
+                  </inline-formula> values do not show a clear relation with the <inline-formula>
+                     <tex-math id="M101">\begin{document}$ \sqrt{s} $\end{document}</tex-math>
+                  </inline-formula> value of the experiments. The values in parentheses are fitting results given by the ALICE group.</p></caption><table><thead><tr><th align="center" colspan="1" rowspan="1" valign="middle">MC generators</th><th align="center" colspan="1" rowspan="1" valign="middle">ALICE 7/TeV</th><th align="center" colspan="1" rowspan="1" valign="middle">ALICE 2.76/TeV</th><th align="center" colspan="1" rowspan="1" valign="middle">ALICE 900/GeV</th><th align="center" colspan="1" rowspan="1" valign="middle">ISR 53/GeV</th></tr></thead><tbody><tr><td align="center" colspan="1" rowspan="1" valign="middle">PYTHIA 8.2</td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M102">\begin{document}$214^{+2}_{-3}~(216\pm 8)$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M103">\begin{document}$206^{+4}_{-4}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M104">\begin{document}$231^{+9}_{-9}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M105">\begin{document}$233^{+10}_{-13}~(188\pm8)$\end{document}</tex-math>
+                        </inline-formula>
+                     </td></tr><tr><td align="center" colspan="1" rowspan="1" valign="middle">EPOS-LHC</td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M106">\begin{document}$210^{+2}_{-3}~(200\pm10)$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M107">\begin{document}$208^{+6}_{-3}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M108">\begin{document}$235^{+8}_{-9}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M109">\begin{document}$211^{+7}_{-11}~(190\pm8)$\end{document}</tex-math>
+                        </inline-formula>
+                     </td></tr><tr><td align="center" colspan="1" rowspan="1" valign="middle">DPMJET-III</td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M110">\begin{document}$201^{+1}_{-3}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M111">\begin{document}$197^{+4}_{-4}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M112">\begin{document}$219^{+8}_{-8}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M113">\begin{document}$195^{+9}_{-12}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td></tr></tbody></table></table-wrap><p>In <xref ref-type="fig" rid="f2">Fig. 2</xref>, we show the <inline-formula>
+               <tex-math id="M114">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> values for different <inline-formula>
+               <tex-math id="M115">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula> collision experiments with various MC generators. As can be seen, <inline-formula>
+               <tex-math id="M116">\begin{document}$  p_0^{ \overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> does not show a clear relation with the <inline-formula>
+               <tex-math id="M117">\begin{document}$ \sqrt{s} $\end{document}</tex-math>
+            </inline-formula> values of the experiments. Since the fitting results for different center-of-mass energies are similar, we assume that the <inline-formula>
+               <tex-math id="M118">\begin{document}$ p_0^{\overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula> value does not vary with the <inline-formula>
+               <tex-math id="M119">\begin{document}$ \sqrt{s} $\end{document}</tex-math>
+            </inline-formula> of the experiment. By fitting these <inline-formula>
+               <tex-math id="M120">\begin{document}$ p_0^{\overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula>, we get <inline-formula>
+               <tex-math id="M121">\begin{document}$ p_0^{\overline{\mathrm{D}}}(\texttt{PYTHIA)} = 213\pm2 $\end{document}</tex-math>
+            </inline-formula> MeV, <inline-formula>
+               <tex-math id="M122">\begin{document}$ p_0^{\overline{\mathrm{D}}}(\texttt{EPOS-LHC)} = 211\pm $\end{document}</tex-math>
+            </inline-formula>
+            <inline-formula>
+               <tex-math id="M122-1">\begin{document}$ 2 $\end{document}</tex-math>
+            </inline-formula> MeV, and <inline-formula>
+               <tex-math id="M123">\begin{document}$ p_0^{\overline{\mathrm{D}}}(\texttt{DPMJET)} = $\end{document}</tex-math>
+            </inline-formula>
+            <inline-formula>
+               <tex-math id="M123-1">\begin{document}$  201\pm2 $\end{document}</tex-math>
+            </inline-formula> MeV for <inline-formula>
+               <tex-math id="M124">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula> collisions.</p><fig id="f2" orientation="portrait" position="float"><label>Fig. 2</label><caption id="fc2"><p>(color online) <inline-formula>
+                     <tex-math id="M125">\begin{document}$ p_0 $\end{document}</tex-math>
+                  </inline-formula> values of <inline-formula>
+                     <tex-math id="M126">\begin{document}$ {\overline{\mathrm{D}}} $\end{document}</tex-math>
+                  </inline-formula> from fitting the <inline-formula>
+                     <tex-math id="M127">\begin{document}$ pp $\end{document}</tex-math>
+                  </inline-formula> collision data with three MC generators.</p></caption><graphic content-type="print" id="f2_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-2.eps" xlink:type="simple"/><graphic content-type="online" id="f2_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f2.jpg" xlink:type="simple"/></fig><p>By using PYTHIA to fit the <inline-formula>
+               <tex-math id="M128">\begin{document}$ B_2 = 3.3\pm1.0\pm0.8\times10^{-3} $\end{document}</tex-math>
+            </inline-formula> data from the ALEPH <inline-formula>
+               <tex-math id="M129">\begin{document}$ e^+e^-\rightarrow Z^0 \rightarrow \overline{\mathrm{D}} $\end{document}</tex-math>
+            </inline-formula> experiment [<xref ref-type="bibr" rid="bib29">29</xref>], we find <inline-formula>
+               <tex-math id="M130">\begin{document}$ p_0^{\overline{\mathrm{D}}}(Z^0) = 190^{+23}_{-27} $\end{document}</tex-math>
+            </inline-formula> MeV. Considering the similarity between the dynamics of the <inline-formula>
+               <tex-math id="M131">\begin{document}$ Z^0 $\end{document}</tex-math>
+            </inline-formula> decay and DM annihilation, we set <inline-formula>
+               <tex-math id="M132">\begin{document}$ p_0^{\overline{\mathrm{D}}}(Z^0) $\end{document}</tex-math>
+            </inline-formula> to be the coalescence momentum for the DM annihilation process <inline-formula>
+               <tex-math id="M133">\begin{document}$ \chi\chi \rightarrow \overline{\mathrm{D}} + X $\end{document}</tex-math>
+            </inline-formula>.</p><p>For <inline-formula>
+               <tex-math id="M134">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula>, we adopt the <inline-formula>
+               <tex-math id="M135">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> value obtained in our previous work [<xref ref-type="bibr" rid="bib22">22</xref>], which determining <inline-formula>
+               <tex-math id="M136">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> by fitting the ALICE <inline-formula>
+               <tex-math id="M137">\begin{document}$ \sqrt{s} = 7 $\end{document}</tex-math>
+            </inline-formula> TeV <inline-formula>
+               <tex-math id="M138">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula>-collision data. The results are listed in <xref ref-type="table" rid="t2">Table 2</xref>. Note that <inline-formula>
+               <tex-math id="M139">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> particles can be produced from two channels: direct formation from the coalescence of <inline-formula>
+               <tex-math id="M140">\begin{document}$ \bar{p}\bar{p}\bar{n} $\end{document}</tex-math>
+            </inline-formula>, or through the <inline-formula>
+               <tex-math id="M141">\begin{document}$ \beta $\end{document}</tex-math>
+            </inline-formula>-decay of an antitriton <inline-formula>
+               <tex-math id="M142">\begin{document}$ \overline{\text{T}} $\end{document}</tex-math>
+            </inline-formula> (<inline-formula>
+               <tex-math id="M143">\begin{document}$ \bar{p}\bar{n}\bar{n} $\end{document}</tex-math>
+            </inline-formula>). The direct formation channel is suppressed by the Coulomb repulsion between the two antiprotons, so some previous works only considered the antitriton channel. However, our calculation shows that the direct formation channel is not negligible. The coalescence momentum of <inline-formula>
+               <tex-math id="M144">\begin{document}$ ^3\overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula> is only slightly smaller than that of <inline-formula>
+               <tex-math id="M145">\begin{document}$ \overline{\text{T}} $\end{document}</tex-math>
+            </inline-formula>, and the Gamow factor <inline-formula>
+               <tex-math id="M146">\begin{document}$ \mathcal{G}\sim \exp(-2\pi\alpha m_p/p_0^{\overline{\mathrm{He}}}) \approx 0.8 $\end{document}</tex-math>
+            </inline-formula> [<xref ref-type="bibr" rid="bib38">38</xref>], which indicates that the Coulomb repulsion may not be significant. From these facts, it is reasonable to ignore the Coulomb repulsion in the MC simulation, and the contributions from both channels are included in this work. Our MC calculation shows that about 30% of <inline-formula>
+               <tex-math id="M147">\begin{document}$ ^3\overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula> is produced through the direct formation channel. Due to the lack of <inline-formula>
+               <tex-math id="M148">\begin{document}$ e^+e^-\rightarrow  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> experiment data, we set <inline-formula>
+               <tex-math id="M149">\begin{document}$ p_0^{\overline{\mathrm{He}}/\overline{\mathrm{T}}}(\texttt{PYTHIA)} $\end{document}</tex-math>
+            </inline-formula> to be the coalescence momentum for the DM annihilation process <inline-formula>
+               <tex-math id="M150">\begin{document}$ \chi\chi \rightarrow \overline{\mathrm{He}}/\overline{\mathrm{T}} + X $\end{document}</tex-math>
+            </inline-formula>. It is known that the coalescence momentum varies for different processes and center-of-mass energies [<xref ref-type="bibr" rid="bib39">39</xref>], and the relation <inline-formula>
+               <tex-math id="M151">\begin{document}$ B_A\approx p_0^{3(A-1)} $\end{document}</tex-math>
+            </inline-formula> makes <inline-formula>
+               <tex-math id="M152">\begin{document}$ p_0 $\end{document}</tex-math>
+            </inline-formula> a crucial factor for the uncertainties of the final fluxes. In some previous analyses, the value of <inline-formula>
+               <tex-math id="M153">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> was estimated using various approaches, for example by using the binding energy relation between <inline-formula>
+               <tex-math id="M154">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M155">\begin{document}$ p_0^{\overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula>, or assuming the ratio <inline-formula>
+               <tex-math id="M156">\begin{document}$ p_0^{\overline{\mathrm{He}}}/p_0^{\overline{\mathrm{D}}} = p_0^{\mathrm{He}}/p_0^{\mathrm{D}} $\end{document}</tex-math>
+            </inline-formula> [<xref ref-type="bibr" rid="bib17">17</xref>], and some works just set <inline-formula>
+               <tex-math id="M157">\begin{document}$ p_0^{\overline{\mathrm{He}}} = p_0^{\overline{\mathrm{D}}} $\end{document}</tex-math>
+            </inline-formula>  [<xref ref-type="bibr" rid="bib18">18</xref>]. The <inline-formula>
+               <tex-math id="M158">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> results from these approaches are different. It is worth mentioning that our <inline-formula>
+               <tex-math id="M159">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> value is relatively small compared to previous works, which leads to conservative DM contributions.</p><table-wrap id="t2" orientation="portrait" position="float"><label>Table 2</label><caption id="tc2"><p>Best-fit values of <inline-formula>
+                     <tex-math id="M160">\begin{document}$ p_0^{\overline{\mathrm{He}}} $\end{document}</tex-math>
+                  </inline-formula> and <inline-formula>
+                     <tex-math id="M161">\begin{document}$ p_0^{\bar{\mathrm{T}}} $\end{document}</tex-math>
+                  </inline-formula> from Ref. [<xref ref-type="bibr" rid="bib22">22</xref>], obtained by fitting the ALICE <inline-formula>
+                     <tex-math id="M162">\begin{document}$ pp $\end{document}</tex-math>
+                  </inline-formula>-collision data at <inline-formula>
+                     <tex-math id="M163">\begin{document}$ \sqrt{s} = 7 $\end{document}</tex-math>
+                  </inline-formula> TeV for three MC generators, PYTHIA 8.2, EPOS-LHC, and DPMJET-III.</p></caption><table><thead><tr><th align="center" colspan="1" rowspan="1" valign="middle">MC generator</th><th align="center" colspan="1" rowspan="1" valign="middle">PYTHIA 8.2</th><th align="center" colspan="1" rowspan="1" valign="middle">EPOS-LHC</th><th align="center" colspan="1" rowspan="1" valign="middle">DPMJET-III</th></tr></thead><tbody><tr><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M164">\begin{document}$p_0^{\overline{\mathrm{He}}}$\end{document}</tex-math>
+                        </inline-formula>/MeV</td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M165">\begin{document}$224^{+12}_{-16}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M166">\begin{document}$227^{+11}_{-16}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M167">\begin{document}$212^{+10}_{-13}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td></tr><tr><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M168">\begin{document}$p_0^{\bar{\mathrm{T}}}$\end{document}</tex-math>
+                        </inline-formula>/MeV</td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M169">\begin{document}$234^{+17}_{-29}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M170">\begin{document}$245^{+17}_{-30}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td><td align="center" colspan="1" rowspan="1" valign="middle">
+                        <inline-formula>
+                           <tex-math id="M171">\begin{document}$222^{+16}_{-26}$\end{document}</tex-math>
+                        </inline-formula>
+                     </td></tr></tbody></table></table-wrap><p>For the primary anti-particles originating from DM annihilations, the injection spectra are calculated using PYTHIA 8.2. We simulate the annihilation of Majorana DM particles by a positron-electron annihilation process <inline-formula>
+               <tex-math id="M172">\begin{document}$ e^+e^- \rightarrow \phi^* \rightarrow f\bar{f} $\end{document}</tex-math>
+            </inline-formula>, where <inline-formula>
+               <tex-math id="M173">\begin{document}$ \phi^* $\end{document}</tex-math>
+            </inline-formula> is a fictitious scaler singlet and <italic toggle="yes">f</italic> is a standard model final state. We set <inline-formula>
+               <tex-math id="M174">\begin{document}$ \sqrt{s} = 2m_{\chi} $\end{document}</tex-math>
+            </inline-formula> and switch off all initial-state-radiations in PYTHIA 8.2, to mimic the dynamics of DM annihilation. Three kinds of final state are considered: <inline-formula>
+               <tex-math id="M175">\begin{document}$ q\bar{q} $\end{document}</tex-math>
+            </inline-formula> (<italic toggle="yes">q</italic> stands for <italic toggle="yes">u</italic> or <italic toggle="yes">d</italic> quark), <inline-formula>
+               <tex-math id="M176">\begin{document}$ b\bar{b} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M177">\begin{document}$ W^+W^- $\end{document}</tex-math>
+            </inline-formula>. In the EPOS-LHC and DPMJET-III generators, only hadrons can be set as the initial states, which does not resemble the properties of DM annihilations.</p><p>For the secondary anti-particles produced in <inline-formula>
+               <tex-math id="M178">\begin{document}$ pp$\end{document}</tex-math>
+            </inline-formula>-collisions, EPOS-LHC and DPMJET-III are used to generate the energy spectra. The default parameters in PYTHIA 8.2 (the Monash tune [<xref ref-type="bibr" rid="bib40">40</xref>]) are focused to reproduce the experimental results at high center-of-mass energies (like ATLAS at <inline-formula>
+               <tex-math id="M179">\begin{document}$ \sqrt{s} = 7 $\end{document}</tex-math>
+            </inline-formula> TeV [<xref ref-type="bibr" rid="bib41">41</xref>]), but are not optimized for energy regions around a few tens of GeV, which give the dominating contributions for secondary CR anti-particles. To evaluate the performance of MC generators at low center-of-mass energies, we compare the <inline-formula>
+               <tex-math id="M180">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> differential invariant cross-section obtained by MC generators and the NA49 data at <inline-formula>
+               <tex-math id="M181">\begin{document}$ \sqrt{s} = 17.3 $\end{document}</tex-math>
+            </inline-formula> GeV [<xref ref-type="bibr" rid="bib42">42</xref>]. This comparison shows that EPOS-LHC has the best performance, and DPMJET-III is also in relatively good agreement with experiment, while the production cross-section of <inline-formula>
+               <tex-math id="M182">\begin{document}$ \bar{p} $\end{document}</tex-math>
+            </inline-formula> given by PYTHIA 8.2 is larger than the NA49 data by roughly a factor of two. In this paper, we will draw our conclusion based on the results from EPOS-LHC, and the difference between EPOS-LHC and DPMJET-III can be used as a rough estimation of the uncertainties from different MC generators.</p></sec><sec id="s03"><label>III.</label><title>PROPAGATION OF COSMIC RAYS</title><p>The propagation of charged CR particles is assumed to be random diffusions in a cylindrical diffusion halo with radius <inline-formula>
+               <tex-math id="M183">\begin{document}$ r_h \approx 20 $\end{document}</tex-math>
+            </inline-formula> kpc and half-height <inline-formula>
+               <tex-math id="M184">\begin{document}$ z_h = 1 \sim 10 $\end{document}</tex-math>
+            </inline-formula> kpc. The diffusion equation is written as [<xref ref-type="bibr" rid="bib43">43</xref>, <xref ref-type="bibr" rid="bib44">44</xref>]:</p><p>
+            <disp-formula> 
+               <label>5</label> 
+               <tex-math id="E5"> <?CDATA $ \begin{aligned}[b] \frac{\partial f}{\partial t} = & q(\vec{r},p)+\vec{\nabla}\cdot(D_{xx}\vec{\nabla} f-\vec{V}_c f)+ \frac{\partial}{\partial p}p^2 D_{pp}\frac{\partial}{\partial p}\frac{1}{p^2} f \\ & - \frac{\partial}{\partial p} \left[ \dot{p} f-\frac{p}{3}(\vec{\nabla}\cdot\vec{V}_c) f \right] -\frac{1}{\tau_f} f - \frac{1}{\tau_r} f \; , \end{aligned} $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M185">\begin{document}$  f(\vec{r},p,t) $\end{document}</tex-math>
+            </inline-formula> is the number density in phase spaces at the particle momentum <italic toggle="yes">p</italic> and position <inline-formula>
+               <tex-math id="M186">\begin{document}$ \vec{r} $\end{document}</tex-math>
+            </inline-formula>, and <inline-formula>
+               <tex-math id="M187">\begin{document}$ q(\vec{r},p) $\end{document}</tex-math>
+            </inline-formula> is the source term. <inline-formula>
+               <tex-math id="M188">\begin{document}$ D_{xx} $\end{document}</tex-math>
+            </inline-formula> is the spatial diffusion coefficient, which is parameterized as <inline-formula>
+               <tex-math id="M189">\begin{document}$ D_{xx} = \beta D_0 (R/R_0)^{\delta} $\end{document}</tex-math>
+            </inline-formula>, where <inline-formula>
+               <tex-math id="M190">\begin{document}$ R = p/(Ze) $\end{document}</tex-math>
+            </inline-formula> is the rigidity of the CR particle with electric charge <inline-formula>
+               <tex-math id="M191">\begin{document}$ Ze $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M192">\begin{document}$ \delta $\end{document}</tex-math>
+            </inline-formula> is the spectral power index, which takes two different values <inline-formula>
+               <tex-math id="M193">\begin{document}$ \delta = \delta_{1(2)} $\end{document}</tex-math>
+            </inline-formula> when <italic toggle="yes">R</italic> is below (above) a reference rigidity <inline-formula>
+               <tex-math id="M194">\begin{document}$ R_0 $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M195">\begin{document}$ D_0 $\end{document}</tex-math>
+            </inline-formula> is a constant normalization coefficient, and <inline-formula>
+               <tex-math id="M196">\begin{document}$ \beta = v/c $\end{document}</tex-math>
+            </inline-formula> is the velocity of CR particles. <inline-formula>
+               <tex-math id="M197">\begin{document}$ \vec{V}_c $\end{document}</tex-math>
+            </inline-formula> quantifies the velocity of the galactic wind convection. The diffusive re-acceleration is described as diffusions in the momentum space, which is described by the parameter <inline-formula>
+               <tex-math id="M198">\begin{document}$ D_{pp} = p^2V_a^2/(9D_{xx}) $\end{document}</tex-math>
+            </inline-formula>, where <inline-formula>
+               <tex-math id="M199">\begin{document}$ V_a $\end{document}</tex-math>
+            </inline-formula> is the Alfvén velocity that characterizes the propagation of weak disturbances in a magnetic field. <inline-formula>
+               <tex-math id="M200">\begin{document}$ \dot{p} \equiv {\rm d}p/{\rm d}t $\end{document}</tex-math>
+            </inline-formula> is the momentum loss rate, and <inline-formula>
+               <tex-math id="M201">\begin{document}$ \tau_f $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M202">\begin{document}$ \tau_r $\end{document}</tex-math>
+            </inline-formula> are the timescales of particle fragmentation and radioactive decay respectively. For boundary conditions, we assume that the number densities of CR particles vanish at the boundary of the halo: <inline-formula>
+               <tex-math id="M203">\begin{document}$  f(r_h,z,p) = f(r,\pm z_h, p) = 0 $\end{document}</tex-math>
+            </inline-formula>. The steady-state diffusion condition is achieved by setting <inline-formula>
+               <tex-math id="M204">\begin{document}$ \partial f/\partial t = 0 $\end{document}</tex-math>
+            </inline-formula>. We numerically solve the diffusion equation Eq. (5) by using the GALPROP v54 code [<xref ref-type="bibr" rid="bib45">45</xref>-<xref ref-type="bibr" rid="bib49">49</xref>]. The primary CR nucleus injection spectra are assumed to have a broken power law behavior <inline-formula>
+               <tex-math id="M205">\begin{document}$ f_p(\vec{r},p)\propto p^{\gamma_p} $\end{document}</tex-math>
+            </inline-formula>, with the injection index <inline-formula>
+               <tex-math id="M206">\begin{document}$ \gamma_p = $\end{document}</tex-math>
+            </inline-formula>
+            <inline-formula>
+               <tex-math id="M206-1">\begin{document}$ \gamma_{p1} (\gamma_{p2}) $\end{document}</tex-math>
+            </inline-formula> for the nucleus rigidity <inline-formula>
+               <tex-math id="M207">\begin{document}$ R_p $\end{document}</tex-math>
+            </inline-formula> below (above) a reference value <inline-formula>
+               <tex-math id="M208">\begin{document}$ R_{ps} $\end{document}</tex-math>
+            </inline-formula>. The spatial distribution of the interstellar gas and the primary sources of CR nuclei are taken from Ref. [<xref ref-type="bibr" rid="bib45">45</xref>].</p><p>The injection of CR particles is described by the source term in the diffusion equation. For the primary CR antiparticles <inline-formula>
+               <tex-math id="M209">\begin{document}$ \bar{A}\;  (\bar{A} = \bar{p}, \overline{\text{D}}, ^3\overline{\text{He}}) $\end{document}</tex-math>
+            </inline-formula> originating from the annihilation of Majorana DM particles, the source term is given by:</p><p>
+            <disp-formula> 
+               <label>6</label> 
+               <tex-math id="E6"> <?CDATA $ q_{\bar{A}}(\vec{r},p) = \frac{\rho_{_{\mathrm{DM}}}^2(\vec{r})}{2m^2_{\chi}}\langle\sigma v\rangle \frac{{\rm d}N_{\bar{A}}}{{\rm d}p}\; , $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M210">\begin{document}$ \rho_{_{\mathrm{DM}}}(\vec{r}) $\end{document}</tex-math>
+            </inline-formula> is the energy density of DM, <inline-formula>
+               <tex-math id="M211">\begin{document}$ \langle\sigma v\rangle $\end{document}</tex-math>
+            </inline-formula> is the thermally-averaged DM annihilation cross-section, and <inline-formula>
+               <tex-math id="M212">\begin{document}$ {\rm d}N_{\bar{A}}/{\rm d}p $\end{document}</tex-math>
+            </inline-formula> is the energy spectrum of <inline-formula>
+               <tex-math id="M213">\begin{document}$ \bar{A} $\end{document}</tex-math>
+            </inline-formula> discussed in the previous section. The spatial distribution of DM is described by DM profiles. In this work, we consider four commonly-used DM profiles to represent the uncertainties: the Navarfro-Frenk-White ("NFW") profile [<xref ref-type="bibr" rid="bib50">50</xref>], the "Isothermal" profile [<xref ref-type="bibr" rid="bib51">51</xref>], the "Moore" profile [<xref ref-type="bibr" rid="bib52">52</xref>, <xref ref-type="bibr" rid="bib53">53</xref>] and the "Einasto" profile [<xref ref-type="bibr" rid="bib54">54</xref>].</p><p>For the secondary <inline-formula>
+               <tex-math id="M214">\begin{document}$ \bar{A} $\end{document}</tex-math>
+            </inline-formula> produced in collisions between primary CR and interstellar gas, the source term can be written as follows:</p><p>
+            <disp-formula> 
+               <label>7</label> 
+               <tex-math id="E7"> <?CDATA $ q_{\bar A}(\vec{r},p) = \sum\limits_{ij} n_j(\vec{r}) \int \beta_i \,c\, \sigma_{ij\to \bar A}^{\mathrm{inel}}(p^{\prime}) \frac{{\rm d}N_{\bar{A}}(p,p^{\prime})}{{\rm d} p}\,n_i(\vec{r},p^{\prime})\,{\rm d}p^{\prime}\; , $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M215">\begin{document}$ n_i $\end{document}</tex-math>
+            </inline-formula> is the number density of CR components (proton, helium or antiproton) per unit momentum, <inline-formula>
+               <tex-math id="M216">\begin{document}$ n_j $\end{document}</tex-math>
+            </inline-formula> is the number density of interstellar gases (hydrogen or helium), and <inline-formula>
+               <tex-math id="M217">\begin{document}$ \sigma_{ij}^{\mathrm{inel}}(p^{\prime}) $\end{document}</tex-math>
+            </inline-formula> is the inelastic cross-section for the process <inline-formula>
+               <tex-math id="M218">\begin{document}$ ij\to \bar A+X $\end{document}</tex-math>
+            </inline-formula>, which is provided by the MC generators. <inline-formula>
+               <tex-math id="M219">\begin{document}$ {\rm d}N_{\bar{A}}(p,p^{\prime})/{\rm d} p $\end{document}</tex-math>
+            </inline-formula> is the energy spectrum of <inline-formula>
+               <tex-math id="M220">\begin{document}$ \bar{A} $\end{document}</tex-math>
+            </inline-formula> in the collisions, with <inline-formula>
+               <tex-math id="M221">\begin{document}$ p^{\prime} $\end{document}</tex-math>
+            </inline-formula>  the momentum of incident CR particles. For <inline-formula>
+               <tex-math id="M222">\begin{document}$ \bar p $\end{document}</tex-math>
+            </inline-formula>, we include the contributions from the collisions of <inline-formula>
+               <tex-math id="M223">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M224">\begin{document}$ p\text{He} $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M225">\begin{document}$ \text{He}p $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M226">\begin{document}$ \text{He}\text{He} $\end{document}</tex-math>
+            </inline-formula>, <inline-formula>
+               <tex-math id="M227">\begin{document}$ \bar p p $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M228">\begin{document}$ \bar p \text{He} $\end{document}</tex-math>
+            </inline-formula>. For the secondary <inline-formula>
+               <tex-math id="M229">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M230">\begin{document}$ ^3\overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula>, since the experimental data are only available in <inline-formula>
+               <tex-math id="M231">\begin{document}$ pp $\end{document}</tex-math>
+            </inline-formula>-collisions, we consider the contribution from collisions between CR protons and interstellar hydrogen, which dominates the secondary background of <inline-formula>
+               <tex-math id="M232">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M233">\begin{document}$ ^3\overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula>. The tertiary contributions of <inline-formula>
+               <tex-math id="M234">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M235">\begin{document}$ ^3\overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula> are not included, as they are only important at low kinetic energy regions below 1 GeV<inline-formula>
+               <tex-math id="M236">\begin{document}$ /A $\end{document}</tex-math>
+            </inline-formula> [<xref ref-type="bibr" rid="bib55">55</xref>], which are not relevant to our conclusions.</p><p>The fragmentation timescale <inline-formula>
+               <tex-math id="M237">\begin{document}$ \tau_f $\end{document}</tex-math>
+            </inline-formula> in Eq. (5) is inversely proportional to the inelastic interaction rate between the nucleus <inline-formula>
+               <tex-math id="M238">\begin{document}$ \bar{\rm A} $\end{document}</tex-math>
+            </inline-formula> and the interstellar gas, which is estimated as [<xref ref-type="bibr" rid="bib17">17</xref>, <xref ref-type="bibr" rid="bib18">18</xref>]</p><p>
+            <disp-formula> 
+               <label>8</label> 
+               <tex-math id="E8"> <?CDATA $ \Gamma_{\mathrm{int}} = (n_{_{\mathrm{H}}} + 4^{2/3} n_{_{\mathrm{He}}})\; v\; \sigma_{\bar{A}p}\; , $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M239">\begin{document}$ n_{_{\mathrm{H}}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M240">\begin{document}$ n_{_{\mathrm{He}}} $\end{document}</tex-math>
+            </inline-formula> are the number densities of interstellar hydrogen and helium, respectively, <inline-formula>
+               <tex-math id="M241">\begin{document}$ 4^{2/3} $\end{document}</tex-math>
+            </inline-formula> is the geometrical factor of helium, <italic toggle="yes">v</italic> is the velocity of <inline-formula>
+               <tex-math id="M242">\begin{document}$ \bar{A} $\end{document}</tex-math>
+            </inline-formula> relative to interstellar gases, and <inline-formula>
+               <tex-math id="M243">\begin{document}$ \sigma_{\bar{A}p} $\end{document}</tex-math>
+            </inline-formula> is the total inelastic cross-section of the collisions between <inline-formula>
+               <tex-math id="M244">\begin{document}$ \bar{A} $\end{document}</tex-math>
+            </inline-formula> and the interstellar gas. The number density ratio <inline-formula>
+               <tex-math id="M245">\begin{document}$ n_{_{\mathrm{He}}}/n_{_{\mathrm{H}}} $\end{document}</tex-math>
+            </inline-formula> in the interstellar gas is taken to be 0.11 [<xref ref-type="bibr" rid="bib45">45</xref>], which is the default value in GALPROP.</p><p>Since experimental data for the inelastic cross sections <inline-formula>
+               <tex-math id="M246">\begin{document}$ \sigma_{\overline{ \rm{D}}p} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M247">\begin{document}$ \sigma_{\overline{ \rm{He}}p} $\end{document}</tex-math>
+            </inline-formula> are currently not available, we assume the relation <inline-formula>
+               <tex-math id="M248">\begin{document}$ \sigma_{\bar{A} p} = \sigma_{A \bar{p}} $\end{document}</tex-math>
+            </inline-formula>, which is guaranteed by CP<italic toggle="yes"> </italic>invariance. For an incident nucleus with atomic mass number <italic toggle="yes">A</italic>, charge number <italic toggle="yes">Z</italic> and kinetic energy <italic toggle="yes">T</italic>, the total inelastic cross-section for <inline-formula>
+               <tex-math id="M249">\begin{document}$ A\bar p $\end{document}</tex-math>
+            </inline-formula> collisions is parameterized by the following formula [<xref ref-type="bibr" rid="bib46">46</xref>]:</p><p>
+            <disp-formula> 
+               <label>9</label> 
+               <tex-math id="E9"> <?CDATA $ \begin{aligned}[b] \sigma_{A\bar{p}}^{\mathrm{tot}} = & A^{2/3}\Big[48.2+19\, x^{-0.55} + (0.1-0.18\, x^{-1.2}) Z \\ & + 0.0012\,x^{-1.5}Z^2\Big]\; \mathrm{mb}, \end{aligned} $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M250">\begin{document}$ x = T/(A \cdot \mathrm{GeV}) $\end{document}</tex-math>
+            </inline-formula>. For example, by substituting <inline-formula>
+               <tex-math id="M251">\begin{document}$ A = 2 $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M252">\begin{document}$ Z = 1 $\end{document}</tex-math>
+            </inline-formula>, one obtains the cross-section <inline-formula>
+               <tex-math id="M253">\begin{document}$ \sigma_{\overline{ \rm{D}} p} $\end{document}</tex-math>
+            </inline-formula>.</p><p>Finally, when anti-nuclei propagate into the heliosphere, the spectra of charged CR particles are distorted by the magnetic fields of the solar system and solar wind. The effects of solar modulation are quantified by the force-field approximation [<xref ref-type="bibr" rid="bib56">56</xref>]:</p><p>
+            <disp-formula> 
+               <label>10</label> 
+               <tex-math id="E10"> <?CDATA $ \Phi^{\mathrm{TOA}}_{A,Z}(T_{\mathrm{TOA}}) = \left(\frac{2m_A T_{\mathrm{TOA}}+T^2_{\mathrm{TOA}}}{2m_A T_{\mathrm{IS}}+T^2_{\mathrm{IS}}}\right) \Phi^{\mathrm{IS}}_{A,Z}(T_{\mathrm{IS}}), $?> </tex-math>
+            </disp-formula>
+         </p><p>where <inline-formula>
+               <tex-math id="M254">\begin{document}$ \Phi $\end{document}</tex-math>
+            </inline-formula> is the flux of CR particles, which is related to the density function <italic toggle="yes">f</italic> by <inline-formula>
+               <tex-math id="M255">\begin{document}$ \Phi = v f/(4\pi) $\end{document}</tex-math>
+            </inline-formula>. “TOA” denotes the value at the top of the atmosphere of the earth, “IS” denotes the value at the boundary between interstellar space and the heliosphere, and <italic toggle="yes">m</italic> is the mass of the nucleus.  <inline-formula>
+               <tex-math id="M256">\begin{document}$ T_{\mathrm{IS}} $\end{document}</tex-math>
+            </inline-formula> is related to <inline-formula>
+               <tex-math id="M257">\begin{document}$ T_{\mathrm{TOA}} $\end{document}</tex-math>
+            </inline-formula> as <inline-formula>
+               <tex-math id="M258">\begin{document}$ T_{\mathrm{IS}} = T_{\mathrm{TOA}}+e \phi_F|Z| $\end{document}</tex-math>
+            </inline-formula>. In this work, we set the value of the Fisk potential at <inline-formula>
+               <tex-math id="M259">\begin{document}$ \phi_F = 550 $\end{document}</tex-math>
+            </inline-formula> MV.</p></sec><sec id="s04"><label>IV.</label><title>UPPER LIMIT OF DM ANNIHILATION CROSS-SECTIONS</title><sec id="s04-01"><label>A.</label><title>Constraints from AMS-02 and HAWC <inline-formula>
+                  <tex-math id="M260">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data</title><p>The experimental CR <inline-formula>
+                  <tex-math id="M261">\begin{document}$ \bar{p} $\end{document}</tex-math>
+               </inline-formula> data shows good agreement with the scenario of secondary <inline-formula>
+                  <tex-math id="M262">\begin{document}$ \bar{p} $\end{document}</tex-math>
+               </inline-formula> productions, and thus it is expected to place stringent constraints on the DM annihilation cross-sections. Since the production of anti-nuclei is strongly correlated with the antiproton, these constraints can greatly reduce the uncertainties of the maximal flux of <inline-formula>
+                  <tex-math id="M263">\begin{document}$ ^3\overline{ \rm{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M264">\begin{document}$ ^3\overline{ \rm{He}} $\end{document}</tex-math>
+               </inline-formula> originating from DM. In 2016, the AMS-02 group [<xref ref-type="bibr" rid="bib11">11</xref>] released the currently most accurate <inline-formula>
+                  <tex-math id="M265">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> ratio data in the rigidity range from 1 to 450 GV. Recently, the HAWC group [<xref ref-type="bibr" rid="bib32">32</xref>] published the upper limit of the <inline-formula>
+                  <tex-math id="M266">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> ratio in very high energy regions, obtained by using observations of the moon shadow. In this paper, we use these two sets of <inline-formula>
+                  <tex-math id="M267">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> ratio data to constrain the upper limit of the DM annihilation cross-sections.</p><p>To quantify the uncertainties from CR propagation, we consider three different propagation models, the “MIN”, “MED” and “MAX” models [<xref ref-type="bibr" rid="bib57">57</xref>]. The parameters of these models are obtained by making a global fit to the AMS-02 proton flux and B/C ratio data using the GALPROP-v54 code, and the names of these models represent the typically minimal, median and maximal antiproton fluxes due to the uncertainties of propagation. The parameters of these three models are listed in <xref ref-type="table" rid="t3">Table 3</xref>. In our calculations, we adopt the default normalization scheme in GALPROP, which normalizes the primary nuclei source term to reproduce the AMS-02 proton flux at the reference kinetic energy <inline-formula>
+                  <tex-math id="M268">\begin{document}$ T = 100 $\end{document}</tex-math>
+               </inline-formula> GeV.</p><table-wrap id="t3" orientation="portrait" position="float"><label>Table 3</label><caption id="tc3"><p>Values of the main parameters in the “MIN”, “MED” and “MAX” models, derived from fitting to the AMS-02 <inline-formula>
+                        <tex-math id="M269">\begin{document}$ B/C $\end{document}</tex-math>
+                     </inline-formula> and proton data based on the GALPROP code [<xref ref-type="bibr" rid="bib57">57</xref>]. The parameter <inline-formula>
+                        <tex-math id="M270">\begin{document}$ D_0 $\end{document}</tex-math>
+                     </inline-formula> is in units of <inline-formula>
+                        <tex-math id="M271">\begin{document}$ 10^{28}\; \mathrm{cm}^2\cdot\mathrm{s}^{-1} $\end{document}</tex-math>
+                     </inline-formula>.</p></caption><table><thead><tr><th align="center" colspan="1" rowspan="1" valign="middle">Model</th><th align="center" colspan="1" rowspan="1" valign="middle"> 
+                           <inline-formula>
+                              <tex-math id="M272">\begin{document}$ r_h $\end{document}</tex-math>
+                           </inline-formula>/kpc</th><th align="center" colspan="1" rowspan="1" valign="middle">
+                           <inline-formula>
+                              <tex-math id="M273">\begin{document}$ \; z_h $\end{document}</tex-math>
+                           </inline-formula>/kpc</th><th align="center" colspan="1" rowspan="1" valign="middle"> 
+                           <inline-formula>
+                              <tex-math id="M274">\begin{document}$ D_0 $\end{document}</tex-math>
+                           </inline-formula>
+                        </th><th align="center" colspan="1" rowspan="1" valign="middle"> 
+                           <inline-formula>
+                              <tex-math id="M275">\begin{document}$ R_0 $\end{document}</tex-math>
+                           </inline-formula>/GV</th><th align="center" colspan="1" rowspan="1" valign="middle"> 
+                           <inline-formula>
+                              <tex-math id="M276">\begin{document}$ \delta_1/\delta_2 $\end{document}</tex-math>
+                           </inline-formula>
+                        </th><th align="center" colspan="1" rowspan="1" valign="middle">
+                           <inline-formula>
+                              <tex-math id="M277">\begin{document}$ \; V_a $\end{document}</tex-math>
+                           </inline-formula>/(km/s)</th><th align="center" colspan="1" rowspan="1" valign="middle"> 
+                           <inline-formula>
+                              <tex-math id="M278">\begin{document}$ R_{ps} $\end{document}</tex-math>
+                           </inline-formula>/GV</th><th align="center" colspan="1" rowspan="1" valign="middle"> 
+                           <inline-formula>
+                              <tex-math id="M279">\begin{document}$ \gamma_{p1}/\gamma_{p2} $\end{document}</tex-math>
+                           </inline-formula>
+                        </th></tr></thead><tbody><tr><td align="center" colspan="1" rowspan="1" valign="middle">MIN</td><td align="center" colspan="1" rowspan="1" valign="middle">20</td><td align="center" colspan="1" rowspan="1" valign="middle">1.8</td><td align="center" colspan="1" rowspan="1" valign="middle">3.53</td><td align="center" colspan="1" rowspan="1" valign="middle">4.0</td><td align="center" colspan="1" rowspan="1" valign="middle">0.3/0.3</td><td align="center" colspan="1" rowspan="1" valign="middle">42.7</td><td align="center" colspan="1" rowspan="1" valign="middle">10.0</td><td align="center" colspan="1" rowspan="1" valign="middle">1.75/2.44</td></tr><tr><td align="center" colspan="1" rowspan="1" valign="middle">MED</td><td align="center" colspan="1" rowspan="1" valign="middle">20</td><td align="center" colspan="1" rowspan="1" valign="middle">3.2</td><td align="center" colspan="1" rowspan="1" valign="middle">6.50</td><td align="center" colspan="1" rowspan="1" valign="middle">4.0</td><td align="center" colspan="1" rowspan="1" valign="middle">0.29/0.29</td><td align="center" colspan="1" rowspan="1" valign="middle">44.8</td><td align="center" colspan="1" rowspan="1" valign="middle">10.0</td><td align="center" colspan="1" rowspan="1" valign="middle">1.79/2.45</td></tr><tr><td align="center" colspan="1" rowspan="1" valign="middle">MAX</td><td align="center" colspan="1" rowspan="1" valign="middle">20</td><td align="center" colspan="1" rowspan="1" valign="middle">6.0</td><td align="center" colspan="1" rowspan="1" valign="middle">10.6</td><td align="center" colspan="1" rowspan="1" valign="middle">4.0</td><td align="center" colspan="1" rowspan="1" valign="middle">0.29/0.29</td><td align="center" colspan="1" rowspan="1" valign="middle">43.4</td><td align="center" colspan="1" rowspan="1" valign="middle">10.0</td><td align="center" colspan="1" rowspan="1" valign="middle">1.81/2.46</td></tr></tbody></table></table-wrap><p>The 95% CL upper limits of DM annihilation cross-sections are derived by performing a frequentist <inline-formula>
+                  <tex-math id="M280">\begin{document}$ \chi^2- $\end{document}</tex-math>
+               </inline-formula>analysis, with <inline-formula>
+                  <tex-math id="M281">\begin{document}$ \chi^2 $\end{document}</tex-math>
+               </inline-formula> defined as:</p><p>
+               <disp-formula> 
+                  <label>11</label> 
+                  <tex-math id="E11"> <?CDATA $ \chi^2 = \sum\limits_{i}\frac{(f^{\mathrm{th}}_i-f^{\mathrm{exp}}_i)^2}{\sigma^2_i}, $?> </tex-math>
+               </disp-formula>
+            </p><p>where <inline-formula>
+                  <tex-math id="M282">\begin{document}$ f^{\mathrm{exp}}_i $\end{document}</tex-math>
+               </inline-formula> is the central value of the experimental <inline-formula>
+                  <tex-math id="M283">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> ratio, <inline-formula>
+                  <tex-math id="M284">\begin{document}$ \sigma_i $\end{document}</tex-math>
+               </inline-formula> is the data error, <inline-formula>
+                  <tex-math id="M285">\begin{document}$ f^{\mathrm{exp}}_i $\end{document}</tex-math>
+               </inline-formula> is the theoretical prediction of <inline-formula>
+                  <tex-math id="M286">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula>, and <italic toggle="yes">i</italic> denotes the <inline-formula>
+                  <tex-math id="M287">\begin{document}$ i- $\end{document}</tex-math>
+               </inline-formula>th data point. For the 95% CL upper limits of <inline-formula>
+                  <tex-math id="M288">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> given by the HAWC experiment, we set <inline-formula>
+                  <tex-math id="M289">\begin{document}$ f^{\mathrm{exp}}_i = 0 $\end{document}</tex-math>
+               </inline-formula>, and the value of the upper limit corresponds to <inline-formula>
+                  <tex-math id="M290">\begin{document}$ 1.96\sigma_i $\end{document}</tex-math>
+               </inline-formula>. For a specific DM mass, we first calculate the minimal value of <inline-formula>
+                  <tex-math id="M291">\begin{document}$ \chi^2 $\end{document}</tex-math>
+               </inline-formula>, and then the 95% CL upper limits on DM annihilation cross-sections corresponding to <inline-formula>
+                  <tex-math id="M292">\begin{document}$ \Delta\chi^2 = 3.84 $\end{document}</tex-math>
+               </inline-formula> for one parameter. See Ref. [<xref ref-type="bibr" rid="bib13">13</xref>] for more details. The upper limits for different annihilation channels are shown in <xref ref-type="fig" rid="f3">Fig. 3</xref>, with the production cross-section of secondary <inline-formula>
+                  <tex-math id="M293">\begin{document}$ \bar{p} $\end{document}</tex-math>
+               </inline-formula> generated by EPOS-LHC. We can see that the differences between the upper limits for various propagation models and DM profiles can reach one to two orders of magnitude. As shown in previous works [<xref ref-type="bibr" rid="bib17">17</xref>, <xref ref-type="bibr" rid="bib58">58</xref>], the final flux uncertainties from propagation models and DM profiles can be larger than one order of magnitude. However, if we use these cross-section upper limits to constrain the maximal flux of <inline-formula>
+                  <tex-math id="M294">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M295">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula>, the final uncertainties from the propagation model and the DM profile can be reduced to merely 30% [<xref ref-type="bibr" rid="bib22">22</xref>]. Comparisons of the maximal <inline-formula>
+                  <tex-math id="M296">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> fluxes in different propagation models and DM profiles are shown in <xref ref-type="fig" rid="f4">Fig. 4</xref>. It can be seen that the uncertainties are small.</p><fig id="f3" orientation="portrait" position="float"><label>Fig. 3</label><caption id="fc3"><p>(color online) 95% CL upper limit of DM annihilation cross-sections as functions of DM particle masses, for different decay channels, propagation models and DM profiles, obtained by using the AMS-02 <inline-formula>
+                        <tex-math id="M297">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data [<xref ref-type="bibr" rid="bib11">11</xref>] and the HAWC <inline-formula>
+                        <tex-math id="M298">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> upper limit [<xref ref-type="bibr" rid="bib32">32</xref>]. The energy spectrum of the secondary <inline-formula>
+                        <tex-math id="M299">\begin{document}$ \bar{p} $\end{document}</tex-math>
+                     </inline-formula> are calculated by the EPOS-LHC MC generator.</p></caption><graphic content-type="print" id="f3_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-3.eps" xlink:type="simple"/><graphic content-type="online" id="f3_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f3.jpg" xlink:type="simple"/></fig><fig id="f4" orientation="portrait" position="float"><label>Fig. 4</label><caption id="fc4"><p>(color online) Comparisons of the maximal <inline-formula>
+                        <tex-math id="M306">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+                     </inline-formula> fluxes for different propagation models and DM profiles, with DM annihilation into <inline-formula>
+                        <tex-math id="M307">\begin{document}$ q\bar q  $\end{document}</tex-math>
+                     </inline-formula> final states and DM mass <inline-formula>
+                        <tex-math id="M308">\begin{document}$ m_{\chi} = 30 $\end{document}</tex-math>
+                     </inline-formula> GeV. The DM annihilation cross-sections are constrained by the AMS-02 and HAWC <inline-formula>
+                        <tex-math id="M309">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data, with the spectrum of secondary <inline-formula>
+                        <tex-math id="M310">\begin{document}$ \bar{p} $\end{document}</tex-math>
+                     </inline-formula> calculated using EPOS-LHC.  (Left) Flux results in the "MED" propagation model with four different DM profiles. (Right) Flux results in three different propagation models, with DM profile fixed to "Isothermal". The secondary background of the <inline-formula>
+                        <tex-math id="M311">\begin{document}$ \overline{ \rm{D}} $\end{document}</tex-math>
+                     </inline-formula> flux is generated by EPOS-LHC.</p></caption><graphic content-type="print" id="f4_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-4.eps" xlink:type="simple"/><graphic content-type="online" id="f4_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f4.jpg" xlink:type="simple"/></fig></sec><sec id="s04-02"><label>B.</label><title>Constraints from HESS galactic center <inline-formula>
+                  <tex-math id="M300">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data</title><p>The galactic center (GC) is a promising place for detecting DM interactions, because of the expected high DM density. The 10-year HESS <inline-formula>
+                  <tex-math id="M301">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data [<xref ref-type="bibr" rid="bib34">34</xref>] focus on a small area around the galactic center, and constrains the DM annihilation cross-sections well for “Cuspy” type DM profiles, which have a large gradient at the inner galactic halo. These include the "Einasto" profile and the "NFW" profile. For DM mass <inline-formula>
+                  <tex-math id="M302">\begin{document}$ m_{\chi} \gtrsim 1 $\end{document}</tex-math>
+               </inline-formula> TeV, the galactic center <inline-formula>
+                  <tex-math id="M303">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray can place more stringent upper limits than the <inline-formula>
+                  <tex-math id="M304">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data. However, for “Cored” type DM profiles, which are flat near the galactic center, such as the "Isothermal" profile, the constraints from the <inline-formula>
+                  <tex-math id="M305">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data are relatively weak.</p><p>The latest galactic center <inline-formula>
+                  <tex-math id="M312">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray analysis, with 254 hours' exposure, was published in 2016 by HESS [<xref ref-type="bibr" rid="bib34">34</xref>]. The upper limits are calculated for several DM profiles and DM annihilation channels, but the <inline-formula>
+                  <tex-math id="M313">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray flux data have not been publicly released. Since the relative statistical error of a data point is inversely proportional to the square root of the number of counts in the bins, we can approximately estimate the 254-hour results by rescaling previous HESS <inline-formula>
+                  <tex-math id="M314">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data [<xref ref-type="bibr" rid="bib33">33</xref>], which were published in 2011 and for which exposure time was 112 hours. To obtain the upper limits for other DM profiles and channels, we perform a <inline-formula>
+                  <tex-math id="M315">\begin{document}$ \chi^2 $\end{document}</tex-math>
+               </inline-formula> analysis to the 112-hour <inline-formula>
+                  <tex-math id="M316">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray flux data and estimate the 254-hour results by rescaling the data errors by a factor <inline-formula>
+                  <tex-math id="M317">\begin{document}$ \sqrt{112/254} $\end{document}</tex-math>
+               </inline-formula>. The flux residual is defined as <inline-formula>
+                  <tex-math id="M318">\begin{document}$ R^{\mathrm{exp}} =   F^{\mathrm{exp}}_{\mathrm{Sr}}-F^{\mathrm{exp}}_{\mathrm{Bg}} $\end{document}</tex-math>
+               </inline-formula>, where <inline-formula>
+                  <tex-math id="M319">\begin{document}$ F^{\mathrm{exp}}_{\mathrm{Sr}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M320">\begin{document}$ F^{\mathrm{exp}}_{\mathrm{Bg}} $\end{document}</tex-math>
+               </inline-formula> are the experimental <inline-formula>
+                  <tex-math id="M321">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray flux data from the source region and from the background region respectively, and the error of <inline-formula>
+                  <tex-math id="M322">\begin{document}$ R^{\mathrm{exp}} $\end{document}</tex-math>
+               </inline-formula> is provided in Ref. [<xref ref-type="bibr" rid="bib33">33</xref>]. <inline-formula>
+                  <tex-math id="M323">\begin{document}$ R^{\mathrm{th}} = F^{\mathrm{th}}_{\mathrm{Sr}}-F^{\mathrm{th}}_{\mathrm{Bg}} $\end{document}</tex-math>
+               </inline-formula> is the theoretical value of the flux residual, and the differential flux <inline-formula>
+                  <tex-math id="M324">\begin{document}$ F^{\mathrm{th}} $\end{document}</tex-math>
+               </inline-formula> is calculated by the following formula:</p><p>
+               <disp-formula> 
+                  <label>12</label> 
+                  <tex-math id="E12"> <?CDATA $ F^{\mathrm{th}} = \frac{\mathrm{d}\Phi_{\gamma}}{\Omega\mathrm{d}E_{\gamma}} = \frac{\langle\sigma v\rangle}{8\pi m_{\chi}^2\Omega}\frac{\mathrm{d} N_{\gamma}}{\mathrm{d}E_{\gamma}} \int_{\Omega}\int_{\mathrm{l.o.s}}\rho^2(r(s,\theta))\mathrm{d}s \mathrm{d}\Omega, $?> </tex-math>
+               </disp-formula>
+            </p><p>where <inline-formula>
+                  <tex-math id="M325">\begin{document}$ \mathrm{d} N_{\gamma}/\mathrm{d}E_{\gamma} $\end{document}</tex-math>
+               </inline-formula> is the energy spectrum of photons produced in one DM annihilation, and <inline-formula>
+                  <tex-math id="M326">\begin{document}$ \Omega $\end{document}</tex-math>
+               </inline-formula> is the total spherical angle of the source or background regions. We adopt the reflected background technique described in Ref. [<xref ref-type="bibr" rid="bib33">33</xref>] to determine the source region and background regions, and calculate the flux residual to perform the <inline-formula>
+                  <tex-math id="M327">\begin{document}$ \chi^2 $\end{document}</tex-math>
+               </inline-formula> analysis. We randomly choose 540 pointing positions near the GC, with the maximal distance between the pointing position and the GC being <inline-formula>
+                  <tex-math id="M328">\begin{document}$ 1.5^{\circ} $\end{document}</tex-math>
+               </inline-formula>. We first calculate the minimal <inline-formula>
+                  <tex-math id="M329">\begin{document}$ \chi^2 $\end{document}</tex-math>
+               </inline-formula> value, and then the 95% CL upper limit corresponds to <inline-formula>
+                  <tex-math id="M330">\begin{document}$ \Delta\chi^2 = 3.84 $\end{document}</tex-math>
+               </inline-formula>. The results are shown in <xref ref-type="fig" rid="f5">Fig. 5</xref>. We can see that there are large gaps between the upper limits for different DM profiles. As expected, the constraints are stringent for DM profiles that are cuspy at the GC, but for a cored one like the Isothermal profile, the limits are rather weak. For various DM profiles, the constraints from <inline-formula>
+                  <tex-math id="M331">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data are are similar, because the DM densities in the diffusion halo are similar in different DM profiles, except for the GC region. However, for <inline-formula>
+                  <tex-math id="M332">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data, the GC region provides the most stringent constraints for heavy DM particles, which leads to the large gaps between DM profiles.</p><fig id="f5" orientation="portrait" position="float"><label>Fig. 5</label><caption id="fc5"><p>(color online) 95% CL upper limit of DM annihilation cross-sections for different annihilation channels and DM profiles, obtained by using the HESS GC <inline-formula>
+                        <tex-math id="M333">\begin{document}$ \gamma $\end{document}</tex-math>
+                     </inline-formula>-ray data with 112 hours' exposure [<xref ref-type="bibr" rid="bib33">33</xref>]. The 254-hour results are derived by rescaling the data errors.</p></caption><graphic content-type="print" id="f5_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-5.eps" xlink:type="simple"/><graphic content-type="online" id="f5_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f5.jpg" xlink:type="simple"/></fig><p>We compare the upper limits from the <inline-formula>
+                  <tex-math id="M334">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data and from the <inline-formula>
+                  <tex-math id="M335">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data, as presented in <xref ref-type="fig" rid="f6">Fig. 6</xref>. We use the "MED" propagation model as the benchmark model, and the "Isothermal" and "Einasto" profiles represent the typical "Cored" and "Cuspy" profiles respectively. The "Isothermal" profile is parameterized as follows:</p><fig id="f6" orientation="portrait" position="float"><label>Fig. 6</label><caption id="fc6"><p>(color online) Comparison between the upper limits from the AMS-02 and HAWC <inline-formula>
+                        <tex-math id="M336">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data and the HESS 254-hour GC <inline-formula>
+                        <tex-math id="M337">\begin{document}$ \gamma $\end{document}</tex-math>
+                     </inline-formula>-ray data. The solid lines stand for constraints from the <inline-formula>
+                        <tex-math id="M338">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data, and the dashed lines are the <inline-formula>
+                        <tex-math id="M339">\begin{document}$ \gamma $\end{document}</tex-math>
+                     </inline-formula>-ray limits. The "MED" propagation model is used as a benchmark model.</p></caption><graphic content-type="print" id="f6_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-6.eps" xlink:type="simple"/><graphic content-type="online" id="f6_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f6.jpg" xlink:type="simple"/></fig><p>
+               <disp-formula> 
+                  <label>13</label> 
+                  <tex-math id="E13"> <?CDATA $ \rho_{\mathrm{DM}} = \rho_{\odot}\frac{1+(r_{\odot}/r_{\mathrm{Iso}})^2}{1+(r/r_{\odot})^2}\; , $?> </tex-math>
+               </disp-formula>
+            </p><p>where <inline-formula>
+                  <tex-math id="M340">\begin{document}$ \rho_{\odot} = 0.43\; \mathrm{GeV/cm}^{3} $\end{document}</tex-math>
+               </inline-formula> is the local DM energy density, <inline-formula>
+                  <tex-math id="M341">\begin{document}$ r_{\mathrm{Iso}} = 3.5\; \mathrm{kpc} $\end{document}</tex-math>
+               </inline-formula>. The "Einasto" profile can be written as:</p><p>
+               <disp-formula> 
+                  <label>14</label> 
+                  <tex-math id="E14"> <?CDATA $ \rho_{\mathrm{DM}} = \rho_{\odot}\exp\left[-\left(\frac{2}{\alpha}\right)\left(\frac{r^{\alpha}- r^{\alpha}_{\odot}}{r^{\alpha}_{\mathrm{Ein}}}\right)\right]\; , $?> </tex-math>
+               </disp-formula>
+            </p><p>where <inline-formula>
+                  <tex-math id="M342">\begin{document}$ \alpha = 0.17 $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M343">\begin{document}$ r_{\mathrm{Ein}} = 20 $\end{document}</tex-math>
+               </inline-formula> kpc. As we can see, in all annihilation channels, for the "Isothermal" profile, the upper limits from <inline-formula>
+                  <tex-math id="M344">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data are much more stringent than those from the <inline-formula>
+                  <tex-math id="M345">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data, while for the "Einasto" profile, the <inline-formula>
+                  <tex-math id="M346">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data give stricter limits than <inline-formula>
+                  <tex-math id="M347">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> for DM mass larger than 2 TeV.</p><p>It is worth mentioning that the Fermi-LAT experiment [<xref ref-type="bibr" rid="bib59">59</xref>] also collected a large amount of <inline-formula>
+                  <tex-math id="M348">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data near the GC, and the relatively large region of interest can reduce the large gaps between different DM profiles. However, the energy range of Fermi-LAT observations (from 20 MeV to more than 300 GeV) is much lower than that of HESS, and thus provides a weaker limitation on large DM mass. For example, the analysis in Ref. [<xref ref-type="bibr" rid="bib60">60</xref>] shows that for a steep profile like “NFW”, HESS gives stronger constraints than Fermi-LAT at <inline-formula>
+                  <tex-math id="M349">\begin{document}$ E\gtrsim1 $\end{document}</tex-math>
+               </inline-formula> TeV. For a flat profile like “Isothermal”, the Fermi-LAT limits derived in Ref. [<xref ref-type="bibr" rid="bib61">61</xref>] are slightly weaker than the <inline-formula>
+                  <tex-math id="M350">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> constraints at <inline-formula>
+                  <tex-math id="M351">\begin{document}$ E\approx 10 $\end{document}</tex-math>
+               </inline-formula> TeV. From these facts, to make the most conservative conclusion, we use the <inline-formula>
+                  <tex-math id="M352">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> limits to calculate the maximal <inline-formula>
+                  <tex-math id="M353">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M354">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> fluxes in the “Isothermal” profile, and use the HESS <inline-formula>
+                  <tex-math id="M355">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray limits for the “Einasto” profile in the following sections.</p></sec></sec><sec id="s05"><label>V.</label><title>
+            <inline-formula>
+               <tex-math id="M356">\begin{document}$ \overline{\mathrm{D}} $\end{document}</tex-math>
+            </inline-formula> AND <inline-formula>
+               <tex-math id="M357">\begin{document}$ \overline{\mathrm{He}} $\end{document}</tex-math>
+            </inline-formula> FLUX FOR LARGE DM MASS</title><sec id="s05-01"><label>A.</label><title>Direct DM annihilation</title><p>With the DM annihilation cross-section upper limits to hand, we can derive the maximal <inline-formula>
+                  <tex-math id="M358">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M359">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> fluxes for different annihilation channels, propagation models, and DM profiles. As shown in <xref ref-type="fig" rid="f4">Fig. 4</xref>, by constraining the DM annihilation cross-section with the <inline-formula>
+                  <tex-math id="M360">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data, the uncertainties from the propagation models are small. We thus present our results for the “MED” propagation model, and other models do not affect our conclusions. For illustrative purposes, the particle mass of the heavy DM is set to be <inline-formula>
+                  <tex-math id="M361">\begin{document}$ m_{\chi} = 10 $\end{document}</tex-math>
+               </inline-formula> and 50 TeV, which is smaller than the unitarity bound for a self-conjugate DM [<xref ref-type="bibr" rid="bib62">62</xref>]. However, it is worth mentioning that our analysis is largely model-independent, and we do not assume that DM has thermal origins.</p><p>Currently, the AMS-02 detector has the strongest detection ability for both <inline-formula>
+                  <tex-math id="M362">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M363">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula>. For the <inline-formula>
+                  <tex-math id="M364">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> flux, the AMS-02 detection sensitivity is given in Ref. [<xref ref-type="bibr" rid="bib39">39</xref>], while the sensitivity for <inline-formula>
+                  <tex-math id="M365">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> has only been released in terms of the <inline-formula>
+                  <tex-math id="M366">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+               </inline-formula> ratio in Ref. [<xref ref-type="bibr" rid="bib20">20</xref>]. To study the detection prospects of AMS-02, we present our results in terms of <inline-formula>
+                  <tex-math id="M367">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> fluxes and <inline-formula>
+                  <tex-math id="M368">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+               </inline-formula> ratios.</p><p>The results for the “Isothermal” profile with <inline-formula>
+                  <tex-math id="M369">\begin{document}$ m_{\chi} = 10 $\end{document}</tex-math>
+               </inline-formula> and 50 TeV are presented in <xref ref-type="fig" rid="f7">Fig. 7</xref>, with the DM annihilation cross-section constrained by the AMS-02 and HAWC <inline-formula>
+                  <tex-math id="M370">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data. The top three figures show the results for <inline-formula>
+                  <tex-math id="M371">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> fluxes for different annihilation channels, while the bottom three figures present the <inline-formula>
+                  <tex-math id="M372">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+               </inline-formula> ratio results. The blue shaded areas represent the prospective AMS-02 detection sensitivity after 18 years of data collection, and the error bands show the uncertainties from coalescence momenta. Note that for <inline-formula>
+                  <tex-math id="M373">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula>, the error bands for the secondary background are thinner than the line width. We can see that for <inline-formula>
+                  <tex-math id="M374">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula>, the DM contributions exceed the secondary backgrounds in the energy region <inline-formula>
+                  <tex-math id="M375">\begin{document}$ T/A\gtrsim300 $\end{document}</tex-math>
+               </inline-formula> GeV. For <inline-formula>
+                  <tex-math id="M376">\begin{document}$ b\bar{b} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M377">\begin{document}$ W^+W^- $\end{document}</tex-math>
+               </inline-formula> channels and <inline-formula>
+                  <tex-math id="M378">\begin{document}$ m_{\chi} = 50 $\end{document}</tex-math>
+               </inline-formula> TeV, the excess can be as large as one order of magnitude. Similarly, for <inline-formula>
+                  <tex-math id="M379">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula>, the excess exists at a kinetic energy of around 800 GeV per nucleon, and the primary <inline-formula>
+                  <tex-math id="M380">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> fluxes originating from DM annihilation can be 20 times larger than the secondary background with <inline-formula>
+                  <tex-math id="M381">\begin{document}$ m_{\chi} = 50 $\end{document}</tex-math>
+               </inline-formula> TeV. Despite the fluxes of these anti-nuclei being small at high kinetic energies, and far below the AMS-02 sensitivities, these excesses can be promising windows for future detections.</p><fig id="f7" orientation="portrait" position="float"><label>Fig. 7</label><caption id="fc7"><p>(color online) <inline-formula>
+                        <tex-math id="M382">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+                     </inline-formula> fluxes (top figures) and <inline-formula>
+                        <tex-math id="M383">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+                     </inline-formula> ratios (bottom figures), for the “Isothermal” profile with large DM mass and the “MED” propagation model. The DM annihilation cross-section is constrained by the AMS-02 and HAWC <inline-formula>
+                        <tex-math id="M384">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data. The blue shaded areas represent the 18-year AMS-02 detection sensitivity.</p></caption><graphic content-type="print" id="f7_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-7.eps" xlink:type="simple"/><graphic content-type="online" id="f7_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f7.jpg" xlink:type="simple"/></fig><p>The results for the “Einasto” profile are shown in <xref ref-type="fig" rid="f8">Fig. 8</xref>, with the DM annihilation cross-sections constrained by the HESS 10-year GC <inline-formula>
+                  <tex-math id="M385">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data. For <inline-formula>
+                  <tex-math id="M386">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula>, the DM contributions are below the secondary background in all energy regions and annihilation channels, and thus the high energy window closes. However, for <inline-formula>
+                  <tex-math id="M387">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula>, the conclusion depends on the choice of MC generators. The DM contributions are lower than the secondary background given by EPOS-LHC, but can still exceed the DPMJET-III background.</p><fig id="f8" orientation="portrait" position="float"><label>Fig. 8</label><caption id="fc8"><p>(color online) <inline-formula>
+                        <tex-math id="M388">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+                     </inline-formula> fluxes (top figures) and <inline-formula>
+                        <tex-math id="M389">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+                     </inline-formula> ratios (bottom figures), for the “Einasto” profile with large DM mass and the “MED” propagation model. The DM annihilation cross-section is constrained by the HESS 10-year GC <inline-formula>
+                        <tex-math id="M390">\begin{document}$ \gamma$\end{document}</tex-math>
+                     </inline-formula>-ray data. The blue shaded areas represent the 18-year AMS-02 detection sensitivity.</p></caption><graphic content-type="print" id="f8_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-8.eps" xlink:type="simple"/><graphic content-type="online" id="f8_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f8.jpg" xlink:type="simple"/></fig></sec><sec id="s05-02"><label>B.</label><title>DM annihilation through mediators</title><p>We also consider the process <inline-formula>
+                  <tex-math id="M391">\begin{document}$ \chi\chi \rightarrow \phi\phi \rightarrow f\bar{f}f\bar{f} $\end{document}</tex-math>
+               </inline-formula>, where two DM particles first annihilate into a couple of mediators, and then the mediators decay into standard model final states. If the mass of the mediator is much smaller than that of the DM particle, the mediator will be highly boosted. The <inline-formula>
+                  <tex-math id="M392">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M393">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> produced in this process are thus expected to assemble in high energy regions, which provides a high signal-to-background ratio for the high energy window.</p><p>By following the steps described in Sec. IV, we obtain the 95% CL upper limit of cross-sections for the annihilation process with mediators. The results for mediator mass <inline-formula>
+                  <tex-math id="M394">\begin{document}$ m_{\phi} = 200 $\end{document}</tex-math>
+               </inline-formula> GeV are presented in <xref ref-type="fig" rid="f9">Fig. 9</xref>. Similar to the results for direct annihilations, for the “Isothermal” profile, the most stringent constraints are from <inline-formula>
+                  <tex-math id="M395">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data, while for the “Einasto” profile, the <inline-formula>
+                  <tex-math id="M396">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray limitations are stricter. Again, we use the AMS-02 and HAWC <inline-formula>
+                  <tex-math id="M397">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+               </inline-formula> data to constrain the “Isothermal” profile, and the “Einasto” profile is restricted by the HESS GC <inline-formula>
+                  <tex-math id="M398">\begin{document}$ \gamma $\end{document}</tex-math>
+               </inline-formula>-ray data.</p><fig id="f9" orientation="portrait" position="float"><label>Fig. 9</label><caption id="fc9"><p>(color online) 95% CL upper limit of DM annihilation cross-sections for different mediator decay channels. The solid lines are derived by using the AMS-02 <inline-formula>
+                        <tex-math id="M399">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data and the HAWC <inline-formula>
+                        <tex-math id="M400">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> upper limit, while the dashed lines represent the limits from the HESS GC <inline-formula>
+                        <tex-math id="M401">\begin{document}$ \gamma $\end{document}</tex-math>
+                     </inline-formula>-ray data. The energy spectra of the secondary <inline-formula>
+                        <tex-math id="M402">\begin{document}$ \bar{p} $\end{document}</tex-math>
+                     </inline-formula> are calculated by EPOS-LHC, and the “MED” propagation model is used.</p></caption><graphic content-type="print" id="f9_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-9.eps" xlink:type="simple"/><graphic content-type="online" id="f9_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f9.jpg" xlink:type="simple"/></fig><p>The results for the “Isothermal” profile and “Einasto” profile with <inline-formula>
+                  <tex-math id="M403">\begin{document}$ m_{\phi} = 200 $\end{document}</tex-math>
+               </inline-formula> GeV are presented in <xref ref-type="fig" rid="f1">Fig. 10</xref> and <xref ref-type="fig" rid="f11">Fig. 11</xref> respectively. As expected, the DM contributions are boosted to high energy regions, and we get similar conclusions as in the direct annihilation channels. For the “Isothermal” profile with <inline-formula>
+                  <tex-math id="M404">\begin{document}$ m_{\chi} = 50 $\end{document}</tex-math>
+               </inline-formula> TeV, the high energy window opens for both <inline-formula>
+                  <tex-math id="M405">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M406">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> in all decay channels, especially for <inline-formula>
+                  <tex-math id="M407">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula>, where the excesses can reach two orders of magnitude in the <inline-formula>
+                  <tex-math id="M408">\begin{document}$ q\bar{q} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M409">\begin{document}$ b\bar{b} $\end{document}</tex-math>
+               </inline-formula> channels. For <inline-formula>
+                  <tex-math id="M410">\begin{document}$ m_{\chi} = 10 $\end{document}</tex-math>
+               </inline-formula> TeV, the DM contributions for <inline-formula>
+                  <tex-math id="M411">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> and <inline-formula>
+                  <tex-math id="M412">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> are comparable to the secondary backgrounds.</p><fig id="f10" orientation="portrait" position="float"><label>Fig. 10</label><caption id="fc10"><p>(color online) <inline-formula>
+                        <tex-math id="M413">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+                     </inline-formula> fluxes (top figures) and <inline-formula>
+                        <tex-math id="M414">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+                     </inline-formula> ratios (bottom figures), for the “Isothermal” profile and different mediator decay channels, with the “MED” propagation model. The DM annihilation cross-section is constrained by the AMS-02 and HAWC <inline-formula>
+                        <tex-math id="M415">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data.</p></caption><graphic content-type="print" id="f10_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-10.eps" xlink:type="simple"/><graphic content-type="online" id="f10_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f10.jpg" xlink:type="simple"/></fig><fig id="f11" orientation="portrait" position="float"><label>Fig. 11</label><caption id="fc11"><p>(color online) <inline-formula>
+                        <tex-math id="M416">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+                     </inline-formula> fluxes (top figures) and <inline-formula>
+                        <tex-math id="M417">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+                     </inline-formula> ratios (bottom figures), for the “Einasto” profile and different mediator decay channels, with the “MED” propagation model are used. The DM annihilation cross section is constrained by the HESS 10-year GC <inline-formula>
+                        <tex-math id="M418">\begin{document}$ \gamma $\end{document}</tex-math>
+                     </inline-formula>-ray data.</p></caption><graphic content-type="print" id="f11_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-11.eps" xlink:type="simple"/><graphic content-type="online" id="f11_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f11.jpg" xlink:type="simple"/></fig><p>However, as shown in <xref ref-type="fig" rid="f11">Fig. 11</xref>, for the “Einasto” profile, the excesses in high energy regions disappear for <inline-formula>
+                  <tex-math id="M419">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> for all DM masses and mediator decay channels. For <inline-formula>
+                  <tex-math id="M420">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula>, the contributions from DM with <inline-formula>
+                  <tex-math id="M421">\begin{document}$ m_{\chi} = 50 $\end{document}</tex-math>
+               </inline-formula> TeV can be larger than the background calculated by using DPMJET-III. For EPOS-LHC, however, the only excess appears in the <inline-formula>
+                  <tex-math id="M422">\begin{document}$ q\bar{q} $\end{document}</tex-math>
+               </inline-formula> decay channel with <inline-formula>
+                  <tex-math id="M423">\begin{document}$ m_{\chi} = 50 $\end{document}</tex-math>
+               </inline-formula> TeV.</p><p>For other mediator masses, we reach the same conclusion. Taking the <inline-formula>
+                  <tex-math id="M428">\begin{document}$ \chi\chi \rightarrow \phi\phi \rightarrow 4q $\end{document}</tex-math>
+               </inline-formula> channel as an example, we calculate the <inline-formula>
+                  <tex-math id="M429">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+               </inline-formula> fluxes and <inline-formula>
+                  <tex-math id="M430">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+               </inline-formula> ratios for mediator mass <inline-formula>
+                  <tex-math id="M431">\begin{document}$ m_{\phi} = 60 $\end{document}</tex-math>
+               </inline-formula>, 200 and 600 GeV, and present the results for the “Isothermal” profile in <xref ref-type="fig" rid="f12">Fig. 12</xref>. It can be seen that with the growth of the mediator mass, the DM contributions in low energy regions increase significantly. However, in high energy regions, in which we are interested, the variations of the results are small.</p><fig id="f12" orientation="portrait" position="float"><label>Fig. 12</label><caption id="fc12"><p>(color online) <inline-formula>
+                        <tex-math id="M424">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+                     </inline-formula> fluxes (top figures) and <inline-formula>
+                        <tex-math id="M425">\begin{document}$  ^3\overline{\text{He}}/\mathrm{He} $\end{document}</tex-math>
+                     </inline-formula> ratios (bottom figures), for the “Isothermal” profile and <inline-formula>
+                        <tex-math id="M426">\begin{document}$ \chi\chi \rightarrow \phi\phi \rightarrow 4q $\end{document}</tex-math>
+                     </inline-formula> channels, with different mediator masses and the “MED” propagation model. The DM annihilation cross-section is constrained by the AMS-02 and HAWC <inline-formula>
+                        <tex-math id="M427">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+                     </inline-formula> data.</p></caption><graphic content-type="print" id="f12_eps" orientation="portrait" position="float" xlink:href="CPC-2020-0341-12.eps" xlink:type="simple"/><graphic content-type="online" id="f12_online" orientation="portrait" position="float" xlink:href="cpc_45_6_065102_f12.jpg" xlink:type="simple"/></fig></sec></sec><sec id="s06"><label>VI.</label><title>CONCLUSIONS</title><p>In summary, we have explored the possibility of probing DM by high energy CR anti-nuclei. We used the MC generators PYTHIA 8.2, EPOS-LHC and DPMJET-III and the coalescence model to calculate the spectra of anti-nuclei. The coalescence momenta of <inline-formula>
+               <tex-math id="M432">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M433">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> were derived by fitting the data from ALICE, ALEPH and CERN ISR experiments. The propagation of charged CR particles was calculated by the GALPROP-v54 code, with the inelastic interaction cross-sections between the primary CR and interstellar gases given by MC generators. We used the HESS GC <inline-formula>
+               <tex-math id="M434">\begin{document}$ \gamma $\end{document}</tex-math>
+            </inline-formula>-ray data to constrain the DM annihilation cross-sections for the DM profiles with large gradient at GC, while the flat profiles were limited by the AMS-02 and HAWC <inline-formula>
+               <tex-math id="M435">\begin{document}$ \bar{p}/p $\end{document}</tex-math>
+            </inline-formula> data.</p><p>Our results showed that, for a “Cored” type DM density profile like the “Isothermal” profile, the high energy window opened for both <inline-formula>
+               <tex-math id="M436">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M437">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> in all channels. However, for a “Cuspy” type profile like the “Einasto” profile, the <inline-formula>
+               <tex-math id="M438">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> contributions from DM annihilations were below the secondary background in both DM direct annihilation and annihilation through mediator decay channels. For <inline-formula>
+               <tex-math id="M439">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula>, the conclusion depended on the choice of MC generators. The <inline-formula>
+               <tex-math id="M440">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> flux originating from DM annihilations could exceed the secondary background for DPMJET-III, while the excess disappeared for EPOS-LHC.</p><p>Signals in high energy regions can effectively avoid the uncertainties from the solar activities. Although the fluxes of <inline-formula>
+               <tex-math id="M441">\begin{document}$  \overline{\text{D}} $\end{document}</tex-math>
+            </inline-formula> and <inline-formula>
+               <tex-math id="M442">\begin{document}$  ^3\overline{\text{He}} $\end{document}</tex-math>
+            </inline-formula> in high energy regions are far below the sensitivity of current experiments like AMS-02 and GAPS, the high energy window could be a promising probe of DM for next-generation experiments. We believe that with the fast development of detector technologies, DM detection through the high energy window will eventually be possible.</p></sec></body><back><ref-list><title>References</title><ref id="bib1"><label>[1]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>J. Beatty</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2004</year><volume>93</volume><fpage>241102</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.93.241102</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0412230 " xlink:type="simple">astro-ph/0412230 </ext-link>
+               </comment></element-citation></ref><ref id="bib2"><label>[2]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Adriani . (PAMELA Collaboration)</surname><given-names>O.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Nature</source><year>2009</year><volume>458</volume><fpage>607</fpage><lpage>609</lpage><pub-id pub-id-type="doi">10.1038/nature07942</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/0810.4995 " xlink:type="simple">0810.4995 </ext-link>
+               </comment></element-citation></ref><ref id="bib3"><label>[3]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ackermann . (Fermi-LAT Collaboration)</surname><given-names>M.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2012</year><volume>108</volume><fpage>011103</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.108.011103</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1109.0521 [astro-ph.HE]" xlink:type="simple">1109.0521 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib4"><label>[4]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Accardo . (AMS Collaboration)</surname><given-names>L.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2014</year><volume>113</volume><fpage>121101</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.113.121101</pub-id></element-citation></ref><ref id="bib5"><label>[5]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Kopp</surname><given-names>J.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2013</year><volume>88</volume><fpage>076013</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1304.1184 " xlink:type="simple">1304.1184 </ext-link>
+               </comment></element-citation></ref><ref id="bib6"><label>[6]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Bergstrom</surname><given-names>L.</given-names></name>
+                  <name name-style="western"><surname>Bringmann</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Cholis</surname><given-names>I.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2013</year><volume>111</volume><fpage>171101</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.111.171101</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1306.3983 [astro-ph.HE]" xlink:type="simple">1306.3983 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib7"><label>[7]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ibarra</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>S. Lamperstorfer</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>Silk</surname><given-names>J.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2014</year><volume>89</volume><issue>6</issue><fpage>063539</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1309.2570 " xlink:type="simple">1309.2570 </ext-link>
+               </comment></element-citation></ref><ref id="bib8"><label>[8]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Jin</surname><given-names>H.-B.</given-names></name>
+                  <name name-style="western"><surname>Wu</surname><given-names>Y.-L.</given-names></name>
+                  <name name-style="western"><surname>Zhou</surname><given-names>Y.-F.</given-names></name>
+               </person-group><source>JCAP</source><year>2013</year><volume>1311</volume><fpage>026</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1304.1997 " xlink:type="simple">1304.1997 </ext-link>
+               </comment></element-citation></ref><ref id="bib9"><label>[9]</label><element-citation publication-type="other" xlink:type="simple"><comment>O. Adriani <italic toggle="yes">et al</italic>., JETP Lett. <bold>96</bold> (2013) 621−627. [Pisma Zh. Eksp. Teor. Fiz.96, 693(2012)]</comment></element-citation></ref><ref id="bib10"><label>[10]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Abe</surname><given-names>K.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2012</year><volume>108</volume><fpage>051102</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.108.051102</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1107.6000 [astro-ph.HE]" xlink:type="simple">1107.6000 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib11"><label>[11]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Aguilar . (AMS Collaboration)</surname><given-names>M.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2016</year><volume>117</volume><issue>9</issue><fpage>091103</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.117.091103</pub-id></element-citation></ref><ref id="bib12"><label>[12]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Giesen</surname><given-names>G.</given-names></name>
+                  <name name-style="western"><surname>Boudaud</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Génolini</surname><given-names>Y.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JCAP</source><year>2015</year><volume>1509</volume><issue>09</issue><fpage>023</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1504.04276 [astro-ph.HE]" xlink:type="simple">1504.04276 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib13"><label>[13]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Jin</surname><given-names>H.-B.</given-names></name>
+                  <name name-style="western"><surname>Wu</surname><given-names>Y.-L.</given-names></name>
+                  <name name-style="western"><surname>Zhou</surname><given-names>Y.-F.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2015</year><volume>92</volume><issue>5</issue><fpage>055027</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1504.04604 " xlink:type="simple">1504.04604 </ext-link>
+               </comment></element-citation></ref><ref id="bib14"><label>[14]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Lin</surname><given-names>S.-J.</given-names></name>
+                  <name name-style="western"><surname>Bi</surname><given-names>X.-J.</given-names></name>
+                  <name name-style="western"><surname>Feng</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. D</source><year>2017</year><volume>96</volume><issue>12</issue><fpage>123010</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1612.04001 [astro-ph.HE]" xlink:type="simple">1612.04001 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib15"><label>[15]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Reinert</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>W. Winkler</surname><given-names>M.</given-names></name>
+               </person-group><source>JCAP</source><year>2018</year><volume>1801</volume><issue>01</issue><fpage>055</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1712.00002 [astro-ph.HE]" xlink:type="simple">1712.00002 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib16"><label>[16]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Donato</surname><given-names>F.</given-names></name>
+                  <name name-style="western"><surname>Fornengo</surname><given-names>N.</given-names></name>
+                  <name name-style="western"><surname>Salati</surname><given-names>P.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2000</year><volume>62</volume><fpage>043003</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-ph/9904481 " xlink:type="simple">hep-ph/9904481 </ext-link>
+               </comment></element-citation></ref><ref id="bib17"><label>[17]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Carlson</surname><given-names>E.</given-names></name>
+                  <name name-style="western"><surname>Coogan</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>Linden</surname><given-names>T.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. D</source><year>2014</year><volume>89</volume><issue>7</issue><fpage>076005</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1401.2461 " xlink:type="simple">1401.2461 </ext-link>
+               </comment></element-citation></ref><ref id="bib18"><label>[18]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Cirelli</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Fornengo</surname><given-names>N.</given-names></name>
+                  <name name-style="western"><surname>Taoso</surname><given-names>M.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JHEP</source><year>2014</year><volume>08</volume><fpage>009</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1401.4017 " xlink:type="simple">1401.4017 </ext-link>
+               </comment></element-citation></ref><ref id="bib19"><label>[19]</label><element-citation publication-type="other" xlink:type="simple"><comment>AMS Collaboration, F. Giovacchini, and V. Choutko, <italic toggle="yes">in Proceedings, 30th International Cosmic Ray Conference (ICRC 2007): Merida, Yucatan, Mexico, July 3-11, 2007</italic>, vol. 4, pp. 765−768. 2007 </comment></element-citation></ref><ref id="bib20"><label>[20]</label><element-citation publication-type="other" xlink:type="simple"><comment>A. Kounine, arXiv: 1009.5349 [astro-ph.HE]</comment></element-citation></ref><ref id="bib21"><label>[21]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Aramaki . (GAPS Collaboration)</surname><given-names>T.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astropart. Phys.</source><year>2016</year><volume>74</volume><fpage>6</fpage><lpage>13</lpage><pub-id pub-id-type="doi">10.1016/j.astropartphys.2015.09.001</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1506.02513 [astro-ph.HE]" xlink:type="simple">1506.02513 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib22"><label>[22]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ding</surname><given-names>Y.-C.</given-names></name>
+                  <name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+                  <name name-style="western"><surname>Wei</surname><given-names>C.-C.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>JCAP</source><year>2019</year><volume>1906</volume><issue>06</issue><fpage>004</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1808.03612 " xlink:type="simple">1808.03612 </ext-link>
+               </comment></element-citation></ref><ref id="bib23"><label>[23]</label><element-citation publication-type="other" xlink:type="simple"><comment>P. von Doetinchem <italic toggle="yes">et al</italic>., arXiv: 2002.04163 [astro-ph.HE]</comment></element-citation></ref><ref id="bib24"><label>[24]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Sjostrand</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Mrenna</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>Z. Skands</surname><given-names>P.</given-names></name>
+               </person-group><source>JHEP</source><year>2006</year><volume>05</volume><fpage>026</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-ph/0603175 " xlink:type="simple">hep-ph/0603175 </ext-link>
+               </comment></element-citation></ref><ref id="bib25"><label>[25]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Sjöstrand</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Ask</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>R. Christiansen</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Comput. Phys. Commun.</source><year>2015</year><volume>191</volume><fpage>159</fpage><lpage>177</lpage><pub-id pub-id-type="doi">10.1016/j.cpc.2015.01.024</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1410.3012 " xlink:type="simple">1410.3012 </ext-link>
+               </comment></element-citation></ref><ref id="bib26"><label>[26]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Werner</surname><given-names>K.</given-names></name>
+                  <name name-style="western"><surname>Liu</surname><given-names>F.-M.</given-names></name>
+                  <name name-style="western"><surname>Pierog</surname><given-names>T.</given-names></name>
+               </person-group><source>Phys. Rev. C</source><year>2006</year><volume>74</volume><fpage>044902</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-ph/0506232 " xlink:type="simple">hep-ph/0506232 </ext-link>
+               </comment></element-citation></ref><ref id="bib27"><label>[27]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Pierog</surname><given-names>T.</given-names></name>
+                  <name name-style="western"><surname>Karpenko</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>M. Katzy</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. C</source><year>2015</year><volume>92</volume><issue>3</issue><fpage>034906</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1306.0121 " xlink:type="simple">1306.0121 </ext-link>
+               </comment></element-citation></ref><ref id="bib28"><label>[28]</label><element-citation publication-type="other" xlink:type="simple"><comment>S. Roesler, R. Engel, and J. Ranft, in <italic toggle="yes">27th International Cosmic Ray Conference (ICRC 2001) Hamburg, Germany, August 7-15, 2001</italic>, pp. 439−442. 2001 </comment></element-citation></ref><ref id="bib29"><label>[29]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Schael . (ALEPH Collaboration)</surname><given-names>S.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Lett. B</source><year>2006</year><volume>639</volume><fpage>192</fpage><lpage>201</lpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/hep-ex/0604023 " xlink:type="simple">hep-ex/0604023 </ext-link>
+               </comment></element-citation></ref><ref id="bib30"><label>[30]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Henning . (British-Scandinavian-MIT Collaboration)</surname><given-names>S.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Lett. Nuovo Cim.</source><year>1978</year><volume>21</volume><fpage>189</fpage><pub-id pub-id-type="doi">10.1007/BF02822248</pub-id></element-citation></ref><ref id="bib31"><label>[31]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Acharya . (ALICE Collaboration)</surname><given-names>S.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. C</source><year>2018</year><volume>97</volume><issue>2</issue><fpage>024615</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1709.08522 " xlink:type="simple">1709.08522 </ext-link>
+               </comment></element-citation></ref><ref id="bib32"><label>[32]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>U. Abeysekara . (HAWC Collaboration)</surname><given-names>A.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. D</source><year>2018</year><volume>97</volume><issue>10</issue><fpage>102005</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1802.08913 [astro-ph.HE]" xlink:type="simple">1802.08913 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib33"><label>[33]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Abramowski . (H. E. S. S. Collaboration)</surname><given-names>A.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2011</year><volume>106</volume><fpage>161301</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.106.161301</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1103.3266 [astro-ph.HE]" xlink:type="simple">1103.3266 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib34"><label>[34]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Abdallah . (H. E. S. S. Collaboration)</surname><given-names>H.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. Lett.</source><year>2016</year><volume>117</volume><issue>11</issue><fpage>111301</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.117.111301</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1607.08142 [astro-ph.HE]" xlink:type="simple">1607.08142 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib35"><label>[35]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>T. Butler</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>A. Pearson</surname><given-names>C.</given-names></name>
+               </person-group><source>Phys. Rev.</source><year>1963</year><volume>129</volume><fpage>836</fpage><lpage>842</lpage><pub-id pub-id-type="doi">10.1103/PhysRev.129.836</pub-id></element-citation></ref><ref id="bib36"><label>[36]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Schwarzschild</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>Zupancic</surname><given-names>C.</given-names></name>
+               </person-group><source>Phys. Rev.</source><year>1963</year><volume>129</volume><fpage>854</fpage><lpage>862</lpage><pub-id pub-id-type="doi">10.1103/PhysRev.129.854</pub-id></element-citation></ref><ref id="bib37"><label>[37]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>P. Csernai</surname><given-names>L.</given-names></name>
+                  <name name-style="western"><surname>I. Kapusta</surname><given-names>J.</given-names></name>
+               </person-group><source>Phys. Rept.</source><year>1986</year><volume>131</volume><fpage>223</fpage><lpage>318</lpage><pub-id pub-id-type="doi">10.1016/0370-1573(86)90031-1</pub-id></element-citation></ref><ref id="bib38"><label>[38]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Blum</surname><given-names>K.</given-names></name>
+                  <name name-style="western"><surname>C. Y. Ng</surname><given-names>K.</given-names></name>
+                  <name name-style="western"><surname>Sato</surname><given-names>R.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rev. D</source><year>2017</year><volume>96</volume><issue>10</issue><fpage>103021</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1704.05431 [astro-ph.HE]" xlink:type="simple">1704.05431 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib39"><label>[39]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Aramaki</surname><given-names>T.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Rept.</source><year>2016</year><volume>618</volume><fpage>1</fpage><lpage>37</lpage><pub-id pub-id-type="doi">10.1016/j.physrep.2016.01.002</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1505.07785 " xlink:type="simple">1505.07785 </ext-link>
+               </comment></element-citation></ref><ref id="bib40"><label>[40]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Skands</surname><given-names>P.</given-names></name>
+                  <name name-style="western"><surname>Carrazza</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>Rojo</surname><given-names>J.</given-names></name>
+               </person-group><source>Eur. Phys. J. C</source><year>2014</year><volume>74</volume><issue>8</issue><fpage>3024</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1404.5630 " xlink:type="simple">1404.5630 </ext-link>
+               </comment></element-citation></ref><ref id="bib41"><label>[41]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Aad . (ATLAS Collaboration)</surname><given-names>G.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Phys. Lett. B</source><year>2011</year><volume>705</volume><fpage>415</fpage><lpage>434</lpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1107.2381 " xlink:type="simple">1107.2381 </ext-link>
+               </comment></element-citation></ref><ref id="bib42"><label>[42]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Anticic . (NA49 Collaboration)</surname><given-names>T.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Eur. Phys. J. C</source><year>2010</year><volume>65</volume><fpage>9</fpage><lpage>63</lpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/0904.2708 " xlink:type="simple">0904.2708 </ext-link>
+               </comment></element-citation></ref><ref id="bib43"><label>[43]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>S. Berezinsky</surname><given-names>V.</given-names></name>
+                  <name name-style="western"><surname>V. Bulanov</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>A. Dogiel</surname><given-names>V.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophysics of cosmic rays</source><year>1990</year></element-citation></ref><ref id="bib44"><label>[44]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>W. Strong</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>V. Moskalenko</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>S. Ptuskin</surname><given-names>V.</given-names></name>
+               </person-group><source>Ann. Rev. Nucl. Part. Sci.</source><year>2007</year><volume>57</volume><fpage>285</fpage><lpage>327</lpage><pub-id pub-id-type="doi">10.1146/annurev.nucl.57.090506.123011</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0701517 " xlink:type="simple">astro-ph/0701517 </ext-link>
+               </comment></element-citation></ref><ref id="bib45"><label>[45]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>W. Strong</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>V. Moskalenko</surname><given-names>I.</given-names></name>
+               </person-group><source>Astrophys. J.</source><year>1998</year><volume>509</volume><fpage>212</fpage><lpage>228</lpage><pub-id pub-id-type="doi">10.1086/306470</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/9807150 " xlink:type="simple">astro-ph/9807150 </ext-link>
+               </comment></element-citation></ref><ref id="bib46"><label>[46]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>V. Moskalenko</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>W. Strong</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>F. Ormes</surname><given-names>J.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>2002</year><volume>565</volume><fpage>280</fpage><lpage>296</lpage><pub-id pub-id-type="doi">10.1086/324402</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0106567 " xlink:type="simple">astro-ph/0106567 </ext-link>
+               </comment></element-citation></ref><ref id="bib47"><label>[47]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>W. Strong</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>V. Moskalenko</surname><given-names>I.</given-names></name>
+               </person-group><source>Adv. Space Res.</source><year>2001</year><volume>27</volume><fpage>717</fpage><lpage>726</lpage><pub-id pub-id-type="doi">10.1016/S0273-1177(01)00112-0</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0101068 " xlink:type="simple">astro-ph/0101068 </ext-link>
+               </comment></element-citation></ref><ref id="bib48"><label>[48]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>V. Moskalenko</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>W. Strong</surname><given-names>A.</given-names></name>
+                  <name name-style="western"><surname>G. Mashnik</surname><given-names>S.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>2003</year><volume>586</volume><fpage>1050</fpage><lpage>1066</lpage><pub-id pub-id-type="doi">10.1086/367697</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0210480 " xlink:type="simple">astro-ph/0210480 </ext-link>
+               </comment></element-citation></ref><ref id="bib49"><label>[49]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>S. Ptuskin</surname><given-names>V.</given-names></name>
+                  <name name-style="western"><surname>V. Moskalenko</surname><given-names>I.</given-names></name>
+                  <name name-style="western"><surname>C. Jones</surname><given-names>F.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>2006</year><volume>642</volume><fpage>902</fpage><lpage>916</lpage><pub-id pub-id-type="doi">10.1086/501117</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0510335 " xlink:type="simple">astro-ph/0510335 </ext-link>
+               </comment></element-citation></ref><ref id="bib50"><label>[50]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>F. Navarro</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>S. Frenk</surname><given-names>C.</given-names></name>
+                  <name name-style="western"><surname>D. M. White</surname><given-names>S.</given-names></name>
+               </person-group><source>Astrophys. J.</source><year>1997</year><volume>490</volume><fpage>493</fpage><lpage>508</lpage><pub-id pub-id-type="doi">10.1086/304888</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/9611107 " xlink:type="simple">astro-ph/9611107 </ext-link>
+               </comment></element-citation></ref><ref id="bib51"><label>[51]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Bergstrom</surname><given-names>L.</given-names></name>
+                  <name name-style="western"><surname>Ullio</surname><given-names>P.</given-names></name>
+                  <name name-style="western"><surname>H. Buckley</surname><given-names>J.</given-names></name>
+               </person-group><source>Astropart. Phys.</source><year>1998</year><volume>9</volume><fpage>137</fpage><lpage>162</lpage><pub-id pub-id-type="doi">10.1016/S0927-6505(98)00015-2</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/9712318 " xlink:type="simple">astro-ph/9712318 </ext-link>
+               </comment></element-citation></ref><ref id="bib52"><label>[52]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Moore</surname><given-names>B.</given-names></name>
+                  <name name-style="western"><surname>Ghigna</surname><given-names>S.</given-names></name>
+                  <name name-style="western"><surname>Governato</surname><given-names>F.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>1999</year><volume>524</volume><fpage>L19</fpage><lpage>L22</lpage><pub-id pub-id-type="doi">10.1086/312287</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/9907411 " xlink:type="simple">astro-ph/9907411 </ext-link>
+               </comment></element-citation></ref><ref id="bib53"><label>[53]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Diemand</surname><given-names>J.</given-names></name>
+                  <name name-style="western"><surname>Moore</surname><given-names>B.</given-names></name>
+                  <name name-style="western"><surname>Stadel</surname><given-names>J.</given-names></name>
+               </person-group><source>Mon. Not. Roy. Astron. Soc.</source><year>2004</year><volume>353</volume><fpage>624</fpage><pub-id pub-id-type="doi">10.1111/j.1365-2966.2004.08094.x</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/astro-ph/0402267 " xlink:type="simple">astro-ph/0402267 </ext-link>
+               </comment></element-citation></ref><ref id="bib54"><label>[54]</label><element-citation publication-type="other" xlink:type="simple"><comment>J. Einasto, in <italic toggle="yes">Astronomy and Astrophysics 2010, [Eds. Oddbjorn Engvold, Rolf Stabell, Bozena Czerny, John Lattanzio], in Encyclopedia of Life Support Systems (EOLSS), Developed under the Auspices of the UNESCO, Eolss Publishers, Oxford, UK</italic>. 2009. arXiv: 0901.0632 [astro-ph.CO]. </comment></element-citation></ref><ref id="bib55"><label>[55]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Korsmeier</surname><given-names>M.</given-names></name>
+                  <name name-style="western"><surname>Donato</surname><given-names>F.</given-names></name>
+                  <name name-style="western"><surname>Fornengo</surname><given-names>N.</given-names></name>
+               </person-group><source>Phys. Rev. D</source><year>2018</year><volume>97</volume><issue>10</issue><fpage>103011</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1711.08465 [astro-ph.HE]" xlink:type="simple">1711.08465 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib56"><label>[56]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>J. Gleeson</surname><given-names>L.</given-names></name>
+                  <name name-style="western"><surname>I. Axford</surname><given-names>W.</given-names></name>
+               </person-group><source>Astrophys. J.</source><year>1968</year><volume>154</volume><fpage>1011</fpage><pub-id pub-id-type="doi">10.1086/149822</pub-id></element-citation></ref><ref id="bib57"><label>[57]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Jin</surname><given-names>H.-B.</given-names></name>
+                  <name name-style="western"><surname>Wu</surname><given-names>Y.-L.</given-names></name>
+                  <name name-style="western"><surname>Zhou</surname><given-names>Y.-F.</given-names></name>
+               </person-group><source>JCAP</source><year>2015</year><volume>1509</volume><issue>09</issue><fpage>049</fpage><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1410.0171 " xlink:type="simple">1410.0171 </ext-link>
+               </comment></element-citation></ref><ref id="bib58"><label>[58]</label><element-citation publication-type="other" xlink:type="simple"><comment>S.-J. Lin, X.-J. Bi, and P.-F. Yin, arXiv: 1801.00997 [astro-ph.HE]</comment></element-citation></ref><ref id="bib59"><label>[59]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>B. Atwood . (Fermi-LAT Collaboration)</surname><given-names>W.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>2009</year><volume>697</volume><fpage>1071</fpage><lpage>1102</lpage><pub-id pub-id-type="doi">10.1088/0004-637X/697/2/1071</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/0902.1089 [astro-ph.IM]" xlink:type="simple">0902.1089 [astro-ph.IM]</ext-link>
+               </comment></element-citation></ref><ref id="bib60"><label>[60]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ackermann . (Fermi-LAT Collaboration)</surname><given-names>M.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>2017</year><volume>840</volume><issue>1</issue><fpage>43</fpage><pub-id pub-id-type="doi">10.3847/1538-4357/aa6cab</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1704.03910 [astro-ph.HE]" xlink:type="simple">1704.03910 [astro-ph.HE]</ext-link>
+               </comment></element-citation></ref><ref id="bib61"><label>[61]</label><element-citation publication-type="journal" xlink:type="simple"><person-group person-group-type="author">
+                  <name name-style="western"><surname>Ackermann . (Fermi-LAT Collaboration)</surname><given-names>M.</given-names></name>
+                  <etal>et al</etal>
+               </person-group><source>Astrophys. J.</source><year>2012</year><volume>761</volume><fpage>91</fpage><pub-id pub-id-type="doi">10.1088/0004-637X/761/2/91</pub-id><comment>arXiv: <ext-link ext-link-type="arxiv" xlink:href="http://arxiv.org/abs/1205.6474 [astro-ph.CO]" xlink:type="simple">1205.6474 [astro-ph.CO]</ext-link>
+               </comment></element-citation></ref><ref id="bib62"><label>[62]</label><element-citation publication-type="other" xlink:type="simple"><comment>J. Smirnov and J. F. Beacom, <italic toggle="yes">Phys. Rev. D</italic> 
+                  <bold>100</bold> (Aug, 2019) 043029. </comment></element-citation></ref></ref-list></back></article>
