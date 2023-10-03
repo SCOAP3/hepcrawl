@@ -83,7 +83,7 @@ class Jats(object):
         for el in root:
             if el.tag == 'label':
                 root.remove(el)
-        return ', '.join(root.itertext())
+        return ''.join(root.itertext())
 
     def _get_authors(self, node):
         authors = []
@@ -106,7 +106,8 @@ class Jats(object):
             for aff in affiliations:
                 # checking is the aff. value captured by xpath is just new line
                 if self._clean_aff(aff).split():
-                    affiliations_values.append({'value': self._clean_aff(aff)})
+                    cleaned_affiliation = self._clean_aff(aff)
+                    affiliations_values.append({'value': cleaned_affiliation})
                 else:
                     # if aff. value captured by xpath is just new line, we have to take all data in aff tags.
                     # because xpath cannot capture data if there is new line and just after different tags.
