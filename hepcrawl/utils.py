@@ -334,3 +334,5 @@ def get_license_by_text(license_text):
             license = get_license_by_url(license_url=LICENSE_TEXTS[key])
 
     return license
+
+LICENSE_PATTERN = re.compile(r"[0-9]+\.[0-9]")

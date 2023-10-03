@@ -1,11 +1,11 @@
 import logging
-from math import fabs
 import re
 
 from hepcrawl.extractors.jats import Jats
 from hepcrawl.items import HEPRecord
 from hepcrawl.loaders import HEPLoader
-from hepcrawl.utils import get_license
+from hepcrawl.exceptions import UnknownLicense
+from hepcrawl.utils import LICENSE_PATTERN
 
 logger = logging.getLogger(__name__)
 
@@ -91,10 +91,7 @@ class IOPParser(Jats):
         record.add_xpath('copyright_year', '//copyright-year/text()')
         record.add_xpath('copyright_statement', '//copyright-statement/text()')
 
-        license = get_license(
-            license_url=node.xpath(
-                '//license/license-p/ext-link/text()').extract_first()
-        )
+        license = self._get_license(node)
         record.add_value('license', license)
 
         record.add_value('collections', ['Chinese Physics C'])
@@ -124,3 +121,30 @@ class IOPParser(Jats):
             arxiv_eprints.append({'value': pattern.sub('', arxiv_value)})
 
         return arxiv_eprints
+
+    def get_license_type_and_version_from_url(self, url):
+        if "creativecommons.org/licenses/by/" not in url:
+            raise UnknownLicense(url)
+        license_type = "CC-BY"
+        match = LICENSE_PATTERN.search(url)
+        return self.construct_license(license_type=license_type, version= match.group(0), url=url)
+
+    def _get_license(self, node):
+        raw_licenses = node.xpath("//permissions/license/@href").extract()
+        licenses = []
+        for raw_license in raw_licenses:
+            type_and_version = self.get_license_type_and_version_from_url(url=raw_license)
+            if type_and_version:
+                licenses.append(type_and_version)
+        return licenses
+
+
+    def construct_license(self, license_type, version, url=None):
+        license = {}
+        if url:
+            license['url'] = url
+        else:
+            logger.warning("License URL is not found in XML.")
+        if license_type and version:
+            license['license'] = "-".join([license_type, version])
+        return license
