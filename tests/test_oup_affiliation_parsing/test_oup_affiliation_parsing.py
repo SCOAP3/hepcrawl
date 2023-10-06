@@ -10,7 +10,7 @@ correct_affiliations = {
         {
             "affiliations": [
                 {
-                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                    "value": "Institute of Science and Engineering, Shimane University, Matsue 690-8504, Japan"
                 }
             ],
             "surname": "Haba",
@@ -19,10 +19,10 @@ correct_affiliations = {
         {
             "affiliations": [
                 {
-                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                    "value": "Institute of Science and Engineering, Shimane University, Matsue 690-8504, Japan"
                 },
                 {
-                    "value": "Department of Physical Sciences, College of Science and Engineering, , Ritsumeikan University, , Shiga 525-8577, , Japan"
+                    "value": "Department of Physical Sciences, College of Science and Engineering, Ritsumeikan University, Shiga 525-8577, Japan"
                 },
             ],
             "surname": "Mimura",
@@ -31,7 +31,7 @@ correct_affiliations = {
         {
             "affiliations": [
                 {
-                    "value": "Institute of Science and Engineering, , Shimane University, , Matsue 690-8504, , Japan"
+                    "value": "Institute of Science and Engineering, Shimane University, Matsue 690-8504, Japan"
                 }
             ],
             "surname": "Yamada",
@@ -43,10 +43,10 @@ correct_affiliations = {
         {
             "affiliations": [
                 {
-                    "value": "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, , , Kyoto 606-8502, , , Japan"
+                    "value": "Center for Gravitational Physics, Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan"
                 },
                 {
-                    "value": "Theoretical Research Division, Nishina Center, , , RIKEN, Saitama 351-0198, , , Japan"
+                    "value": "Theoretical Research Division, Nishina Center, RIKEN, Saitama 351-0198, Japan"
                 },
             ],
             "surname": "Aoki",
@@ -56,7 +56,7 @@ correct_affiliations = {
         {
             "affiliations": [
                 {
-                    "value": "Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), , , RIKEN Saitama 351-0198, , , Japan"
+                    "value": "Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN Saitama 351-0198, Japan"
                 }
             ],
             "surname": "Yazaki",
@@ -67,7 +67,7 @@ correct_affiliations = {
         {
             "affiliations": [
                 {
-                    "value": "Department of Physics, Graduate School of Science, Osaka University, , , Toyonaka, Osaka 560-0043, , , Japan"
+                    "value": "Department of Physics, Graduate School of Science, Osaka University, Toyonaka, Osaka 560-0043, Japan"
                 }
             ],
             "surname": "Yamaguchi",
