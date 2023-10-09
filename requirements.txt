@@ -174,7 +174,7 @@ w3lib==1.22.0
 wcwidth==0.1.7
 webargs==5.5.3
 webencodings==0.5.1
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 whichcraft==0.6.1
 workflow==2.1.6
 WTForms==2.3.1
