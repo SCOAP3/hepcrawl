@@ -15,7 +15,7 @@ binaryornot==0.4.4
 bleach==3.1.5
 blinker==1.4
 celery==3.1.26.post2
-certifi==2018.10.15
+certifi==2022.12.7
 cffi==1.14.0
 chardet==3.0.4
 check-manifest==0.41
