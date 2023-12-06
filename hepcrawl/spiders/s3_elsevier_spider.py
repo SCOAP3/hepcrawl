@@ -248,6 +248,7 @@ class S3ElsevierSpider(Spider):
 
             for i in range(len(journal_data)):
                 for doi, data in journal_data[i]['articles'].items():
+                    self.log("Starting to parse file: '%s'" % data['files']['xml'], logging.INFO)
                     with open(data['files']['xml'], 'r') as xml_file:
                         xml_file_content = xml_file.read()
                         for nodename in self.itertag:
