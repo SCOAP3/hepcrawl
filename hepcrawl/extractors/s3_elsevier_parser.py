@@ -55,62 +55,78 @@ class S3ElsevierParser(object):
         record = HEPLoader(item=HEPRecord(), selector=node)
 
         article_type = node.xpath('./@docsubtype').extract()
-        article_type = map(lambda x: self.article_type_mapping.get(x, 'other'), article_type)
+        article_type = map(lambda x: self.article_type_mapping.get(
+            x, 'other'), article_type)
         record.add_value('journal_doctype', article_type)
 
         dois = node.xpath('./item-info/doi/text()').extract()
-        doi = dois[0]
-        record.add_value('dois', dois)
+        try:
+            doi = dois[0]
+            record.add_value('dois', dois)
 
-        if article_type in ['correction', 'addendum']:
-            logger.info('Adding related_article_doi for article %s.' % dois)
-            record.add_xpath('related_article_doi', "//related-article[@ext-link-type='doi']/@href")
+            if article_type in ['correction', 'addendum']:
+                logger.info(
+                    'Adding related_article_doi for article %s.' % dois)
+                record.add_xpath('related_article_doi',
+                                 "//related-article[@ext-link-type='doi']/@href")
 
-        record.add_xpath('abstract', './*[self::head | self::simple-head]/abstract[1]/abstract-sec')
-        record.add_xpath('title', './*[self::head | self::simple-head]/title/text()')
-        record.add_xpath('subtitle', './*[self::head | self::simple-head]/subtitle/text()')
+            record.add_xpath(
+                'abstract', './*[self::head | self::simple-head]/abstract[1]/abstract-sec')
+            record.add_xpath(
+                'title', './*[self::head | self::simple-head]/title/text()')
+            record.add_xpath(
+                'subtitle', './*[self::head | self::simple-head]/subtitle/text()')
 
-        record.add_value('authors', self.get_authors(node, dois))
-        record.add_xpath('collaborations', "./*[self::head | self::simple-head]/author-group/collaboration/text/text()")
+            record.add_value('authors', self.get_authors(node, dois))
+            record.add_xpath(
+                'collaborations', "./*[self::head | self::simple-head]/author-group/collaboration/text/text()")
 
-        record.add_value('journal_title', meta['articles'][doi]['journal'])
-        record.add_value('journal_volume', meta['volume'])
-        record.add_xpath('journal_artid', '//item-info/aid/text()')
+            record.add_value('journal_title', meta['articles'][doi]['journal'])
+            record.add_value('journal_volume', meta['volume'])
+            record.add_xpath('journal_artid', '//item-info/aid/text()')
 
-        first_page = meta['articles'][doi].get('first-page')
-        last_page = meta['articles'][doi].get('last-page')
-        record.add_value('journal_fpage', first_page)
-        record.add_value('journal_lpage', last_page)
+            first_page = meta['articles'][doi].get('first-page')
+            last_page = meta['articles'][doi].get('last-page')
+            record.add_value('journal_fpage', first_page)
+            record.add_value('journal_lpage', last_page)
 
-        if first_page is not None and last_page is not None:
-            try:
-                page_nr = int(last_page) - int(first_page) + 1
-                record.add_value('page_nr', page_nr)
-            except ValueError as e:
-                logger.error('Failed to parse last_page or first_page for article %s: %s' % (dois, e))
+            if first_page is not None and last_page is not None:
+                try:
+                    page_nr = int(last_page) - int(first_page) + 1
+                    record.add_value('page_nr', page_nr)
+                except ValueError as e:
+                    logger.error(
+                        'Failed to parse last_page or first_page for article %s: %s' % (dois, e))
 
-        published_date = datetime.datetime.strptime(meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S")
-        record.add_value('journal_year', published_date.year)
-        record.add_value('date_published', published_date.strftime("%Y-%m-%d"))
+            published_date = datetime.datetime.strptime(
+                meta['articles'][doi]['publication-date'], "%Y-%m-%dT%H:%M:%S")
+            record.add_value('journal_year', published_date.year)
+            record.add_value('date_published',
+                             published_date.strftime("%Y-%m-%d"))
 
-        record.add_xpath('copyright_holder', './item-info/copyright/text()')
-        record.add_xpath('copyright_year', './item-info/copyright/@year')
-        record.add_xpath('copyright_statement', './item-info/copyright/text()')
+            record.add_xpath('copyright_holder',
+                             './item-info/copyright/text()')
+            record.add_xpath('copyright_year', './item-info/copyright/@year')
+            record.add_xpath('copyright_statement',
+                             './item-info/copyright/text()')
 
-        license = get_license(
-            license_url='http://creativecommons.org/licenses/by/3.0/'
-        )
-        record.add_value('license', license)
+            license = get_license(
+                license_url='http://creativecommons.org/licenses/by/3.0/'
+            )
+            record.add_value('license', license)
 
-        record.add_value('collections', [meta['articles'][doi]['journal']])
+            record.add_value('collections', [meta['articles'][doi]['journal']])
 
-        # local file paths
-        local_files = []
-        for filetype in meta['articles'][doi]['files']:
-            local_files.append({'filetype': filetype, 'path': meta['articles'][doi]['files'][filetype]})
-        record.add_value('local_files', local_files)
+            # local file paths
+            local_files = []
+            for filetype in meta['articles'][doi]['files']:
+                local_files.append(
+                    {'filetype': filetype, 'path': meta['articles'][doi]['files'][filetype]})
+            record.add_value('local_files', local_files)
 
-        return dict(record.load_item())
+            return dict(record.load_item())
+        except IndexError:
+            logger.error("Article has no DOI")
 
     def get_authors(self, node, dois):
         """Get the authors."""
@@ -120,7 +136,8 @@ class S3ElsevierParser(object):
             for author in author_group.xpath("./author"):
                 surname = author.xpath("./surname/text()")
                 given_names = author.xpath("./given-name/text()")
-                affiliations = self._get_affiliations(author_group, author, dois)
+                affiliations = self._get_affiliations(
+                    author_group, author, dois)
                 orcid = self._get_orcid(author)
                 emails = author.xpath("./e-address/text()")
 
@@ -133,7 +150,8 @@ class S3ElsevierParser(object):
                 if orcid:
                     auth_dict['orcid'] = orcid
                 if affiliations:
-                    auth_dict['affiliations'] = [{"value": aff} for aff in affiliations]
+                    auth_dict['affiliations'] = [
+                        {"value": aff} for aff in affiliations]
                 if emails:
                     auth_dict['email'] = emails.extract_first()
 
@@ -159,9 +177,11 @@ class S3ElsevierParser(object):
         """
         affiliations_by_id = []
         for aff_id in ref_ids:
-            ce_affiliation = author_group.xpath("//affiliation[@id='" + aff_id + "']")
+            ce_affiliation = author_group.xpath(
+                "//affiliation[@id='" + aff_id + "']")
             if ce_affiliation.xpath(".//affiliation"):
-                aff = ce_affiliation.xpath(".//*[self::organization or self::city or self::country or self::address-line]/text()")
+                aff = ce_affiliation.xpath(
+                    ".//*[self::organization or self::city or self::country or self::address-line]/text()")
                 affiliations_by_id.append(", ".join(aff.extract()))
             elif ce_affiliation:
                 aff = ce_affiliation.xpath("./textfn/text()").extract_first()
@@ -178,7 +198,8 @@ class S3ElsevierParser(object):
         """
 
         ref_ids = author.xpath(".//@refid").extract()
-        group_affs = author_group.xpath(".//affiliation[not(@*)]/textfn/text()")
+        group_affs = author_group.xpath(
+            ".//affiliation[not(@*)]/textfn/text()")
         all_group_affs = author_group.xpath(".//affiliation/textfn/text()")
 
         # Don't take correspondence (cor1) or deceased (fn1):
