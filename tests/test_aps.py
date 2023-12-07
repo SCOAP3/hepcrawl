@@ -58,7 +58,8 @@ def test_abstract(results):
 
 def test_title(results):
     """Test extracting title."""
-    titles = ("You can run, you can hide: The epidemiology and statistical mechanics of zombies",)
+    titles = (
+        "You can run, you can hide: The epidemiology and statistical mechanics of zombies",)
     for title, record in zip(titles, results):
         assert 'title' in record
         assert record['title'] == title
@@ -151,20 +152,29 @@ def test_publication_info(results):
 
 def test_authors(results):
     """Test authors."""
-    expected_results = (
-        dict(
-            affiliation='Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA',
-            author_full_names=['Alemi, Alexander A.', 'Bierbaum, Matthew', 'Myers, Christopher R.', 'Sethna, James P.']
-        ),
-    )
-    for expected, record in zip(expected_results, results):
-        assert 'authors' in record
-        assert len(record['authors']) == len(expected['author_full_names'])
+    expected_results = [{'affiliations': [{'value': u'Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA'}],
+                         'full_name': u'Alemi, Alexander A.',
+                         'given_names': u'Alexander A.',
+                         'raw_name': u'Alexander A. Alemi',
+                         'surname': u'Alemi'},
+                        {'affiliations': [{'value': u'Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA'}],
+                         'full_name': u'Bierbaum, Matthew',
+                         'given_names': u'Matthew',
+                         'raw_name': u'Matthew Bierbaum',
+                         'surname': u'Bierbaum'},
+                        {'affiliations': [{'value': u'Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA'},
+                                          {'value': u'Institute of Biotechnology, Cornell University, Ithaca, New York 14853, USA'}],
+                         'full_name': u'Myers, Christopher R.',
+                         'given_names': u'Christopher R.',
+                         'raw_name': u'Christopher R. Myers',
+                         'surname': u'Myers'},
+                        {'affiliations': [{'value': u'Laboratory of Atomic and Solid State Physics, Cornell University, Ithaca, New York 14853, USA'}],
+                         'full_name': u'Sethna, James P.',
+                         'given_names': u'James P.',
+                         'raw_name': u'James P. Sethna',
+                         'surname': u'Sethna'}]
 
-        record_full_names = [author['full_name'] for author in record['authors']]
-        assert set(expected['author_full_names']) == set(record_full_names)  # assert that we have the same list of authors
-        for author in record['authors']:
-            assert author['affiliations'][0]['value'] == expected['affiliation']
+    assert results[0]['authors'] == expected_results
 
 
 def test_copyrights(results):
